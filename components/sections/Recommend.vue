@@ -6,6 +6,31 @@
         <p>Рекоммендуем:</p>
       </div>
 
+      <!-- <div class="hooper">
+        <hooper>
+          <slide>
+            slide 1
+          </slide>
+          <slide>
+            slide 2
+          </slide>
+          <slide>
+            slide 3
+          </slide>
+          <slide>
+            slide 4
+          </slide>
+          <slide>
+            slide 5
+          </slide>
+          <slide>
+            slide 6
+          </slide>
+
+          <hooper-navigation slot="hooper-addons"></hooper-navigation>
+        </hooper>
+      </div> -->
+
       <div class="grid grid-cols-1 gap-y-4 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 xl:gap-x-8">
         <div v-for="product in recommends" :key="product.id" class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
           <ProductCard :product="product" />
@@ -17,11 +42,22 @@
 </template>
   
 <script>
+// import {
+//   Hooper,
+//   Slide,
+//   Navigation as HooperNavigation
+//   } from 'hooper';
+//   import 'hooper/dist/hooper.css';
+
+
   import ProductCard from '../ProductCard.vue';
     export default {
       name: 'RecommendSection',
       components: {
-        ProductCard
+        ProductCard,
+        // Hooper,
+        // Slide,
+        // HooperNavigation
     },
     props: {
       recommends: {
