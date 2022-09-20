@@ -1,7 +1,7 @@
 <template>
 
   <div class="p-2">
-    <div class="">
+    <div class="grid justify-items-center bg-white">
       <img 
         :src="product.preview_image" 
         :alt="product.imageAlt"
