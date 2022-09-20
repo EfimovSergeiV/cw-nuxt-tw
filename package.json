@@ -9,6 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@mdi/font": "^7.0.96",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.19.3",
@@ -19,6 +20,11 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^5.3.3"
+    "@nuxtjs/color-mode": "^2.1.1",
+    "@nuxtjs/tailwindcss": "^5.3.3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.7"
   }
 }

@@ -16,7 +16,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'assets/low-priorty.pcss',
-    'assets/high-priorty.pcss'
+    'assets/high-priorty.pcss',
+    '@mdi/font/css/materialdesignicons.min.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -28,6 +29,10 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // // Doc: https://github.com/nuxt-community/color-mode-module
+    // "@nuxtjs/color-mode",
+    // // Doc: https://github.com/nuxt-community/tailwindcss-module
+    // "@nuxtjs/tailwindcss",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -37,6 +42,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode',
   ],
 
   tailwindcss: {
@@ -50,13 +56,21 @@ export default {
       // 'low-priority' will have lower priority than Tailwind stylesheet, 
       // while 'high-priorty' will override it
       after: 'assets/low-priorty.pcss'
-  }
+    }
+  },
+
+  colorMode: {
+    storageKey: 'color-mode',
+    preference: 'system',
+    fallback: 'dark',
+    classSuffix: '',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'http://127.0.0.1:8000',
+    // baseURL: 'https://api.glsvar.ru',
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -64,6 +78,11 @@ export default {
     manifest: {
       lang: 'en'
     }
+  },
+
+  loading: {
+    color: 'yellow',
+    height: '1px',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
