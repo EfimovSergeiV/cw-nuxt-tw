@@ -1,14 +1,14 @@
 <template>
 
   <div class="p-2">
-    <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-sm bg-white xl:aspect-w-7 xl:aspect-h-8">
+    <div class="">
       <img 
         :src="product.preview_image" 
         :alt="product.imageAlt"
         loading=lazy
         width="235"
         height="177"
-        class="h-full w-full object-cover object-center" 
+        class="" 
       />
     </div>
 
