@@ -15,7 +15,8 @@
           <div class="grid justify-items-center">
             <img
               :alt="brand.brand"
-              class="cursor-pointer"
+              onerror="this.src='../../noimage-235-177.jpg'"
+              class="cursor-pointer rounded-sm"
               style="width:150px; height: 100px"
               width="150"
               height="100"
@@ -32,7 +33,6 @@
         </slide>
       </hooper>
     </div>
-    <!-- hooper-footer footer-brand footer-brand-img point-cursor -->
   </section>
 </template>
   

@@ -34,7 +34,7 @@ import Pagination from '~/components/Pagination.vue'
         const rands = await $axios.$get(`c/random/`, {params: { ct: query.ct },})
         const response = await $axios.$get(`c/prods/`, {params: query,})
         const breadcrumbs = await $axios.$get(`c/breadcrumb/`, {params: query,})
-        
+
         return { cts, response, brands, props, rands, breadcrumbs }
       },
       data() {

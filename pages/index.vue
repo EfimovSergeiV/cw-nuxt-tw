@@ -8,7 +8,7 @@
     <Svarog :mpromobs="mpromobs" />
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
-    <CorouselBrands :brands="brands" />
+    <CorouselBrands :brands="filterCarouselBrands(brands)" />
     <Footer />
 
   </div>
@@ -42,7 +42,7 @@ import CorouselBrands from '~/components/sections/CorouselBrands.vue'
     CartModal,
     Footer,
     CorouselBrands
-},
+  },
     async asyncData({ $axios }) {
       const banners = await $axios.$get('c/mainbanner/')
       const brands = await $axios.$get('/c/brands/')
@@ -54,5 +54,16 @@ import CorouselBrands from '~/components/sections/CorouselBrands.vue'
       const mweld = await $axios.$get(`c/prod/1835/`)
       return { banners, brands, cts, latest, mpromobs, esab, recommends, mweld }
     },
+    methods: {
+        filterCarouselBrands(brands) {
+          const truebrand = []
+          brands.forEach((element) => {
+            if (element.carousel === true) {
+              truebrand.push(element)
+            }
+          })
+          return truebrand
+        }
+      }
   }
 </script>
