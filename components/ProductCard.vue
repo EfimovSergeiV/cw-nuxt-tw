@@ -1,32 +1,29 @@
 <template>
 
   <div class="p-2">
-    <div class="grid justify-items-center bg-white">
+    <div class="grid justify-items-center bg-white rounded-sm">
       <img 
-        :src="product.preview_image" 
+        :src="product.preview_image"
+        onerror="this.src='../../noimage-235-177.jpg'"
         :alt="product.imageAlt"
         loading=lazy
         width="235"
         height="177"
-        class="" 
+        class="p-4" 
       />
     </div>
 
     <nuxt-link to="/product/158">
       <p class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">{{ product.prod_price[0].price.toLocaleString() }} руб.</p>
       <p class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">В наличии</p>
-      <p class="mt-2 h-16 text-sm text-gray-700 dark:text-gray-200 text-center">{{ product.name }}</p>
+      <p class="mt-2 h-20 text-sm text-gray-700 dark:text-gray-200 text-center">{{ product.name }}</p>
     </nuxt-link>
-
 
     <div class="grid grid-flow-col justify-items-end">
       <button type="button" class="mdi mdi-24px mdi-equalizer-outline text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-500 focus:outline-none transition duration-300 delay-150 hover:delay-300"></button>
       <button type="button" class="mdi mdi-24px mdi-heart-multiple-outline text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-500 focus:outline-none transition duration-300 delay-150 hover:delay-300"></button>
-      <button type="button" class="mdi mdi-16px mdi-cart-outline rounded-sm bg-yellow-450 px-6 py-1 text-base text-gray-800 shadow-sm hover:bg-yellow-550 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition duration-300 delay-150 hover:delay-300">
-        В корзину
-      </button>
+      <button type="button" class="mdi mdi-16px mdi-cart-outline rounded-sm bg-yellow-450 px-6 py-1 text-base text-gray-800 shadow-sm hover:bg-yellow-550 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 transition duration-300 delay-150 hover:delay-300">В корзину</button>
     </div>
-
   </div>
 
 </template>
