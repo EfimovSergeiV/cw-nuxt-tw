@@ -2,14 +2,14 @@
   <section id="" class="mt-10">
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
       <hooper
-      :infinite-scroll="true"
-      :center-mode="true"
-      :items-to-show="5"
-      pagination="no"
-      :auto-play="true"
-      :play-speed="17000"
-      class=""
-      style="height:100px"
+        :infinite-scroll="true"
+        :center-mode="true"
+        :items-to-show="5"
+        pagination="no"
+        :auto-play="true"
+        :play-speed="17000"
+        class=""
+        style="height:100px"
       >
         <slide v-for="(brand, br) in brands" :key="br">
           <div class="grid justify-items-center">
@@ -26,9 +26,8 @@
                 $router.push({
                   name: `products`,
                   query: { brnd: brand.id, page: 1 },
-                })
-              "
-            />
+                })"
+              />
           </div>
         </slide>
       </hooper>
