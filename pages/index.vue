@@ -2,6 +2,7 @@
   <div>
 
     <Navbar :cts="cts" />
+    <Main />
     <ESAB :esab="esab" />
     <CorouselProducts :latest="latest" />
     <MWeld :mweld="mweld" />
