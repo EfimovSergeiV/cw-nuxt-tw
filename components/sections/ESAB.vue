@@ -9,7 +9,7 @@
 
       <div class="grid md:grid-cols-2 gap-4 rounded-sm">
         <div class="border dark:border-gray-700">
-          <div class="absolute px-2">
+          <div class="absolute px-2 z-10">
             <div class="flex items-center">
               <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" width="60" />
               <p class="text-[15px] hidden lg:block font-black shadow-sm text-yellow-450 uppercase">Являемся официальным дистрибьютером</p>              
@@ -38,7 +38,7 @@
         </div>
         <div class=" md:p-4">
           <div class="">
-            <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200">{{ text }}</p>
+            <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200 font-medium">{{ text }}</p>
           </div>
         </div>
       </div>
