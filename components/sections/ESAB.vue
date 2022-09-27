@@ -1,7 +1,7 @@
 <template>
   <section id="" class="mt-4">
 
-    <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="my-4 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
         <p class="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-200">{{ title }}</p>
@@ -9,6 +9,12 @@
 
       <div class="grid md:grid-cols-2 gap-4 rounded-sm">
         <div class="border dark:border-gray-700">
+          <div class="absolute px-2">
+            <div class="flex items-center">
+              <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" width="60" />
+              <p class="text-[15px] hidden lg:block font-black shadow-sm text-yellow-450 uppercase">Являемся официальным дистрибьютером</p>              
+            </div>
+          </div>
           <img 
             class="rounded-sm"
             src="http://127.0.0.1:8000/files/c/esab-banner-one.jpg" 

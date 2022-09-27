@@ -1,35 +1,11 @@
 <template>
   <div class="">
-    <div class="mx-auto py-4 px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="py-2">
-        <p>Рекоммендуем:</p>
+      <div class="my-4 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
+        <p class="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-200">Главный сварщик рекомендует</p>
       </div>
 
-      <!-- <div class="hooper">
-        <hooper>
-          <slide>
-            slide 1
-          </slide>
-          <slide>
-            slide 2
-          </slide>
-          <slide>
-            slide 3
-          </slide>
-          <slide>
-            slide 4
-          </slide>
-          <slide>
-            slide 5
-          </slide>
-          <slide>
-            slide 6
-          </slide>
-
-          <hooper-navigation slot="hooper-addons"></hooper-navigation>
-        </hooper>
-      </div> -->
 
       <div class="grid grid-cols-1 gap-y-4 gap-x-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 xl:gap-x-4">
         <div v-for="product in recommends" :key="product.id" class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">

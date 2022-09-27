@@ -16,7 +16,7 @@
             <img
               :alt="brand.brand"
               onerror="this.src='../../noimage-235-177.jpg'"
-              class="cursor-pointer rounded-sm"
+              class="cursor-pointer rounded-sm p-3"
               style="width:150px; height: 100px"
               width="150"
               height="100"
