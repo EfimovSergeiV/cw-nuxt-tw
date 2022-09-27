@@ -4,7 +4,7 @@
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
       <div class="my-4 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
-        <p class="text-lg md:text-2xl text-gray-900 dark:text-gray-200">{{ title }}</p>
+        <p class="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-200">{{ title }}</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-4 rounded-sm">
@@ -23,25 +23,19 @@
       </div>
 
 
-
       <div class="flex items-center my-4 p-1 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm">
-
         <div class="hidden md:block flex-none">
           <img
             src="esab-logo.jpg"
             width="220px"
           />
         </div>
-
         <div class=" md:p-4">
           <div class="">
             <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200">{{ text }}</p>
           </div>
         </div>
-
       </div>
-
-
 
 
     </div>
