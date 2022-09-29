@@ -28,16 +28,49 @@
                             <nuxt-link to="/" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Главная</nuxt-link>
                         </li>
 
-                        <li class="group">
-                          <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700" @click="menu = !menu">Каталог <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></nuxt-link>
-                          <div class="absolute z-50 w-full left-0 invisible group-hover:opacity-100 group-hover:visible">
+                        <li id="navabar-menu" class="group">
+                          <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700">Каталог <div class="ml-1 mdi mdi-arrow-down" ></div></nuxt-link>
+                          <div class="absolute z-40 w-full left-0 m--invisible group-hover:opacity-100 group-hover:visible">
                             <div class="container mt-4">
                               <div class="mx-auto py-1 pb-1 px-4 lg:max-w-7xl lg:px-8">
                                 <div class="menu-section">
                                   <div id="mega-menu-full-dropdown" class="mt-1 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
                                     <div class="grid py-5 px-4 mx-auto max-w-screen-xl text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
-                                      
-                                      <ul aria-labelledby="mega-menu-full-dropdown-button">
+
+
+                                      <div class="" v-for="ct in cts" :key="ct.id">
+                                        <div class="block p-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700">
+                                          <nuxt-link to="#" class="font-semibold">{{ ct.name }}</nuxt-link>
+
+                                          <ul>
+                                            <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-4 my-1">
+                                              <div id="ssct" class="block">
+                                                <nuxt-link to="#" class="text-sm font-light text-gray-500 dark:text-gray-300">{{ sct.name }} <div  v-if="sct.inserted.length > 0" class="inline-block mdi mdi-arrow-down"></div>
+                                                                                             
+                                                </nuxt-link>
+                                                
+
+                                              
+                                              
+                                              </div>
+
+                                              <div v-if="sct.inserted.length > 0" class="absolute z-50 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
+                                                <div class="" v-for="ssct in sct.inserted" :key="ssct.id">
+                                                  <nuxt-link to="#">{{ ssct.name }}</nuxt-link>
+                                                </div>
+                                              </div>
+
+                                            </li>
+                                          </ul>                                        
+
+                                        </div>
+                                      </div>
+                                        
+
+
+
+
+                                      <!-- <ul aria-labelledby="mega-menu-full-dropdown-button">
                                           <li>
                                               <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                                                   <div class="font-semibold">Online Stores</div>
@@ -77,7 +110,7 @@
                                               </a>
                                           </li>
                                       </ul>
-                                      <ul class="hidden md:block">
+                                      <ul class="">
                                         <li>
                                             <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
                                                 <div class="font-semibold">Audience Management</div>
@@ -96,7 +129,7 @@
                                                 <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
                                             </a>
                                         </li>
-                                      </ul>
+                                      </ul> -->
                                       <!-- <ul>
                                         <li>
                                             <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
@@ -106,11 +139,11 @@
                                         </li>
                                       </ul> -->
                                     </div>
-                                    <div class="px-10 py-4">
+                                    <!-- <div class="px-10 py-4">
                                       <nuxt-link to="/cts" class="text-right">
                                         <h3>Все категории</h3>
                                       </nuxt-link>
-                                    </div> 
+                                    </div>  -->
                                   </div>
                                 </div>
                               </div>
