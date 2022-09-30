@@ -41,7 +41,7 @@ import 'hooper/dist/hooper.css'
 import { mapGetters } from 'vuex'
 
   export default {
-    name: 'MainSection',
+    name: 'BrandCarouselSection',
     components: {
       Hooper,
       Slide
