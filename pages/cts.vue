@@ -1,15 +1,10 @@
 <template>
   <div class="min-h-screen">
 
-    <div class="">
-      <Navbar :cts="cts" />
-    </div>
-    <div class="">
-      <Categories :cts="cts" />
-    </div>
-    <div class="">
-      <Footer class="" />
-    </div>
+    <Header />
+    <Navbar :cts="cts" />
+    <Categories :cts="cts" />
+    <Footer class="" />
 
   </div>
 </template>

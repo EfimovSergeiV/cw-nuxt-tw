@@ -1,17 +1,21 @@
 <template>
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 py-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-items-stretch">
-      <div class="grid justify-items-center md:justify-items-start">
-        <img src="blue-svar.png" width="320" />
+    <div class="grid grid-cols-1 md:grid-cols-2 items-end justify-items-stretch">
+
+      <div class="grid justify-items-center md:justify-items-start my-3">
+        <nuxt-link to="/">
+          <img src="blue-svar.png" width="380" />
+        </nuxt-link>
       </div>
-      <div class="group">
+      
+      <div class="group my-3">
 
         <label class="relative block">
           
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
             <div class="mdi mdi-24px mdi-store-search text-slate-800"></div>
           </span>
-          <input v-model="search" class="text-gray-900 placeholder:text-slate-800 block bg-white w-full border border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам..." type="text" name="search"/>
+          <input v-model="search" class="text-gray-900 placeholder:text-slate-800 block bg-white w-full border border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
 
 
           <div class="absolute z-40 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
