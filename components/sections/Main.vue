@@ -13,7 +13,7 @@
             :auto-play="false"
             :play-speed="7000"
             style="height: 100%;"
-            class=""
+            class="main-hooper"
           >
             <slide v-for="banner in banners" :key="banner.id" class="h-96">
               <img
@@ -27,10 +27,7 @@
 
         </div>
 
-
-
       </div>
-
 
     </div>
 
@@ -44,7 +41,6 @@ import {
   Navigation as HooperNavigation,
   Pagination as HooperPagination,
 } from 'hooper'
-import 'hooper/dist/hooper.css'
 
 export default {
   name: 'MainSection',

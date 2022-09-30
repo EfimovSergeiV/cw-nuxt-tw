@@ -37,7 +37,6 @@
   
 <script>
 import { Hooper, Slide } from 'hooper'
-import 'hooper/dist/hooper.css'
 import { mapGetters } from 'vuex'
 
   export default {
