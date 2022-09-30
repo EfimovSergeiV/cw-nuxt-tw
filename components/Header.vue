@@ -11,32 +11,84 @@
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
             <div class="mdi mdi-24px mdi-store-search text-slate-800"></div>
           </span>
-          <input class="text-gray-900 placeholder:text-slate-800 block bg-white w-full border border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам..." type="text" name="search"/>
-        
-        
-        
-        
-        </label>
+          <input v-model="search" class="text-gray-900 placeholder:text-slate-800 block bg-white w-full border border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам..." type="text" name="search"/>
 
 
-          <div class="absolute z-40 w-full left-0 invisible group-focus-within:visible hover:visible group-hover:opacity-100">
-            <div class="container mt-4">
-              <div class="mx-auto py-1 pb-1 px-4 lg:max-w-7xl lg:px-8">
+          <div class="absolute z-40 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
+            <div class="container">
+              <div class="">
                 <div class="search-result bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
                   
-                  <div class="p-3">
-                    <p v-for="i in 20" :key="i" class="text-gray-500 dark:text-gray-300">Results:</p>
-                  </div>
-                  
+                  <div class="h-96 overflow-y-auto">
 
+                    <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-4 py-2">
+                      <div>
+                        <nuxt-link to="#" class="text-gray-500 dark:text-gray-300">
+                          {{ searchresult.name }}
+                        </nuxt-link>                      
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- <div class="px-4 py-4 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-600">
+                    <nuxt-link to="#">
+                       Показать все результаты
+                      <span class="inline-block items-center">
+                       <div class="mdi mdi-arrow-right-bold"></div>
+                      </span>
+                    </nuxt-link>
+                  </div> -->
 
                 </div>
               </div>
             </div>
           </div>
 
+        </label>
+
       </div>
       
     </div>
   </div>
 </template>
+
+<script>    
+  export default {
+      name: 'Header',
+      components: {
+    },
+    props: {
+      searchresult: {
+        type: Array,
+        default: Array,
+      },
+    },
+    data() {
+      return {
+        search: '',
+        searchResult: [],
+      }
+    },
+    watch: {
+      search() {
+        this.debouncedGetAnswer()
+      },
+    },
+    created() {
+      this.debouncedGetAnswer = this.lodash.debounce(this.goSearch, 300)
+    },
+
+    methods: {
+      goSearch() {
+      if (this.search.length > 3) {
+        this.$axios
+          .$post('/c/search/', { name: this.search.toLowerCase() })
+          .then((response) => {
+            this.searchResult = response
+          })
+      }
+    }
+  }
+}
+  </script>
