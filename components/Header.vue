@@ -19,7 +19,7 @@
               <div class="">
                 <div class="search-result bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
                   
-                  <div class="h-96 overflow-y-auto">
+                  <div v-if="searchResult.length > 0" class="h-96 overflow-y-auto">
 
                     <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-4 py-2">
                       <div>
@@ -29,6 +29,10 @@
                       </div>
                     </div>
 
+                  </div>
+
+                  <div v-else class="px-4 py-4">
+                    <p>Начните вводить запрос</p>
                   </div>
 
                   <!-- <div class="px-4 py-4 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-600">
@@ -84,8 +88,15 @@
       if (this.search.length > 3) {
         this.$axios
           .$post('/c/search/', { name: this.search.toLowerCase() })
+          // .then((response) => {
+          //   this.searchResult = response
+          // })
           .then((response) => {
-            this.searchResult = response
+            if (response.length > 0) {
+              this.searchResult = response
+            } else {
+              this.searchResult = [{"id":0,"name":"По запросу ничего не найдено"}]
+            }
           })
       }
     }
