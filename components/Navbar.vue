@@ -51,78 +51,6 @@
                                         </div>
                                       </div>
                                         
-
-
-
-
-                                      <!-- <ul aria-labelledby="mega-menu-full-dropdown-button">
-                                          <li>
-                                              <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                  <div class="font-semibold">Online Stores</div>
-                                                  <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                              </a>
-                                          </li>
-                                          <li>
-                                              <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                  <div class="font-semibold">Segmentation</div>
-                                                  <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                              </a>
-                                          </li>
-                                          <li>
-                                              <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                  <div class="font-semibold">Marketing CRM</div>
-                                                  <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                              </a>
-                                          </li>
-                                      </ul>
-                                      <ul>
-                                          <li>
-                                              <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                  <div class="font-semibold">Online Stores</div>
-                                                  <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                              </a>
-                                          </li>
-                                          <li>
-                                              <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                  <div class="font-semibold">Segmentation</div>
-                                                  <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                              </a>
-                                          </li>
-                                          <li>
-                                              <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                  <div class="font-semibold">Marketing CRM</div>
-                                                  <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                              </a>
-                                          </li>
-                                      </ul>
-                                      <ul class="">
-                                        <li>
-                                            <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                <div class="font-semibold">Audience Management</div>
-                                                <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                <div class="font-semibold">Creative Tools</div>
-                                                <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                <div class="font-semibold">Marketing Automation</div>
-                                                <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                            </a>
-                                        </li>
-                                      </ul> -->
-                                      <!-- <ul>
-                                        <li>
-                                            <a href="#" class="block p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
-                                                <div class="font-semibold">Marketing CRM</div>
-                                                <span class="text-sm font-light text-gray-500 dark:text-gray-400">Connect with third-party tools that you're already using.</span>
-                                            </a>
-                                        </li>
-                                      </ul> -->
                                     </div>
                                     <!-- <div class="px-10 py-4">
                                       <nuxt-link to="/cts" class="text-right">
@@ -145,7 +73,7 @@
                         <li class="group">
                           <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700" @click="profile = !profile">Профиль</a>                     
                           <div class="absolute w-full left-0 invisible group-hover:opacity-100 group-hover:visible">
-                            <div class="container mt-4">
+                            <div class="container ">
                               <div class="mx-auto py-1 pb-1 px-4 lg:max-w-7xl lg:px-8">
                                 <div class="menu-profile grid justify-items-end">
                                   <div class="right-10 z-10 mt-2 w-60 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
