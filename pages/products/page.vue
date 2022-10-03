@@ -3,7 +3,8 @@
 
       <Navbar :cts="cts" />
       <Breadcrumbs />
-      <TwoModal />
+      <CartModal />
+      <!-- {{ response.results.slice(10, 14)}} -->
       <Pagination />
       <Products :products="response.results" />  
       <Pagination />
@@ -15,7 +16,7 @@
 import Navbar from '~/components/Navbar.vue'
 import Products from '~/components/sections/Products.vue'
 import Breadcrumbs from '~/components/Breadcrumbs.vue'
-import TwoModal from '~/components/TwoModal.vue'
+import TwoModal from '~/components/CartModal.vue'
 import Pagination from '~/components/Pagination.vue'
 
   export default {
