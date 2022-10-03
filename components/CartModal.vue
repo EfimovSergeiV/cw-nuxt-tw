@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="relative z-10 ashidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
