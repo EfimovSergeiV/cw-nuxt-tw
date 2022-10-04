@@ -10,6 +10,7 @@
     <Svarog :mpromobs="mpromobs" />
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
+    <AllPointsMaps :shops="shops" />
     <CorouselBrands :brands="filterCarouselBrands(brands)" />
     <Footer />
 
@@ -29,22 +30,24 @@ import Recommend from '~/components/sections/Recommend.vue'
 import Latest from '~/components/sections/Latest.vue'
 import CartModal from '~/components/CartModal.vue'
 import CorouselBrands from '~/components/sections/CorouselBrands.vue'
+import AllPointsMaps from '~/components/sections/AllPointsMaps.vue'
 
   export default {
     name: 'IndexPage',
     components: {
-      Navbar,
-      Main,
-      ESAB,
-      CorouselProducts,
-      MWeld,
-      Svarog,
-      Recommend,
-      Latest,
-      CartModal,
-      Footer,
-      CorouselBrands
-    },
+    Navbar,
+    Main,
+    ESAB,
+    CorouselProducts,
+    MWeld,
+    Svarog,
+    Recommend,
+    Latest,
+    CartModal,
+    Footer,
+    CorouselBrands,
+    AllPointsMaps
+},
     async asyncData({ $axios }) {
       const banners = await $axios.$get('c/mainbanner/')
       const brands = await $axios.$get('/c/brands/')
@@ -54,7 +57,8 @@ import CorouselBrands from '~/components/sections/CorouselBrands.vue'
       const mpromobs = await $axios.$get('c/mpromob/')
       const recommends = await $axios.$get(`c/recommend/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
-      return { banners, brands, cts, latest, mpromobs, esab, recommends, mweld }
+      const shops = await $axios.$get('/c/shops/')
+      return { banners, brands, cts, latest, mpromobs, esab, recommends, mweld, shops }
     },
     methods: {
         filterCarouselBrands(brands) {

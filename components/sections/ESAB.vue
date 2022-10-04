@@ -38,7 +38,10 @@
         </div>
         <div class=" md:p-4">
           <div class="">
-            <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200 font-medium">{{ text }}</p>
+            <!-- <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200 font-medium">{{ text }}</p> -->
+            <p class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-100">
+            {{ text }}
+            </p>
           </div>
         </div>
       </div>
