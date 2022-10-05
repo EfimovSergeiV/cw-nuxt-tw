@@ -29,10 +29,21 @@
 
           </div> -->
 
-          <div class="flex-1 flex flex-col bg-gray-400 relative overflow-hidden">
+
+
+          <div class="flex flex-col bg-gray-400 relative overflow-hidden">
             <a href="#" class="block bg-gray-400 overflow-hidden">
-              <img class="object-cover w-full h-full hover:opacity-75 transition ease-in-out duration-150 hover:scale-110 transform" src="https://images.unsplash.com/photo-1569701813229-33284b643e3c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" alt="">
+              <img class="object-cover hover:opacity-75 transition ease-in-out duration-150 hover:scale-110 transform" src="120-120.jpg" alt="">
             </a>
+
+          <div class="absolute">
+            <div class="p-2 text-black">
+              <p class="mdi mdi-content-copy cursor-pointer" @click="copyToBuffer(shop.adress)"> {{ shop.adress }}</p>
+              <a :href="'tel:' + shop.phone">{{ shop.phone }}</a>
+              <p>{{ shop.wday }}</p>
+              <p>{{ shop.wend }}</p>            
+            </div>
+          </div>            
           </div>
 
 
@@ -52,14 +63,6 @@
 
       </div>
 
-      <div class="static p-10">
-        <!-- Static parent -->
-        <div class="static ..."><p>Static child</p></div>
-        <div class="inline-block ..."><p>Static sibling</p></div>
-        <!-- Static parent -->
-        <div class="absolute ..."><p>Absolute child</p></div>
-        <div class="inline-block ..."><p>Static sibling</p></div>
-      </div>
 
     </div>
   </section>
