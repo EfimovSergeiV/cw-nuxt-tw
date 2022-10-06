@@ -1,7 +1,7 @@
 <template>
 
 
-    <div class="relative z-10 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="relative z-10 " aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
@@ -21,6 +21,7 @@
                               <span class="sr-only">Close modal</span>
                           </button>
                       </div>
+                      
                       <div class="p-6 space-y-6 h-96 overflow-y-auto">
 
 

@@ -13,9 +13,9 @@
         <label class="relative block">
           
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-            <div class="mdi mdi-24px mdi-store-search text-slate-800"></div>
+            <div class="mdi mdi-24px mdi-store-search text-slate-800 dark:text-slate-100"></div>
           </span>
-          <input v-model="search" class="text-gray-900 placeholder:text-slate-800 block bg-white w-full border border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
+          <input v-model="search" class="text-gray-900 placeholder:text-slate-800 block bg-white dark:bg-gray-800 dark:placeholder:text-slate-100 w-full border border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
 
 
           <div class="absolute z-40 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
