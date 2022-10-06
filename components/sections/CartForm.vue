@@ -13,34 +13,42 @@
               <nuxt-link to="#" class="">{{ product.name }}</nuxt-link>
             </div>
 
-            <div class="md:flex items-center md:justify-between">
-              <div class="flex items-center">
-                <img :src="product.preview_image" class="rounded-sm" width="80" />
-                
-              </div>
 
-              <div class="flex justify-between items-center md:w-56">
-                <div class="flex justify-center w-20">
-                  <div class="mdi mdi-minus cursor-pointer"></div>
-                  <div class="mx-2"><p>1</p></div>
-                  <div class="mdi mdi-plus cursor-pointer"></div>
-                </div>
-                <div class="text-sm">
-                  <div class="flex justify-end">
-                    <p class="mx-2">{{ product.prod_price[0].price}}</p>
-                    <p>руб./шт</p>
-                  </div>
-                  <div class="">
-                    <p>Итог: 45000 руб.</p>
-                  </div>
+            <div class="flex justify-between">
+              <div class="flex items-center">
+                <div class="bg-white p-2 rounded-sm">
+                  <img :src="product.preview_image" class="rounded-sm" width="80" />
                 </div>
               </div>
+              <div class="md:flex items-center md:justify-end">
+                <div class="flex justify-between items-center md:w-56">
+                  <div class="flex justify-center w-20">
+                    <div class="mdi mdi-minus cursor-pointer"></div>
+                    <div class="mx-2"><p>1</p></div>
+                    <div class="mdi mdi-plus cursor-pointer"></div>
+                  </div>
+                  <div class="text-sm">
+                    <div class="flex justify-end">
+                      <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
+                      <p class="text-xs">руб./шт</p>
+                    </div>
+                    <div class="mt-2">
+                      <p>Итог: 45000 руб.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            
+  
             </div>
+
 
             <div class="flex justify-end py-2">
               <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-sm px-3 py-1 mx-3 rounded-md">в избранное</button>
               <button type="button" class="">удалить</button>
             </div>
+
+            
           </div>
         </div>
 
