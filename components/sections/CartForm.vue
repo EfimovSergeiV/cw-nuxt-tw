@@ -2,61 +2,104 @@
   <section id="cart-form">
 
     <!-- <CartModal /> -->
-    <div class="mx-auto py-10 px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="grid lg:grid-cols-2 gap-4">
+      <div class="mt-3">
 
-        <div class="">
-          <div v-for="product in cart" :key="product.id" class="my-2">
+        <div class="lg:columns-2 gap-4">
+          <div v-for="product in cart" :key="product.id" class="mb-4">
 
-            <div class="my-2">
-              <nuxt-link to="#" class="">{{ product.name }}</nuxt-link>
-            </div>
-
-
-            <div class="flex justify-between">
-              <div class="flex items-center">
-                <div class="bg-white p-2 rounded-sm">
-                  <img :src="product.preview_image" class="rounded-sm" width="80" />
+            <div class=" bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800">
+              <div class="py-2 px-2">
+                <div class="my-2">
+                  <nuxt-link to="#" class="">{{ product.name }}</nuxt-link>
                 </div>
+                <div class="flex justify-between">
+                  <div class="">
+                    <div class="flex items-center">
+                      <div class="bg-white p-4 rounded-sm">
+                        <img :src="product.preview_image" class="rounded-sm" width="80" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="md:flex items-center md:justify-end">
+                      <div class="flex justify-between items-center md:w-56">
+                        <div class="flex justify-center w-20">
+                          <div class="mdi mdi-minus cursor-pointer"></div>
+                          <div class="mx-2"><p>1</p></div>
+                          <div class="mdi mdi-plus cursor-pointer"></div>
+                        </div>
+                        <div class="text-sm">
+                          <div class="flex justify-end">
+                            <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
+                            <p class="text-xs">руб./шт</p>
+                          </div>
+                          <div class="mt-2">
+                            <p>Итог: 45000 руб.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>               
+
+                    <div class="mt-4">
+                      <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-sm px-3 py-1 mx-3 rounded-md text-gray-200">в избранное</button>
+                      <button type="button" class="text-gray-800 dark:text-gray-200">удалить</button>
+                    </div>
+                  </div>
+
+
+                  </div>
+                </div>                
               </div>
-              <div class="md:flex items-center md:justify-end">
-                <div class="flex justify-between items-center md:w-56">
-                  <div class="flex justify-center w-20">
-                    <div class="mdi mdi-minus cursor-pointer"></div>
-                    <div class="mx-2"><p>1</p></div>
-                    <div class="mdi mdi-plus cursor-pointer"></div>
-                  </div>
-                  <div class="text-sm">
-                    <div class="flex justify-end">
-                      <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
-                      <p class="text-xs">руб./шт</p>
-                    </div>
-                    <div class="mt-2">
-                      <p>Итог: 45000 руб.</p>
-                    </div>
+            </div>
+
+
+            <!-- <div class="px-3 bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800">
+
+
+              <div class="flex justify-between">
+
+                <div class="flex items-center">
+                  <div class="bg-white p-2 rounded-sm">
+                    <img :src="product.preview_image" class="rounded-sm" width="80" />
                   </div>
                 </div>
-              </div>              
-            
-  
-            </div>
+                <div class="md:flex items-center md:justify-end">
+                  <div class="flex justify-between items-center md:w-56">
+                    <div class="flex justify-center w-20">
+                      <div class="mdi mdi-minus cursor-pointer"></div>
+                      <div class="mx-2"><p>1</p></div>
+                      <div class="mdi mdi-plus cursor-pointer"></div>
+                    </div>
+                    <div class="text-sm">
+                      <div class="flex justify-end">
+                        <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
+                        <p class="text-xs">руб./шт</p>
+                      </div>
+                      <div class="mt-2">
+                        <p>Итог: 45000 руб.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>               
+              </div>
 
+              <div class="flex justify-end py-2">
+                <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-sm px-3 py-1 mx-3 rounded-md text-gray-200">в избранное</button>
+                <button type="button" class="text-gray-800 dark:text-gray-200">удалить</button>
+              </div>
 
-            <div class="flex justify-end py-2">
-              <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-sm px-3 py-1 mx-3 rounded-md">в избранное</button>
-              <button type="button" class="">удалить</button>
-            </div>
-
+            </div> -->
             
           </div>
         </div>
 
 
 
-        <div class="">
+        <div class="grid grid-cols-2 gap-4">
 
-          <div class="">
+          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 mt-2">
 
             <form>
               <div class="relative z-0 mb-6 w-full group">
@@ -89,6 +132,10 @@
               </div>              
               <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Сделать заказ</button>
             </form>
+          </div>
+
+          <div class="">
+            <p>hallo welt</p>
           </div>
 
 
