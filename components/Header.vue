@@ -6,8 +6,8 @@
  
       <div id="color-mode">
         <!-- <p class="mdi mdi-lightbulb-night cursor-pointer text-sm"> Тёмный режим</p> -->
-        <p v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mdi mdi-lightbulb-outline cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Вкл</p>
-        <p v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mdi mdi-lightbulb-night cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Выкл</p>
+        <p v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mdi mdi-lightbulb-outline cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Светлый режим</p>
+        <p v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mdi mdi-lightbulb-night cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Тёмный режим</p>
       </div>
       
       <div class="grid md:grid-cols-3 text-right gap-4">
