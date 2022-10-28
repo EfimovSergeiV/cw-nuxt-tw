@@ -1,20 +1,20 @@
 <template>
   <div class="container">
-    <div class="mx-auto py-1 pb-1 px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto my-4 pb-1 px-4 lg:max-w-7xl lg:px-8">
         <nav class="">
       
-          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800">
+          <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800">
             <div class="grid justify-items-end mx-auto max-w-screen-xl px-8 md:px-8 lg:px-8 py-2.5">
 
                 <div id="mega-menu-full" class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1">
                     <ul class="flex flex-col mt-4 text-sm font-medium md:flex-row md:space-x-8 md:mt-0">
 
                         <li>
-                            <nuxt-link to="/" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Главная</nuxt-link>
+                          <nuxt-link to="/" class="block py-2 pr-4 pl-3 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Главная</nuxt-link>
                         </li>
 
                         <li id="navabar-menu" class="group">
-                          <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="flex justify-between items-center py-2 pr-4 pl-3 w-full font-medium text-gray-700 border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700">Каталог <div class="ml-1 mdi mdi-arrow-down" ></div></nuxt-link>
+                          <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="flex justify-betweentext-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center py-2 pr-4 pl-3 w-full font-medium border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700">Каталог <div class=" hidden ml-1 mdi mdi-arrow-down" ></div></nuxt-link>
                           <div class="absolute z-40 w-full left-0 invisible group-hover:opacity-100 group-hover:visible delay-700">
                             <div class="container mt-4">
                               <div class="mx-auto py-1 pb-1 px-4 lg:max-w-7xl lg:px-8">
@@ -62,12 +62,14 @@
                         </li>
 
                         <li>
-                            <nuxt-link to="cart" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700">Корзина</nuxt-link>
+                            <nuxt-link to="cart" class="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Корзина</nuxt-link>
                         </li>
                         <li>
-                            <nuxt-link to="about" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700">Магазины</nuxt-link>
+                            <nuxt-link to="about" class="block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Магазины</nuxt-link>
                         </li>
-                        <li class="group">
+
+
+                        <!-- <li class="group">
                           <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 md:p-0 dark:text-gray-400 md:dark:hover:text-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100 md:dark:hover:bg-transparent dark:border-gray-700" @click="profile = !profile">Профиль</a>                     
                           <div class="absolute w-full left-0 invisible group-hover:opacity-100 group-hover:visible">
                             <div class="container ">
@@ -93,7 +95,9 @@
                             </div>
                           </div>
                         
-                        </li>
+                        </li> -->
+
+                        
                     </ul>
                 </div>
             </div>

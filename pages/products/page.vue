@@ -1,9 +1,10 @@
 <template>
     <div>
 
+      <Header />
       <Navbar :cts="cts" />
       <Breadcrumbs />
-      <CartModal />
+      <!-- <CartModal /> -->
       <!-- {{ response.results.slice(10, 14)}} -->
       <Pagination />
       <Products :products="response.results" />  
@@ -13,6 +14,7 @@
   </template>
   
 <script>
+import Header from '~/components/Header.vue'
 import Navbar from '~/components/Navbar.vue'
 import Products from '~/components/sections/Products.vue'
 import Breadcrumbs from '~/components/Breadcrumbs.vue'
@@ -22,6 +24,7 @@ import Pagination from '~/components/Pagination.vue'
   export default {
     name: 'ProductsPage',
       components: {
+        Header,
         Navbar,
         Products,
         Breadcrumbs,

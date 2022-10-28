@@ -43,8 +43,8 @@
                     </div>               
 
                     <div class="mt-4">
-                      <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-sm px-3 py-1 mx-3 rounded-md text-gray-200">в избранное</button>
-                      <button type="button" class="text-gray-800 dark:text-gray-200">удалить</button>
+                      <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-700 dark:hover:bg-blue-800 text-sm font-bold px-3 py-1 mx-3 rounded-sm text-yellow-300">В избранное</button>
+                      <button type="button" class="text-gray-800 dark:text-gray-200 text-xs">Удалить из корзины</button>
                     </div>
                   </div>
 
@@ -99,7 +99,7 @@
 
         <div class="grid grid-cols-2 gap-4">
 
-          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 mt-2">
+          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4">
 
             <form>
               <div class="relative z-0 mb-6 w-full group">

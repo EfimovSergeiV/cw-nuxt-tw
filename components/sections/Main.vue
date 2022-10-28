@@ -3,7 +3,19 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div class="grid grid-cols-2">
         
-        <div class=""></div>
+        <div class="">
+          
+          <div class="grid grid-cols-2 gap-4">
+            
+            <div v-for="products in 4" v-key="products">
+            
+              <p> this latest product</p>
+            
+            </div>
+
+          </div>
+
+        </div>
 
         <div class="">
 

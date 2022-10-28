@@ -1,20 +1,20 @@
 <template>
-  <div class="mx-auto py-1 pt-1 px-4 lg:max-w-7xl lg:px-8">
+  <div class="mx-auto py-1 px-4 lg:max-w-7xl lg:px-8">
     <footer class="p-4 bg-white rounded-sm shadow md:flex md:items-center md:justify-between md:p-6 border dark:bg-gray-800 dark:border-gray-700">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">Главный сварщик</a>
+      <span class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">© 2023 <a href="#" class="">Главный сварщик</a>
       </span>
-      <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+      <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
           <li>
-              <a href="#" class="mr-4 hover:underline md:mr-6 ">Политика обработки данных</a>
+              <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</a>
           </li>
           <li>
-              <a href="#" class="hover:underline mr-4 md:mr-6">Сертификаты</a>
+              <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Сертификаты</a>
           </li>
           <li>
-              <a href="#" class="mr-4 hover:underline md:mr-6">Способы оплаты</a>
+              <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</a>
           </li>
           <li>
-              <a href="#" class="hover:underline">Доставка</a>
+              <a href="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</a>
           </li>
       </ul>
     </footer>
@@ -46,7 +46,7 @@
                         With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
                     </p>
                     <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                        The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                        The European Unions General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
                     </p>
                 </div>
                 <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">

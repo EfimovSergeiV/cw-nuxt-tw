@@ -4,15 +4,15 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="my-4 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
-        <p class="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-200">{{ title }}</p>
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300">{{ title }}</p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-4 rounded-sm">
-        <div class="border dark:border-gray-700">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="border dark:border-gray-700 rounded-sm">
           <div class="absolute px-2 z-10">
             <div class="flex items-center">
               <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" width="60" />
-              <p class="text-[15px] hidden lg:block font-black shadow-sm text-yellow-450 uppercase">Являемся официальным дистрибьютером</p>              
+              <p class="text-[15px] hidden lg:block shadow-sm text-yellow-450 uppercase">Являемся официальным дистрибьютером</p>              
             </div>
           </div>
           <img 
@@ -39,7 +39,7 @@
         <div class=" md:p-4">
           <div class="">
             <!-- <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200 font-medium">{{ text }}</p> -->
-            <p class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-100">
+            <p class="bg-clip-text text-gray-700 dark:text-gray-300">
             {{ text }}
             </p>
           </div>

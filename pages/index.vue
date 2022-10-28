@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import Navbar from '~/components/Navbar.vue'
 import Header from '~/components/Header.vue'
+import Navbar from '~/components/Navbar.vue'
 import Footer from '~/components/Footer.vue'
 import Main from '~/components/sections/Main.vue'
 import ESAB from '~/components/sections/ESAB.vue'
@@ -35,19 +35,20 @@ import AllPointsMaps from '~/components/sections/AllPointsMaps.vue'
   export default {
     name: 'IndexPage',
     components: {
-    Navbar,
-    Main,
-    ESAB,
-    CorouselProducts,
-    MWeld,
-    Svarog,
-    Recommend,
-    Latest,
-    CartModal,
-    Footer,
-    CorouselBrands,
-    AllPointsMaps
-},
+      Header,
+      Navbar,
+      Main,
+      ESAB,
+      CorouselProducts,
+      MWeld,
+      Svarog,
+      Recommend,
+      Latest,
+      CartModal,
+      Footer,
+      CorouselBrands,
+      AllPointsMaps
+    },
     async asyncData({ $axios }) {
       const banners = await $axios.$get('c/mainbanner/')
       const brands = await $axios.$get('/c/brands/')

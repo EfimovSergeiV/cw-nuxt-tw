@@ -1,21 +1,43 @@
 <template>
-  <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 py-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 items-end justify-items-stretch">
+  <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
-      <div class="grid justify-items-center md:justify-items-start my-3">
-        <nuxt-link to="/">
-          <img src="blue-svar.png" width="380" />
-        </nuxt-link>
+
+    <div id="main-info" class="flex justify-between gap-2 md:gap-6">
+ 
+      <div id="color-mode">
+        <!-- <p class="mdi mdi-lightbulb-night cursor-pointer text-sm"> Тёмный режим</p> -->
+        <p v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mdi mdi-lightbulb-outline cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Вкл</p>
+        <p v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mdi mdi-lightbulb-night cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Выкл</p>
       </div>
       
-      <div class="group my-3">
+      <div class="grid md:grid-cols-3 text-right gap-4">
+        <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+        <a href="tel:+78112606005" class="mdi mdi-phone text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
+        <p class="mdi mdi-map-marker cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Cанкт-Петербург</p>          
+      </div>
+      
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+
+      <div class="my-4">
+        <div class="flex justify-center md:justify-start">
+          <nuxt-link to="/">
+            <img src="../assets/images/blue-svar.png" width="380" />
+          </nuxt-link>
+        </div>
+      </div>
+
+      
+      <div class="group my-4">
 
         <label class="relative block">
           
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-            <div class="mdi mdi-24px mdi-store-search text-slate-800 dark:text-slate-300"></div>
+            <div class="mdi mdi-magnify text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
           </span>
-          <input v-model="search" class="text-gray-900 placeholder:text-slate-800    focus:ring-0 peer    block bg-white dark:bg-gray-800 dark:placeholder:text-slate-200 w-full border dark:border-slate-600 border-slate-300 rounded-sm py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
+          <input v-model="search" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 placeholder:text-slate-500 focus:ring-0 peer block bg-white dark:bg-gray-800 dark:placeholder:text-slate-600 w-full border dark:border-slate-600 border-slate-300 rounded-sm py-2 pl-7 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
 
 
           <div class="absolute z-40 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
@@ -27,7 +49,7 @@
 
                     <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-4 py-2">
                       <div>
-                        <nuxt-link to="#" class="text-gray-500 dark:text-gray-300">
+                        <nuxt-link to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">
                           {{ searchresult.name }}
                         </nuxt-link>                      
                       </div>
@@ -36,7 +58,7 @@
                   </div>
 
                   <div v-else class="px-4 py-4">
-                    <p>Начните вводить запрос</p>
+                    <p class="text-sm">Начните вводить запрос</p>
                   </div>
 
                   <!-- <div class="px-4 py-4 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-600">
@@ -56,22 +78,58 @@
         </label>
 
       </div>
-      
     </div>
+
+
+    <div class="border dark:border-gray-700 rounded-sm">
+
+      <hooper
+        :center-mode="true"
+        :wheel-control="false"
+        :auto-play="false"
+        :play-speed="7000"
+        style="height: 100%;"
+        class="main-hooper"
+      >
+        <slide v-for="i in 10" :key="i" class="">
+          <img
+            src="../assets/images/header-banner.png"
+            style="width: 100%;"
+            class="rounded-sm"
+            onerror="this.src='./noimage-960-540.jpg'"
+          />
+        </slide>
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+        <hooper-pagination slot="hooper-addons"></hooper-pagination>
+      </hooper>
+
+    </div>
+
   </div>
 </template>
 
-<script>    
+<script>
+  import {
+    Hooper,
+    Slide,
+    Navigation as HooperNavigation,
+    Pagination as HooperPagination,
+  } from 'hooper'
+
   export default {
       name: 'Header',
       components: {
+        Hooper,
+        Slide,
+        HooperNavigation,
+        HooperPagination,
     },
-    props: {
-      searchresult: {
-        type: Array,
-        default: Array,
-      },
-    },
+    // props: {
+    //   searchresult: {
+    //     type: Array,
+    //     default: Array,
+    //   },
+    // },
     data() {
       return {
         search: '',
@@ -102,8 +160,8 @@
               this.searchResult = [{"id":0,"name":"По запросу ничего не найдено"}]
             }
           })
+        }
       }
     }
   }
-}
   </script>

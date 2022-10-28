@@ -4,8 +4,8 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="mt-4 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">      
-        <div class="text-lg md:text-xl font-bold">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-200 to-yellow-200">
+        <div class="text-lg md:text-xl">
+          <span class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">
             Наши магазины
           </span>
         </div>
