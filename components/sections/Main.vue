@@ -10,7 +10,7 @@
             
             <div v-for="products in 4" v-key="products">
             
-              <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
+              <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800">
                 <div class="h-36 lg:h-40">
 
                   <nuxt-link to="#">
@@ -57,7 +57,7 @@
 
         </div>
 
-        <div class="border dark:border-gray-700 rounded-sm">
+        <div class="border dark:border-gray-700 rounded-sm shadow-md">
 
           <hooper
             :center-mode="true"

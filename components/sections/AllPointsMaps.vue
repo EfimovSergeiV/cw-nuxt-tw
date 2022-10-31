@@ -3,7 +3,7 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="mt-4 p-1 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">      
+      <div class="mt-4 p-1 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md text-center">      
         <!-- <div class="text-lg md:text-xl">
           <span class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">
             Наши магазины
@@ -26,11 +26,13 @@
             <div class="grid grid-cols-3 gap-4">
               <div class="" v-for="shop in shops" :key="shop.id">
 
-                <div class="">
-                  <p class="text-xs">{{ shop.adress }}</p>
-                  <p class="text-xs">{{ shop.phone }}</p>
-                  <p class="text-xs">{{ shop.wday }}</p>
-                  <p class="text-xs">{{ shop.wend }}</p>
+                <div class="flex items-center h-28">
+                  <div class="text-gray-700 dark:text-gray-300">
+                    <p class="text-xs">{{ shop.adress }}</p>
+                    <p class="text-xs">{{ shop.phone }}</p>
+                    <p class="text-xs">{{ shop.wday }}</p>
+                    <p class="text-xs">{{ shop.wend }}</p>                    
+                  </div>
                 </div>
                 
               </div>

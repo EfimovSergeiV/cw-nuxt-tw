@@ -8,7 +8,7 @@
       </div> -->
 
       <div class="grid md:grid-cols-2 gap-4">
-        <div class="border dark:border-gray-700 rounded-sm">
+        <div class="border dark:border-gray-700 rounded-sm shadow-md">
 
           <div class="relative">
             <img 
@@ -32,7 +32,7 @@
         </div>
 
         
-        <div class="border dark:border-gray-700 rounded-sm">
+        <div class="border dark:border-gray-700 rounded-sm shadow-md">
           <img 
             class="rounded-sm"
             src="http://127.0.0.1:8000/files/c/handy-esab.jpg"
@@ -41,7 +41,7 @@
       </div>
 
 
-      <div class="flex items-center my-4 p-1 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm">
+      <div class="flex items-center my-4 p-1 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="hidden md:block flex-none">
           <img
             src="esab-logo.jpg"
