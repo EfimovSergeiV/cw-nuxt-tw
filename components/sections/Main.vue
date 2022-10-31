@@ -10,25 +10,45 @@
             <div v-for="products in 4" v-key="products">
             
               <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
-                <div class="p-2 h-36 lg:h-40">
+                <div class="h-36 lg:h-40">
 
-                  <div class="">
+                  <nuxt-link to="#">
+                    <div class="bg-white h-full rounded-sm group">
 
-                    <p>Hallo welt</p>
+                      <div class="relative h-full rounded-sm">
+                        <div class="flex justify-center">
+                          <img 
+                            src="noimage-235-177.jpg"
+                            onerror="this.src='../../noimage-235-177.jpg'"
+                            alt="product.imageAlt"
+                            loading=lazy
+                            width="160"
+                            height="120"
+                          />
+                        </div>
 
-                  </div>
+                        <div class="absolute left-0 top-0">
+                          <div class="flex items-center p-1">
+                            <p class="flex items-center uppercase text-red-600 font-bold mdi mdi-alert-decagram text-xs">Новинка</p>
+                          </div>
+                        </div>
+                        <div class="absolute top-0 right-0">
+                          <div class="flex items-center p-1 rounded-sm">
+                            <p class="text-gray-700 font-bold text-xs">8000 RUB</p>
+                          </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0">
+                          <div class="flex items-center bg-gray-800/60 group-hover:bg-gray-800/70 p-1 rounded-sm">
+                            <p class="text-gray-300 text-xs">Сварочный аппарат TECNICA 188 MPGE 230V ACX+PLAST.C.CASE</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                    
+                  </nuxt-link>
 
                 </div>
-                <!-- <img 
-                  src="noimage-235-177.jpg"
-                  onerror="this.src='../../noimage-235-177.jpg'"
-                  alt="product.imageAlt"
-                  loading=lazy
-                  width="160"
-                  height="120"
-                  class="p-4" 
-                /> -->
               </div>
+
             
             </div>
 

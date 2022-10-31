@@ -3,7 +3,7 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="my-4 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-sm text-center">
-        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300">Главный сварщик рекомендует</p>
+        <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300">Главный Cварщик рекомендует</p>
       </div>
 
 
