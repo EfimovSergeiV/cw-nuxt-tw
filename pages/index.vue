@@ -4,6 +4,7 @@
     <Header />
     <Navbar :cts="cts" />
     <Main :banners="banners" />
+    <Reviews :reviews="banners" />
     <ESAB :esab="esab" />
     <CorouselProducts :latest="latest" />
     <MWeld :mweld="mweld" />
@@ -22,6 +23,7 @@ import Header from '~/components/Header.vue'
 import Navbar from '~/components/Navbar.vue'
 import Footer from '~/components/Footer.vue'
 import Main from '~/components/sections/Main.vue'
+import Reviews from '~/components/sections/Reviews.vue'
 import ESAB from '~/components/sections/ESAB.vue'
 import CorouselProducts from '~/components/sections/CorouselProducts.vue'
 import MWeld from '~/components/sections/MWeld.vue'
@@ -38,6 +40,7 @@ import AllPointsMaps from '~/components/sections/AllPointsMaps.vue'
       Header,
       Navbar,
       Main,
+      Reviews,
       ESAB,
       CorouselProducts,
       MWeld,

@@ -3,9 +3,10 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         
-        <div class="">
+        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 p-1 shadow-md">
           
           <div class="grid grid-cols-2 gap-4">
+
             
             <div v-for="products in 4" v-key="products">
             
@@ -37,9 +38,9 @@
                             <p class="text-gray-700 font-bold text-xs">8000 RUB</p>
                           </div>
                         </div>
-                        <div class="absolute bottom-0 left-0">
+                        <div class="absolute bottom-0 left-0 w-full">
                           <div class="flex items-center bg-gray-800/60 group-hover:bg-gray-800/70 p-1 rounded-sm">
-                            <p class="text-gray-300 text-xs">Сварочный аппарат TECNICA 188 MPGE 230V ACX+PLAST.C.CASE</p>
+                            <p class="text-gray-200 text-xs">Сварочный аппарат TECNICA 188 MPGE 230V ACX+PLAST.C.CASE</p>
                           </div>
                         </div>
                       </div>
