@@ -3,7 +3,7 @@
     <div class="mx-auto my-4 pb-1 px-4 lg:max-w-7xl lg:px-8">
       <nav class="">
     
-        <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 py-2 md:px-4">
+        <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 py-2 md:px-4 relative">
 
           <div id="mobile" class="md:hidden">
             <div class="flex justify-center md:justify-end text-sm">
@@ -26,11 +26,13 @@
 
                     <li id="navabar-menu" class="group">
                       <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center w-full font-medium border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant"> Каталог</nuxt-link>
+                      
+                      
                       <div class="absolute z-40 w-full left-0 invisible group-hover:opacity-100 group-hover:visible delay-700">
-                        <div class="container mt-4">
-                          <div class="mx-auto py-1 pb-1 px-4 lg:max-w-7xl lg:px-8">
+                        <div class="mt-4">
+                          <div class="">
                             <div class="menu-section">
-                              <div id="mega-menu-full-dropdown" class="mt-1 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
+                              <div id="mega-menu-full-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
                                 <div class="grid py-5 px-4 mx-auto max-w-screen-xl text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
 
 
@@ -60,16 +62,20 @@
                                   </div>
                                     
                                 </div>
-                                <!-- <div class="px-10 py-4">
+                                <div class="px-10 py-4">
                                   <nuxt-link to="/cts" class="text-right">
                                     <h3>Все категории</h3>
                                   </nuxt-link>
-                                </div>  -->
+                                </div> 
                               </div>
                             </div>
                           </div>
-                        </div>                            
+                        </div>
                       </div>
+
+
+
+
                     </li>
 
                     <li>
