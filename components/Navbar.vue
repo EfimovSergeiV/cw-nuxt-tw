@@ -32,33 +32,58 @@
                         <div class="">
                           <div class="">
                             <div class="menu-section">
-                              <div id="mega-menu-full-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
-                                <div class="columns-3 lg:columns-4 p-2">
+                              <div id="mega-menu-full-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
+
+                                <div class="columns-3 lg:columns-4">
+                                  <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
+                                    <div class="">
 
 
+                                      <div class="p-2">
+                                        <div>
+                                          <nuxt-link to="products/page" class="font-bold text-base my-1">{{ ct.name }}</nuxt-link>              
+                                        </div>
+
+                                        <div>
+                                          <ul>
+                                            <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-2 my-1">
+                                              <nuxt-link to="#" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                                            </li>
+                                          </ul>
+                                        </div>              
+                                      </div>
+
+
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <!-- <div class="columns-3 lg:columns-4 p-2">
                                   <div class="break-inside-avoid-column" v-for="ct in cts" :key="ct.id">
-                                    <div class="block p-3 rounded-sm hover:bg-gray-50 dark:hover:bg-gray-700">
-                                      <nuxt-link to="#" class="font-bold text-gray-800 dark:text-gray-200 mb-3">{{ ct.name }}</nuxt-link>
+                                    <div class="block p-2 rounded-sm hover:bg-gray-50 dark:hover:bg-gray-700">
+                                      <nuxt-link to="#" class="font-bold text-gray-800 dark:text-gray-200 mb-3 text-base">{{ ct.name }}</nuxt-link>
 
                                       <ul>
-                                        <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-3">
+                                        <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-2">
                                           <div id="ssct" class="block">
-                                            <nuxt-link to="#" class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }} <div  v-if="sct.inserted.length > 0" class="hidden iiinline-block mdi mdi-arrow-down"></div></nuxt-link>
+                                            <nuxt-link to="#" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }} <div  v-if="sct.inserted.length > 0" class="hidden iiinline-block mdi mdi-arrow-down"></div></nuxt-link>
                                           </div>
 
-                                          <!-- <div v-if="sct.inserted.length > 0" class="absolute z-50 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
+                                          <div v-if="sct.inserted.length > 0" class="absolute z-50 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
                                             <div class="" v-for="ssct in sct.inserted" :key="ssct.id">
                                               <nuxt-link to="#">{{ ssct.name }}</nuxt-link>
                                             </div>
-                                          </div> -->
+                                          </div>
 
                                         </li>
                                       </ul>                                        
 
                                     </div>
                                   </div>
-                                    
-                                </div>
+                                </div> -->
+
+                                
                                 <!-- <div class="px-10 py-4">
                                   <nuxt-link to="/cts" class="text-right">
                                     <h3>Все категории</h3>
