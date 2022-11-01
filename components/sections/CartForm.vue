@@ -146,9 +146,6 @@
     </div>
 
 
-
-    </div>
-
   </section>
 
 </template>
@@ -157,10 +154,10 @@
 import CartModal from '../CartModal.vue';
 
   export default {
-      name: 'CartForm',
-      components: {
-    CartModal
-},
+    name: 'CartForm',
+    components: {
+      CartModal
+    },
     props: {
       cts: {
         type: Array,
