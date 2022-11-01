@@ -25,35 +25,32 @@
                     </li>
 
                     <li id="navabar-menu" class="group">
-                      <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center w-full font-medium border-b border-gray-100 md:w-auto hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant"> Каталог</nuxt-link>
+                      <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center font-medium border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant"> Каталог</nuxt-link>
                       
                       
-                      <div class="absolute z-40 w-full left-0 invisible group-hover:opacity-100 group-hover:visible delay-700">
-                        <div class="mt-4">
+                      <div class="absolute z-40 -left-px -right-px iinvisible group-hover:opacity-100 group-hover:visible delay-700 mt-3 rounded-sm shadow-md">
+                        <div class="">
                           <div class="">
                             <div class="menu-section">
                               <div id="mega-menu-full-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
-                                <div class="grid py-5 px-4 mx-auto max-w-screen-xl text-gray-900 dark:text-white sm:grid-cols-2 md:grid-cols-3 md:px-6">
+                                <div class="columns-4 py-5 px-4 text-gray-900 dark:text-white md:px-6">
 
 
-                                  <div class="" v-for="ct in cts" :key="ct.id">
+                                  <div class="break-inside-avoid-column" v-for="ct in cts" :key="ct.id">
                                     <div class="block p-3 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700">
-                                      <nuxt-link to="#" class="font-semibold">{{ ct.name }}</nuxt-link>
+                                      <nuxt-link to="#" class="font-bold">{{ ct.name }}</nuxt-link>
 
                                       <ul>
                                         <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-4 my-1">
                                           <div id="ssct" class="block">
-                                            <nuxt-link to="#" class="text-sm font-light text-gray-500 dark:text-gray-300">{{ sct.name }} <div  v-if="sct.inserted.length > 0" class="inline-block mdi mdi-arrow-down"></div>
-                                                                                          
-                                            </nuxt-link>
-
+                                            <nuxt-link to="#" class="text-sm font-light text-gray-500 dark:text-gray-300">{{ sct.name }} <div  v-if="sct.inserted.length > 0" class="hidden iiinline-block mdi mdi-arrow-down"></div></nuxt-link>
                                           </div>
 
-                                          <div v-if="sct.inserted.length > 0" class="absolute z-50 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
+                                          <!-- <div v-if="sct.inserted.length > 0" class="absolute z-50 bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
                                             <div class="" v-for="ssct in sct.inserted" :key="ssct.id">
                                               <nuxt-link to="#">{{ ssct.name }}</nuxt-link>
                                             </div>
-                                          </div>
+                                          </div> -->
 
                                         </li>
                                       </ul>                                        
