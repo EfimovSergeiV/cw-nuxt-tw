@@ -1,11 +1,15 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'cw-nuxt-tw',
+    title: 'Главный сварщик: Cварочное оборудование, всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { 
+        hid: 'description', 
+        name: 'description', 
+        content: 'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск' 
+      },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -77,7 +81,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: 'ru'
     }
   },
 
