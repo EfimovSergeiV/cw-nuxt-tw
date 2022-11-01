@@ -1,29 +1,36 @@
 <template>
   <div class="">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-        <div v-for="ct in cts" :key="ct.id" class="flex items-stretch bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
-          <div class="w-full p-2">
 
-            <div>
-              <nuxt-link to="products/page" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 rounded-md text-sm font-medium">
-                <h2>{{ ct.name }}</h2>
-              </nuxt-link>
-            </div>
+      <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
+        <div class="columns-3 lg:columns-4">
+          <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
+            <div class="">
 
-            <div class="mt-4">
-              <div v-for="sct in ct.inserted" :key="sct.id" >
+
+              <div class="p-2">
                 <div>
-                  <nuxt-link to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 rounded-md text-sm font-medium">
-                    {{ sct.name }}
-                  </nuxt-link>
+                  <nuxt-link to="products/page" class="font-bold">{{ ct.name }}</nuxt-link>              
                 </div>
-              </div>
-            </div>
 
+                <div>
+                  <ul>
+                    <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-2">
+                      <nuxt-link to="#" class="text-sm">{{ sct.name }}</nuxt-link>
+                    </li>
+                  </ul>
+                </div>              
+              </div>
+
+
+            </div>
           </div>
         </div>
+
       </div>
+
+
+
     </div>
   </div>
 </template>
