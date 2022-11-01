@@ -4,7 +4,7 @@
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
         <div class="px-2 mt-2">
-          <p class="">Обзоры на оборудование:</p>
+          <nuxt-link to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-200 font-bold">Обзоры на оборудование</nuxt-link>
         </div>
         
         <div class="">
