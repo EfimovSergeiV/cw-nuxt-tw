@@ -2,9 +2,9 @@
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
 
-    <div id="main-info" class="flex justify-between gap-2 md:gap-6">
+    <div id="main-info" class="flex justify-between gap-2 my-2 md:gap-6">
  
-      <div id="color-mode">
+      <div id="color-mode" class="">
         <!-- <p class="mdi mdi-lightbulb-night cursor-pointer text-sm"> Тёмный режим</p> -->
         <p v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mdi mdi-lightbulb-outline cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Светлый режим</p>
         <p v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mdi mdi-lightbulb-night cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Тёмный режим</p>

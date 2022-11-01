@@ -25,9 +25,34 @@
         Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас! Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!
       </div>
       <div>
-        <p>ПРИЯТНЫХ ПОКУПОК!</p>
-      </div>      
+        <p class="mdi mdi-"> ПРИЯТНЫХ ПОКУПОК!</p>
+      </div>
+
+      <div class="mt-4">
+        <p class="text-xs"> {{ shops }} </p>
+      </div>
+      
+     
     </div>
 
   </section>
 </template>
+
+<script>    
+  export default {
+      name: 'About',
+      components: {
+    },
+    props: {
+      shops: {
+        type: Array,
+        default: Array,
+      },
+    },
+    data() {
+      return {
+  
+      }
+    },
+  }
+</script>

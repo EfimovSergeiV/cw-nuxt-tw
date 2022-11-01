@@ -11,9 +11,9 @@
     <Svarog :mpromobs="mpromobs" />
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
-    <AllPointsMaps :shops="shops" />
-    <CorouselBrands :brands="filterCarouselBrands(brands)" />
-    <Footer />
+    <!-- <AllPointsMaps :shops="shops" :brands="filterCarouselBrands(brands)" /> -->
+    <CorouselBrands :shops="shops" :brands="filterCarouselBrands(brands)" />
+    <Footer :shops="shops" />
 
   </div>
 </template>

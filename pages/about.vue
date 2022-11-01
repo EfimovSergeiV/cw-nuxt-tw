@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-screen">
+  <div class="">
 
     <Header />
     <Navbar :cts="cts" />
-    <About />
+    <About :shops="shops" />
     <Footer class="" />
 
   </div>
@@ -22,8 +22,8 @@ import Footer from '~/components/Footer.vue'
       Footer,
     },
     async asyncData({ $axios }) {
-      const cts = await $axios.$get(`c/ct/`)
-      return { cts }
+      const shops = await $axios.$get(`c/shops/`)
+      return { shops }
     },
     data() {
       return {

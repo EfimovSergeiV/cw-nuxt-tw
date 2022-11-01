@@ -3,40 +3,44 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
-      <div class="">
-        <hooper
-          :center-mode="true"
-          :wheel-control="false"
-          :items-to-show="3"
-          :infinite-scroll="true"
-          :auto-play="false"
-          :play-speed="7000"
-          style="height: 100%;"
-          class="main-hooper"
-        >
-          <slide v-for="video in videos" :key="video.id" class="hooper-ul">
-            <div class="hh h-60">
-              <!-- <img
-                :src="review.image"
-                class="rounded-sm h-full"
-                onerror="this.src='./noimage-960-540.jpg'"
-              /> -->
-              <iframe
-                :src="video.video"
-                loading="lazy"
-                height="100%"
-                width="100%"
-                allowfullscreen="0"
-                frameborder="0"
-              ></iframe>
-            </div>
+        <div class="px-2 mt-2">
+          <p class="">Обзоры на оборудование:</p>
+        </div>
+        
+        <div class="">
+          <hooper
+            :center-mode="true"
+            :wheel-control="false"
+            :items-to-show="3"
+            :infinite-scroll="true"
+            :auto-play="false"
+            :play-speed="7000"
+            style="height: 100%;"
+            class="main-hooper"
+          >
+            <slide v-for="video in videos" :key="video.id" class="hooper-ul">
+              <div class="h-60 border dark:border-gray-700 shadow-md">
+                <!-- <img
+                  :src="review.image"
+                  class="rounded-sm h-full"
+                  onerror="this.src='./noimage-960-540.jpg'"
+                /> -->
+                <iframe
+                  :src="video.video"
+                  loading="lazy"
+                  height="100%"
+                  width="100%"
+                  allowfullscreen="0"
+                  frameborder="0"
+                ></iframe>
+              </div>
 
 
-          </slide>
-          <hooper-navigation slot="hooper-addons"></hooper-navigation>
-          <hooper-pagination slot="hooper-addons"></hooper-pagination>
-        </hooper>
-      </div>
+            </slide>
+            <hooper-navigation slot="hooper-addons"></hooper-navigation>
+            <hooper-pagination slot="hooper-addons"></hooper-pagination>
+          </hooper>
+        </div>
 
       </div>
 
