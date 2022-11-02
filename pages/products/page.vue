@@ -1,25 +1,38 @@
 <template>
-    <div>
+  <div>
 
-      <Header />
-      <Navbar :cts="cts" />
-      <Breadcrumbs />
-      <!-- <CartModal /> -->
-      <!-- {{ response.results.slice(10, 14)}} -->
-      <Pagination />
-      <Products :products="response.results" />  
-      <Pagination />
-      
+    <Header />
+    <Navbar :cts="cts" />
+    <Breadcrumbs />
+    <!-- <CartModal /> -->
+    <!-- {{ response.results.slice(10, 14)}} -->
+
+
+    <FiltersWithPagination />
+
+
+    <Products :products="response.results" />
+
+    <div class="mx-auto px-4 py-4 lg:max-w-7xl lg:px-8">
+      <div class="flex justify-end">
+        <Pagination />
+      </div>
     </div>
-  </template>
+    
+    <Footer />
+    
+  </div>
+</template>
   
 <script>
-import Header from '~/components/Header.vue'
-import Navbar from '~/components/Navbar.vue'
-import Products from '~/components/sections/Products.vue'
-import Breadcrumbs from '~/components/Breadcrumbs.vue'
-import TwoModal from '~/components/CartModal.vue'
-import Pagination from '~/components/Pagination.vue'
+  import Header from '~/components/Header.vue'
+  import Navbar from '~/components/Navbar.vue'
+  import Products from '~/components/sections/Products.vue'
+  import FiltersWithPagination from '~/components/sections/FiltersWithPagination.vue'
+  import Breadcrumbs from '~/components/Breadcrumbs.vue'
+  import TwoModal from '~/components/CartModal.vue'
+  import Pagination from '~/components/Pagination.vue'
+  import Footer from '~/components/Footer.vue'
 
   export default {
     name: 'ProductsPage',
@@ -29,7 +42,9 @@ import Pagination from '~/components/Pagination.vue'
         Products,
         Breadcrumbs,
         TwoModal,
+        FiltersWithPagination,
         Pagination,
+        Footer
       },
       async asyncData({ query, $axios }) {
         const cts = await $axios.$get('c/ct/')
