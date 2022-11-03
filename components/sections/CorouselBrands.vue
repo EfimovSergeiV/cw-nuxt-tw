@@ -8,10 +8,10 @@
 
         <div class="">
           <p class="text-gray-700 dark:text-gray-300 font-bold my-4">Адреса магазинов:</p>
-          <div class="grid grid-cols-3 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-3 md:grid-cols-4 place-content-end gap-4">
 
             <div class="text-gray-700 dark:text-gray-300 hover:text-gray-800 hover:dark:text-gray-200 group cursor-pointer" v-for="shop in shops" :key="shop.id">
-              <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 h-full group-hover:border-gray-600">
+              <div class="bg-white rounded-sm border border-gray-200 group-hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800 h-full dark:group-hover:border-gray-600">
                 <div class="p-2">
                   <p class="text-sm font-bold">{{ shop.city }}:</p>
                   <div class="flex items-end lg:h-14">
