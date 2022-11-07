@@ -15,19 +15,18 @@
               </div>
 
               <div class="px-2">
-                <div class="columns-3 lg:columns-4">
+                <div class="columns-1 lg:columns-4 gap-4">
                   <div class="break-inside-avoid-column border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
                     
                     <div id="checkbox-form my-2">
-                      <p class="text-sm mb-2 mt-1"> Форма чекбокс</p>
+                      <p class="text-sm mb-2 m-1"> Форма чекбокс</p>
                       <div class="flex flex-wrap">
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> Telwin</p>
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> Aurora</p>
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> Grovers</p>
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> Linkoln Elektric</p>
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> ESAB</p>
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> Кедр</p>
-                        <p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> Fubag</p>
+
+                        <div class="flex items-center mr-4 p-1" v-for="(brand, id) in ['Telwin','Aurora','Grovers','Linkoln Elektric','ESAB','Кедр','Fubag']" :key="id">
+                          <input :id="'inline-checkboxa1' + id" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                          <label :for="'inline-checkboxa1' + id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand }}</label>
+                        </div>
+                      
                       </div>                      
                     </div>
 
@@ -35,7 +34,7 @@
 
                   <div class="break-inside-avoid-column border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
                     <div id="range-form my-2">
-                      <p class="text-sm my-1"> Форма диапазон</p>
+                      <p class="text-sm m-1"> Форма диапазон</p>
                       <div class="">
 
                         <div class="flex justify-start mx-1 my-2">
@@ -43,10 +42,14 @@
                           <p class="mx-2"> - </p>
                           <input type="text" id="max" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-gray-500 focus:border-gray-500 block w-24 p-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500" placeholder="160000" required>
                         </div>
+
                         <div class="grid grid-cols-1">
-                          <div class=""><p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> 3100 - 5000</p></div>
-                          <div class=""><p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> 5000 - 100000</p></div>
-                          <div class=""><p class="flex items-center text-xs m-1"><input type="checkbox" class="mr-1 appearance-none indeterminate:bg-gray-300" /> 100000 - 160000</p></div>
+                          <div class="m-1">
+                            <div class="flex items-center mr-4 p-1" v-for="i in 6" :key="i">
+                              <input :id="'inline-checkbox1' + i" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                              <label :for="'inline-checkbox1' + i" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ i }}00 - {{ i }}000</label>
+                            </div>
+                          </div>
                         </div>
 
                       </div>
@@ -81,26 +84,25 @@
 <script>
   import Pagination from '~/components/Pagination.vue'
 
-
   export default {
     name: 'FiltersWithPagination',
-      components: {
-        Pagination,
-      },
-      async asyncData({ query, $axios }) {
-        const cts = await $axios.$get('c/ct/')
-        const brands = await $axios.$get(`c/ctbrand/`, {params: { ct: query.ct },})
-        const props = await $axios.$get(`c/props/`, {params: { ct: query.ct },})
-        const rands = await $axios.$get(`c/random/`, {params: { ct: query.ct },})
-        const response = await $axios.$get(`c/prods/`, {params: query,})
-        const breadcrumbs = await $axios.$get(`c/breadcrumb/`, {params: query,})
+    components: {
+      Pagination,
+    },
+    async asyncData({ query, $axios }) {
+      const cts = await $axios.$get('c/ct/')
+      const brands = await $axios.$get(`c/ctbrand/`, {params: { ct: query.ct },})
+      const props = await $axios.$get(`c/props/`, {params: { ct: query.ct },})
+      const rands = await $axios.$get(`c/random/`, {params: { ct: query.ct },})
+      const response = await $axios.$get(`c/prods/`, {params: query,})
+      const breadcrumbs = await $axios.$get(`c/breadcrumb/`, {params: query,})
 
-        return { cts, response, brands, props, rands, breadcrumbs }
-      },
-      data() {
-        return {
-          stat: false,
-        }
-      },
+      return { cts, response, brands, props, rands, breadcrumbs }
+    },
+    data() {
+      return {
+        stat: false,
+      }
+    },
   }
 </script>
