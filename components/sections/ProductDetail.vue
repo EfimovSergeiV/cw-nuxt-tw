@@ -9,16 +9,16 @@
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="p-2">
-          <div class="flex flex-row gap-4">
+          <div class="flex justify-between">
             
-            <div class="basis-1/4">
+            <div class="">
               <div class="flex items-center justify-center p-2 bg-white rounded-sm">
                 <img src="https://api.glsvar.ru/files/img/c/preview/strong-400.png" width="235" height="177" class="rounded-sm"/>
               </div>
               
             </div>
 
-            <div class="basis-1/2">
+            <!-- <div class="basis-1/2">
 
               <div class="">
                 <div v-for="param in product.propstrmodel.slice(0, 6)" :key="param.id">
@@ -32,25 +32,28 @@
                 </div>                 
               </div>
 
-            </div>
+            </div> -->
 
-            <div class="basis-1/4 flex items-center justify-center">
+            <div class="">
 
 
               <div class="">
                 <div class="mx-1 text-right">
-                  <p class="text-4xl font-bold dark:text-gray-300 my-4">12 500 руб.</p>
+                  <p class="text-3xl font-bold dark:text-gray-300 my-4">12 500 руб.</p>
                 </div>
                 <div class="mx-1 text-right">
-                  <p class="text-base font-bold dark:text-gray-300 my-4">В наличии</p>
+                  <p class="text-base dark:text-gray-300 my-4">В наличии</p>
                 </div>
                 
                 <div class=" ">
                   <div class="flex items-center justify-between">
                     <div class="">
                       <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                            В избранное
+                        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-equalizer-outline">
+                        </span>
+                      </button>
+                      <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-heart-multiple-outline">
                         </span>
                       </button>
                     </div>
@@ -71,8 +74,21 @@
 
           </div>
           
-          <div class="py-4">
-            <p>{{ product.decription }}</p>
+          <div class="grid grid-cols-1 py-4">
+            <div class="my-8">
+              <p>{{ product.decription }}</p>
+            </div>
+            <div class="columns-2">
+
+              <div v-for="param in product.propstrmodel" :key="param.id">
+                <div class="flex justify-between">
+                  <div class=""><small>{{ param.name }} :</small></div>
+                  <div class="text-right"><small>{{ param.value }}</small></div>                
+                </div>
+              
+              </div>
+            </div>
+
           </div>
 
 
