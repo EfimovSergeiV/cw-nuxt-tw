@@ -31,7 +31,7 @@
 
 
           <div class="my-4">
-            <div class="flex flex-col md:flex-row md:justify-between">
+            <div class="flex flex-col md:flex-row md:justify-between gap-8">
               
               <div class="w-96">
                 <div class="flex items-center mb-3">

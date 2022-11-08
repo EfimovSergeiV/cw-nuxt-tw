@@ -40,13 +40,13 @@
 
 
                                       <div class="p-2">
-                                        <div>
-                                          <nuxt-link to="products/page" class="font-bold text-gray-700 dark:text-gray-300 text-base my-1">{{ ct.name }}</nuxt-link>              
+                                        <div class="mb-1">
+                                          <nuxt-link to="products/page" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
                                         </div>
 
                                         <div>
                                           <ul>
-                                            <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-2 my-1">
+                                            <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-3 my-1">
                                               <nuxt-link to="#" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
                                             </li>
                                           </ul>
