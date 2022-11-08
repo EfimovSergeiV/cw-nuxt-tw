@@ -62,15 +62,15 @@
                 </div>
                 
                 <div class="flex justify-end">
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-equalizer-outline">
                     </span>
                   </button>
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-heart-multiple-outline">
                     </span>
                   </button>
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         В корзину
                     </span>
@@ -152,9 +152,9 @@
                         <textarea id="comment" rows="4" class="px-0 w-full text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Напишите что-нибудь..." required></textarea>
                     </div>
                     <div class="flex justify-end items-center py-2 px-3 border-t dark:border-gray-600">
-                        <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-                            Оставить комментарий
-                        </button>
+                      <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        Оставить комментарий
+                      </button>
                         <!-- <div class="flex pl-0 space-x-1 sm:pl-2">
                             <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
@@ -180,9 +180,9 @@
         </div>
       </div>
 
-      <div class="text-xs mt-6">
+      <!-- <div class="text-xs mt-6">
         <p>{{ product }}</p>
-      </div>
+      </div> -->
     </div>
 
   </section>
@@ -201,60 +201,7 @@
     },
     data() {
       return {
-        // product: {
-        //   name: "Cварочный инвертор AuroraPRO STRONGHOLD 400M",
-        //   decription: "Профессиональный инвертор STRONGHOLD 400M предназначендля работы штучными электродами (MMA) в условиях небольшого производства. Максимальный ток в 400А достигается при весе всего 22 кг.Профессиональный сварщик по достоинству оценит данный аппарат.Широкие возможности настроек инвертора обеспечивают высокое качество сварки практически в любых условиях.",
-        //   propstrmodel: [
-        //       {
-        //           "id": 7924,
-        //           "name": "Наибольшая пропускная способность при наибольшем рабочем давлении, л/мин",
-        //           "qname": "03sn",
-        //           "value": "30"
-        //       },
-        //       {
-        //           "id": 7920,
-        //           "name": "Габаритные размеры, мм",
-        //           "qname": "3b0e",
-        //           "value": "128х158х232"
-        //       },
-        //       {
-        //           "id": 7922,
-        //           "name": "Масса комплекта, кг",
-        //           "qname": "8q2m",
-        //           "value": "1"
-        //       },
-        //       {
-        //           "id": 7923,
-        //           "name": "Наименьшее давление газа на входе, при наибольшем расходе МПа (кгс/см2)",
-        //           "qname": "hekh",
-        //           "value": "0,8 (8)"
-        //       },
-        //       {
-        //           "id": 7921,
-        //           "name": "Наибольшее давление газа на входе, МПа (кгс/см2)",
-        //           "qname": "ik6q",
-        //           "value": "10 (100)"
-        //       },
-        //       {
-        //           "id": 9759,
-        //           "name": "Вес, кг",
-        //           "qname": "7z26",
-        //           "value": "5"
-        //       },
-        //       {
-        //           "id": 11635,
-        //           "name": "Тип проволоки",
-        //           "qname": "cop",
-        //           "value": "омеднённая"
-        //       },
-        //       {
-        //           "id": 9758,
-        //           "name": "Диаметр проволоки, мм",
-        //           "qname": "emjx",
-        //           "value": "1,0"
-        //       }
-        //   ],
-        // },
+        //// data
       }
     },
   }
