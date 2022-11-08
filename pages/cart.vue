@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen">
+  <div class="mmmin-h-screen">
 
     <Header />
     <Navbar :cts="cts" />
