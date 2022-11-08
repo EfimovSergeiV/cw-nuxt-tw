@@ -3,7 +3,7 @@
     <Header />
     <Navbar />
     <Breadcrumbs />
-    <ProductDetail />
+    <ProductDetail :product="product" />
     <Footer />
   </div>
 </template>
