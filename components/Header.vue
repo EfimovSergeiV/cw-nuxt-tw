@@ -5,9 +5,16 @@
     <div id="main-info" class="flex justify-between gap-2 my-2 md:gap-6">
  
       <div id="color-mode" class="">
-        <!-- <p class="mdi mdi-lightbulb-night cursor-pointer text-sm"> Тёмный режим</p> -->
-        <p v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="mdi mdi-lightbulb-outline cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Светлый режим</p>
-        <p v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'dark'" class="mdi mdi-lightbulb-night cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Тёмный режим</p>
+
+        <ColorScheme placeholder="Color mode" tag="span">
+          <span class="text-sm">Color mode: </span>
+          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>{{ $colorMode.preference }}</b></span>
+          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>{{ $colorMode.preference }}</b></span>
+          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>{{ $colorMode.preference }}</b></span>
+
+          <span v-if="$colorMode.preference === 'system'">(<i>{{ $colorMode.value }}</i>)</span>
+        </ColorScheme>
+
       </div>
       
       <div class="grid md:grid-cols-3 text-right gap-4">
