@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
+      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 mt-4 shadow-md">
         <div class="p-2">
           <p class="text-sm">
             Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас! Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!
@@ -47,9 +47,30 @@
       </div>
 
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
 
+      <div class="grid grid-cols-3 gap-4">
+
+        <div class="" v-for="shop in shops" :key="shop.id">
+
+          <div class="bg-white rounded-sm dark:bg-gray-800 my-4 shadow-md h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-100">
+            <div class="p-2">
+              <div class="my-2">
+                <p class="text-sm">{{ shop.adress }} {{ shop.phone }}</p>
+                <p class="text-sm">{{ shop.wday }}</p>
+                <p class="text-sm">{{ shop.wend }}</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
+
+
+
+      <div class="my-6">
+        <p class="text-sm">{{ selectedShop }}</p>
+      </div>      
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
         <iframe 
@@ -58,8 +79,8 @@
           height="350" 
           style="border:0;" 
           allowfullscreen="" 
-          loading="lazy" r
-          eferrerpolicy="no-referrer-when-downgrade">
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
       <!-- <div class="mt-4">
@@ -85,7 +106,7 @@
     },
     data() {
       return {
-  
+        selectedShop: {}
       }
     },
   }
