@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-bg">
+  <div>
     <Header />
     <Navbar />
     <Breadcrumbs />

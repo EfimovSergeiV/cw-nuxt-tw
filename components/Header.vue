@@ -7,12 +7,10 @@
       <div id="color-mode" class="">
 
         <ColorScheme placeholder="ColorMode" tag="span">
-          <span class="text-sm">Color mode: </span>
-          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>{{ $colorMode.preference }}</b></span>
-          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>{{ $colorMode.preference }}</b></span>
-          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>{{ $colorMode.preference }}</b></span>
-
-          <span v-if="$colorMode.preference === 'system'">(<i>{{ $colorMode.value }}</i>)</span>
+          <span class="text-sm">Тема оформления: </span>
+          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>авто</b></span>
+          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>тёмная</b></span>
+          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> <b>светлая</b></span>
         </ColorScheme>
 
       </div>
