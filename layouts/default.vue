@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 bg-gradient-to-r dark:from-gray-900 dark:to-gray-800 text-gray-700 dark:text-gray-300 footer-bg">
+  <div class="bg-gradient-to-r from-gray-300 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-700 dark:text-gray-300 footer-bg">
     
     <div class="bg-fixed bg-no-repeat bg-right-bottom bg-cover bg-[url('images/footer-bg.png')] dark:bg-[url('images/footer-dark-bg.png')]">
       <!-- bg-cover -->
