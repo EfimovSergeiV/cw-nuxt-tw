@@ -4,6 +4,7 @@
     <Header />
     <Navbar :cts="cts" />
     <About :shops="shops" />
+    <ShopMaps :shops="shops" /> 
     <Footer class="" />
 
   </div>
@@ -12,6 +13,7 @@
 <script>
 import Navbar from '~/components/Navbar.vue'
 import About from '~/components/sections/About.vue'
+import ShopMaps from '~/components/sections/ShopMaps.vue'
 import Footer from '~/components/Footer.vue'
 
   export default {
@@ -19,6 +21,7 @@ import Footer from '~/components/Footer.vue'
     components: {
       Navbar,
       About,
+      ShopMaps,
       Footer,
     },
     async asyncData({ $axios }) {

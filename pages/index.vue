@@ -11,6 +11,7 @@
     <Svarog :mpromobs="mpromobs" />
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
+    <ShopMaps :shops="shops" />
     <CorouselBrands :shops="shops" :brands="filterCarouselBrands(brands)" />
     <Footer :shops="shops" />
 
@@ -31,6 +32,7 @@ import Recommend from '~/components/sections/Recommend.vue'
 import Latest from '~/components/sections/Latest.vue'
 import CartModal from '~/components/CartModal.vue'
 import CorouselBrands from '~/components/sections/CorouselBrands.vue'
+import ShopMaps from '~/components/sections/ShopMaps.vue'
 
   export default {
     name: 'IndexPage',
@@ -48,6 +50,7 @@ import CorouselBrands from '~/components/sections/CorouselBrands.vue'
       CartModal,
       Footer,
       CorouselBrands,
+      ShopMaps,
     },
     async asyncData({ $axios }) {
       const banners = await $axios.$get('c/mainbanner/')
