@@ -3,7 +3,7 @@
 
     <Header />
     <Navbar :cts="cts" />
-    <Main :banners="banners" />
+    <Main :latest="latest" :banners="banners" />
     <Reviews :reviews="banners" />
     <ESAB :esab="esab" />
     <CorouselProducts :latest="latest" />

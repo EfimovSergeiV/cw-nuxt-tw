@@ -3,11 +3,8 @@
 
     <Header />
     <Navbar :cts="cts" />
-    <Breadcrumbs />
+    <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <!-- <CartModal /> -->
-    <!-- {{ response.results.slice(10, 14)}} -->
-
-
     <FiltersWithPagination />
 
 
@@ -52,7 +49,7 @@
         const props = await $axios.$get(`c/props/`, {params: { ct: query.ct },})
         const rands = await $axios.$get(`c/random/`, {params: { ct: query.ct },})
         const response = await $axios.$get(`c/prods/`, {params: query,})
-        const breadcrumbs = await $axios.$get(`c/breadcrumb/`, {params: query,})
+        const breadcrumbs = await $axios.$get(`c/breadcrumb/`, { params: query })
 
         return { cts, response, brands, props, rands, breadcrumbs }
       },

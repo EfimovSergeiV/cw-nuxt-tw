@@ -1,6 +1,7 @@
 <template>
   <section id="main">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 p-1 shadow-md">
@@ -8,7 +9,7 @@
           <div class="grid grid-cols-2 gap-4">
 
             
-            <div v-for="products in 4" v-key="products">
+            <div v-for="product in latest.slice(0, 4)" v-key="product.id">
             
               <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800">
                 <div class="h-36 lg:h-40">
@@ -19,7 +20,7 @@
                       <div class="relative h-full rounded-sm">
                         <div class="flex justify-center">
                           <img 
-                            src="noimage-235-177.jpg"
+                            :src="product.preview_image"
                             onerror="this.src='../../noimage-235-177.jpg'"
                             alt="product.imageAlt"
                             loading=lazy
@@ -35,7 +36,7 @@
                         </div>
                         <div class="absolute top-0 right-0">
                           <div class="flex items-center p-1 rounded-sm">
-                            <p class="text-gray-700 font-bold text-xs">8000 RUB</p>
+                            <p class="text-gray-700 font-bold text-xs">{{ product.only_price.toLocaleString() }} руб</p>
                           </div>
                         </div>
                         <div class="absolute bottom-0 left-0 w-full">
@@ -104,6 +105,10 @@ export default {
       HooperPagination,
     },
     props: {
+      latest: {
+        type: Array,
+        default: Array,
+      },
       banners: {
         type: Array,
         default: Array,

@@ -2,7 +2,7 @@
   <div>
     <Header />
     <Navbar />
-    <Breadcrumbs />
+    <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <ProductDetail :product="product" />
     <Footer />
   </div>
