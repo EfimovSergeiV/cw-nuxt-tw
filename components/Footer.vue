@@ -19,7 +19,7 @@
       <div class="py-4 md:flex md:justify-between">
 
 
-        <span class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex">© 2023 <p class="mx-1">Главный сварщик</p>
+        <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end">© 2023 <p class="mx-1">Главный сварщик</p>
         </span>
         <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
             <li>

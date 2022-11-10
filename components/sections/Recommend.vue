@@ -36,11 +36,11 @@
                       />
                     </div>
 
-                    <div class="absolute left-0 top-0">
+                    <!-- <div class="absolute left-0 top-0">
                       <div class="flex items-center p-1">
                         <p class="flex items-center uppercase text-red-600 font-bold mdi mdi-alert-decagram text-xs">Новинка</p>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="absolute top-0 right-0">
                       <div class="flex items-center p-1 rounded-sm">
                         <p class="text-gray-700 font-bold text-xs">8000 RUB</p>
