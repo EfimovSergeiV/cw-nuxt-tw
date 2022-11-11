@@ -4,150 +4,99 @@
     <!-- <CartModal /> -->
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="mt-3">
 
-        <div class="lg:columns-2 gap-4">
-          <div v-for="product in cart" :key="product.id" class="mb-4">
-
-            <div class=" bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800">
-              <div class="py-2 px-2">
-                <div class="my-2">
-                  <nuxt-link to="#" class="">{{ product.name }}</nuxt-link>
-                </div>
-                <div class="flex justify-between">
-                  <div class="">
-                    <div class="flex items-center">
-                      <div class="bg-white p-4 rounded-sm">
-                        <img :src="product.preview_image" class="rounded-sm" width="80" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <div class="md:flex items-center md:justify-end">
-                      <div class="flex justify-between items-center md:w-56">
-                        <div class="flex justify-center w-20">
-                          <div class="mdi mdi-minus cursor-pointer"></div>
-                          <div class="mx-2"><p>1</p></div>
-                          <div class="mdi mdi-plus cursor-pointer"></div>
-                        </div>
-                        <div class="text-sm">
-                          <div class="flex justify-end">
-                            <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
-                            <p class="text-xs">руб./шт</p>
-                          </div>
-                          <div class="mt-2">
-                            <p>Итог: 45000 руб.</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>               
-
-                    <div class="mt-4">
-                      <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-700 dark:hover:bg-blue-800 text-sm font-bold px-3 py-1 mx-3 rounded-sm text-yellow-300">В избранное</button>
-                      <button type="button" class="text-gray-800 dark:text-gray-200 text-xs">Удалить из корзины</button>
-                    </div>
-                  </div>
-
-
-                  </div>
-                </div>                
-              </div>
-            </div>
-
-
-            <!-- <div class="px-3 bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800">
-
-
-              <div class="flex justify-between">
-
-                <div class="flex items-center">
-                  <div class="bg-white p-2 rounded-sm">
-                    <img :src="product.preview_image" class="rounded-sm" width="80" />
-                  </div>
-                </div>
-                <div class="md:flex items-center md:justify-end">
-                  <div class="flex justify-between items-center md:w-56">
-                    <div class="flex justify-center w-20">
-                      <div class="mdi mdi-minus cursor-pointer"></div>
-                      <div class="mx-2"><p>1</p></div>
-                      <div class="mdi mdi-plus cursor-pointer"></div>
-                    </div>
-                    <div class="text-sm">
-                      <div class="flex justify-end">
-                        <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
-                        <p class="text-xs">руб./шт</p>
-                      </div>
-                      <div class="mt-2">
-                        <p>Итог: 45000 руб.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>               
-              </div>
-
-              <div class="flex justify-end py-2">
-                <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-sm px-3 py-1 mx-3 rounded-md text-gray-200">в избранное</button>
-                <button type="button" class="text-gray-800 dark:text-gray-200">удалить</button>
-              </div>
-
-            </div> -->
-            
-          </div>
-        </div>
-
-
-
-        <div class="grid grid-cols-2 gap-4">
-
-          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4">
-
-            <form>
-              <div class="relative z-0 mb-6 w-full group">
-                  <input type="email" name="floating-email" id="floating-email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                  <label for="floating-email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email адрес</label>
-              </div>
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="floating-first_name" id="floating-first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Имя *</label>
-                </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="floating-last_name" id="floating-last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Фамилия</label>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating-phone" id="floating-phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Номер телефона *</label>
-                </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="floating-company" id="floating-company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
-                </div>
-              </div>
-              <div class="relative z-0 mb-6 w-full group">
-                  <input type="text" name="your-comment" id="your-comment" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                  <label for="your-comment" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Комментарий к заказу</label>
-              </div>              
-              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Сделать заказ</button>
-            </form>
-          </div>
+      <div class="">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
           <div class="">
-            <p>hallo welt</p>
+            <div class="flex flex-col gap-4">
+              <div v-for="product in cart" :key="product.id" class="">
+                <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800">
+                  <div class="py-1 px-2">
+                    <div class="py-1">
+                      <nuxt-link to="#" class="text-sm">{{ product.name }}</nuxt-link>
+                    </div>
+                    <div class="flex justify-between items-end">
+                      <div class="">
+                        <div class="flex items-center">
+                          <div class="bg-white p-4 rounded-sm">
+                            <img :src="product.preview_image" class="rounded-sm" width="80" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <div class="md:flex items-center md:justify-end">
+                          <div class="flex justify-between items-center md:w-56">
+                            <div class="flex justify-center w-20">
+                              <div class="mdi mdi-minus cursor-pointer"></div>
+                              <div class="mx-2"><p>1</p></div>
+                              <div class="mdi mdi-plus cursor-pointer"></div>
+                            </div>
+                            <div class="text-sm">
+                              <div class="flex justify-end">
+                                <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
+                                <p class="text-xs">руб./шт</p>
+                              </div>
+                              <div class="mt-2">
+                                <p>Итог: 45000 руб.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>               
+                        <div class="mt-4">
+                          <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-700 dark:hover:bg-blue-800 text-sm font-bold px-3 py-1 mx-3 rounded-sm text-gray-300">В избранное</button>
+                          <button type="button" class="text-gray-800 dark:text-gray-200 text-xs">Удалить из корзины</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                
+                </div>
+              </div>
+            </div>
           </div>
+          
+          <div class="">
 
-
+            <div class="">
+              <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4">
+                <form>
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="email" name="floating-email" id="floating-email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="floating-email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email адрес</label>
+                  </div>
+                  <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating-first_name" id="floating-first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating-first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Имя *</label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating-last_name" id="floating-last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating-last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Фамилия</label>
+                    </div>
+                  </div>
+                  <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating-phone" id="floating-phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating-phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Номер телефона *</label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <input type="text" name="floating-company" id="floating-company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <label for="floating-company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
+                    </div>
+                  </div>
+                  <div class="relative z-0 mb-6 w-full group">
+                      <input type="text" name="your-comment" id="your-comment" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                      <label for="your-comment" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Комментарий к заказу</label>
+                  </div>              
+                  <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Сделать заказ</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-      
-
-
+      </div>
     </div>
-
-
   </section>
-
 </template>
 
 <script>
