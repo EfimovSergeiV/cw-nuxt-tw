@@ -146,17 +146,27 @@
             <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
 
 
-            <div class="border dark:border-gray-700 rounded-sm bg-gray-50 dark:bg-gray-700">
-              <div class="mx-2 my-2">
-                <div class="grid md:grid-cols-2 justify-items-stretch items-center">
-                  <div class="">
+            <div class="border dark:border-gray-600 rounded-sm bg-gray-50 dark:bg-gray-700">
+              <div class="">
+                <div class="grid md:grid-cols-2 justify-items-stretch items-center ">
+                  <div class="mx-2 my-2">
                     <select v-model="selectedShop" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                       <option disabled value="">Выберие магазин</option>
                       <option v-for="shop in shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
                     </select>                    
                   </div>
-                  <div class="justify-self-end">
-                    {{ '+7 (123) 456-78-90' }}
+                  <div class="justify-self-end text-right mx-2 my-2">
+                    <div class="" v-if="selectedShop.phone">
+                      <div class="flex">
+                        <div class="">
+                          <a :href="'tel:' + selectedShop.phone.replace(/[^+\d]/g, '')">{{ selectedShop.phone }}</a>
+                        </div>
+                        <div class="">
+                          <p class="text-sm mt-1">{{ selectedShop.wday }}</p>
+                          <p class="text-sm">{{ selectedShop.wend }}</p>   
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
