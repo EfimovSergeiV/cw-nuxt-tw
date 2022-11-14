@@ -30,7 +30,6 @@
       </li>
     </ul>
 
-
   </div>
 </template>
 
@@ -41,7 +40,7 @@
       // ProductCard
   },
     props: {
-      pages: {
+      response: {
         type: Array,
         default: Array,
       },

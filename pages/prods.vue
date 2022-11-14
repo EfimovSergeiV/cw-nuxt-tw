@@ -3,16 +3,23 @@
 
     <Header />
     <Navbar :cts="cts" />
+
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+      <div class="flex justify-end mb-1">
+        <p class="text-3xl font-bold">{{ response.meta.title }}</p>
+      </div>
+    </div>
+
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <!-- <CartModal /> -->
-    <FiltersWithPagination />
+    <FiltersWithPagination :response="response" />
 
 
     <Products :products="response.results" />
 
     <div class="mx-auto px-4 py-4 lg:max-w-7xl lg:px-8">
       <div class="flex justify-end">
-        <Pagination />
+        <Pagination :response="response" />
       </div>
     </div>
     
