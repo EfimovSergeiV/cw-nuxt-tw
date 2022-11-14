@@ -12,7 +12,7 @@
           <iframe :src="mapURLs[selectCity]" width="100%" height="350" frameborder="0" loading="lazy" class="rounded-sm"></iframe>
           <div class="absolute top-0 bg-gradient-to-r from-gray-100/95 dark:from-gray-700/95 to-gray-500/0 w-2/3 h-full">
             <div class="mx-2">
-              <p class="my-1 font-bold text-gray-700 dark:text-gray-300">Главный сварщик - {{ selectCity}}</p>
+              <p class="my-1 font-bold text-gray-700 dark:text-gray-300">Главный сварщик | {{ selectCity}}</p>
               <div class="">
                 <div class="my-1" v-for="shop in shops" :key="shop.id">
                   <div class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs" v-if="shop.city == selectCity">

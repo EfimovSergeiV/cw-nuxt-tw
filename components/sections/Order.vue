@@ -26,8 +26,6 @@
             </div>  
           </div>
         </div>
-
-        <small>{{ order }}</small>
   
       </div>
     </div>
