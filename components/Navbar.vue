@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="mx-auto my-4 pb-1 px-4 lg:max-w-7xl lg:px-8">
+      <!-- THIS IS BUG FOR SHORT PAGE (hidden UP) -->
       <nav class="">
     
         <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 py-2 md:px-4 relative">
