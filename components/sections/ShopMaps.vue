@@ -3,13 +3,13 @@
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 text-center">
         <div class="mt-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">
-          <p class="text-lg my-2" @click="selectCity = city"> {{ city }}</p>
+          <p class="text-base my-1" @click="selectCity = city"> {{ city }}</p>
         </div>
       </div>
 
       <div class="mt-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="relative">
-          <iframe :src="mapURLs[selectCity]" width="100%" height="350" frameborder="0" lazy class="rounded-sm"></iframe>
+          <iframe :src="mapURLs[selectCity]" width="100%" height="350" frameborder="0" loading="lazy" class="rounded-sm"></iframe>
           <div class="absolute top-0 bg-gradient-to-r from-gray-100/95 dark:from-gray-700/95 to-gray-500/0 w-2/3 h-full">
             <div class="mx-2">
               <p class="my-1 font-bold text-gray-700 dark:text-gray-300">Главный сварщик - {{ selectCity}}</p>

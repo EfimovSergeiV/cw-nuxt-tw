@@ -39,7 +39,7 @@
       </div>
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 mt-4 shadow-md">
-        <div class="p-2">
+        <div class="p-2 my-4">
           <p class="text-base text-center">
             Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!<br />Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!
           </p>

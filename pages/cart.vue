@@ -4,7 +4,7 @@
     <Header />
     <Navbar :cts="cts" />
 
-    <CartForm />
+    <CartForm :shops="shops" />
 
     <Footer class="" />
 
@@ -25,7 +25,8 @@ import CartForm from '~/components/sections/CartForm.vue'
   },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
-      return { cts }
+      const shops = await $axios.$get('/c/shops/')
+      return { cts, shops }
     },
     data() {
       return {
