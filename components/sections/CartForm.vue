@@ -56,9 +56,7 @@
           </div>
         </div>
       </div>
-
       <div class="mt-4">
-        <div class="w-full">
           <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
 
 
@@ -118,9 +116,13 @@
               </div>
 
             </div>
+          </div>
+      </div>
 
+      <div class="mt-4">
+          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
 
-            <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center justify-between">
               <div class="">
                 2. Способ получения
               </div>
@@ -128,14 +130,14 @@
                 <div class="">
                   <button class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                     <span class="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                      Самовывоз
+                      Самовывоз из магазина
                     </span>
                   </button>              
                 </div>
                 <div class="">
                   <button class="cursor-not-allowed relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                     <span class="relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                      Доставка
+                      Доставка ТК
                     </span>
                   </button>              
                 </div>                  
@@ -222,7 +224,7 @@
               <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Сделать заказ</button>
             </form> -->
           </div>
-        </div>
+
       </div>
 
     </div>
