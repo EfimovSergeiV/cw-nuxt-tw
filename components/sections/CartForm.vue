@@ -57,13 +57,6 @@
       <div class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
 
-          <label>
-              <input  type="radio" name="option" id="option1" class="hidden peer" />
-              <div class="peer-checked:bg-red-600">option1</div>
-              <div></div>
-              <p class="peer-checked:bg-blue-600">hallo</p>
-          </label>
-
           <div class="flex items-center justify-between">
             <div class="">
               1. Данные покупателя
@@ -73,19 +66,18 @@
               <ul class="grid gap-6 w-full md:grid-cols-2">
                 <li>
                   <input type="radio" id="hosting-small" name="person" v-model="entity" value="false" class="hidden peer" required>
-                  <label for="hosting-small" class=" peer-checked:mt-4 inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
-                      <div class="">
-                          <p class="mdi mdi-check  peer-checked:hidden"></p>
-                          <div class="w-full peer-checked:bg-red-600"> Физическое лицо</div>
-                      </div>
+                  <label for="hosting-small" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                    <div class="block">
+                      <div class="w-full"> Физическое лицо</div>
+                    </div>
                   </label>
                 </li>
                 <li>
                   <input type="radio" id="hosting-big" name="person" v-model="entity" value="true" class="hidden peer">
                   <label for="hosting-big" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                      <div class="block">
-                        <div class="w-full">Юридическое лицо</div>
-                      </div>
+                    <div class="block">
+                      <div class="w-full">Юридическое лицо</div>
+                    </div>
                   </label>
                 </li>
               </ul>
