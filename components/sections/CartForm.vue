@@ -1,7 +1,6 @@
 <template>
   <section id="cart-form">
 
-    <!-- <CartModal /> -->
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -39,7 +38,6 @@
                     </div>
                   </div>               
                   <div class="mt-4 flex gap-2">
-                    <!-- <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-700 dark:hover:bg-blue-800 text-sm px-3 py-1 mx-3 rounded-sm text-gray-300">В избранное</button> -->
                     <div class="">
                       <button class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                         <span class="relative px-4 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -57,71 +55,78 @@
         </div>
       </div>
       <div class="mt-4">
-          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
+        <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
 
+          <label>
+              <input  type="radio" name="option" id="option1" class="hidden peer" />
+              <div class="peer-checked:bg-red-600">option1</div>
+              <div></div>
+              <p class="peer-checked:bg-blue-600">hallo</p>
+          </label>
 
-            <div class="flex items-center justify-between">
-              <div class="">
-                1. Данные покупателя
-              </div>
-              <div class="flex justify-end gap-4">
-
-                <ul class="grid gap-6 w-full md:grid-cols-2">
-                  <li>
-                    <input type="radio" id="hosting-small" name="person" v-model="entity" value="false" class="hidden peer" required>
-                    <label for="hosting-small" class=" inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
-
-                      <div class="w-full peer-checked:"> Физическое лицо</div>
-
-                    </label>
-                  </li>
-                  <li>
-                    <input type="radio" id="hosting-big" name="person" v-model="entity" value="true" class="hidden peer">
-                    <label for="hosting-big" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-
-                      <div class="w-full">Юридическое лицо</div>
-
-                    </label>
-                  </li>
-                </ul>
-              </div>
+          <div class="flex items-center justify-between">
+            <div class="">
+              1. Данные покупателя
             </div>
+            <div class="flex justify-end gap-4">
 
-
-            <div class="grid md:grid-cols-2 gap-4">
-
-              <div class="">
-                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Имя (необязательно)</label>
-                <div class="relative">
-                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <p class="mdi mdi-account"></p>
-                  </div>
-                  <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
-                </div>                
-              </div>
-              <div class="">
-                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта (необязательно)</label>
-                <div class="relative">
-                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <p class="mdi mdi-email"></p>
-                  </div>
-                  <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
-                </div>                
-              </div>
-              <div class="">
-                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
-                <div class="relative">
-                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <p class="mdi mdi-phone"></p>
-                  </div>
-                  <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
-                </div>                
-              </div>
-
+              <ul class="grid gap-6 w-full md:grid-cols-2">
+                <li>
+                  <input type="radio" id="hosting-small" name="person" v-model="entity" value="false" class="hidden peer" required>
+                  <label for="hosting-small" class=" peer-checked:mt-4 inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                      <div class="">
+                          <p class="mdi mdi-check  peer-checked:hidden"></p>
+                          <div class="w-full peer-checked:bg-red-600"> Физическое лицо</div>
+                      </div>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" id="hosting-big" name="person" v-model="entity" value="true" class="hidden peer">
+                  <label for="hosting-big" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                      <div class="block">
+                        <div class="w-full">Юридическое лицо</div>
+                      </div>
+                  </label>
+                </li>
+              </ul>
             </div>
+          </div>
 
+
+          <div class="grid md:grid-cols-2 gap-4">
+
+            <div class="">
+              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Имя (необязательно)</label>
+              <div class="relative">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                  <p class="mdi mdi-account"></p>
+                </div>
+                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
+              </div>                
+            </div>
+            <div class="">
+              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта (необязательно)</label>
+              <div class="relative">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                  <p class="mdi mdi-email"></p>
+                </div>
+                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+              </div>                
+            </div>
+            <div class="">
+              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
+              <div class="relative">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                  <p class="mdi mdi-phone"></p>
+                </div>
+                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+              </div>                
+            </div>
 
           </div>
+
+
+        </div>
       </div>
 
       <div v-if="entity == 'true'" class="mt-4">
@@ -144,120 +149,81 @@
       
 
       <div class="mt-4">
-          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
+        <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
 
-            <div class="flex items-center justify-between">
-              <div class="">
-                2. Способ получения
-              </div>
-              <div class="flex justify-end gap-4">
-                <ul class="grid gap-6 w-full md:grid-cols-2">
-                  <li>
-                    <input type="radio" id="hosting-smalll" name="hosting1" value="hosting-small" class="hidden peer" required>
-                    <label for="hosting-smalll" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
-                        <div class="block">
-                            <div class="w-full">Самовывоз из магазина</div>
-                        </div>
-                    </label>
-                  </li>
-                  <li>
-                    <input type="radio" id="hosting-bigg" name="hosting1" value="hosting-big" class="hidden peer">
-                    <label for="hosting-bigg" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        <div class="block">
-                            <div class="w-full">Доставка ТК</div>
-                        </div>
-                    </label>
-                  </li>
-                </ul>
-              </div>
+          <div class="flex items-center justify-between">
+            <div class="">
+              2. Способ получения
             </div>
+            <div class="flex justify-end gap-4">
+              <ul class="grid gap-6 w-full md:grid-cols-2">
+                <li>
+                  <input type="radio" id="hosting-smalll" name="hosting1" value="hosting-small" class="hidden peer" required>
+                  <label for="hosting-smalll" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                      <div class="block">
+                          <div class="w-full">Самовывоз из магазина</div>
+                      </div>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" id="hosting-bigg" name="hosting1" value="hosting-big" class="hidden peer">
+                  <label for="hosting-bigg" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                      <div class="block">
+                          <div class="w-full">Доставка ТК</div>
+                      </div>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
 
 
-            <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
+          <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
 
 
-            <div class="border dark:border-gray-600 rounded-sm bg-gray-50 dark:bg-gray-700">
-              <div class="">
-                <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
-                  <div class="mx-2 my-2">
-                    <select v-model="selectedShop" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                      <option disabled value="">Выберие магазин</option>
-                      <option v-for="shop in shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
-                    </select>                    
-                  </div>
-                  <div class="justify-self-center mx-2 my-2">
-                    <div class="" v-if="selectedShop.phone">
-                      <div class="flex items-center">
-                        <div class="border-r">
-                          <a class="text-2xl mx-2" :href="'tel:' + selectedShop.phone.replace(/[^+\d]/g, '')">{{ selectedShop.phone }}</a>
-                        </div>
-                        <div class="mx-2">
-                          <p class="text-xs font-bold mt-1">{{ selectedShop.wday }}</p>
-                          <p class="text-xs font-bold">{{ selectedShop.wend }}</p>   
-                        </div>
+          <div class="border dark:border-gray-600 rounded-sm bg-gray-50 dark:bg-gray-700">
+            <div class="">
+              <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
+                <div class="mx-2 my-2">
+                  <select v-model="selectedShop" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option disabled value="">Выберие магазин</option>
+                    <option v-for="shop in shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
+                  </select>                    
+                </div>
+                <div class="justify-self-center mx-2 my-2">
+                  <div class="" v-if="selectedShop.phone">
+                    <div class="flex items-center">
+                      <div class="border-r">
+                        <a class="text-2xl mx-2" :href="'tel:' + selectedShop.phone.replace(/[^+\d]/g, '')">{{ selectedShop.phone }}</a>
+                      </div>
+                      <div class="mx-2">
+                        <p class="text-xs font-bold mt-1">{{ selectedShop.wday }}</p>
+                        <p class="text-xs font-bold">{{ selectedShop.wend }}</p>   
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-              </div>
-              <div class="">
-                <iframe :src="selectedShop.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
             </div>
-
-
-            <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
-            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
-
-
-            <div class="my-4">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                  Сделать заказ
-                </span>
-              </button>              
+            <div class="">
+              <iframe :src="selectedShop.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-
-
-            <!-- <form>
-              <div class="relative z-0 mb-6 w-full group">
-                  <input type="email" name="floating-email" id="floating-email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                  <label for="floating-email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email адрес</label>
-              </div>
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="floating-first_name" id="floating-first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Имя *</label>
-                </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="floating-last_name" id="floating-last_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-last_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Фамилия</label>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 md:gap-6">
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating-phone" id="floating-phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Номер телефона *</label>
-                </div>
-                <div class="relative z-0 mb-6 w-full group">
-                    <input type="text" name="floating-company" id="floating-company" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                    <label for="floating-company" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company (Ex. Google)</label>
-                </div>
-              </div>
-              <div class="relative z-0 mb-6 w-full group">
-                  <input type="text" name="your-comment" id="your-comment" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                  <label for="your-comment" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Комментарий к заказу</label>
-              </div>              
-              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Сделать заказ</button>
-            </form> -->
           </div>
 
-      </div>
-      {{ legaladress }}
+          <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
+          <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
 
+          <div class="my-4">
+            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                Сделать заказ
+              </span>
+            </button>              
+          </div>
+        </div>
+      </div>
     </div>
-    
   </section>
 </template>
 
