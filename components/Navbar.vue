@@ -29,7 +29,7 @@
                       <nuxt-link to="/cts" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center font-medium border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant"> Каталог</nuxt-link>
                       
                       
-                      <div class="absolute z-40 -left-px -right-px invisible group-hover:opacity-100 group-hover:visible delay-500 mt-7 rounded-sm shadow-md">
+                      <div class="absolute z-40 -left-px -right-px invisible group-hover:opacity-100 group-hover:visible delay-1000 mt-7 rounded-sm shadow-md">
                         <div class="">
                           <div class="">
                             <div class="menu-section">

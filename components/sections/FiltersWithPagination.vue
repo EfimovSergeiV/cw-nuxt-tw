@@ -41,7 +41,7 @@
 
                   <div class="" v-for="prop in props" :key="prop.id">
 
-                    <div class="py-2" v-if="prop.propwidget == 'range'">
+                    <div class="py-2" v-if="prop.propwidget == 'value'">
                       <div class="break-inside-avoid-column border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
                         
                         <div id="checkbox-form my-2">
@@ -59,7 +59,7 @@
                       </div>
                     </div>
 
-                    <div class="py-2" v-if="prop.propwidget == 'value'">
+                    <div class="py-2" v-if="prop.propwidget == 'range'">
                       <div class="break-inside-avoid-column border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
                         <div id="range-form my-2">
                           <p class="text-sm m-1">{{ prop.name }}</p>
