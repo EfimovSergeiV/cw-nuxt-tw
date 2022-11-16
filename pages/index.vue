@@ -15,6 +15,8 @@
     <CorouselBrands :shops="shops" :brands="filterCarouselBrands(brands)" />
     <Footer :shops="shops" />
 
+    <ShopsModal :shops="shops" />
+
   </div>
 </template>
 
@@ -33,6 +35,7 @@ import Latest from '~/components/sections/Latest.vue'
 import CartModal from '~/components/CartModal.vue'
 import CorouselBrands from '~/components/sections/CorouselBrands.vue'
 import ShopMaps from '~/components/sections/ShopMaps.vue'
+import ShopsModal from '~/components/ShopsModal.vue'
 
   export default {
     name: 'IndexPage',
@@ -51,6 +54,7 @@ import ShopMaps from '~/components/sections/ShopMaps.vue'
       Footer,
       CorouselBrands,
       ShopMaps,
+      ShopsModal,
     },
     async asyncData({ $axios }) {
       const banners = await $axios.$get('c/mainbanner/')
