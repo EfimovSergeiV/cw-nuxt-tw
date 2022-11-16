@@ -16,7 +16,7 @@
       </li>
 
       <li>
-        <nuxt-link :to="{ name: 'prods', query: {ct: opts.ct, page: 6}}" class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+        <nuxt-link :to="{ name: 'prods', query: {ct: opts.ct, page: ceil}}" class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
           &gt;
         </nuxt-link>
       </li>
@@ -41,6 +41,7 @@
     data() {
       return {
         opts: this.$route.query,
+        ceil: Math.ceil(this.response.count/20),
         pagination: Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7),
       }
     },
