@@ -9,7 +9,7 @@
           <div class="bg-white group rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md py-1 px-2">
             <p class="text-sm cursor-pointer mdi mdi-filter-outline"> Фильтр по товарам</p>
 
-            <div class="ii invisible left-0 group-hover:visible delay-500 absolute bg-white dark:bg-gray-800 border shadow-md rounded-sm dark:border-gray-700 w-full top-0">
+            <div class="iiinvisible left-0 group-hover:visible delay-500 absolute bg-white dark:bg-gray-800 border shadow-md rounded-sm dark:border-gray-700 w-full top-0">
               <div class="bg-white group rounded-sm dark:bg-gray-800 my-4 py-1 px-2">
                 <p class="text-sm mdi mdi-filter"> Фильтр по товарам</p>
               </div>
