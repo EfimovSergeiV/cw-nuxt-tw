@@ -50,16 +50,27 @@
       $route(to, from) {
         // this.$router.app.refresh()
         this.opts = this.$route.query
-        
-        let pk = 0
-        if ( this.$route.query.page > 3 ) {
-          pk = Number(this.$route.query.page) - 4
+
+        let currentPage = Number(this.$route.query.page)
+
+        let a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7)
+
+        if (currentPage > 4) {
+          a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(currentPage - 4, currentPage + 3)
         }
 
-        
+        if (Math.ceil(this.response.count/20) - currentPage < 3) {
+          a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(-7)
+        }
 
-        this.pagination = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(pk, Number(this.$route.query.page) + 3)
-        console.log('CONSOLE LOG:', pk, Number(this.$route.query.page) + 3 )
+        this.pagination = a
+
+        console.log(
+          'CurrentPage: ', currentPage,
+          'CurrentPage -1: ', currentPage -1,
+          'CurrentPage +7: ', currentPage +7,
+          'Array: ', a
+          )
         
       },
     },
