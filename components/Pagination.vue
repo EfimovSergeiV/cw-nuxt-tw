@@ -22,7 +22,6 @@
       </li>
     </ul>
 
-
   </div>
 </template>
 
@@ -61,8 +60,15 @@
         }
 
         this.pagination = a
-        
+        this.scrollTop()
       },
     },
+    methods: {
+      scrollTop() {
+        document
+          .getElementById('pagination')
+          .scrollIntoView()
+      },
+    }
   }
 </script>
