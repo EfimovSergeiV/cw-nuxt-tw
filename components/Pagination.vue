@@ -1,7 +1,7 @@
 <template>
   <div id="pagination">
 
-    {{ opts }}
+    <!-- {{ opts }} -->
 
     <ul class="inline-flex items-center -space-x-px">
       <li>

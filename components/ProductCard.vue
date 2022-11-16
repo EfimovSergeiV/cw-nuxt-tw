@@ -19,7 +19,7 @@
       <p class="mt-2 h-20 text-sm text-gray-700 dark:text-gray-200 text-center">{{ product.name }}</p>
     </nuxt-link>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center ">
       <div class="flex justify-end">
         <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
           <span class="relative px-3 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-equalizer-outline">

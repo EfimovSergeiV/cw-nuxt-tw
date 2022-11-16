@@ -12,7 +12,7 @@
 
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <!-- <CartModal /> -->
-    <FiltersWithPagination :response="response" />
+    <FiltersWithPagination :props="props" :brands="brands" :response="response" />
 
 
     <Products :products="response.results" />
