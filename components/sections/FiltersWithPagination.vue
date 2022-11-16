@@ -124,8 +124,8 @@
     },
     props: {
       response: {
-        type: Array,
-        default: Array,
+        type: Object,
+        default: Object,
       },
       props: {
         type: Array,

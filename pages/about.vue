@@ -26,7 +26,8 @@ import Footer from '~/components/Footer.vue'
     },
     async asyncData({ $axios }) {
       const shops = await $axios.$get(`c/shops/`)
-      return { shops }
+      const cts = await $axios.$get('c/ct/')
+      return { shops, cts }
     },
     data() {
       return {
