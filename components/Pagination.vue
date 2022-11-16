@@ -40,9 +40,7 @@
     },
     data() {
       return {
-        opts: this.$route.query, /// del
-        // start: 0,
-        // stop: 7,
+        opts: this.$route.query,
         pagination: Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7),
       }
     },
@@ -50,9 +48,7 @@
       $route(to, from) {
         // this.$router.app.refresh()
         this.opts = this.$route.query
-
         let currentPage = Number(this.$route.query.page)
-
         let a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7)
 
         if (currentPage > 4) {
@@ -64,13 +60,6 @@
         }
 
         this.pagination = a
-
-        console.log(
-          'CurrentPage: ', currentPage,
-          'CurrentPage -1: ', currentPage -1,
-          'CurrentPage +7: ', currentPage +7,
-          'Array: ', a
-          )
         
       },
     },
