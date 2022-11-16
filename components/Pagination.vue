@@ -40,9 +40,9 @@
     },
     data() {
       return {
-        opts: this.$route.query,
-        start: 0,
-        stop: 7,
+        opts: this.$route.query, /// del
+        // start: 0,
+        // stop: 7,
         pagination: Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7),
       }
     },
