@@ -48,6 +48,7 @@
       $route(to, from) {
         // this.$router.app.refresh()
         this.opts = this.$route.query
+        
         let currentPage = Number(this.$route.query.page)
         let a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7)
 
@@ -60,15 +61,9 @@
         }
 
         this.pagination = a
-        this.scrollTop()
+        this.ceil = Math.ceil(this.response.count/20)
+        // console.log('LOG ROUTE', Math.ceil(this.response.count/20))
       },
     },
-    methods: {
-      scrollTop() {
-        document
-          .getElementById('pagination')
-          .scrollIntoView()
-      },
-    }
   }
 </script>

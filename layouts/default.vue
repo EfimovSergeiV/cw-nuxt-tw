@@ -7,7 +7,7 @@
       <div class="container mx-auto">
         
         <transition name="fade" mode="out-in">
-          <Nuxt />
+          <Nuxt id="page" />
         </transition>
 
       </div>      
@@ -31,6 +31,6 @@
     //       },
     //   ],
     //   link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
-    // },  
+    // },
   };
 </script>
