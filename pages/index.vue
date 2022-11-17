@@ -15,7 +15,7 @@
     <CorouselBrands :shops="shops" :brands="filterCarouselBrands(brands)" />
     <Footer :shops="shops" />
 
-    <ShopsModal :shops="shops" />
+    <!-- <ShopsModal :shops="shops" /> -->
 
   </div>
 </template>
