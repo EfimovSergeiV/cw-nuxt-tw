@@ -3,6 +3,7 @@
 export const state = () => ({
   counter: 0,
   cartModal: false,
+  shopModal: false,
 })
 
 export const getters = {
