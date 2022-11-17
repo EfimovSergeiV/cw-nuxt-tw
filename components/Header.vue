@@ -17,7 +17,7 @@
       <div class="grid md:grid-cols-3 text-right gap-4">
         <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
         <a href="tel:+78112606005" class="mdi mdi-phone text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
-        <p class="mdi mdi-map-marker cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Cанкт-Петербург</p>          
+        <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Cанкт-Петербург</p>          
       </div>
       
     </div>
@@ -113,6 +113,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
   import {
     Hooper,
     Slide,
@@ -150,6 +152,14 @@
     },
 
     methods: {
+      ...mapActions({
+        showShopsModal: 'showShopsModal',
+        // delProductToCart: 'modules/cart/delProductToCart',
+        // addToComparison: 'modules/comparison/addToComparison',
+        // delToComparison: 'modules/comparison/delToComparison',
+        // addProductToFav: 'modules/favorites/addProductToFav',
+        // delProductToFav: 'modules/favorites/delProductToFav',
+      }),
       goSearch() {
       if (this.search.length > 3) {
         this.$axios

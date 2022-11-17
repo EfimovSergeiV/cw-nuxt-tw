@@ -4,7 +4,7 @@
     <Header />
     <Navbar :cts="cts" />
     <About :shops="shops" />
-    <ShopMaps :shops="shops" /> 
+    <ShopMaps /> 
     <Footer class="" />
 
   </div>
@@ -25,9 +25,8 @@ import Footer from '~/components/Footer.vue'
       Footer,
     },
     async asyncData({ $axios }) {
-      const shops = await $axios.$get(`c/shops/`)
       const cts = await $axios.$get('c/ct/')
-      return { shops, cts }
+      return { cts }
     },
     data() {
       return {

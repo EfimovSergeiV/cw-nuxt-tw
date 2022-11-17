@@ -1,5 +1,71 @@
 /* eslint-disable camelcase */
 
+export const state = () => ({
+    products: [],
+    cartModal: false,
+  })
+  
+  export const getters = {
+    // getCounter(state) {
+    //   return state.counter
+    // }
+  }
+  
+  export const mutations = {
+    increment(state) {
+      state.counter++
+    },
+    showCartModal(state, mainbanner) {
+        state.cartModal = !state.cartModal
+      },
+    showCartModal(state, mainbanner) {
+      state.cartModal = !state.cartModal
+    },
+    addProductToCart(
+      state,
+      { id, vcode, name, rating, prod_price, preview_image, propstrmodel }
+    ) {
+      state.cartModal = !state.cartModal
+      state.products.push({
+        id,
+        vcode,
+        name,
+        rating,
+        prod_price,
+        preview_image,
+        propstrmodel,
+        quantity: 1,
+      })
+    },
+  }
+  
+  export const actions = {
+    showCartModal({ commit }) {
+      commit('showCartModal')
+    },
+    rmProductToCart({ commit }) {
+      commit('showShopsModal')
+    },
+    addProductToCart({ state, commit }, product) {
+      console.log('ACTION')
+
+      const cartProduct = state.products.find((item) => item.id === product.id)
+      if (!cartProduct) {
+        commit('addProductToCart', {
+          id: product.id,
+          vcode: product.vcode,
+          name: product.name,
+          rating: product.rating,
+          prod_price: product.prod_price,
+          preview_image: product.preview_image,
+          propstrmodel: product.propstrmodel,
+        })
+      } else {
+        commit('delProductFromCart', cartProduct)
+      }
+    },
+  }
+
 
 // export const state = () => ({
 //   products: [],

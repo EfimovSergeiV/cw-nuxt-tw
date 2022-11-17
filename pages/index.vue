@@ -11,7 +11,7 @@
     <Svarog :mpromobs="mpromobs" />
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
-    <ShopMaps :shops="shops" />
+    <ShopMaps />
     <CorouselBrands :shops="shops" :brands="filterCarouselBrands(brands)" />
     <Footer :shops="shops" />
 
@@ -65,8 +65,8 @@ import ShopsModal from '~/components/ShopsModal.vue'
       const mpromobs = await $axios.$get('c/mpromob/')
       const recommends = await $axios.$get(`c/recommend/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
-      const shops = await $axios.$get('/c/shops/')
-      return { banners, brands, cts, latest, mpromobs, esab, recommends, mweld, shops }
+
+      return { banners, brands, cts, latest, mpromobs, esab, recommends, mweld }
     },
     methods: {
         filterCarouselBrands(brands) {

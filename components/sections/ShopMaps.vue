@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 
   export default {
     name: 'ShopMaps',
@@ -59,6 +60,9 @@
       }
     },
     computed: {
-  },
+      ...mapState({
+        shops: (state) => state.shops,
+      }),
+    },
 }
 </script>

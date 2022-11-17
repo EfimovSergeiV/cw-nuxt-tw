@@ -13,12 +13,11 @@
       </div>      
     </div>
 
-    
-    <div v-if="cartModal" class="z-40 fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <!-- <div v-if="cartModal" class="z-40 fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div> -->
     <transition name="fade" mode="out-in">
       <CartModal v-if="cartModal" />
+      <ShopsModal v-if="shopModal" />
     </transition>
-
 
   </div>
    
@@ -28,6 +27,7 @@
 <script>
   import { mapActions, mapGetters, mapState, mapMutations } from 'vuex'
   import CartModal from '~/components/CartModal.vue'
+  import ShopsModal from '~/components/ShopsModal.vue'
 
   export default {
     // head: {
@@ -44,7 +44,8 @@
     //   link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     // },
     components: {
-      CartModal
+      CartModal,
+      ShopsModal,
     },
     data() {
       return {
@@ -62,7 +63,8 @@
     },
     computed: {
       ...mapState({
-        cartModal: (state) => state.cartModal,
+        cartModal: (state) => state.modules.cart.cartModal,
+        shopModal: (state) => state.shopModal
       }),
     },
   };
