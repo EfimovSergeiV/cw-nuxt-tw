@@ -2,6 +2,7 @@
   <div class="min-h-screen">
 
     <Header />
+    <TopSliderSection />
     <Navbar :cts="cts" />
     <Categories :cts="cts" />
     <Recommend :recommends="recommends" />
@@ -12,6 +13,7 @@
   
 <script>
 import Navbar from '~/components/Navbar.vue'
+import TopSliderSection from '~/components/sections/TopSliderSection.vue'
 import Categories from '~/components/sections/Categories.vue'
 import Recommend from '~/components/sections/Recommend.vue'
 import Footer from '~/components/Footer.vue'
@@ -20,6 +22,7 @@ import Footer from '~/components/Footer.vue'
     name: 'CategoryPage',
     components: {
     Navbar,
+    TopSliderSection,
     Categories,
     Recommend,
     Footer,
