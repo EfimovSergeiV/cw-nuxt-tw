@@ -80,11 +80,10 @@
                                 </div>
                               </div>
                             </div> -->
-
                             
                             <div class="px-10 py-4">
                               <nuxt-link to="/cts" class="text-right">
-                                <h3>Все категории</h3>
+                                <h3>Перейти в каталог</h3>
                               </nuxt-link>
                             </div> 
                           </div>
