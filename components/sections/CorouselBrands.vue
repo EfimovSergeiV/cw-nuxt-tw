@@ -61,10 +61,6 @@ import { mapGetters } from 'vuex'
         type: Array,
         default: Array,
       },
-      shops: {
-        type: Array,
-        default: Array,
-      },
     },
     data() {
       return {

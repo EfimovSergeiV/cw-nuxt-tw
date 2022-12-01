@@ -25,7 +25,7 @@
 </template>
   
 <script>
-  import { mapActions, mapGetters, mapState, mapMutations } from 'vuex'
+  import { mapState, mapMutations } from 'vuex'
   import CartModal from '~/components/CartModal.vue'
   import ShopsModal from '~/components/ShopsModal.vue'
 

@@ -2,12 +2,31 @@
   <section id="filters-with-pagination">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="relative z-30">
+      <div class="">
+        <ul>
+          <li class="relative group">
+            <button class="hover:opacity-30">THIS IS BUTTON</button>
+            <div class="absolute top-0 left-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
+              <div class="relative w-full">
+                <p>Hallo welt</p>
+              </div>
+            </div>
+          </li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        
+
+      </div>
+
+
+      <!-- <div class="relative z-30">
 
         <div class="flex justify-between items-center">
 
           <div class="bg-white group rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md py-1 px-2">
-            <p class="text-sm cursor-pointer mdi mdi-filter-outline"> Фильтр по товарам</p>
+            <p class="text-sm cursor-pointer mdi mdi-filter-outline"> Фильтр по товараммм</p>
 
             
             <div class="invisible left-0 group-hover:visible absolute bg-white dark:bg-gray-800 border shadow-md rounded-sm dark:border-gray-700 w-full top-0">
@@ -15,8 +34,6 @@
               <div class="bg-white group rounded-sm dark:bg-gray-800 my-4 py-1 px-2">
                 <p class="text-sm mdi mdi-filter"> Фильтр по товарам</p>
               </div>
-
-              <!-- <p>{{ props }}</p> -->
 
               <div class="px-2">
                 <div class="columns-1 lg:columns-3 gap-4">
@@ -110,7 +127,7 @@
         </div>
 
 
-      </div>      
+      </div>       -->
     </div>
 
   </section>

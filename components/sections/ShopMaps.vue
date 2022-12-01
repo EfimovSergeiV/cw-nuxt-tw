@@ -40,12 +40,12 @@ import { mapState } from 'vuex';
     name: 'ShopMaps',
     components: {
     },
-    props: {
-      shops: {
-        type: Array,
-        default: Array,
-      },
-    },
+    // props: {
+    //   shops: {
+    //     type: Array,
+    //     default: Array,
+    //   },
+    // },
     data() {
       return {
         selectCity: 'Псков',

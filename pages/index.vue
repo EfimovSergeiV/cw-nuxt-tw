@@ -13,8 +13,8 @@
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
     <ShopMaps />
-    <CorouselBrands :shops="shops" :brands="filterCarouselBrands(brands)" />
-    <Footer :shops="shops" />
+    <CorouselBrands :brands="filterCarouselBrands(brands)" />
+    <Footer />
 
     <!-- <ShopsModal :shops="shops" /> -->
 
