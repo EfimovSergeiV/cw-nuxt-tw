@@ -25,6 +25,30 @@
                       </div>
 
 
+                      <div class="demo">
+                        <div v-if="selected" style="padding-top:10px; width: 100%;">
+                          You have selected <code>{{selected.name}}, the {{selected.race}}</code>
+                        </div>
+                        <div class="autosuggest-container">
+                          <vue-autosuggest
+                            v-model="query"
+                            :suggestions="filteredOptions"
+                            @focus="focusMe"
+                            @click="clickHandler"
+                            @input="onInputChange"
+                            @selected="onSelected"
+                            :get-suggestion-value="getSuggestionValue"
+                            :should-render-suggestions="shouldRenderSuggestions"
+                            :input-props="{id:'autosuggest__input', placeholder:'Do you feel lucky, punk?'}">
+                            <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
+                              <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion.item.avatar" />
+                              <div style="{ display: 'flex', color: 'navyblue'}">{{suggestion.item.name}}</div>
+                            </div>
+                          </vue-autosuggest>
+                        </div>
+                      </div>
+
+
                       <div class="">
                         <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                           <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
@@ -49,10 +73,12 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import { VueAutosuggest } from "vue-autosuggest";
 
   export default {
       name: 'ShopModal',
       components: {
+        VueAutosuggest
     },
     props: {
       shops: {
@@ -62,18 +88,61 @@ import { mapActions, mapState } from 'vuex';
     },
     data() {
       return {
-
+        query: "",
+        selected: "",
+        suggestions: [
+          {
+            data: [
+              { id: 1, name: "Frodo", race: "Hobbit", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Elijah_Wood_as_Frodo_Baggins.png/220px-Elijah_Wood_as_Frodo_Baggins.png" },
+              { id: 2, name: "Samwise", race: "Hobbit", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Sean_Astin_as_Samwise_Gamgee.png/200px-Sean_Astin_as_Samwise_Gamgee.png" },
+              { id: 3, name: "Gandalf", race: "Maia", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/220px-Gandalf600ppx.jpg" },
+              { id: 4, name: "Aragorn", race: "Human", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Aragorn300ppx.png/150px-Aragorn300ppx.png" }
+            ]
+          }
+        ]
       }
     },
     methods: {
       ...mapActions({
         showShopsModal: 'showShopsModal',
-      }),      
+      }),
+      clickHandler(item) {
+      // event fired when clicking on the input
+      },
+      onSelected(item) {
+        this.selected = item.item;
+      },
+      onInputChange(text) {
+        // event fired when the input changes
+        console.log(text)
+      },
+      /**
+       * This is what the <input/> value is set to when you are selecting a suggestion.
+       */
+      getSuggestionValue(suggestion) {
+        return suggestion.item.name;
+      },
+      shouldRenderSuggestions (size, loading) {
+        // This is the default behavior
+        return size >= 0 && !loading
+      },
+      focusMe(e) {
+        console.log(e) // FocusEvent
+      }     
     },
     computed: {
       ...mapState({
         shops: (state) => state.shops,
       }),
+      filteredOptions() {
+        return [
+          { 
+            data: this.suggestions[0].data.filter(option => {
+              return option.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+            })
+          }
+        ];
+      }
     },
   }
 </script>
