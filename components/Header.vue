@@ -84,31 +84,6 @@
       </div>
     </div>
 
-<!-- 
-    <div class="border dark:border-gray-700 rounded-sm">
-
-      <hooper
-        :center-mode="true"
-        :wheel-control="false"
-        :auto-play="false"
-        :play-speed="7000"
-        style="height: 100%;"
-        class="main-hooper"
-      >
-        <slide v-for="i in 10" :key="i" class="">
-          <img
-            src="../assets/images/header-banner.png"
-            style="width: 100%;"
-            class="rounded-sm"
-            onerror="this.src='./noimage-960-540.jpg'"
-          />
-        </slide>
-        <hooper-navigation slot="hooper-addons"></hooper-navigation>
-        <hooper-pagination slot="hooper-addons"></hooper-pagination>
-      </hooper>
-
-    </div> -->
-
   </div>
 </template>
 

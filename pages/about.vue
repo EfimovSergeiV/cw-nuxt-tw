@@ -2,6 +2,7 @@
   <div class="">
 
     <Header />
+    <TopSliderSection />
     <Navbar :cts="cts" />
     <About :shops="shops" />
     <ShopMaps /> 
@@ -12,6 +13,7 @@
   
 <script>
 import Navbar from '~/components/Navbar.vue'
+import TopSliderSection from '~/components/sections/TopSliderSection.vue'
 import About from '~/components/sections/About.vue'
 import ShopMaps from '~/components/sections/ShopMaps.vue'
 import Footer from '~/components/Footer.vue'
@@ -20,6 +22,7 @@ import Footer from '~/components/Footer.vue'
     name: 'AboutPage',
     components: {
       Navbar,
+      TopSliderSection,
       About,
       ShopMaps,
       Footer,
