@@ -53,7 +53,7 @@
 
                     <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-4 py-2">
                       <div>
-                        <nuxt-link to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">
+                        <nuxt-link :to="{ name: 'product-id', params: { id: searchresult.id } }" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">
                           {{ searchresult.name }}
                         </nuxt-link>                      
                       </div>
