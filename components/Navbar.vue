@@ -167,9 +167,9 @@
                         <nuxt-link :to="{ name: 'cart' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-cart"> Корзина</nuxt-link>
                         <div v-if="cart.length > 0" class="absolute top-0 right-0">
                           <!-- <p class="text-xs">{{ cart.length }}</p> -->
-                          <span class="flex h-3 w-3">
+                          <span class="flex h-2 w-2">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
                           </span>
                         </div>
                         
