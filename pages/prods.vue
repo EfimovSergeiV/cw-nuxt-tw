@@ -65,17 +65,17 @@ export default {
         stat: false,
       }
     },
-    watch: {
-      $route(to, from) {
-        this.scrollTop()
-      },
-    },
-    methods: {
-      scrollTop() {
-        document
-          .getElementById('cat-title')
-          .scrollIntoView()
-      },
-    }  
+    // watch: {
+    //   $route(to, from) {
+    //     this.scrollTop()
+    //   },
+    // },
+    // methods: {
+    //   scrollTop() {
+    //     document
+    //       .getElementById('cat-title')
+    //       .scrollIntoView()
+    //   },
+    // }  
   }
 </script>

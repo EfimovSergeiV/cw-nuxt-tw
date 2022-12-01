@@ -84,7 +84,7 @@
       </div>
     </div>
 
-
+<!-- 
     <div class="border dark:border-gray-700 rounded-sm">
 
       <hooper
@@ -107,7 +107,7 @@
         <hooper-pagination slot="hooper-addons"></hooper-pagination>
       </hooper>
 
-    </div>
+    </div> -->
 
   </div>
 </template>
@@ -115,20 +115,10 @@
 <script>
 import { mapActions } from 'vuex';
 
-  import {
-    Hooper,
-    Slide,
-    Navigation as HooperNavigation,
-    Pagination as HooperPagination,
-  } from 'hooper'
-
   export default {
       name: 'Header',
       components: {
-        Hooper,
-        Slide,
-        HooperNavigation,
-        HooperPagination,
+
     },
     // props: {
     //   searchresult: {

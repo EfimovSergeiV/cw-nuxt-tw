@@ -2,6 +2,7 @@
   <div class="">
 
     <Header />
+    <TopSliderSection />
     <Navbar :cts="cts" />
     <Main :latest="latest" :banners="banners" />
     <Reviews :reviews="banners" />
@@ -22,8 +23,8 @@
 
 <script>
 import Header from '~/components/Header.vue'
+import TopSliderSection from '~/components/sections/TopSliderSection.vue'
 import Navbar from '~/components/Navbar.vue'
-import Footer from '~/components/Footer.vue'
 import Main from '~/components/sections/Main.vue'
 import Reviews from '~/components/sections/Reviews.vue'
 import ESAB from '~/components/sections/ESAB.vue'
@@ -36,11 +37,13 @@ import CartModal from '~/components/CartModal.vue'
 import CorouselBrands from '~/components/sections/CorouselBrands.vue'
 import ShopMaps from '~/components/sections/ShopMaps.vue'
 import ShopsModal from '~/components/ShopsModal.vue'
+import Footer from '~/components/Footer.vue'
 
   export default {
     name: 'IndexPage',
     components: {
       Header,
+      TopSliderSection,
       Navbar,
       Main,
       Reviews,
