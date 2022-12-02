@@ -1,7 +1,9 @@
 <template>
   <section id="cart-form">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-      <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm p-1">
+
+
+      <div v-if="(cart.length > 0)" class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm p-1">
 
         <div class="overflow-x-auto w-full">
           <div class="">
@@ -35,7 +37,7 @@
                     <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
                     <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
                     <div class="flex justify-center w-20">
-                      <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close-thick cursor-pointer"></button>
+                      <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close cursor-pointer"></button>
                     </div>
                     
                   </div>
@@ -45,16 +47,16 @@
             </div>
           </div>
         </div>
-        <div class="flex justify-between my-6 mx-2">
+        <div class="flex justify-between mt-6 mx-2">
           <div class="">
             <div class="flex gap-6">
-              <div class="flex gap-2">
+              <!-- <div class="flex gap-2">
                 <p>Всего товаров:</p>
                 <p class="font-bold">4</p>
-              </div>
+              </div> -->
               <div class="flex gap-2">
-                <p>Сумма:</p>
-                <p class="font-bold">29 690 руб</p>
+                <p>Итог:</p>
+                <p class="font-bold">{{ cartTotalPrice() }} руб.</p>
               </div>
             </div>
           </div>
@@ -64,6 +66,10 @@
 
         </div>
 
+      </div>
+
+      <div v-else class="">
+        <p>Ваша корзина пуста</p>
       </div>
 
       <div class="mt-4">
@@ -225,6 +231,11 @@
               </span>
             </button>              
           </div>
+
+          <div class="">
+            <p class="text-xs">{{ JSON.stringify($storage.state) }}</p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -232,7 +243,7 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 import CartModal from '../CartModal.vue';
 import CartField from '../CartField.vue'
 
@@ -256,7 +267,34 @@ import CartField from '../CartField.vue'
       return {
         selectedShop: null,
         entity: "false",
-        legaladress: '',
+        re_token: null,
+
+        totalPrice: 0,
+        selface: 'individual', /// default
+        delivery: false,
+        deliverymethods: [
+          { text: 'Самовывоз', value: false },
+          { text: 'Доставка', value: true },
+        ],
+        faceopts: [
+          { text: 'Физическое лицо', value: 'individual' },
+          { text: 'Юридическое лицо', value: 'entity' },
+        ],
+        payMethod: 'cash',
+        payMethods: [
+          { value: 'cash', text: 'Оплатить в магазине' },
+          {
+            value: 'online',
+            text: 'Оплатить онлайн',
+            disabled: false,
+          },
+          { value: 'cashless', text: 'Безналичный расчёт ( Для юр. лиц )' },
+        ],
+        selected: 'radio1',
+        options: [
+          { text: 'Самовывоз', value: 'radio1' },
+          { text: 'Radio 3', value: 'radio2' },
+        ],
       }
     },
     computed: {
@@ -273,6 +311,75 @@ import CartField from '../CartField.vue'
       delProductToFav: 'modules/favorites/delProductToFav',
       cleanCart: 'modules/cart/cleanCart',
     }),
+    cartTotalPrice() {
+      let result = 0
+      this.cart.forEach(
+        (ell) =>
+          (result += ell.prod_price * ell.quantity)
+      )
+      this.totalPrice = Math.ceil(result)
+      return Math.ceil(result)
+    },
+    phoneState() {
+      const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
+      if (this.client.phone) {
+        return this.client.phone.search(re) !== -1
+      } else {
+        return false
+      }
+    },
+    emailState() {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      if (this.client.email) {
+        return this.client.email.search(re) !== -1
+      } else if (this.payMethod === 'online') {
+        return false
+      } else {
+        return true
+      }
+    },
+    sendOrder() {
+      this.$axios.$post('o/order/', {
+        region_code: this.shop.region_code,
+        shop_id: this.shop.shop_id,
+        person: this.client.person,
+        phone: this.client.phone,
+        email: this.client.email,
+        adress: this.shop.adress,
+        comment: this.client.comment,
+        total: this.totalPrice,
+        delivery: this.delivery,
+        delivery_adress: 'this.deliverycity',
+        delivery_summ: this.deliverysumm,
+        company: this.client.company,
+        legaladress: this.client.legaladress,
+        inn: this.client.inn,
+        kpp: this.client.kpp,
+        okpo: this.client.okpo,
+        bankname: this.client.bankname,
+        currentacc: this.client.currentacc,
+        corresponding: this.client.corresponding,
+        bic: this.client.bic,
+        client_product: this.cart,
+      }).then((response) => {
+        if (this.payMethod === 'online') {
+          this.$router.push({
+            name: 'payment',
+            query: { order: response.order },
+          })
+        } else {
+          this.$router.push({
+            name: 'success',
+            params: { order: response.order },
+          })
+        }
+      }).catch(() => {
+        this.$bvToast.toast('Проверьте правильность заполнения формы', {
+          title: 'Заказ не принят',
+          variant: 'danger',
+        })
+      })
+    }
   }
 }
 </script>
