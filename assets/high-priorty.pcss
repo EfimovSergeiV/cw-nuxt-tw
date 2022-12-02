@@ -6,6 +6,27 @@
   opacity: 0;
 }
 
+.absolute-left-emergence-enter,
+.absolute-left-emergence-leave-to {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-15em);
+}
+.absolute-left-emergence-enter-active,
+.absolute-left-emergence-leave-active {
+  transition: all 0.3s ease;
+}
+
+/* Исчезновение влево и стили корзины*/
+.left-emergence-enter,
+.left-emergence-leave-to {
+  opacity: 0;
+  transform: translateX(-12em);
+}
+.left-emergence-enter-active,
+.left-emergence-leave-active {
+  transition: all 0.3s ease;
+}
 
 ::-webkit-scrollbar {
   width: 6px;

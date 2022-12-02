@@ -1,58 +1,52 @@
 <template>
   <section id="cart-form">
-
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-
       <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm p-1">
 
         <div class="overflow-x-auto w-full">
           <div class="">
+
             <div class="grid gap-2 px-2 py-4">
-
               <div class="flex">
-
                 <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
                 <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
                 <div class="flex justify-center w-32"><p class="text-sm">Количество</p></div>
                 <div class="flex justify-center w-32"><p class="text-sm">Наличие</p></div>
                 <div class="flex justify-center w-32"><p class="text-sm">Стоимость</p></div>
                 <div class="flex justify-center w-20"><p class="text-sm">Удалить</p></div>
-
               </div>
-
-
-
             </div>
 
-            <div class="grid gap-2 px-1 my-4">
-              <div v-for="product, pk in 4" :key="pk" class="">
-
-                <div class="flex items-center gap-2">
-                  <div class="flex justify-center items-center w-24 bg-white rounded-sm">
-                    <img src="https://api.glsvar.ru/files/img/c/preview/235ic.png" class="rounded-sm w-20" />
-                  </div>
-                  <div class="flex justify-center w-1/2">
-                    <p class="text-sm">Сварочный инвертор Rebel™ EMP 235ic</p>
-                  </div>
-                  <div class="flex justify-center w-32">
-                    <div class="mdi mdi-minus cursor-pointer"></div>
-                    <div class="mx-2"><p>1</p></div>
-                    <div class="mdi mdi-plus cursor-pointer"></div>
-                  </div>
-                  <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
-                  <div class="flex justify-center w-32"><p class="text-sm">29 690 руб/шт</p></div>
-                  <div class="flex justify-center w-20">
-                    <div class="mdi mdi-24px mdi-close-thick cursor-pointer"></div>
+            <div class="grid gap-2 px-1">
+              <transition-group tag="div" name="left-emergence">
+                <div v-for="product in cart" :key="product.id" class="my-4">
+                  <div class="flex items-center gap-2">
+                    <div class="flex justify-center items-center w-24 bg-white rounded-sm">
+                      <img :src="product.preview_image" class="rounded-sm w-20" />
+                    </div>
+                    <div class="flex justify-center w-1/2">
+                      <p class="text-sm">{{ product.name }}</p>
+                    </div>
+                    <div class="flex justify-center w-32">
+                      <button  @click="decProductToCart(product)" class="mdi mdi-minus cursor-pointer"></button>
+                      <div class="mx-2"><p>{{ product.quantity }}</p></div>
+                      <button @click="incProductToCart(product)" class="mdi mdi-plus cursor-pointer"></button>
+                    </div>
+                    <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
+                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
+                    <div class="flex justify-center w-20">
+                      <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close-thick cursor-pointer"></button>
+                    </div>
+                    
                   </div>
                   
                 </div>
-
-              </div>
+              </transition-group>
             </div>
           </div>
         </div>
-        <div class="">
-          <div class="my-6 mx-2">
+        <div class="flex justify-between my-6 mx-2">
+          <div class="">
             <div class="flex gap-6">
               <div class="flex gap-2">
                 <p>Всего товаров:</p>
@@ -63,128 +57,14 @@
                 <p class="font-bold">29 690 руб</p>
               </div>
             </div>
+          </div>
+          <div>
+            <button @click="cleanCart" class="text-xs">Очистить корзину</button>            
           </div>
 
         </div>
 
       </div>
-
-      <!-- <div class="">
-
-        <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm overflow-x-auto w-full">
-
-          <div class="">
-            <div class="">
-              <div class="flex gap-2 px-2 py-4">
-                <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
-                <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
-                <div class="flex justify-center w-32"><p class="text-sm">Количество</p></div>
-                <div class="flex justify-center w-32"><p class="text-sm">Наличие</p></div>
-                <div class="flex justify-center w-32"><p class="text-sm">Стоимость</p></div>
-                <div class="flex justify-center w-20"><p class="text-sm">Удалить</p></div>
-              </div>
-
-              <div class="grid gap-2 p-1">
-                <div v-for="product, pk in 4" :key="pk" class="">
-
-                  <div class="flex items-center gap-2">
-                    <div class="flex justify-center items-center h-24 w-24 bg-white rounded-sm">
-                      <img src="https://api.glsvar.ru/files/img/c/preview/235ic.png" class="rounded-sm w-20" />
-                    </div>
-                    <div class="flex justify-center w-1/2">
-                      <p>Сварочный инвертор Rebel™ EMP 235ic</p>
-                    </div>
-                    <div class="flex justify-center w-32">
-                      <div class="mdi mdi-minus cursor-pointer"></div>
-                      <div class="mx-2"><p>1</p></div>
-                      <div class="mdi mdi-plus cursor-pointer"></div>
-                    </div>
-                    <div class="flex justify-center w-32"><p>В наличии</p></div>
-                    <div class="flex justify-center w-32"><p>29 690 руб/шт</p></div>
-                    <div class="flex justify-center w-20">
-                      <div class="mdi mdi-24px mdi-close-thick cursor-pointer"></div>
-                    </div>
-                    
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="my-6 mx-2">
-            <div class="flex gap-6">
-              <div class="flex gap-2">
-                <p>Всего товаров:</p>
-                <p class="font-bold">4</p>
-              </div>
-              <div class="flex gap-2">
-                <p>Сумма:</p>
-                <p class="font-bold">29 690 руб</p>
-              </div>
-            </div>
-          </div>
-
-
-          
-          
-        </div>
-      </div> -->
-
-      <!-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div v-for="product in cart" :key="product.id" class="">
-          <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm">
-            <div class="py-1 px-2">
-              <div class="flex justify-between items-end">
-                <div class="">
-                  <div class="flex items-center">
-                    <div class="bg-white p-4 rounded-sm">
-                      <img :src="product.preview_image" class="rounded-sm" width="80" />
-                    </div>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="pb-3">
-                    <nuxt-link to="#" class="text-sm">{{ product.name }}</nuxt-link>
-                  </div>
-
-                  <div class="md:flex items-center md:justify-end">
-                    <div class="flex justify-between items-center md:w-56">
-                      <div class="flex justify-center w-20">
-                        <div class="mdi mdi-minus cursor-pointer"></div>
-                        <div class="mx-2"><p>1</p></div>
-                        <div class="mdi mdi-plus cursor-pointer"></div>
-                      </div>
-                      <div class="text-sm">
-                        <div class="flex justify-end">
-                          <p class="mx-2 text-xs">{{ product.prod_price[0].price}}</p>
-                          <p class="text-xs">руб./шт</p>
-                        </div>
-                        <div class="mt-2">
-                          <p>Итог: 45000 руб.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>               
-                  <div class="mt-4 flex justify-end gap-2">
-                    <div class="">
-                      <button class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                        <span class="relative px-4 py-1 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                          В избранное
-                        </span>
-                      </button>              
-                    </div>
-
-                    <button type="button" class="text-gray-800 dark:text-gray-200 text-xs">Удалить из корзины</button>
-                  </div>
-                </div>
-              </div>
-            </div>                
-          </div>
-        </div>
-      </div> -->
-
 
       <div class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
@@ -352,7 +232,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import CartModal from '../CartModal.vue';
 import CartField from '../CartField.vue'
 
@@ -384,5 +264,15 @@ import CartField from '../CartField.vue'
       cart: (state) => state.modules.cart.products,
     }),
   },
+  methods: {
+    ...mapActions({
+      incProductToCart: 'modules/cart/incProductToCart',
+      decProductToCart: 'modules/cart/decProductToCart',
+      delProductToCart: 'modules/cart/delProductToCart',
+      addProductToFav: 'modules/favorites/addProductToFav',
+      delProductToFav: 'modules/favorites/delProductToFav',
+      cleanCart: 'modules/cart/cleanCart',
+    }),
   }
+}
 </script>

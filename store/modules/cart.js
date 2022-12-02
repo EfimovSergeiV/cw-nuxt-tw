@@ -2,6 +2,7 @@
 
 export const state = () => ({
     products: [],
+    // counter: 0,
     cartModal: false,
   })
   
@@ -9,18 +10,20 @@ export const state = () => ({
     // getCounter(state) {
     //   return state.counter
     // }
+//   cartTotalPrice: (state) => {
+//     let result = 0
+//     state.products.forEach((el) => (result += el.price * el.quantity))
+//     return result
+//   },
   }
   
   export const mutations = {
     increment(state) {
       state.counter++
     },
-    showCartModal(state, mainbanner) {
+    showCartModal(state) {
         state.cartModal = !state.cartModal
       },
-    showCartModal(state, mainbanner) {
-      state.cartModal = !state.cartModal
-    },
     addProductToCart(
       state,
       { id, vcode, name, rating, prod_price, preview_image, propstrmodel }
@@ -37,26 +40,46 @@ export const state = () => ({
         quantity: 1,
       })
     },
+    delProductFromCart(state, { id }) {
+      const cartProduct = state.products.findIndex((item) => item.id === id)
+      state.products.splice(cartProduct, 1)
+    },
+    incItemQuantity(state, { id }) {
+      const cartProduct = state.products.find((item) => item.id === id)
+      cartProduct.quantity++
+    },
+
+    delProductFromCart(state, { id }) {
+      const cartProduct = state.products.findIndex((item) => item.id === id)
+      state.products.splice(cartProduct, 1)
+    },
+
+    cleanCart(state) {
+      state.products = []
+    },
+
+    decProductQuantity(state, { id }) {
+      const cartProduct = state.products.find((product) => product.id === id)
+      if (cartProduct.quantity > 1) {
+        cartProduct.quantity--
+      }
+    },
   }
   
   export const actions = {
     showCartModal({ commit }) {
       commit('showCartModal')
     },
-    rmProductToCart({ commit }) {
-      commit('showShopsModal')
-    },
     addProductToCart({ state, commit }, product) {
-      console.log('ACTION')
-
       const cartProduct = state.products.find((item) => item.id === product.id)
+      console.log(product)
       if (!cartProduct) {
         commit('addProductToCart', {
           id: product.id,
           vcode: product.vcode,
           name: product.name,
           rating: product.rating,
-          prod_price: product.prod_price,
+          prod_price: product.only_price,
           preview_image: product.preview_image,
           propstrmodel: product.propstrmodel,
         })
@@ -64,10 +87,24 @@ export const state = () => ({
         commit('delProductFromCart', cartProduct)
       }
     },
+    delProductToCart({ commit }, product) {
+      commit('delProductFromCart', { id: product.id })
+    },
+    incProductToCart({ commit }, product) {
+      commit('incItemQuantity', { id: product.id })
+    },
+    decProductToCart({ commit }, product) {
+      commit('decProductQuantity', { id: product.id })
+    },
+    cleanCart({ commit }) {
+      commit('cleanCart')
+    },
   }
 
 
 // export const state = () => ({
+//   products: [],
+//   cartModal: false,
 //   products: [],
 //   deliverysumm: 0,
 //   deliverystatus: false,
@@ -97,6 +134,13 @@ export const state = () => ({
 // }
 
 // export const actions = {
+//   showCartModal({ commit }) {
+//     commit('showCartModal')
+//   },
+//   rmProductToCart({ commit }) {
+//     commit('showShopsModal')
+//   },
+
 //   addProductToCart({ state, commit }, product) {
 //     const cartProduct = state.products.find((item) => item.id === product.id)
 //     if (!cartProduct) {
@@ -105,7 +149,7 @@ export const state = () => ({
 //         vcode: product.vcode,
 //         name: product.name,
 //         rating: product.rating,
-//         prod_price: product.prod_price,
+//         prod_price: product.only_price,
 //         preview_image: product.preview_image,
 //         propstrmodel: product.propstrmodel,
 //       })
@@ -155,6 +199,15 @@ export const state = () => ({
 // }
 
 // export const mutations = {
+//   increment(state) {
+//     state.counter++
+//   },
+//   showCartModal(state, mainbanner) {
+//       state.cartModal = !state.cartModal
+//     },
+//   showCartModal(state, mainbanner) {
+//     state.cartModal = !state.cartModal
+//   },
 //   changeDeliveryStatus(state, status) {
 //     state.deliverystatus = status
 //   },
