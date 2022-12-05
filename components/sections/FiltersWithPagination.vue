@@ -109,10 +109,10 @@
                     
                     <div class="flex justify-end p-4">
                       <nuxt-link :to="{ name: 'prods', query: { ct: opts.ct, page: undefined }}" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</nuxt-link>
-                      <nuxt-link :to="{ name: 'prods', query: { ct: opts.ct, ...opts, page: undefined }}" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { ...opts, page: undefined }}" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</nuxt-link>
                     </div>
                     
-                    <p class="text-sm">TAIL: {{ checkedNames }} OPTS: {{ opts }}</p>
+                    <p class="text-sm">OPTS: {{ opts }}</p>
 
                   </div>
                 </div>
@@ -160,14 +160,13 @@
     data() {
       return {
         opts: this.$route.query,
-        checkedNames: {}
-        // tail: { "ct": "14", "brnd": [ 8, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] }
+        // tail: { "ct": "14", "brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] }
       }
     },
     methods: {
       changeForm(key, value) {
         console.log("Change form KEY: ", key, "VALUE: ", value)
-        this.opts = { "brnd": [ 8, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] }
+        this.opts = { "ct": "14", query: { "brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ]} }
       },
     }
   }
