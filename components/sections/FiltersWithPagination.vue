@@ -22,9 +22,9 @@
 
         <div class="flex justify-between items-center">
 
-          <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md py-1 px-2">
+          <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md py-2 px-2">
             <div class="group">
-              <p class="text-sm mdi mdi-filter-outline"> Фильтр по товарам</p>
+              <p class="text-xs md:text-sm mdi mdi-filter-outline"> Фильтр по товарам</p>
 
               <div class="absolute top-0 left-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 transform">
 
