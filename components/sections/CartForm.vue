@@ -232,9 +232,9 @@
             </button>              
           </div>
 
-          <div class="">
+          <!-- <div class="">
             <p class="text-xs">{{ JSON.stringify($storage.state) }}</p>
-          </div>
+          </div> -->
 
         </div>
       </div>

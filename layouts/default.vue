@@ -6,15 +6,20 @@
       <!-- bg-cover -->
       <div class="container mx-auto">
 
+        <p class="text-sm">{{ JSON.stringify($storage.state) }}/ {{ cookies }}</p>
+
         <transition name="fade" mode="out-in">
           <Nuxt id="page" />
         </transition>
 
-      </div>      
+      </div>
+
     </div>
 
     <!-- <div v-if="cartModal" class="z-40 fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div> -->
+    
     <transition name="fade" mode="out-in">
+      <CookiesMsg v-if="(cookies && cookiestore)" />
       <CartModal v-if="cartModal" />
       <ShopsModal v-if="shopModal" />
     </transition>
@@ -26,6 +31,7 @@
   
 <script>
   import { mapState, mapMutations } from 'vuex'
+  import CookiesMsg from '~/components/CookiesMsg.vue';
   import CartModal from '~/components/CartModal.vue'
   import ShopsModal from '~/components/ShopsModal.vue'
 
@@ -44,6 +50,7 @@
     //   link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     // },
     components: {
+      CookiesMsg,
       CartModal,
       ShopsModal,
     },
@@ -64,7 +71,10 @@
     computed: {
       ...mapState({
         cartModal: (state) => state.modules.cart.cartModal,
-        shopModal: (state) => state.shopModal
+        shopModal: (state) => state.shopModal,
+        cookies: (state) => state.cookies,
+        cookiestore: (state) => state.storage.cookies
+        // cookies: s => s.storage.cookies
       }),
     },
   };

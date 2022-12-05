@@ -2,6 +2,7 @@
 
 export const state = () => ({
   shops: null,
+  cookies: true,
   shopModal: false,
 })
 
@@ -18,6 +19,10 @@ export const mutations = {
 
   showShopsModal(state, mainbanner) {
     state.shopModal = !state.shopModal
+  },
+  showCookiesModal(state) {
+    state.cookies = !state.cookies
+    console.log(state.cookies)
   },
   shopsData(state, shops) {
     state.shops = shops
@@ -44,5 +49,8 @@ export const actions = {
 
   showShopsModal({ commit }) {
     commit('showShopsModal')
+  },
+  showCookiesModal({ commit }) {
+    commit('showCookiesModal')
   },
 }
