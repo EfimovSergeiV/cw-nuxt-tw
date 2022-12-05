@@ -19,21 +19,18 @@
             >
               <slide v-for="(brand, br) in brands" :key="br">
                 <div class="grid justify-items-center">
-                  <img
-                    :alt="brand.brand"
-                    onerror="this.src='../../noimage-235-177.jpg'"
-                    class="cursor-pointer rounded-sm p-3"
-                    style="width:150px; height: 100px"
-                    width="150"
-                    height="100"
-                    :src="brand.image"
-                    fluid
-                    @click="
-                      $router.push({
-                        name: `products`,
-                        query: { brnd: brand.id, page: 1 },
-                      })"
-                    />
+                  <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">
+                    <img
+                      :alt="brand.brand"
+                      onerror="this.src='../../noimage-235-177.jpg'"
+                      class="rounded-sm p-3"
+                      style="width:150px; height: 100px"
+                      width="150"
+                      height="100"
+                      :src="brand.image"
+                      fluid
+                      />                  
+                  </nuxt-link>
                 </div>
               </slide>
             </hooper>              

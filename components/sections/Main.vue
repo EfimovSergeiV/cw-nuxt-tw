@@ -14,7 +14,7 @@
               <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800">
                 <div class="h-36 lg:h-40">
 
-                  <nuxt-link to="#">
+                  <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }">
                     <div class="bg-white h-full rounded-sm group">
 
                       <div class="relative h-full rounded-sm">
@@ -22,7 +22,7 @@
                           <img 
                             :src="product.preview_image"
                             onerror="this.src='../../noimage-235-177.jpg'"
-                            alt="product.imageAlt"
+                            :alt="product.name"
                             loading=lazy
                             width="160"
                             height="120"
@@ -36,12 +36,12 @@
                         </div>
                         <div class="absolute top-0 right-0">
                           <div class="flex items-center p-1 rounded-sm">
-                            <p class="text-gray-700 font-bold text-xs">{{ product.only_price.toLocaleString() }} руб</p>
+                            <p class="text-gray-700 font-bold text-xs">{{ product.only_price.toLocaleString() }} руб.</p>
                           </div>
                         </div>
                         <div class="absolute bottom-0 left-0 w-full">
-                          <div class="flex items-center bg-gray-800/60 group-hover:bg-gray-800/70 p-1 rounded-sm">
-                            <p class="text-gray-200 text-xs">Сварочный аппарат TECNICA 188 MPGE 230V ACX+PLAST.C.CASE</p>
+                          <div class="flex items-center bg-gray-800/60 group-hover:bg-gray-800/70 p-1 h-10 rounded-sm">
+                            <p class="text-gray-200 text-xs">{{ product.name }}</p>
                           </div>
                         </div>
                       </div>
@@ -58,29 +58,30 @@
 
         </div>
 
-        <div class="flex justify-center items-center border dark:border-gray-700 rounded-sm shadow-md">
-
-          <hooper
-            :center-mode="true"
-            :wheel-control="false"
-            :auto-play="false"
-            :play-speed="7000"
-            style="height: 348px; width: 598px;"
-            class="main-hooper"
-          >
-            <slide v-for="banner in banners" :key="banner.id" style="height: 348px; width: 598px;" class="">
-              <img
-                style="height: 348px; width: 598px;"
-                :src="banner.image"
-                class="rounded-sm"
-                onerror="this.src='./noimage-960-540.jpg'"
-              />
-            </slide>
-            <hooper-navigation slot="hooper-addons"></hooper-navigation>
-            <hooper-pagination slot="hooper-addons"></hooper-pagination>
-          </hooper>
-
+        <div class="hidden lg:block">
+          <div class="flex justify-center items-center border dark:border-gray-700 rounded-sm shadow-md">
+            <hooper
+              :center-mode="true"
+              :wheel-control="false"
+              :auto-play="false"
+              :play-speed="7000"
+              style="height: 348px; width: 598px;"
+              class="main-hooper"
+            >
+              <slide v-for="banner in banners" :key="banner.id" style="height: 348px; width: 598px;" class="">
+                <img
+                  style="height: 348px; width: 598px;"
+                  :src="banner.image"
+                  class="rounded-sm"
+                  onerror="this.src='./noimage-960-540.jpg'"
+                />
+              </slide>
+              <hooper-navigation slot="hooper-addons"></hooper-navigation>
+              <hooper-pagination slot="hooper-addons"></hooper-pagination>
+            </hooper>
+          </div>
         </div>
+
 
       </div>
 

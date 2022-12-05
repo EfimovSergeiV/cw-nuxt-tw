@@ -22,7 +22,7 @@
                     <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" width="140" />
                   </div>
                   <div class="p-1 text-gray-300">
-                    <p>{{ title }}</p>
+                    <p class="text-sm xl:text-base">{{ title }}</p>
                   </div>
                 </div>
               </div>
