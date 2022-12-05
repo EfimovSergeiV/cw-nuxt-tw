@@ -58,10 +58,12 @@
                             <div id="checkbox-form my-2">
                               <p class="text-sm mb-2 m-1">{{ prop.name }}</p>
                               <div class="flex flex-wrap">
-
+                                <p class="text-sm">{{ prop.prop_ops }}</p>
                                 <div class="flex items-center mr-4 p-1" v-for="ops in prop.prop_ops" :key="ops.id">
-                                  <input :id="ops.id" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                  <label :for="ops.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
+                                  
+                                  <input @change="changeForm(prop.prop_alias, ops.opskey )" :id="ops.opskey" type="checkbox" :value="ops.ops" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                  <label :for="ops.opskey" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">VAL:{{ ops.ops }}</label>
+                                
                                 </div>
                               
                               </div>                      
@@ -69,8 +71,11 @@
 
                           </div>
                         </div>
+                        <p class="text-sm">TAIL: {{ checkedNames }} OPTS: {{ opts }}</p>
 
-                        <div class="py-2" v-if="prop.propwidget == 'range'">
+                        <!-- { "ct": "14", "brnd": [ 8, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] } -->
+
+                        <!-- <div class="py-2" v-if="prop.propwidget == 'range'">
                           <div class="break-inside-avoid-column border border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
                             <div id="range-form my-2">
                               <p class="text-sm m-1">{{ prop.name }}</p>
@@ -85,8 +90,9 @@
                                 <div class="grid grid-cols-1">
                                   <div class="m-1">
                                     <div class="flex items-center mr-4 p-1" v-for="ops in prop.prop_ops" :key="ops.id">
-                                      <input :id="ops.id" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                      <label :for="ops.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
+                                      <p class="text-sm">{{ ops }}</p>
+                                      <input :id="ops.id" type="checkbox" v-model="opts[prop.prop_alias]" :key="ops.id" :value="ops.opskey" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                      <label :for="ops.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">RANGE:{{ ops.ops }}</label>
                                     </div>
                                   </div>
                                 </div>
@@ -94,7 +100,7 @@
                               </div>
                             </div>
                           </div>
-                        </div>                 
+                        </div>                  -->
                       
                       </div>
 
@@ -102,27 +108,20 @@
                     
                     
                     <div class="flex justify-end p-4">
-                      <nuxt-link to="#" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</nuxt-link>
-                      <nuxt-link to="#" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</nuxt-link>
-                    </div>                    
+                      <nuxt-link :to="{ name: 'prods', query: { ct: opts.ct, page: undefined }}" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</nuxt-link>
+                      <nuxt-link :to="{ name: 'prods', query: { ct: opts.ct, ...opts, page: undefined }}" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</nuxt-link>
+                    </div>
+                    
+                    <p class="text-sm">TAIL: {{ checkedNames }} OPTS: {{ opts }}</p>
+
                   </div>
                 </div>
-
-
-
                 </div>                
-
               </div>
-            
-
-            
+            </div>
 
 
 
-
-
-
-          </div>
 
           <div class="">
             <Pagination :response="response" />
@@ -160,8 +159,16 @@
     },
     data() {
       return {
-        stat: false,
+        opts: this.$route.query,
+        checkedNames: {}
+        // tail: { "ct": "14", "brnd": [ 8, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] }
       }
     },
+    methods: {
+      changeForm(key, value) {
+        console.log("Change form KEY: ", key, "VALUE: ", value)
+        this.opts = { "brnd": [ 8, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] }
+      },
+    }
   }
 </script>
