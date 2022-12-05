@@ -5,7 +5,7 @@
 
       <div class="md:flex md:justify-between items-end">
         <div class="flex">
-          <img src="~/assets/images/vk-logo.svg" width="20px" height="20px"/>
+          <img src="~/assets/images/vk-logo.svg" alt="vk-logo" width="20px" height="20px"/>
           <a href="https://vk.com/glsvar" target="_blank" class="font-bold text-base mx-2">МЫ ВКОНТАКТЕ</a>
         </div>
         <div class="w-full md:w-1/2">

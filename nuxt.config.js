@@ -10,7 +10,7 @@ export default {
         name: 'description', 
         content: 'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск' 
       },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=yes' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -93,8 +93,16 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'ru'
-    }
+      lang: 'ru',
+      name: 'Интернет магазин: Главный сварщик',
+      short_name: 'Главный сварщик',
+      theme_color: '#182130',
+      background_color: '#ffffff',
+      description:
+        'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
+      start_url: 'https://glsvar.ru',
+      categories: ['shop'],
+    },
   },
 
   loading: {

@@ -28,7 +28,7 @@
       <div class="my-4">
         <div class="flex justify-center md:justify-start">
           <nuxt-link to="/">
-            <img src="../assets/images/blue-svar.png" width="380" />
+            <img src="../assets/images/blue-svar.png" alt="glsvar-logo" width="380" />
           </nuxt-link>
         </div>
       </div>

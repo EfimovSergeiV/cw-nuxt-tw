@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <P class="text-sm">{{ product }}</P> -->
     <Header />
     <Navbar />
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
@@ -31,6 +32,63 @@ import Footer from '~/components/Footer.vue'
       const mweld = await $axios.$get(`c/prod/1835/`)
       const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
       return { product, breadcrumbs, reviews, regions, mweld }
+    },
+    head() {
+      return {
+        title: `${this.product.name} - купить в интернет магазине Главный сварщик`,
+        meta: [
+          { 
+            hid: 'description', 
+            name: 'description', 
+            content: `${this.product.name} - купить в интернет магазине Главный сварщик`
+          },
+          {
+            hid: 'twitter:title',
+            name: 'twitter:title',
+            content: this.product.name
+          },
+          {
+            hid: 'twitter:description',
+            name: 'twitter:description',
+            content: this.product.description
+          },
+          {
+            hid: 'twitter:image',
+            name: 'twitter:image',
+            content: this.product.preview_image
+          },
+          {
+            hid: 'twitter:image:alt',
+            name: 'twitter:image:alt',
+            content: this.product.name
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: this.product.name
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: this.product.description
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: this.product.preview_image
+          },
+          {
+            hid: 'og:image:secure_url',
+            property: 'og:image:secure_url',
+            content: this.product.preview_image
+          },
+          {
+            hid: 'og:image:alt',
+            property: 'og:image:alt',
+            content: this.product.name
+          }
+        ]
+      }
     },
     data() {
       return {

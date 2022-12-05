@@ -9,7 +9,7 @@
           <div class="grid grid-cols-2 gap-4">
 
             
-            <div v-for="product in latest.slice(0, 4)" v-key="product.id">
+            <div v-for="product in latest.slice(0, 4)" :key="product.id">
             
               <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800">
                 <div class="h-36 lg:h-40">

@@ -6,7 +6,7 @@
       <!-- bg-cover -->
       <div class="container mx-auto">
 
-        <p class="text-sm">{{ JSON.stringify($storage.state) }}/ {{ cookies }}</p>
+        <!-- <p class="text-sm">{{ JSON.stringify($storage.state) }}/ {{ cookies }}</p> -->
 
         <transition name="fade" mode="out-in">
           <Nuxt id="page" />

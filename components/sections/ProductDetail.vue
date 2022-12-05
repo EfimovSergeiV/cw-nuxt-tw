@@ -18,7 +18,7 @@
             <div class="md:basis-1/4">
               <div class="cursor-pointer">
                 <div class="bg-white flex items-center justify-center rounded-sm">
-                  <img :src="product.preview_image" width="235" height="177" class="rounded-sm"/>
+                  <img :src="product.preview_image" :alt="product.name" width="235" height="177" class="rounded-sm"/>
                 </div>
               </div>              
             </div>
