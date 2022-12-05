@@ -2,9 +2,9 @@
   <section id="main">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 lg:flex gap-4">
         
-        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 p-1 shadow-md">
+        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 p-1 shadow-md w-full">
           
           <div class="grid grid-cols-2 gap-4">
 
@@ -58,20 +58,21 @@
 
         </div>
 
-        <div class="border dark:border-gray-700 rounded-sm shadow-md">
+        <div class="flex justify-center items-center border dark:border-gray-700 rounded-sm shadow-md">
 
           <hooper
             :center-mode="true"
             :wheel-control="false"
             :auto-play="false"
             :play-speed="7000"
-            style="height: 100%;"
+            style="height: 348px; width: 598px;"
             class="main-hooper"
           >
-            <slide v-for="banner in banners" :key="banner.id" class="">
+            <slide v-for="banner in banners" :key="banner.id" style="height: 348px; width: 598px;" class="">
               <img
+                style="height: 348px; width: 598px;"
                 :src="banner.image"
-                class="rounded-sm h-full"
+                class="rounded-sm"
                 onerror="this.src='./noimage-960-540.jpg'"
               />
             </slide>
