@@ -4,22 +4,29 @@
     <Header />
     <Navbar :cts="cts" />
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 h-screen">
-      <div class="flex gap-4 my-2 items-center justify-between h-full">
+
+
+
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+      <div class="flex gap-4 items-center justify-center h-full my-24">
         <div class="">
-          <p class="text-3xl">Этой страницы больше существует</p>
-          <p class="my-4">Возможно она была перемещена или удалена</p>
-          <div class="flex justify-center items-center">
-            <nuxt-link :to="{ name: 'index'}" class="text-2xl">вернуться на главную страницу</nuxt-link>
+          <p class=" lg:text-3xl">Этой страницы больше существует...</p>
+          <p class="my-4 text-xs lg:text-base">Возможно она была перемещена или удалена</p>
+          <div class="flex justify-end items-center">
+            <nuxt-link :to="{ name: 'index'}" class="">вернуться на главную</nuxt-link>
           </div>
         </div>
 
         <div class="">
-          <img src="../assets/images/not-found.png" class=" w-96"/>
+          <img src="../assets/images/not-found.png" class="w-32 lg:w-96"/>
         </div>
         
       </div>      
     </div>
+
+
+
+
     
     <Footer />
     
