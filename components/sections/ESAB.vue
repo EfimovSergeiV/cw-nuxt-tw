@@ -13,7 +13,7 @@
           <div class="relative">
             <img 
                 class="rounded-sm"
-                src="http://127.0.0.1:8000/files/c/esab-banner-one.jpg" 
+                src="https://glsvar.ru/esab-banner-one.jpg" 
               />  
             <div class="absolute bottom-0 left-0 top-0">
               <div class="">
@@ -35,7 +35,7 @@
         <div class="border dark:border-gray-700 rounded-sm shadow-md">
           <img 
             class="rounded-sm"
-            src="http://127.0.0.1:8000/files/c/handy-esab.jpg"
+            src="https://glsvar.ru/ws-esab.jpg"
           />
         </div>
       </div>
