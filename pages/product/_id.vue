@@ -1,9 +1,17 @@
 <template>
   <div>
-    <!-- <P class="text-sm">{{ product }}</P> -->
+
     <Header />
-    <Navbar />
-    <Breadcrumbs :breadcrumbs="breadcrumbs" />
+    <Navbar :cts="cts" />
+
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+      <div class="flex my-2 items-center justify-end">
+        <h1>{{ product.name }}</h1>
+      </div>      
+    </div>
+
+    <Breadcrumbs class="my-4" :breadcrumbs="breadcrumbs" />
+
     <ProductDetail :product="product" />
     <Footer />
   </div>
@@ -26,12 +34,13 @@ import Footer from '~/components/Footer.vue'
         Footer,
     },
     async asyncData({ params, $axios }) {
+      const cts = await $axios.$get('c/ct/')
       const product = await $axios.$get(`c/prod/${params.id}`)
       const reviews = await $axios.$get(`u/reviews/?prod_id=${params.id}`)
       const regions = await $axios.$get(`o/cdek/regions/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
       const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
-      return { product, breadcrumbs, reviews, regions, mweld }
+      return { cts, product, breadcrumbs, reviews, regions, mweld }
     },
     head() {
       return {

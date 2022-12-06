@@ -1,11 +1,11 @@
 <template>
   <section id="product-detail">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
+      <!-- <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
         <div class="p-2">
           <h1>{{ product.name }}</h1>
         </div>
-      </div>
+      </div> -->
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="p-2">
@@ -83,7 +83,7 @@
 
           <p class="text-base my-2">Характеристики:</p>
           <div class="columns-1 lg:columns-2 gap-4">
-            <div v-for="param in product.propstrmodel" :key="param.id">
+            <div v-for="param in product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
               <div class="flex justify-between">
                 <div class=""><small>{{ param.name }} :</small></div>
                 <div class="text-right"><small>{{ param.value }}</small></div>                

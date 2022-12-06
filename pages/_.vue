@@ -4,7 +4,22 @@
     <Header />
     <Navbar :cts="cts" />
 
-    <p class="text-xl"> ERROR - Page Not Found</p>
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 h-screen">
+      <div class="flex gap-4 my-2 items-center justify-between h-full">
+        <div class="">
+          <p class="text-3xl">Этой страницы больше существует</p>
+          <p class="my-4">Возможно она была перемещена или удалена</p>
+          <div class="flex justify-center items-center">
+            <nuxt-link :to="{ name: 'index'}" class="text-2xl">вернуться на главную страницу</nuxt-link>
+          </div>
+        </div>
+
+        <div class="">
+          <img src="../assets/images/not-found.png" class=" w-96"/>
+        </div>
+        
+      </div>      
+    </div>
     
     <Footer />
     
