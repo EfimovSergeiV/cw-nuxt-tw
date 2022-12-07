@@ -76,11 +76,11 @@ export default {
     classSuffix: '',
   },
 
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  },
+  // router: {
+  //   scrollBehavior: function (to, from, savedPosition) {
+  //     return { x: 0, y: 0 }
+  //   }
+  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
