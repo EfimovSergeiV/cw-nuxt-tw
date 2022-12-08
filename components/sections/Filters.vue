@@ -73,7 +73,7 @@
             </div>
 
             <div>
-              <p class="text-sm mt-6">OPTS: {{ opts }}</p>
+              <p class="text-sm mt-6">filter{{ count }}: {{ filter }}</p>
             </div>
 
             <div class="flex justify-end p-4">
@@ -119,26 +119,26 @@
       return {
         opts: this.$route.query,
         show: false,
+        filter: {},
+        count: 1,
       }
     },
     methods: {
       changeForm(key, value) {
-        console.log("Change form KEY: ", key, "VALUE: ", value)
-
-        /// Обработка параметров
-        
-
-
-
-        this.opts = { "ct": 14 ,"brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ], "page": 1 }
-        console.log('FILTERS: ',this.opts )
+        if (key in this.filter) {
+          this.filter[key].push(value.toString())
+        } else {
+          this.filter[key] = [value.toString(),]
+        }
+        this.count += 1 /// Интересный костыль
       },
       appFilter() {
         this.show = false
-        this.$router.push({ name: 'prods', query: {...this.opts} })
+        this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, ...this.filter, "page": 1 } })
       },
       clearFilter() {
         console.log(this.opts.ct)
+        this.filter = {}
         this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, "page": 1 } })
       }
     }
