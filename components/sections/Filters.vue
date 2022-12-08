@@ -7,8 +7,8 @@
       <div class="flex items-center justify-between py-4">
 
         <button @click="(show = !show)" class="text-base mdi mdi-filter-outline hover:text-gray-900 dark:hover:text-gray-100"> Фильтр по товарам</button>
-        {{ response.count }}
-        <Pagination :response="response" :counter="response.count" />
+
+        <Pagination :response="response" />
         
       </div>
 
@@ -104,7 +104,7 @@
     methods: {
       changeForm(key, value) {
         console.log("Change form KEY: ", key, "VALUE: ", value)
-        this.opts = { "ct": 14 ,"brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ]}
+        this.opts = { "ct": 14 ,"brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ], "page": 1 }
         console.log('FILTERS: ',this.opts )
       },
       appFilter() {
