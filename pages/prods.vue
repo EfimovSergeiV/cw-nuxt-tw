@@ -19,7 +19,7 @@
         <Pagination :response="response" />
       </div>
     </div>
-    
+
     <Footer />
     
   </div>
