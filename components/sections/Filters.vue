@@ -33,8 +33,6 @@
                     
                     <div id="checkbox-form my-2">
                       <p class="text-sm mb-2 m-1">Производитель</p>
-                      
-                      <p class="text-xs">{{ brands }}</p>
 
                       <div class="flex flex-wrap">
                         <div class="flex items-center mr-4 p-1" v-for="brand in brands" :key="brand.id">
@@ -61,7 +59,7 @@
                         <div class="flex items-center mr-4 p-1" v-for="ops in prop.prop_ops" :key="ops.id">
                           
                           <input @change="changeForm(prop.prop_alias, ops.opskey )" :id="ops.opskey" type="checkbox" :value="ops.ops" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                          <label :for="ops.opskey" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">VAL:{{ ops.ops }}</label>
+                          <label :for="ops.opskey" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
                         
                         </div>
                       
@@ -128,6 +126,9 @@
         console.log("Change form KEY: ", key, "VALUE: ", value)
 
         /// Обработка параметров
+        
+
+
 
         this.opts = { "ct": 14 ,"brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ], "page": 1 }
         console.log('FILTERS: ',this.opts )
