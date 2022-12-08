@@ -58,7 +58,7 @@
                       <div class="flex flex-wrap">
                         <div class="flex items-center mr-4 p-1" v-for="ops in prop.prop_ops" :key="ops.id">
                           
-                          <input @change="changeForm(prop.prop_alias, ops.opskey )" :id="ops.opskey" type="checkbox" :value="ops.ops" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                          <input @change="changeForm(prop.prop_alias, ops.opskey )" v-model="filte[prop.prop_alias]" :id="ops.opskey" :value="ops.opskey" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                           <label :for="ops.opskey" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ ops.ops }}</label>
                         
                         </div>
@@ -73,6 +73,7 @@
             </div>
 
             <div>
+              <p class="text-sm mt-6">filte {{ filte }}</p>
               <p class="text-sm mt-6">filter{{ count }}: {{ filter }}</p>
             </div>
 
@@ -120,6 +121,7 @@
         opts: this.$route.query,
         show: false,
         filter: {},
+        filte: {},
         count: 1,
       }
     },
