@@ -11,10 +11,7 @@
     </div>
 
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
-    <!-- <CartModal /> -->
-    <FiltersWithPagination :props="props" :brands="brands" :response="response" />
-
-
+    <Filters class="" :props="props" :brands="brands" :response="response" />
     <Products :products="response.results" />
 
     <div class="mx-auto px-4 py-4 lg:max-w-7xl lg:px-8">
@@ -32,7 +29,7 @@
 import Header from '~/components/Header.vue'
 import Navbar from '~/components/Navbar.vue'
 import Products from '~/components/sections/Products.vue'
-import FiltersWithPagination from '~/components/sections/FiltersWithPagination.vue'
+import Filters from '~/components/sections/Filters.vue'
 import Breadcrumbs from '~/components/Breadcrumbs.vue'
 import TwoModal from '~/components/CartModal.vue'
 import Pagination from '~/components/Pagination.vue'
@@ -46,7 +43,7 @@ export default {
       Products,
       Breadcrumbs,
       TwoModal,
-      FiltersWithPagination,
+      Filters,
       Pagination,
       Footer
     },

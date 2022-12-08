@@ -37,7 +37,7 @@
   import Header from '~/components/Header.vue'
   import Navbar from '~/components/Navbar.vue'
   import Products from '~/components/sections/Products.vue'
-  import FiltersWithPagination from '~/components/sections/FiltersWithPagination.vue'
+
   import Breadcrumbs from '~/components/Breadcrumbs.vue'
   import TwoModal from '~/components/CartModal.vue'
   import Pagination from '~/components/Pagination.vue'
@@ -51,7 +51,7 @@
         Products,
         Breadcrumbs,
         TwoModal,
-        FiltersWithPagination,
+
         Pagination,
         Footer
       },
