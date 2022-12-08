@@ -1,8 +1,7 @@
 <template>
   <div id="pagination">
 
-    
-    <!-- <p class="text-xs pb-4">{{ opts }}</p> -->
+    <p class="text-xs pb-4">PL: {{ pagination.length }}</p>
 
     <ul v-if="(pagination.length > 1)" class="inline-flex items-center -space-x-px">
       <li>
@@ -62,7 +61,8 @@
 
         this.pagination = a
         this.ceil = Math.ceil(this.response.count/20)
-        // console.log('LOG ROUTE', Math.ceil(this.response.count/20))
+
+        console.log('PAGINATION: this.pag...', this.pagination, ' response: ', this.response )
       },
     },
   }

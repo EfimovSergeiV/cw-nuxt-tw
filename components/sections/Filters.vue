@@ -56,8 +56,8 @@
             </div>
 
             <div class="flex justify-end p-4">
-              <nuxt-link :to="{ name: 'prods', query: { ct: opts.ct, page: undefined }}" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</nuxt-link>
-              <nuxt-link :to="{ name: 'prods', query: { ...opts, page: undefined }}" @click="(show = false)" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</nuxt-link>
+              <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
+              <button @click="appFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
             </div>
 
 
@@ -97,16 +97,22 @@
     data() {
       return {
         opts: this.$route.query,
-        show: true,
-        // tail: { "ct": "14", "brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ] }
+        show: false,
       }
     },
     methods: {
       changeForm(key, value) {
         console.log("Change form KEY: ", key, "VALUE: ", value)
         this.opts = { "ct": 14 ,"brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ]}
-        console.log('OPTS: ',this.opts )
+        console.log('FILTERS: ',this.opts )
       },
+      appFilter() {
+        this.show = false
+        this.$router.push({ name: 'prods', query: {...this.opts} })
+      },
+      clearFilter() {
+        console.log('CLEAR FILTER')
+      }
     }
   }
 </script>

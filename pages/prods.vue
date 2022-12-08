@@ -12,6 +12,7 @@
 
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <Filters class="" :props="props" :brands="brands" :response="response" />
+    <p>Prods: {{ response.count }}</p>
     <Products :products="response.results" />
 
     <div class="mx-auto px-4 py-4 lg:max-w-7xl lg:px-8">
