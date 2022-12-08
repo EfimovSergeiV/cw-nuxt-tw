@@ -2,7 +2,7 @@
   <div id="pagination">
 
     
-    <p class="text-xs pb-4">{{ opts }}</p>
+    <!-- <p class="text-xs pb-4">{{ opts }}</p> -->
 
     <ul v-if="(pagination.length > 1)" class="inline-flex items-center -space-x-px">
       <li>
