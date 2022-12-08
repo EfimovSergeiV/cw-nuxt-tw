@@ -7,7 +7,8 @@
       <div class="flex items-center justify-between py-4">
 
         <button @click="(show = !show)" class="text-base mdi mdi-filter-outline hover:text-gray-900 dark:hover:text-gray-100"> Фильтр по товарам</button>
-        <Pagination :response="response" />
+        {{ response.count }}
+        <Pagination :response="response" :counter="response.count" />
         
       </div>
 

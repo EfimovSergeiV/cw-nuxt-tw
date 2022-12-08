@@ -1,6 +1,7 @@
 <template>
   <div id="pagination">
 
+    <p class="text-xs pb-4">CNT: {{ counter }}</p>
     <p class="text-xs pb-4">PL: {{ pagination.length }}</p>
 
     <ul v-if="(pagination.length > 1)" class="inline-flex items-center -space-x-px">
@@ -34,6 +35,10 @@
       response: {
         type: Object,
         default: Object,
+      },
+      counter: {
+        type: Number,
+        default: Number,
       },
     },
     data() {
