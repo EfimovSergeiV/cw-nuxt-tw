@@ -166,7 +166,8 @@
     methods: {
       changeForm(key, value) {
         console.log("Change form KEY: ", key, "VALUE: ", value)
-        this.opts = { "ct": "14", query: { "brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ]} }
+        this.opts = { "ct": 14 ,"brnd": [ 3, 27 ], "6d53": [ "2,0", "2,5", "3,0", "3,2" ]}
+        console.log('OPTS: ',this.opts )
       },
     }
   }

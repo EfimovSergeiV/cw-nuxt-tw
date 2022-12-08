@@ -6,14 +6,14 @@
 
     <ul v-if="(pagination.length > 1)" class="inline-flex items-center -space-x-px">
       <li>
-        <nuxt-link :to="{ name: 'prods', query: {ct: opts.ct, page: 1}}" class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-l-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+        <nuxt-link :to="{ name: 'prods', query: {ct: opts.ct, ...opts, page: 1}}" class="py-2 px-3 leading-tight text-gray-500 bg-white rounded-l-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
           &lt;
         </nuxt-link>
       </li>
 
       <li v-for="page, pk in pagination" :key="pk">
         <nuxt-link v-if="page == opts.page" :to="{ name: 'prods', query: {ct: opts.ct, page: page}}" aria-current="page" class="z-10 py-2 px-3 leading-tight text-gray-800 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-gray-900 dark:border-gray-700 dark:bg-gray-700 dark:text-white">{{ page }}</nuxt-link>
-        <nuxt-link v-else :to="{ name: 'prods', query: {ct: opts.ct, page: page}}" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ page }}</nuxt-link>
+        <nuxt-link v-else :to="{ name: 'prods', query: {ct: opts.ct, ...opts, page: page}}" class="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">{{ page }}</nuxt-link>
       </li>
 
       <li>
