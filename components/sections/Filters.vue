@@ -5,12 +5,20 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="flex items-center justify-between py-4">
-
-        <button @click="(show = !show)" class="text-base mdi mdi-filter-outline hover:text-gray-900 dark:hover:text-gray-100"> Фильтр по товарам</button>
-
-        <Pagination :response="response" />
+        <!-- <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Фильтр по товарам</button> -->
         
+        <div class="flex gap-2 items-center ">
+          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Фильтр</button>
+          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Новые</button>
+          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Дешевле</button>
+          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Дороже</button>
+        </div>
+        
+        <Pagination :response="response" />  
       </div>
+
+
+      
 
     </div>
 
@@ -72,12 +80,7 @@
               </div>
             </div>
 
-
-
-
-
           </div>
-
 
           <div class="absolute bottom-0 right-0 w-full">
             <div class="bg-gray-300 dark:bg-gray-800">
@@ -87,8 +90,6 @@
               </div>                
             </div>
           </div>
-
-
 
         </div>
       </div>
