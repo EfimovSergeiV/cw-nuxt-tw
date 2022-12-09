@@ -17,7 +17,7 @@
 
     <transition tag="div" name="left-emergence">
       <div v-if="(show && $nuxt.$route.name === 'prods')" class="fixed z-40 top-0 left-0">
-        <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-screen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600">
+        <div class="bg-gradient-to-br from-gray-300 to-gray-200 dark:from-gray-900 dark:to-gray-800 w-screen md:w-[420px] h-screen overflow-y-auto border-r border-gray-300 dark:border-gray-700">
           <div class="p-4 relative">
 
 
@@ -72,6 +72,19 @@
               </div>
             </div>
 
+
+            <!-- <div id="v-model-multiple-checkboxes">
+              <input type="checkbox" id="jack" value="Джек" v-model="checkedNames" />
+              <label for="jack">Джек</label>
+              <input type="checkbox" id="john" value="Джон" v-model="checkedNames" />
+              <label for="john">Джон</label>
+              <input type="checkbox" id="mike" value="Майк" v-model="checkedNames" />
+              <label for="mike">Майк</label>
+              <br />
+              <span>Отмеченные имена: {{ checkedNames }}</span>
+            </div> -->
+
+
             <div>
               <p class="text-sm mt-6">filte {{ filte }}</p>
               <p class="text-sm mt-6">filter{{ count }}: {{ filter }}</p>
@@ -121,26 +134,28 @@
         opts: this.$route.query,
         show: false,
         filter: {},
-        filte: {},
+        filte: {}, ///{ "2rzq": [], "6d53": [] },
         count: 1,
+        checkedNames: []
       }
     },
     methods: {
       changeForm(key, value) {
         if (key in this.filter) {
-          this.filter[key].push(value.toString())
+          // this.filter[key].push(value.toString())
         } else {
           this.filter[key] = [value.toString(),]
+          this.filte[key] = [value.toString(),]
         }
         this.count += 1 /// Интересный костыль
       },
       appFilter() {
         this.show = false
-        this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, ...this.filter, "page": 1 } })
+        this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, ...this.filte, "page": 1 } })
       },
       clearFilter() {
         console.log(this.opts.ct)
-        this.filter = {}
+        this.filte = {}
         this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, "page": 1 } })
       }
     }
