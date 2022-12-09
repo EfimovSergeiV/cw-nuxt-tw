@@ -26,7 +26,7 @@
               <div class=""><button @click="show = !show" class="mdi mdi-24px mdi-close cursor-pointer"></button></div>
             </div>
 
-            <div class="">
+            <div class="pb-14">
 
               <div class="py-2">
                   <div class="break-inside-avoid-column border border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600 rounded-sm p-1">
@@ -73,18 +73,22 @@
             </div>
 
 
-            <div class="flex justify-end p-4">
-              <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
-              <button @click="appFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
+
+
+
+          </div>
+
+
+          <div class="absolute bottom-0 right-0 w-full">
+            <div class="bg-gray-300 dark:bg-gray-800">
+              <div class="flex justify-end p-4">
+                <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
+                <button @click="appFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
+              </div>                
             </div>
-
-
           </div>
 
-          <div>
-            <p class="text-sm">Filte: {{ filte }}</p>
-            <p class="text-sm">Filter: {{ filter }}</p>
-          </div>
+
 
         </div>
       </div>
