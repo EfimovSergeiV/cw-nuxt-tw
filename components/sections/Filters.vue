@@ -37,8 +37,8 @@
                       <div class="flex flex-wrap">
                         <div class="flex items-center mr-4 p-1" v-for="brand in brands" :key="brand.id">
                           
-                          <input @change="changeForm('brnd', brand.id )" type="checkbox"  class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                          <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand.brand }}</label>
+                          <input @change="changeForm('brnd', brand.id )" v-model="filte['brnd']" :id="brand.id" :value="brand.id" type="checkbox"  class="w-4 h-4 text-blue-600 bg-gray-100 rounded-sm border-gray-300 focus:ring-blue-500 dark:focus:ring-gray-700 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                          <label :for="brand.id" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ brand.brand }}</label>
                         
                         </div>
                       
@@ -73,23 +73,6 @@
             </div>
 
 
-            <!-- <div id="v-model-multiple-checkboxes">
-              <input type="checkbox" id="jack" value="Джек" v-model="checkedNames" />
-              <label for="jack">Джек</label>
-              <input type="checkbox" id="john" value="Джон" v-model="checkedNames" />
-              <label for="john">Джон</label>
-              <input type="checkbox" id="mike" value="Майк" v-model="checkedNames" />
-              <label for="mike">Майк</label>
-              <br />
-              <span>Отмеченные имена: {{ checkedNames }}</span>
-            </div> -->
-
-
-            <div>
-              <p class="text-sm mt-6">filte {{ filte }}</p>
-              <p class="text-sm mt-6">filter{{ count }}: {{ filter }}</p>
-            </div>
-
             <div class="flex justify-end p-4">
               <button @click="clearFilter" class="text-sm mx-2 mdi mdi-filter-variant-minus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Очистить</button>
               <button @click="appFilter" class="text-sm mx-2 mdi mdi-filter-variant-plus text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Применить</button>
@@ -98,7 +81,10 @@
 
           </div>
 
-          
+          <div>
+            <p class="text-sm">Filte: {{ filte }}</p>
+            <p class="text-sm">Filter: {{ filter }}</p>
+          </div>
 
         </div>
       </div>
@@ -141,21 +127,21 @@
     },
     methods: {
       changeForm(key, value) {
+        console.log()
         if (key in this.filter) {
           // this.filter[key].push(value.toString())
         } else {
           this.filter[key] = [value.toString(),]
           this.filte[key] = [value.toString(),]
         }
-        this.count += 1 /// Интересный костыль
       },
       appFilter() {
         this.show = false
         this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, ...this.filte, "page": 1 } })
       },
       clearFilter() {
-        console.log(this.opts.ct)
         this.filte = {}
+        this.filter = {}
         this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, "page": 1 } })
       }
     }
