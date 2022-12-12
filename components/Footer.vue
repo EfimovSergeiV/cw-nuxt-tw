@@ -3,13 +3,13 @@
 
     <div class="">
 
-      <div class="md:flex md:justify-between items-end">
+      <div class="md:flex md:justify-between items-center">
         <div class="flex">
           <img src="~/assets/images/vk-logo.svg" alt="vk-logo" width="20px" height="20px"/>
           <a href="https://vk.com/glsvar" target="_blank" class="font-bold text-base mx-2">МЫ ВКОНТАКТЕ</a>
         </div>
         <div class="w-full md:w-1/2">
-          <p class="text-xs text-right my-3">
+          <p class="text-xs text-right my-3 select-none">
             Все цены и материаллы, указанные на сайте www.glsvar.ru, приведены как справочная информация и не являются публичной офертой, определяемой положениями ст. 437 ГК РФ, и могут быть изменены в любое время без предупреждения. 
             Для получения подробной информации о стоимости, сроках и условиях поставки просьба обращаться по указанным на сайте телефонам.
           </p>          
@@ -21,7 +21,7 @@
 
         <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end">© 2023 <p class="mx-1">Главный сварщик</p>
         </span>
-        <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
+        <ul class="flex flex-wrap items-center justify-center text-xs mt-3 md:text-sm sm:mt-0">
             <li>
                 <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</a>
             </li>
