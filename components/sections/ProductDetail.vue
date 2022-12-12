@@ -18,7 +18,14 @@
             <div class="md:basis-1/4">
               <div class="cursor-pointer">
                 <div class="bg-white flex items-center justify-center rounded-sm">
-                  <img :src="product.preview_image" :alt="product.name" width="235" height="177" class="rounded-sm cursor-zoom-in"/>
+                  <img 
+                    :src="product.preview_image" 
+                    :alt="product.name" 
+                    width="235" 
+                    height="177"
+                    onerror="this.src='../../noimage-235-177.jpg'"
+                    class="rounded-sm cursor-zoom-in"
+                  />
                 </div>
               </div>              
             </div>
@@ -53,9 +60,13 @@
 
               
               <div class="">
-                <div class="flex justify-end">
-                  <p class="text-4xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
-                  <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>
+                <div class="">
+                  <p v-if="product.only_price === 0" class="text-4xl font-bold dark:text-gray-300">По запросу</p>
+                  <div v-else class="flex gap-1 justify-end">
+                    <p class="text-4xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
+                    <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>                    
+                  </div>
+
                 </div>
                 <div class="flex justify-end my-2 mx-2">
                   <p class="text-base">В наличии</p>

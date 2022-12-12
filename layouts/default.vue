@@ -20,9 +20,12 @@
     
     <transition name="fade" mode="out-in">
       <CookiesMsg v-if="(cookies && cookiestore)" />
-      <CartModal v-if="cartModal" />
       <ShopsModal v-if="shopModal" />
-      <requestPriceModal />
+
+      <CartModal v-if="cartModal" />
+      <requestPriceModal v-if="requestModal" />
+
+
     </transition>
 
   </div>
@@ -74,6 +77,7 @@
     computed: {
       ...mapState({
         cartModal: (state) => state.modules.cart.cartModal,
+        requestModal: (state) => state.modules.cart.requestModal,
         shopModal: (state) => state.shopModal,
         cookies: (state) => state.cookies,
         cookiestore: (state) => state.storage.cookies

@@ -43,7 +43,8 @@
                     </div> -->
                     <div class="absolute top-0 right-0">
                       <div class="flex items-center p-1 rounded-sm">
-                        <p class="text-gray-700 font-bold text-xs">{{ product.only_price.toLocaleString() }} руб.</p>
+                        <p v-if="product.only_price === 0" class="text-gray-700 font-bold text-xs">По запросу</p>
+                        <p v-else class="text-gray-700 font-bold text-xs">{{ product.only_price.toLocaleString() }} руб.</p>
                       </div>
                     </div>
                     <div class="absolute bottom-0 left-0 w-full">

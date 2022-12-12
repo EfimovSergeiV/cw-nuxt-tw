@@ -1,9 +1,11 @@
 /* eslint-disable camelcase */
 
 export const state = () => ({
-    products: [],
+    products: [], /// Товары в корзине
+    requests: [], /// Товары для запроса стоимости
     // counter: 0,
     cartModal: false,
+    requestModal: false,
   })
   
   export const getters = {
