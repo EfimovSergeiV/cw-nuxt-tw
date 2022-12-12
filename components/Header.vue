@@ -2,15 +2,17 @@
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
 
-    <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
+    <div id="main-info" class="flex justify-between items-end gap-2 my-2 md:gap-6">
  
-      <div id="color-mode" class="">
+      <div id="color-mode" class="flex gap-4">
 
-        <ColorScheme placeholder="ColorMode" tag="span">
-          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-laptop"></span>
-          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-weather-night"></span>
-          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-white-balance-sunny"></span>
+        <ColorScheme tag="span">
+          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-xl mdi mdi-laptop"></p></span>
+          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-xl mdi mdi-weather-night"></p></span>
+          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-xl mdi mdi-white-balance-sunny"></p></span>
         </ColorScheme>
+        <div class="mdi mdi-compare text-xl cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
+        <div class="mdi mdi-heart-outline text-xl cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
 
       </div>
       
