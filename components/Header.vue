@@ -2,21 +2,21 @@
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
 
-    <div id="main-info" class="flex justify-between items-end gap-2 my-2 md:gap-6">
+    <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
  
-      <div id="color-mode" class="flex gap-4">
+      <div id="color-mode" class="flex gap-3">
 
         <ColorScheme tag="span">
-          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-xl mdi mdi-laptop"></p></span>
-          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-xl mdi mdi-weather-night"></p></span>
-          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-xl mdi mdi-white-balance-sunny"></p></span>
+          <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-laptop"></p></span>
+          <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-weather-night"></p></span>
+          <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-white-balance-sunny"></p></span>
         </ColorScheme>
-        <div class="mdi mdi-compare text-xl cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
-        <div class="mdi mdi-heart-outline text-xl cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
+        <div class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
+        <div class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
 
       </div>
       
-      <div class="flex text-right items-center gap-4">
+      <div class="flex text-right items-center gap-2 md:gap-4">
         <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
         <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
         <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> Cанкт-Петербург</p>          
