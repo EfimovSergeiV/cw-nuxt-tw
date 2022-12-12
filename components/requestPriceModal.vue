@@ -46,9 +46,9 @@
                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                       <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
                           <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                              Товар добавлен в корзину
+                              Запрос стоимости товара
                           </h3>
-                          <button @click="showCartModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
                               <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                               <span class="sr-only">Close modal</span>
                           </button>
@@ -82,14 +82,14 @@
                                       <p class="text-sm">{{ product.name }}</p>
                                     </div>
                                     <div class="flex justify-center w-32">
-                                      <button  @click="decProductToCart(product)" class="mdi mdi-minus cursor-pointer"></button>
+                                      <button   class="mdi mdi-minus cursor-pointer"></button>
                                       <div class="mx-2"><p>{{ product.quantity }}</p></div>
-                                      <button @click="incProductToCart(product)" class="mdi mdi-plus cursor-pointer"></button>
+                                      <button  class="mdi mdi-plus cursor-pointer"></button>
                                     </div>
                                     <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
                                     <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
                                     <div class="flex justify-center w-20">
-                                      <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close cursor-pointer"></button>
+                                      <button  class="mdi mdi-24px mdi-close cursor-pointer"></button>
                                     </div>
                                     
                                   </div>
@@ -137,18 +137,18 @@
                       </div>
 
 
-                      <div class="flex items-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600 justify-between">
+                      <div class="grid grid-cols-2 px-2 py-4 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                         <div class="">
-                          <div class="flex items-center mb-4">
-                            <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                            <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Не показывать больше</label>
+                          <p class="text-xs my-1">Ваш номер телефона или email:</p>
+                          <input type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="placeholder">
+                        </div>
+                        <div class="flex justify-end items-end">
+                          <div class="">
+                            <button class="text-white px-4 py-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Запросить стоимость</button>
                           </div>
                         </div>
-                        <div class="flex justify-end">
-                          <button @click="showCartModal" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Продолжить покупки</button>
-                          <button @click="goCart" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Перейти в корзину</button>
-                        </div>
                       </div>
+                      
                     </div>
 
 
@@ -163,7 +163,7 @@
 import { mapActions, mapState } from 'vuex';
 
   export default {
-      name: 'cartModal',
+      name: 'requestPriceModal',
       components: {
     },
     props: {
@@ -180,6 +180,7 @@ import { mapActions, mapState } from 'vuex';
     computed: {
       ...mapState({
         cart: (state) => state.modules.cart.products,
+        pricerequest: (state) => state.modules.pricerequest,
       }),
     },
     methods: {
@@ -194,10 +195,6 @@ import { mapActions, mapState } from 'vuex';
         addProductToFav: 'modules/favorites/addProductToFav',
         delProductToFav: 'modules/favorites/delProductToFav',
       }),
-      goCart(){
-        this.showCartModal()
-        this.$router.push({ name: 'cart' })
-      }     
     },
 
   }

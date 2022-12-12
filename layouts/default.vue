@@ -22,6 +22,7 @@
       <CookiesMsg v-if="(cookies && cookiestore)" />
       <CartModal v-if="cartModal" />
       <ShopsModal v-if="shopModal" />
+      <requestPriceModal />
     </transition>
 
   </div>
@@ -30,10 +31,11 @@
 </template>
   
 <script>
-  import { mapState, mapMutations } from 'vuex'
+  import { mapState, mapMutations } from 'vuex';
   import CookiesMsg from '~/components/CookiesMsg.vue';
-  import CartModal from '~/components/CartModal.vue'
-  import ShopsModal from '~/components/ShopsModal.vue'
+  import CartModal from '~/components/CartModal.vue';
+  import ShopsModal from '~/components/ShopsModal.vue';
+  import requestPriceModal from '~/components/requestPriceModal.vue';
 
   export default {
     // head: {
@@ -53,6 +55,7 @@
       CookiesMsg,
       CartModal,
       ShopsModal,
+      requestPriceModal,
     },
     data() {
       return {
