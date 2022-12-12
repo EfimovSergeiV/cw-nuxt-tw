@@ -56,7 +56,49 @@
                       
                       <div class="p-6 space-y-6 h-96 overflow-y-auto">
 
-                          {{ cart }}
+                        
+                        <div class="overflow-x-auto w-full">
+                          <div class="">
+
+                            <div class="grid gap-2 px-2 py-4">
+                              <div class="flex">
+                                <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
+                                <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
+                                <div class="flex justify-center w-32"><p class="text-sm">Количество</p></div>
+                                <div class="flex justify-center w-32"><p class="text-sm">Наличие</p></div>
+                                <div class="flex justify-center w-32"><p class="text-sm">Стоимость</p></div>
+                                <div class="flex justify-center w-20"><p class="text-sm">Удалить</p></div>
+                              </div>
+                            </div>
+
+                            <div class="grid gap-2 px-1">
+                              <transition-group tag="div" name="left-emergence">
+                                <div v-for="product in cart" :key="product.id" class="my-4">
+                                  <div class="flex items-center gap-2">
+                                    <div class="flex justify-center items-center w-24 bg-white rounded-sm">
+                                      <img :src="product.preview_image" class="rounded-sm w-20" />
+                                    </div>
+                                    <div class="flex justify-center w-1/2">
+                                      <p class="text-sm">{{ product.name }}</p>
+                                    </div>
+                                    <div class="flex justify-center w-32">
+                                      <button  @click="decProductToCart(product)" class="mdi mdi-minus cursor-pointer"></button>
+                                      <div class="mx-2"><p>{{ product.quantity }}</p></div>
+                                      <button @click="incProductToCart(product)" class="mdi mdi-plus cursor-pointer"></button>
+                                    </div>
+                                    <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
+                                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
+                                    <div class="flex justify-center w-20">
+                                      <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close cursor-pointer"></button>
+                                    </div>
+                                    
+                                  </div>
+                                  
+                                </div>
+                              </transition-group>
+                            </div>
+                          </div>
+                        </div>
                           <!-- <div v-for="product in cart" :key="product.id">
                             <div class="md:flex items-center md:justify-between">
 
@@ -103,7 +145,7 @@
                           </div>
                         </div>
                         <div class="flex justify-end">
-                          <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Продолжить покупки</button>
+                          <button @click="showCartModal" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Продолжить покупки</button>
                           <button @click="goCart" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Перейти в корзину</button>
                         </div>
                       </div>
@@ -146,11 +188,14 @@ import { mapActions, mapState } from 'vuex';
     methods: {
       ...mapActions({
         showCartModal: 'modules/cart/showCartModal',
-        // delProductToCart: 'modules/cart/delProductToCart',
-        // addToComparison: 'modules/comparison/addToComparison',
-        // delToComparison: 'modules/comparison/delToComparison',
-        // addProductToFav: 'modules/favorites/addProductToFav',
-        // delProductToFav: 'modules/favorites/delProductToFav',
+        delProductToCart: 'modules/cart/delProductToCart',
+        incProductToCart: 'modules/cart/incProductToCart',
+        decProductToCart: 'modules/cart/decProductToCart',
+        delProductToCart: 'modules/cart/delProductToCart',
+        addToComparison: 'modules/comparison/addToComparison',
+        delToComparison: 'modules/comparison/delToComparison',
+        addProductToFav: 'modules/favorites/addProductToFav',
+        delProductToFav: 'modules/favorites/delProductToFav',
       }),
       goCart(){
         this.showCartModal()

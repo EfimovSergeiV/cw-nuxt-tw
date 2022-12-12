@@ -47,6 +47,8 @@
             </div>
           </div>
         </div>
+
+        
         <div class="flex justify-between mt-6 mx-2">
           <div class="">
             <div class="flex gap-6">

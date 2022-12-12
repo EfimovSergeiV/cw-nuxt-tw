@@ -1,7 +1,6 @@
 <template>
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
-
     <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
  
       <div id="color-mode" class="flex gap-3">
