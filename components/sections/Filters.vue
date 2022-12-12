@@ -4,21 +4,56 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="flex items-center justify-between py-4">
-        <!-- <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Фильтр по товарам</button> -->
-        
-        <div class="flex gap-2 items-center ">
-          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Фильтр</button>
-          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Новые</button>
-          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Дешевле</button>
-          <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-r-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Дороже</button>
+
+      <div class="grid grid-cols-2 my-3">
+
+        <div class="">
+          <div class="flex gap-1 justify-start items-center ">
+            <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Фильтр</button>
+            
+            <ul class="flex gap-1">
+              <li>
+                <input type="radio" id="date" name="person" v-model="by" value="Date" class="hidden peer" required>
+                <label for="date" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                  <div class="block">
+                    <div class="w-full text-sm">Новые</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <input type="radio" id="rating" name="person" v-model="by" value="Rating" class="hidden peer">
+                <label for="rating" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                  <div class="block">
+                    <div class="w-full text-sm">Рейтинг</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <input type="radio" id="low-price" name="person" v-model="by" value="LowPrice" class="hidden peer">
+                <label for="low-price" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                  <div class="block">
+                    <div class="w-full text-sm">Дешевле</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <input type="radio" id="high-price" name="person" v-model="by" value="HighPrice" class="hidden peer">
+                <label for="high-price" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                  <div class="block">
+                    <div class="w-full text-sm">Дороже</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
+
+          </div>
+
         </div>
-        
-        <Pagination :response="response" />  
-      </div>
+        <div class="flex justify-end items-center">
+          <Pagination :response="response" />  
+        </div>
 
-
-      
+      </div>      
 
     </div>
 
@@ -127,8 +162,23 @@
         filter: {},
         filte: {}, ///{ "2rzq": [], "6d53": [] },
         count: 1,
-        checkedNames: []
+        checkedNames: [],
+        by: null,
       }
+    },
+    watch: {
+      by() {
+        if (this.by != null) {
+          this.$router.push({
+            name: 'prods',
+            query: {
+              ...this.$route.query,
+              by: this.by,
+              page: 1,
+            },
+          })          
+        }
+      },
     },
     methods: {
       changeForm(key, value) {
@@ -147,6 +197,7 @@
       clearFilter() {
         this.filte = {}
         this.filter = {}
+        this.by = null
         this.$router.push({ name: 'prods', query: {"ct": this.opts.ct, "page": 1 } })
       }
     }
