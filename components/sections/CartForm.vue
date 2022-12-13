@@ -88,7 +88,7 @@
                   <input type="radio" id="hosting-small" name="person" v-model="entity" value="false" class="hidden peer" required>
                   <label for="hosting-small" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">                           
                     <div class="block">
-                      <div class="w-full"> Физическое лицо</div>
+                      <div class="w-full">Физическое лицо</div>
                     </div>
                   </label>
                 </li>
