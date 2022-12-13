@@ -86,7 +86,7 @@
               <ul class="grid gap-6 w-full md:grid-cols-2">
                 <li>
                   <input type="radio" id="hosting-small" name="person" v-model="entity" value="false" class="hidden peer" required>
-                  <label for="hosting-small" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                  <label for="hosting-small" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all duration-75">                           
                     <div class="block">
                       <div class="w-full"> Физическое лицо</div>
                     </div>
@@ -94,7 +94,7 @@
                 </li>
                 <li>
                   <input type="radio" id="hosting-big" name="person" v-model="entity" value="true" class="hidden peer">
-                  <label for="hosting-big" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                  <label for="hosting-big" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all duration-75">
                     <div class="block">
                       <div class="w-full">Юридическое лицо</div>
                     </div>
@@ -168,18 +168,18 @@
               2. Способ получения
             </div>
             <div class="flex justify-end gap-4">
-              <ul class="grid gap-6 w-full md:grid-cols-2">
+              <ul class="flex justify-end items-center gap-4 w-full md:grid-cols-2">
                 <li>
-                  <input type="radio" id="hosting-smalll" name="hosting1" value="hosting-small" class="hidden peer" required>
-                  <label for="hosting-smalll" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                  <input type="radio" id="pickup" name="delivery" v-model="delivery" value="false" class="hidden peer" required>
+                  <label for="pickup" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all duration-75">                           
                     <div class="block">
                       <div class="w-full">Самовывоз из магазина</div>
                     </div>
                   </label>
                 </li>
                 <li>
-                  <input type="radio" id="hosting-bigg" name="hosting1" value="hosting-big" class="hidden peer">
-                  <label for="hosting-bigg" class=" cursor-not-allowed inline-flex justify-between items-center p-2 w-full text-gray-500 rounded-lg border border-gray-200 dark:border-gray-900 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 dark:text-gray-600 dark:bg-gray-800 ">
+                  <input disabled type="radio" id="delivery" name="delivery" v-model="delivery" value="true" class="hidden peer">
+                  <label for="delivery" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all duration-75">
                     <div class="block">
                       <div class="w-full">Доставка ТК</div>
                     </div>
@@ -191,28 +191,10 @@
           </div>
 
           <div class="my-4">
-            <ul class="flex justify-end items-center gap-4 w-full md:grid-cols-2">
-              <li>
-                <input type="radio" id="pickup" name="delivery" v-model="delivery" value="false" class="hidden peer" required>
-                <label for="pickup" class="inline-flex justify-between items-center text-sm px-4 py-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
-                  <div class="block">
-                    <div class="w-full">Самовывоз из магазина</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <input type="radio" id="delivery" name="delivery" v-model="delivery" value="true" class="hidden peer">
-                <label for="delivery" class="inline-flex justify-between items-center text-sm px-4 py-2 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                  <div class="block">
-                    <div class="w-full">Доставка ТК</div>
-                  </div>
-                </label>
-              </li>
-            </ul>
+
 
           </div>
 
-          {{ delivery }}
           <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
 
 
@@ -249,7 +231,7 @@
           <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
           <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
 
-          <div class="my-4">
+          <div class="flex justify-end items-center my-4">
             <button class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 Сделать заказ
