@@ -172,24 +172,47 @@
                 <li>
                   <input type="radio" id="hosting-smalll" name="hosting1" value="hosting-small" class="hidden peer" required>
                   <label for="hosting-smalll" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
-                      <div class="block">
-                          <div class="w-full">Самовывоз из магазина</div>
-                      </div>
+                    <div class="block">
+                      <div class="w-full">Самовывоз из магазина</div>
+                    </div>
                   </label>
                 </li>
                 <li>
                   <input type="radio" id="hosting-bigg" name="hosting1" value="hosting-big" class="hidden peer">
-                  <label for="hosting-bigg" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
-                      <div class="block">
-                          <div class="w-full">Доставка ТК</div>
-                      </div>
+                  <label for="hosting-bigg" class=" cursor-not-allowed inline-flex justify-between items-center p-2 w-full text-gray-500 rounded-lg border border-gray-200 dark:border-gray-900 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 dark:text-gray-600 dark:bg-gray-800 ">
+                    <div class="block">
+                      <div class="w-full">Доставка ТК</div>
+                    </div>
                   </label>
                 </li>
               </ul>
             </div>
+
           </div>
 
+          <div class="my-4">
+            <ul class="flex justify-end items-center gap-4 w-full md:grid-cols-2">
+              <li>
+                <input type="radio" id="pickup" name="delivery" v-model="delivery" value="false" class="hidden peer" required>
+                <label for="pickup" class="inline-flex justify-between items-center text-sm px-4 py-2.5 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">                           
+                  <div class="block">
+                    <div class="w-full">Самовывоз из магазина</div>
+                  </div>
+                </label>
+              </li>
+              <li>
+                <input type="radio" id="delivery" name="delivery" v-model="delivery" value="true" class="hidden peer">
+                <label for="delivery" class="inline-flex justify-between items-center text-sm px-4 py-2.5 w-full text-gray-500 bg-white rounded-sm border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                  <div class="block">
+                    <div class="w-full">Доставка ТК</div>
+                  </div>
+                </label>
+              </li>
+            </ul>
 
+          </div>
+
+          {{ delivery }}
           <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
 
 
