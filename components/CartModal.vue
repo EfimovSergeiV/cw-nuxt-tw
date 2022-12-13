@@ -38,7 +38,7 @@
 
 
             <div class="fixed inset-0 overflow-y-hidden overscroll-y-none">
-                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div class="flex min-h-full justify-center p-4 text-center items-center">
 
                 <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl mx-4">
                     

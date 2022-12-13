@@ -178,10 +178,10 @@
                   </label>
                 </li>
                 <li>
-                  <input type="radio" id="hosting-bigg" name="hosting1" value="hosting-big" class="hidden peer">
-                  <label for="hosting-bigg" class="inline-flex justify-between items-center p-2 w-full text-gray-500 bg-white rounded-lg border border-gray-200 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                  <input disabled type="radio" id="delivery-btn" name="hosting1" value="hosting-big" class="hidden peer disabled:text-red-500">
+                  <label for="delivery-btn" class="dark:peer-checked:text-blue-500 text-red-500">
                       <div class="block">
-                          <div class="w-full">Доставка ТК</div>
+                        <div class="w-full">Доставка ТК</div>
                       </div>
                   </label>
                 </li>
@@ -252,7 +252,6 @@ import CartField from '../CartField.vue'
   export default {
     name: 'CartForm',
     components: {
-      CartModal,
       CartField,
     },
     props: {
@@ -272,7 +271,7 @@ import CartField from '../CartField.vue'
         re_token: null,
 
         totalPrice: 0,
-        selface: 'individual', /// default
+        selface: 'individual', /// Физ. или Юр. лицо
         delivery: false,
         deliverymethods: [
           { text: 'Самовывоз', value: false },
