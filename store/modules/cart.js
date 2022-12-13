@@ -2,7 +2,7 @@
 
 export const state = () => ({
     products: [], /// Товары в корзине
-    requests: [], /// Товары для запроса стоимости
+    requestPrice: {}, /// Товары для запроса стоимости
     // counter: 0,
     cartModal: false,
     requestModal: false,
@@ -12,11 +12,11 @@ export const state = () => ({
     // getCounter(state) {
     //   return state.counter
     // }
-//   cartTotalPrice: (state) => {
-//     let result = 0
-//     state.products.forEach((el) => (result += el.price * el.quantity))
-//     return result
-//   },
+    //   cartTotalPrice: (state) => {
+    //     let result = 0
+    //     state.products.forEach((el) => (result += el.price * el.quantity))
+    //     return result
+    //   },
   }
   
   export const mutations = {
@@ -66,6 +66,16 @@ export const state = () => ({
         cartProduct.quantity--
       }
     },
+
+    //// Запрос стоимости товара
+    requestPriceProduct(state, { product }) {
+      state.requestPrice = product
+      state.requestModal = true
+    },
+    hideRequestModal(state) {
+      state.requestPrice = {}
+      state.requestModal = false
+    }
   }
   
   export const actions = {
@@ -101,6 +111,14 @@ export const state = () => ({
     cleanCart({ commit }) {
       commit('cleanCart')
     },
+
+    /// Запрос стоимости продукта
+    requestPriceProduct({ commit }, product) {
+      commit('requestPriceProduct', { product } )
+    },
+    hideRequestModal({ commit }) {
+      commit('hideRequestModal')
+    }
   }
 
 

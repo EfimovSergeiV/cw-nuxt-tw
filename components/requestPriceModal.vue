@@ -1,161 +1,54 @@
 <template>
 
-  <!-- <div>
+  <div class="relative z-50 " aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
-    <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
-      <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
-        <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-          <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-            <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
-              Modal title
-            </h5>
-            <button type="button"
-              class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-              data-bs-dismiss="modal" aria-label="Close"></button>
+
+    <div class="fixed inset-0 overflow-y-hidden overscroll-y-none">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+
+        <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl mx-4">
+                  
+
+          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Запрос стоимости товара
+                </h3>
+                <button @click="hideRequestModal" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
+                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    <span class="sr-only"></span>
+                </button>
+            </div>
+
+
+            <div class="p-6 space-y-6 h-96 overflow-y-auto">
+              <div class="">
+                <div class="grid gap-2 px-1">
+                  <p class="text-sm">{{ requestPrice }}</p>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="grid grid-cols-2 px-2 py-4 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="">
+                <p class="text-xs my-1">Ваш номер телефона или email:</p>
+                <input type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="placeholder">
+              </div>
+              <div class="flex justify-end items-end">
+                <div class="">
+                  <button class="text-white px-4 py-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Запросить стоимость</button>
+                </div>
+              </div>
+            </div>
+            
           </div>
-          <div class="modal-body relative p-4">
-            <p>This is a vertically centered modal.</p>
-          </div>
-          <div
-            class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-            <button type="button"
-              class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
-              data-bs-dismiss="modal">
-              Close
-            </button>
-            <button type="button"
-              class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
-              Save changes
-            </button>
-          </div>
+
+
         </div>
       </div>
     </div>
-
-  </div> -->
-
-    <div class="relative z-50 " aria-labelledby="modal-title" role="dialog" aria-modal="true">
-
-
-            <div class="fixed inset-0 overflow-y-hidden overscroll-y-none">
-                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-
-                <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl mx-4">
-                    
-
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                      <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
-                          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                              Запрос стоимости товара
-                          </h3>
-                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
-                              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                              <span class="sr-only">Close modal</span>
-                          </button>
-                      </div>
-                      
-                      <div class="p-6 space-y-6 h-96 overflow-y-auto">
-
-                        
-                        <div class="overflow-x-auto w-full">
-                          <div class="">
-
-                            <div class="grid gap-2 px-2 py-4">
-                              <div class="flex">
-                                <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
-                                <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
-                                <div class="flex justify-center w-32"><p class="text-sm">Количество</p></div>
-                                <div class="flex justify-center w-32"><p class="text-sm">Наличие</p></div>
-                                <div class="flex justify-center w-32"><p class="text-sm">Стоимость</p></div>
-                                <div class="flex justify-center w-20"><p class="text-sm">Удалить</p></div>
-                              </div>
-                            </div>
-
-                            <div class="grid gap-2 px-1">
-                              <transition-group tag="div" name="left-emergence">
-                                <div v-for="product in cart" :key="product.id" class="my-4">
-                                  <div class="flex items-center gap-2">
-                                    <div class="flex justify-center items-center w-24 bg-white rounded-sm">
-                                      <img :src="product.preview_image" class="rounded-sm w-20" />
-                                    </div>
-                                    <div class="flex justify-center w-1/2">
-                                      <p class="text-sm">{{ product.name }}</p>
-                                    </div>
-                                    <div class="flex justify-center w-32">
-                                      <button   class="mdi mdi-minus cursor-pointer"></button>
-                                      <div class="mx-2"><p>{{ product.quantity }}</p></div>
-                                      <button  class="mdi mdi-plus cursor-pointer"></button>
-                                    </div>
-                                    <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
-                                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
-                                    <div class="flex justify-center w-20">
-                                      <button  class="mdi mdi-24px mdi-close cursor-pointer"></button>
-                                    </div>
-                                    
-                                  </div>
-                                  
-                                </div>
-                              </transition-group>
-                            </div>
-                          </div>
-                        </div>
-                          <!-- <div v-for="product in cart" :key="product.id">
-                            <div class="md:flex items-center md:justify-between">
-
-                              <div class="flex items-center">
-                                <img :src="product.preview_image" class="rounded-sm" width="80" />
-                                <nuxt-link to="#" class="mx-3">{{ product.name }}</nuxt-link>
-                              </div>
-
-                              <div class="flex justify-between items-center md:w-56">
-                                <div class="flex justify-center w-20">
-                                  <div class="mdi mdi-minus cursor-pointer"></div>
-                                  <div class="mx-2"><p>1</p></div>
-                                  <div class="mdi mdi-plus cursor-pointer"></div>
-                                </div>
-                                <div class="">
-                                  <div class="flex justify-end">
-                                    <p class="mx-2">{{ product.prod_price[0].price}}</p>
-                                    <p>руб./шт</p>
-                                  </div>
-                                  <div class="">
-                                    <p>Итог: 45000 руб.</p>
-                                  </div>
-                                </div>
-                              </div>
-
-                            </div>
-
-                            <div class="flex justify-end py-2">
-                              <button class="bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 px-4 py-1 mx-3 rounded-md">в избранное</button>
-                              <button type="button" class="">удалить</button>
-                            </div>
-
-                          </div> -->
-
-
-                      </div>
-
-
-                      <div class="grid grid-cols-2 px-2 py-4 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                        <div class="">
-                          <p class="text-xs my-1">Ваш номер телефона или email:</p>
-                          <input type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="placeholder">
-                        </div>
-                        <div class="flex justify-end items-end">
-                          <div class="">
-                            <button class="text-white px-4 py-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-sm text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Запросить стоимость</button>
-                          </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 
 </template>
 
@@ -179,7 +72,7 @@ import { mapActions, mapState } from 'vuex';
     },
     computed: {
       ...mapState({
-        cart: (state) => state.modules.cart.products,
+        requestPrice: (state) => state.modules.cart.requestPrice,
         pricerequest: (state) => state.modules.pricerequest,
       }),
     },
@@ -190,6 +83,8 @@ import { mapActions, mapState } from 'vuex';
         incProductToCart: 'modules/cart/incProductToCart',
         decProductToCart: 'modules/cart/decProductToCart',
         delProductToCart: 'modules/cart/delProductToCart',
+        hideRequestModal: 'modules/cart/hideRequestModal',
+
         addToComparison: 'modules/comparison/addToComparison',
         delToComparison: 'modules/comparison/delToComparison',
         addProductToFav: 'modules/favorites/addProductToFav',

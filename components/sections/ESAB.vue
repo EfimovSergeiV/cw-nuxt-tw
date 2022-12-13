@@ -13,13 +13,14 @@
           <div class="relative">
             <img 
                 class="rounded-sm"
+                loading=lazy
                 src="https://glsvar.ru/esab-banner-one.jpg" 
               />  
             <div class="absolute bottom-0 left-0 top-0">
               <div class="">
                 <div class="flex items-center bg-gray-800/80">
                   <div class="p-1">
-                    <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" width="140" />
+                    <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" loading=lazy width="140" />
                   </div>
                   <div class="p-1 text-gray-300">
                     <p class="text-sm xl:text-base">{{ title }}</p>
@@ -36,6 +37,7 @@
           <img 
             class="rounded-sm"
             src="https://glsvar.ru/ws-esab.jpg"
+            loading=lazy
           />
         </div>
       </div>
@@ -46,6 +48,7 @@
           <img
             src="esab-logo.jpg"
             width="220px"
+            loading=lazy
           />
         </div>
         <div class=" md:p-4">

@@ -77,6 +77,7 @@
     computed: {
       ...mapState({
         cartModal: (state) => state.modules.cart.cartModal,
+        requestPrice: (state) => state.modules.cart.requestPrice,
         requestModal: (state) => state.modules.cart.requestModal,
         shopModal: (state) => state.shopModal,
         cookies: (state) => state.cookies,
