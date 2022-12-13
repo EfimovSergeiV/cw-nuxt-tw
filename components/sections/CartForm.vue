@@ -179,7 +179,7 @@
                 </li>
                 <li>
                   <input disabled type="radio" id="delivery" name="delivery" v-model="delivery" value="true" class="hidden peer">
-                  <label for="delivery" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">
+                  <label for="delivery" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-not-allowed inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">
                     <div class="block">
                       <div class="w-full">Доставка ТК</div>
                     </div>
