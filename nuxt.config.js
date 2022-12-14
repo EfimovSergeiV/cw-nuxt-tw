@@ -91,7 +91,10 @@ export default {
 
   // https://github.com/nuxt-community/universal-storage-module
   storage: {
-    initialState: { cookies: true }
+    initialState: { 
+      cookies: true, 
+      clientName: null  
+    }
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

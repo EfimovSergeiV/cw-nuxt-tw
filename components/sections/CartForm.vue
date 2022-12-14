@@ -113,7 +113,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-account"></p>
                 </div>
-                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
+                <input v-model="person" type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
               </div>                
             </div>
             <div class="">
@@ -233,16 +233,20 @@
           <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
 
           <div class="flex justify-end items-center my-4">
-            <button @click="sendOrder" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
+            <button @click="cookiesStorage" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 Сделать заказ
               </span>
             </button>              
           </div>
 
-          <!-- <div class="">
-            <p class="text-xs">{{ JSON.stringify($storage.state) }}</p>
-          </div> -->
+          <div class="">
+            <!-- <p class="text-xs">{{ JSON.stringify($storage.state) }}</p> -->
+            <p class="text-xs">A: {{ $storage.state }}</p>
+            <p class="text-xs">B: {{ $storage.state.clientName }}</p>
+            <p class="text-xs">C: {{ person }}</p>
+            <p class="text-xs">D: {{ client }}</p>
+          </div>
 
         </div>
       </div>
@@ -252,7 +256,6 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
-import CartModal from '../CartModal.vue';
 import CartField from '../CartField.vue'
 
   export default {
@@ -277,6 +280,9 @@ import CartField from '../CartField.vue'
         re_token: null,
 
         bic: null, /// Make local storage (Cookies)
+        counter: 1,
+        person: null,
+        client: null,
 
         totalPrice: 0,
         selface: 'individual', /// Физ. или Юр. лицо
@@ -309,6 +315,7 @@ import CartField from '../CartField.vue'
     computed: {
     ...mapState({
       cart: (state) => state.modules.cart.products,
+      person: (state) => state.storage.clientName,
     }),
   },
   methods: {
@@ -320,6 +327,12 @@ import CartField from '../CartField.vue'
       delProductToFav: 'modules/favorites/delProductToFav',
       cleanCart: 'modules/cart/cleanCart',
     }),
+    cookiesStorage() {
+      // this.counter += 1
+      this.$storage.setCookie("clientName", "IvanovIvanIvanovich")
+      // this.client =  this.$storage.getCookie("clientName")
+      // console.log(client)
+    },
     cartTotalPrice() {
       let result = 0
       this.cart.forEach(

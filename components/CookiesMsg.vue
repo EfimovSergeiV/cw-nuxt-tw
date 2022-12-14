@@ -39,7 +39,6 @@ import { mapActions  } from 'vuex';
         showCookiesModal: 'showCookiesModal',
       }),
       hideCookies(){
-        console.log("hidden")
         this.$storage.setCookie('cookies', false)
         this.showCookiesModal()
       }     
