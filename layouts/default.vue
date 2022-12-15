@@ -82,7 +82,6 @@
         shopModal: (state) => state.shopModal,
         cookies: (state) => state.cookies,
         cookiestore: (state) => state.storage.cookies
-        // cookies: s => s.storage.cookies
       }),
     },
   };
