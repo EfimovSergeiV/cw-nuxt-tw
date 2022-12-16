@@ -246,6 +246,7 @@
             <p class="text-xs">phone: {{ phone }}</p>
             <p class="text-xs">email: {{ email }}</p>
             <p class="text-xs">comment: {{ comment }}</p>
+            <p class="text-xs">comment: {{ city }}</p>
           </div>
 
         </div>
@@ -257,6 +258,7 @@
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
 import CartField from '../CartField.vue'
+import city from '@/cities.js'
 
   export default {
     name: 'CartForm',
@@ -285,6 +287,8 @@ import CartField from '../CartField.vue'
         phone: '+7565455455454',    ///null,
         email: 'sys@tehnosvar.ru',  ///null,
         comment: 'This is comment', ///null,
+
+        city: city,
 
         totalPrice: 0,
         delivery: false,
