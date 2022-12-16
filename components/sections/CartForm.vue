@@ -122,7 +122,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-email"></p>
                 </div>
-                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+                <input v-model="email" type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
               </div>                
             </div>
             <div class="">
@@ -131,7 +131,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <p class="mdi mdi-phone"></p>
                 </div>
-                <input type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+                <input v-model="phone" type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
               </div>                
             </div>
 
@@ -230,22 +230,22 @@
           </div>
 
           <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
-          <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+          <textarea v-model="comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
 
           <div class="flex justify-end items-center my-4">
-            <button @click="cookiesStorage" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
+            <button @click="sendOrder" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 Сделать заказ
               </span>
             </button>              
           </div>
 
-          <div class="">
-            <!-- <p class="text-xs">{{ JSON.stringify($storage.state) }}</p> -->
-            <p class="text-xs">A: {{ $storage.state }}</p>
-            <p class="text-xs">B: {{ $storage.state.clientName }}</p>
-            <p class="text-xs">C: {{ person }}</p>
-            <p class="text-xs">D: {{ client }}</p>
+          <p class="text-xs">A: {{ $storage.state }}</p>
+          <div class="flex gap-4">
+            <p class="text-xs">person: {{ person }}</p>
+            <p class="text-xs">phone: {{ phone }}</p>
+            <p class="text-xs">email: {{ email }}</p>
+            <p class="text-xs">comment: {{ comment }}</p>
           </div>
 
         </div>
@@ -276,40 +276,19 @@ import CartField from '../CartField.vue'
     data() {
       return {
         selectedShop: null,
-        entity: "false",
-        re_token: null,
+        entity: "false", /// Физ. или Юр. лицо
 
-        bic: null, /// Make local storage (Cookies)
-        counter: 1,
-        person: null,
-        client: null,
+
+        bic: null,
+
+        person: 'Ефимов Сергей',    ///null,
+        phone: '+7565455455454',    ///null,
+        email: 'sys@tehnosvar.ru',  ///null,
+        comment: 'This is comment', ///null,
 
         totalPrice: 0,
-        selface: 'individual', /// Физ. или Юр. лицо
         delivery: false,
-        deliverymethods: [
-          { text: 'Самовывоз', value: false },
-          { text: 'Доставка', value: true },
-        ],
-        faceopts: [
-          { text: 'Физическое лицо', value: 'individual' },
-          { text: 'Юридическое лицо', value: 'entity' },
-        ],
-        payMethod: 'cash',
-        payMethods: [
-          { value: 'cash', text: 'Оплатить в магазине' },
-          {
-            value: 'online',
-            text: 'Оплатить онлайн',
-            disabled: false,
-          },
-          { value: 'cashless', text: 'Безналичный расчёт ( Для юр. лиц )' },
-        ],
-        selected: 'radio1',
-        options: [
-          { text: 'Самовывоз', value: 'radio1' },
-          { text: 'Radio 3', value: 'radio2' },
-        ],
+
       }
     },
     computed: {
@@ -317,6 +296,24 @@ import CartField from '../CartField.vue'
       cart: (state) => state.modules.cart.products,
       person: (state) => state.storage.clientName,
     }),
+    phoneState() {
+      const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
+      if (this.client.phone) {
+        return this.client.phone.search(re) !== -1
+      } else {
+        return false
+      }
+    },
+    emailState() {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      if (this.client.email) {
+        return this.client.email.search(re) !== -1
+      } else if (this.payMethod === 'online') {
+        return false
+      } else {
+        return true
+      }
+    },
   },
   methods: {
     ...mapActions({
@@ -361,47 +358,66 @@ import CartField from '../CartField.vue'
       }
     },
     sendOrder() {
-      this.$axios.$post('o/order/', {
-        region_code: this.shop.region_code,
-        shop_id: this.shop.shop_id,
-        person: this.client.person,
-        phone: this.client.phone,
-        email: this.client.email,
-        adress: this.shop.adress,
-        comment: this.client.comment,
+      console.log(
+        this.person, this.phone, this.email, this.comment
+        
+      )
+      const data = {
+        person: this.person,
+        phone: this.phone,
+        email: this.email,
+        comment: this.comment,
         total: this.totalPrice,
-        delivery: this.delivery,
-        delivery_adress: 'this.deliverycity',
-        delivery_summ: this.deliverysumm,
-        company: this.client.company,
-        legaladress: this.client.legaladress,
-        inn: this.client.inn,
-        kpp: this.client.kpp,
-        okpo: this.client.okpo,
-        bankname: this.client.bankname,
-        currentacc: this.client.currentacc,
-        corresponding: this.client.corresponding,
-        bic: this.client.bic,
+
         client_product: this.cart,
-      }).then((response) => {
-        if (this.payMethod === 'online') {
-          this.$router.push({
-            name: 'payment',
-            query: { order: response.order },
-          })
-        } else {
-          this.$router.push({
-            name: 'success',
-            params: { order: response.order },
-          })
-        }
-      }).catch(() => {
-        this.$bvToast.toast('Проверьте правильность заполнения формы', {
-          title: 'Заказ не принят',
-          variant: 'danger',
-        })
-      })
-    }
+      }
+
+      this.$axios.$post('o/order/', data)
+    },
+    
+    // sendOrder() {
+    //   this.$axios.$post('o/order/', {
+    //     region_code: this.shop.region_code,
+    //     shop_id: this.shop.shop_id,
+
+    //     person: this.client.person,
+    //     phone: this.client.phone,
+    //     email: this.client.email,
+    //     adress: this.shop.adress,
+    //     comment: this.client.comment,
+    //     total: this.totalPrice,
+    //     delivery: this.delivery,
+    //     delivery_adress: 'this.deliverycity',
+    //     delivery_summ: this.deliverysumm,
+    //     company: this.client.company,
+    //     legaladress: this.client.legaladress,
+    //     inn: this.client.inn,
+    //     kpp: this.client.kpp,
+    //     okpo: this.client.okpo,
+    //     bankname: this.client.bankname,
+    //     currentacc: this.client.currentacc,
+    //     corresponding: this.client.corresponding,
+    //     bic: this.client.bic,
+    //     client_product: this.cart,
+    //   }).then((response) => {
+    //     if (this.payMethod === 'online') {
+    //       this.$router.push({
+    //         name: 'payment',
+    //         query: { order: response.order },
+    //       })
+    //     } else {
+    //       this.$router.push({
+    //         name: 'success',
+    //         params: { order: response.order },
+    //       })
+    //     }
+    //   }).catch(() => {
+    //     this.$bvToast.toast('Проверьте правильность заполнения формы', {
+    //       title: 'Заказ не принят',
+    //       variant: 'danger',
+    //     })
+    //   })
+    // }
   }
 }
 </script>
