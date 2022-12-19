@@ -39,16 +39,30 @@
                             @click="clickHandler"
                             @input="onInputChange"
                             @selected="onSelected"
+                            class="text-gray-700"
                             :get-suggestion-value="getSuggestionValue"
                             :should-render-suggestions="shouldRenderSuggestions"
-                            :input-props="{ id:'autosuggest__input', placeholder:'Введите название' }">
+                            :input-props="{ id:'autosuggest__input', placeholder:'Введите название' }"
+                            :section-configs="{ 'default': { limit: 6 } }"
+                            >
 
                             <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
-                              <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
-                              <div style="{ display: 'flex', color: 'navyblue'}">{{ suggestion.item }}</div>
+                              <div class="flex text-base ">
+                                <p class="text-gray-300">{{ suggestion.item }}</p>
+                              </div>
                             </div>
                             
                           </vue-autosuggest>
+
+                          <!-- <div class="">
+                            <div class="" v-for="city, item in filteredOptions[0].data.slice(0, 50)" :key="item">
+                              <div class="">
+                                <p class="">{{ city }}</p>
+                              </div>
+                            </div>
+
+                          </div> -->
+
                         </div>
                       </div>
 
@@ -80,7 +94,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 
 </template>
 
@@ -132,7 +146,7 @@ import cities from '@/cities.js'
         return size >= 0 && !loading
       },
       focusMe(e) {
-        console.log(e) // FocusEvent
+        console.log('FocusEvent') // FocusEvent
       }     
     },
     computed: {
@@ -143,7 +157,7 @@ import cities from '@/cities.js'
         return [
           { 
             data: this.cities.filter(option => {
-              console.log(option)
+              // console.log(option)
               return option.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
             })
 
@@ -152,7 +166,15 @@ import cities from '@/cities.js'
             // })
           }
         ];
-      }
+      },
+      // sectionConfigs: {
+      //   'default': {
+      //       limit: 6,
+      //       onSelected: function(item, originalInput) {
+      //           console.log(item, originalInput, `Selected "${item.item}"`);
+      //       }
+      //   },
+      // }
     },
   }
 </script>
