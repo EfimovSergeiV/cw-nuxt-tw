@@ -68,7 +68,7 @@
                         <div class="flex justify-end items-end px-2 py-2 space-x-2 rounded-b border-t bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600">
 
                           <div class="">
-                            <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
+                            <button @click="changeRegion(selected.item)" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
                           </div>
 
                         </div>
@@ -125,6 +125,7 @@ import cities from '@/cities.js'
     methods: {
       ...mapActions({
         showShopsModal: 'showShopsModal',
+        changeRegion: 'changeRegion'
       }),
       clickHandler(item) {
       // event fired when clicking on the input
