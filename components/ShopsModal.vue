@@ -4,9 +4,9 @@
     <div class="relative z-50 " aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
             <div class="fixed inset-0 overflow-y-hidden overscroll-y-none">
-                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <div class="flex min-h-full justify-center p-4 text-center items-center sm:p-0">
 
-                <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl mx-4">
+                <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl mx-4 w-10/12">
 
                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                       <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
@@ -24,6 +24,9 @@
                         {{ shop.adress }}
                       </div> -->
 
+                      <p>QUERY: {{ query }} {{ query.length }}</p>
+                      <p>filteredOptions: {{ filteredOptions[0].data.slice(0, 50) }}</p>
+
 
                       <div class="px-14 py-20">
                         
@@ -39,18 +42,25 @@
                             @click="clickHandler"
                             @input="onInputChange"
                             @selected="onSelected"
-                            class="text-gray-700"
+                            class="text-gray-700 bg-white px-1 py-2 "
                             :get-suggestion-value="getSuggestionValue"
                             :should-render-suggestions="shouldRenderSuggestions"
-                            :input-props="{ id:'autosuggest__input', placeholder:'Введите название' }"
-                            :section-configs="{ 'default': { limit: 6 } }"
-                            >
+                            :input-props="{ id:'', placeholder:'Введите название' }"
+                            :section-configs="{ 'default': { limit: 6 } }">
+                           
 
-                            <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
-                              <div class="flex text-base ">
-                                <p class="text-gray-300">{{ suggestion.item }}</p>
-                              </div>
-                            </div>
+
+                              
+                              <!-- <div slot-scope="{suggestion}" class=" bg-gray-800 my-0.5 cursor-pointer">
+                                  <div class="flex text-base px-1 py-2">
+                                    <p class="text-gray-300 hover:text-gray-100">{{ suggestion.item }}</p>
+                                  </div>
+                              </div>   -->
+
+
+                            
+                            
+
                             
                           </vue-autosuggest>
 
@@ -157,13 +167,8 @@ import cities from '@/cities.js'
         return [
           { 
             data: this.cities.filter(option => {
-              // console.log(option)
               return option.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
             })
-
-            // data: this.suggestions[0].data.filter(option => {
-            //   return option.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
-            // })
           }
         ];
       },
