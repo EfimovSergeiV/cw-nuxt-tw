@@ -26,9 +26,11 @@
 
 
                       <div class="px-14 py-20">
+                        
                         <div v-if="selected" style="padding-top:10px; width: 100%;">
-                          You have selected <code>{{selected.name}}, the {{selected.race}}</code>
+                          Ваш город: <code>{{ selected.item }}, <br /> {{selected}}</code>
                         </div>
+
                         <div class="autosuggest-container">
                           <vue-autosuggest
                             v-model="query"
@@ -39,11 +41,13 @@
                             @selected="onSelected"
                             :get-suggestion-value="getSuggestionValue"
                             :should-render-suggestions="shouldRenderSuggestions"
-                            :input-props="{id:'autosuggest__input', placeholder:'Do you feel lucky, punk?'}">
+                            :input-props="{ id:'autosuggest__input', placeholder:'Введите название' }">
+
                             <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
-                              <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion.item.avatar" />
-                              <div style="{ display: 'flex', color: 'navyblue'}">{{suggestion.item.name}}</div>
+                              <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
+                              <div style="{ display: 'flex', color: 'navyblue'}">{{ suggestion.item }}</div>
                             </div>
+                            
                           </vue-autosuggest>
                         </div>
                       </div>
@@ -98,19 +102,9 @@ import cities from '@/cities.js'
     },
     data() {
       return {
+        selected: "",
         cities: cities,
         query: "",
-        selected: "",
-        suggestions: [
-          {
-            data: [
-              { id: 1, name: "Frodo", race: "Hobbit", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Elijah_Wood_as_Frodo_Baggins.png/220px-Elijah_Wood_as_Frodo_Baggins.png" },
-              { id: 2, name: "Samwise", race: "Hobbit", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7b/Sean_Astin_as_Samwise_Gamgee.png/200px-Sean_Astin_as_Samwise_Gamgee.png" },
-              { id: 3, name: "Gandalf", race: "Maia", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e9/Gandalf600ppx.jpg/220px-Gandalf600ppx.jpg" },
-              { id: 4, name: "Aragorn", race: "Human", avatar: "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Aragorn300ppx.png/150px-Aragorn300ppx.png" }
-            ]
-          }
-        ]
       }
     },
     methods: {
@@ -121,7 +115,7 @@ import cities from '@/cities.js'
       // event fired when clicking on the input
       },
       onSelected(item) {
-        this.selected = item.item;
+        this.selected = item;
       },
       onInputChange(text) {
         // event fired when the input changes
@@ -131,7 +125,7 @@ import cities from '@/cities.js'
        * This is what the <input/> value is set to when you are selecting a suggestion.
        */
       getSuggestionValue(suggestion) {
-        return suggestion.item.name;
+        return suggestion.item;
       },
       shouldRenderSuggestions (size, loading) {
         // This is the default behavior
@@ -148,9 +142,14 @@ import cities from '@/cities.js'
       filteredOptions() {
         return [
           { 
-            data: this.suggestions[0].data.filter(option => {
-              return option.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+            data: this.cities.filter(option => {
+              console.log(option)
+              return option.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
             })
+
+            // data: this.suggestions[0].data.filter(option => {
+            //   return option.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+            // })
           }
         ];
       }
