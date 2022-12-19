@@ -24,11 +24,12 @@
                         {{ shop.adress }}
                       </div> -->
 
-                        <div class="px-2 py-4">
+                        <div class="px-4 py-4">
 
                         
-                          <div v-if="selected">
-                            Сейчас: <code>{{ selected.item }}, <br /> {{selected}}</code>
+                          <div v-if="selected" class="flex gap-4 my-4">
+                            <p class="">Сейчас:</p>
+                            <p>{{ selected.item }}</p>
                           </div>
 
                           
@@ -46,9 +47,9 @@
                                 :should-render-suggestions="shouldRenderSuggestions"
                                 :input-props="{ id:'', placeholder:'Введите название' }"
                                 :section-configs="{ 'default': { limit: 10 } }"
-                                class="text-gray-500">
+                                class="text-gray-500 h-96">
 
-                                <div slot-scope="{suggestion}" class="text-gray-300 dark:text-gray-700">
+                                <div slot-scope="{suggestion}" class="dark:text-gray-300 text-gray-700 my-2 mx-1 cursor-pointer">
                                   <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
                                   <div>{{ suggestion.item }}</div>
                                 </div>
