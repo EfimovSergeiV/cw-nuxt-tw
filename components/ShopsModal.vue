@@ -58,7 +58,7 @@
                             </div>
 
                             <div class="">
-                              <p>free rectangle</p>
+                              <!-- <p>free rectangle</p> -->
                             </div>
 
                           </div>
