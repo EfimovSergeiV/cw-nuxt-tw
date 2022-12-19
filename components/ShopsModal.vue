@@ -20,12 +20,12 @@
                       </div>
                       
                       
-                      <div v-for="shop in shops" :key="shop.id">
+                      <!-- <div v-for="shop in shops" :key="shop.id">
                         {{ shop.adress }}
-                      </div>
+                      </div> -->
 
 
-                      <div class="demo">
+                      <div class="px-14 py-20">
                         <div v-if="selected" style="padding-top:10px; width: 100%;">
                           You have selected <code>{{selected.name}}, the {{selected.race}}</code>
                         </div>
@@ -49,7 +49,16 @@
                       </div>
 
 
-                      <div class="">
+                      <div class="flex justify-end items-end px-2 py-2 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+
+                        <div class="">
+                          <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Выбрать магазин</button>
+                        </div>
+
+                      </div>
+                    </div>
+
+                      <!-- <div class="">
                         <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                           <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                               В корзину
@@ -60,7 +69,7 @@
                               выбрать
                           </span>
                         </button>
-                      </div>
+                      </div> -->
 
                     </div>
 
@@ -74,6 +83,7 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import { VueAutosuggest } from "vue-autosuggest";
+import cities from '@/cities.js'
 
   export default {
       name: 'ShopModal',
@@ -88,6 +98,7 @@ import { VueAutosuggest } from "vue-autosuggest";
     },
     data() {
       return {
+        cities: cities,
         query: "",
         selected: "",
         suggestions: [
