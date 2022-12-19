@@ -25,7 +25,6 @@
                       </div> -->
 
                       <p>QUERY: {{ query }} {{ query.length }}</p>
-                      <p>filteredOptions: {{ filteredOptions[0].data.slice(0, 50) }}</p>
 
 
                       <div class="px-14 py-20">
@@ -42,36 +41,29 @@
                             @click="clickHandler"
                             @input="onInputChange"
                             @selected="onSelected"
-                            class="text-gray-700 bg-white px-1 py-2 "
+                            class="text-gray-700 bg-gray-600 px-1 py-2 "
                             :get-suggestion-value="getSuggestionValue"
                             :should-render-suggestions="shouldRenderSuggestions"
                             :input-props="{ id:'', placeholder:'Введите название' }"
-                            :section-configs="{ 'default': { limit: 6 } }">
-                           
-
-
-                              
+                            :section-configs="{ 'default': { limit: 1 } }">
+                                                         
                               <!-- <div slot-scope="{suggestion}" class=" bg-gray-800 my-0.5 cursor-pointer">
                                   <div class="flex text-base px-1 py-2">
                                     <p class="text-gray-300 hover:text-gray-100">{{ suggestion.item }}</p>
                                   </div>
                               </div>   -->
-
-
-                            
-                            
-
                             
                           </vue-autosuggest>
 
-                          <!-- <div class="">
-                            <div class="" v-for="city, item in filteredOptions[0].data.slice(0, 50)" :key="item">
-                              <div class="">
-                                <p class="">{{ city }}</p>
+                          <div class="">
+                            <transition-group tag="div" name="left-emergence">
+                              <div class="" v-for="city, item in filteredOptions[0].data.slice(0, 10)" :key="item">
+                                <div @click="query = city" class="">
+                                  <p class="">{{ city }}</p>
+                                </div>
                               </div>
-                            </div>
-
-                          </div> -->
+                            </transition-group>
+                          </div>
 
                         </div>
                       </div>
