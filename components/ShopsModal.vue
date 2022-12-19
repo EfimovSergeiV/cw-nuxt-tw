@@ -24,58 +24,41 @@
                         {{ shop.adress }}
                       </div> -->
 
-                      <p>QUERY: {{ query }} {{ query.length }}</p>
+                        <div class="px-2 py-4">
 
-
-                      <div class="px-14 py-20">
                         
-                        <div v-if="selected" style="padding-top:10px; width: 100%;">
-                          Ваш город: <code>{{ selected.item }}, <br /> {{selected}}</code>
+                          <div v-if="selected">
+                            Сейчас: <code>{{ selected.item }}, <br /> {{selected}}</code>
+                          </div>
+
+                          <div class="">
+                            <vue-autosuggest
+                              v-model="query"
+                              :suggestions="filteredOptions"
+                              :get-suggestion-value="getSuggestionValue"
+                              :should-render-suggestions="shouldRenderSuggestions"
+                              :input-props="{ id:'', placeholder:'Введите название' }"
+                              :section-configs="{ 'default': { limit: 10 } }"
+                              class="text-gray-500">
+
+                              <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
+                                <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
+                                <div class="text-gray-300">{{ suggestion.item }}</div>
+                              </div>
+
+                            </vue-autosuggest>
+
+                          </div>
+
                         </div>
 
-                        <div class="">
-                          <vue-autosuggest
-                            v-model="query"
-                            :suggestions="filteredOptions"
-                            @focus="focusMe"
-                            @click="clickHandler"
-                            @input="onInputChange"
-                            @selected="onSelected"
-                            class="text-gray-700"
-                            :get-suggestion-value="getSuggestionValue"
-                            :should-render-suggestions="shouldRenderSuggestions"
-                            :input-props="{ id:'', placeholder:'Введите название' }"
-                            :section-configs="{ 'default': { limit: 1 } }">
-                                                         
-                              <div slot-scope="{suggestion}" class=" bg-gray-800 my-0.5 cursor-pointer">
-                                <div class="text-base hidden">
-                                  <p class="text-gray-300 hover:text-gray-100">{{ suggestion.item }}</p>
-                                </div>
-                              </div>
-                            
-                          </vue-autosuggest>
-
-                          
-                          <div v-if="filteredOptions[0].data.length != '1' && query.length > 1" class="mx-1">
-                            <transition-group tag="div" name="left-emergence">
-                              <div class="" v-for="city, item in filteredOptions[0].data.slice(0, 10)" :key="item">
-                                <div @click="query = city" class="">
-                                  <p class="text-gray-300">{{ city }}</p>
-                                </div>
-                              </div>
-                            </transition-group>
-                          </div>                          
-
-
-
-                        </div>
                       </div>
 
 
                       <div class="flex justify-end items-end px-2 py-2 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
 
                         <div class="">
-                          <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Выбрать магазин</button>
+                          <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
                         </div>
 
                       </div>
@@ -96,7 +79,7 @@
 
                     </div>
 
-                </div>
+
             </div>
         </div>
 
@@ -121,7 +104,7 @@ import cities from '@/cities.js'
     },
     data() {
       return {
-        selected: "",
+        selected: { item : "Псков"},
         cities: cities,
         query: "",
       }
