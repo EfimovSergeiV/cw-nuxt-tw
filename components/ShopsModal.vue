@@ -34,6 +34,10 @@
                           <div class="">
                             <vue-autosuggest
                               v-model="query"
+                              @focus="focusMe"
+                              @click="clickHandler"
+                              @input="onInputChange"
+                              @selected="onSelected"
                               :suggestions="filteredOptions"
                               :get-suggestion-value="getSuggestionValue"
                               :should-render-suggestions="shouldRenderSuggestions"
@@ -104,7 +108,7 @@ import cities from '@/cities.js'
     },
     data() {
       return {
-        selected: { item : "Псков"},
+        selected: "",
         cities: cities,
         query: "",
       }
