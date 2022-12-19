@@ -31,41 +31,49 @@
                             Сейчас: <code>{{ selected.item }}, <br /> {{selected}}</code>
                           </div>
 
+                          
+
+                          <div class="flex gap-2">
+                            <div class="">
+                              <vue-autosuggest
+                                v-model="query"
+                                @focus="focusMe"
+                                @click="clickHandler"
+                                @input="onInputChange"
+                                @selected="onSelected"
+                                :suggestions="filteredOptions"
+                                :get-suggestion-value="getSuggestionValue"
+                                :should-render-suggestions="shouldRenderSuggestions"
+                                :input-props="{ id:'', placeholder:'Введите название' }"
+                                :section-configs="{ 'default': { limit: 10 } }"
+                                class="text-gray-500">
+
+                                <div slot-scope="{suggestion}" class="text-gray-300 dark:text-gray-700">
+                                  <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
+                                  <div>{{ suggestion.item }}</div>
+                                </div>
+
+                              </vue-autosuggest>
+                            </div>
+
+                            <div class="">
+                              <p>free rectangle</p>
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                        <div class="flex justify-end items-end px-2 py-2 space-x-2 rounded-b border-t bg-white dark:bg-gray-700 border-gray-200 dark:border-gray-600">
+
                           <div class="">
-                            <vue-autosuggest
-                              v-model="query"
-                              @focus="focusMe"
-                              @click="clickHandler"
-                              @input="onInputChange"
-                              @selected="onSelected"
-                              :suggestions="filteredOptions"
-                              :get-suggestion-value="getSuggestionValue"
-                              :should-render-suggestions="shouldRenderSuggestions"
-                              :input-props="{ id:'', placeholder:'Введите название' }"
-                              :section-configs="{ 'default': { limit: 10 } }"
-                              class="text-gray-500">
-
-                              <div slot-scope="{suggestion}" style="display: flex; align-items: center;">
-                                <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
-                                <div class="text-gray-300">{{ suggestion.item }}</div>
-                              </div>
-
-                            </vue-autosuggest>
-
+                            <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
                           </div>
 
                         </div>
 
                       </div>
 
-
-                      <div class="flex justify-end items-end px-2 py-2 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-
-                        <div class="">
-                          <button data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
-                        </div>
-
-                      </div>
                     </div>
 
                       <!-- <div class="">
