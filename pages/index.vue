@@ -2,7 +2,7 @@
   <div class="">
 
     <Header />
-    <TopSliderSection />
+    <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <Main :latest="latest" :banners="banners" />
     <Reviews :reviews="banners" />
@@ -60,6 +60,7 @@ import Footer from '~/components/Footer.vue'
       ShopsModal,
     },
     async asyncData({ $axios }) {
+      const widebanners = await $axios.$get('c/widebanners/')
       const banners = await $axios.$get('c/mainbanner/')
       const brands = await $axios.$get('/c/brands/')
       const cts = await $axios.$get('c/ct/')
@@ -69,7 +70,7 @@ import Footer from '~/components/Footer.vue'
       const recommends = await $axios.$get(`c/recommend/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
 
-      return { banners, brands, cts, latest, mpromobs, esab, recommends, mweld }
+      return { widebanners, banners, brands, cts, latest, mpromobs, esab, recommends, mweld }
     },
     methods: {
         filterCarouselBrands(brands) {

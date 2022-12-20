@@ -2,7 +2,7 @@
   <div class="">
 
     <Header />
-    <TopSliderSection />
+    <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <About :shops="shops" />
     <ShopMaps /> 
@@ -28,8 +28,9 @@ import Footer from '~/components/Footer.vue'
       Footer,
     },
     async asyncData({ $axios }) {
+      const widebanners = await $axios.$get('c/widebanners/')
       const cts = await $axios.$get('c/ct/')
-      return { cts }
+      return { widebanners, cts }
     },
     data() {
       return {

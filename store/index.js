@@ -30,6 +30,13 @@ export const mutations = {
   },
   shopsData(state, shops) {
     state.shops = shops
+  },
+  changeLocation(state, location) {
+    const translated = {
+      Pskov: "Псков",
+      Moscow: "Москва"
+    }
+    state.region = translated[location.city]
   }
 }
 
@@ -44,11 +51,13 @@ export const actions = {
   },
   async storeDispatchFunc({ commit }) {
     const shops = await this.$axios.$get('c/shops/')
+    const location = await this.$axios.$get('location/')
     // if (this.state.auth.loggedIn) {
     //   const likeserver = await this.$axios.$get('u/likes/')
     //   commit('addLikesProducts', likeserver)
     // }
     commit('shopsData', shops)
+    commit('changeLocation', location)
   },
 
   showShopsModal({ commit }) {

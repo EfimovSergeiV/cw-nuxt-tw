@@ -2,7 +2,7 @@
   <div class="min-h-screen">
 
     <Header />
-    <TopSliderSection />
+    <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <Categories :cts="cts" />
     <Recommend :recommends="recommends" />
@@ -29,9 +29,10 @@ import Footer from '~/components/Footer.vue'
 
 },
     async asyncData({ $axios }) {
+      const widebanners = await $axios.$get('c/widebanners/')
       const cts = await $axios.$get(`c/ct/`)
       const recommends = await $axios.$get(`c/recommend/`)
-      return { cts, recommends }
+      return { widebanners, cts, recommends }
     },
     data() {
       return {
