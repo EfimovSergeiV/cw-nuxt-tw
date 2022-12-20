@@ -8,8 +8,24 @@
 
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-      <div class="flex gap-4 items-center justify-center h-full my-24">
-        <div class="">
+
+      <div class="flex gap-4 items-center justify-center h-full my-40 md:my-80">
+
+        <div class="flex items-center gap-8">
+          <div class="grid gap-2 grid-cols-1">
+            <div class="mx-4 text-center">
+              <p class="text-2xl">Этой страницы больше нет</p>
+            </div>
+            <div class="border-b border-gray-700 dark:border-gray-300"></div>
+            <div class="mx-4 text-center">
+              <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
+            </div>
+          </div>
+          <div>
+            <p class="mdi mdi-close-outline text-3xl md:text-6xl"> 404</p>
+          </div>          
+        </div>
+        <!-- <div class="">
           <p class=" lg:text-3xl">Этой страницы больше существует...</p>
           <p class="my-4 text-xs lg:text-base">Возможно она была перемещена или удалена</p>
           <div class="flex justify-end items-center">
@@ -19,7 +35,7 @@
 
         <div class="">
           <img src="../assets/images/not-found.png" class="w-32 lg:w-96"/>
-        </div>
+        </div> -->
         
       </div>      
     </div>
