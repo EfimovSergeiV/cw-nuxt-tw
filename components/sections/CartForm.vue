@@ -74,11 +74,11 @@
 
         <div class="flex items-center gap-8">
           <div class="grid gap-2 grid-cols-1">
-            <div class="">
+            <div class="mx-4 text-center">
               <p class="text-xl">Ваша корзина пуста</p>
             </div>
-            <div class=" border-b"></div>
-            <div class="">
+            <div class="border-b"></div>
+            <div class="mx-4 text-center">
               <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
             </div>
           </div>
