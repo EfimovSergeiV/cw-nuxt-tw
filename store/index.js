@@ -1,6 +1,9 @@
 /* eslint-disable camelcase */
 
 export const state = () => ({
+  client: {
+    name: null
+  },
   shops: null,
   region: null,
   cookies: true,
@@ -37,6 +40,9 @@ export const mutations = {
       Moscow: "Москва"
     }
     state.region = translated[location.city]
+  },
+  clientData(state, client) {
+    state.client = client
   }
 }
 
@@ -69,4 +75,7 @@ export const actions = {
   showCookiesModal({ commit }) {
     commit('showCookiesModal')
   },
+  clientData({ commit }, client ) {
+    commit('clientData', client)
+  }
 }

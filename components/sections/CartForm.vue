@@ -130,7 +130,7 @@
                   <p class="mdi mdi-account"></p>
                 </div>
                 <input v-model="person" type="text" id="email-address-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
-              </div>                
+              </div>
             </div>
             <div class="">
               <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта (необязательно)</label>
@@ -256,7 +256,6 @@
             </button>
           </div>
 
-          <p class="text-xs">A: {{ $storage.state }}</p>
           <div class="flex gap-4">
             <p class="text-xs">person: {{ person }}</p>
             <p class="text-xs">phone: {{ phone }}</p>
@@ -272,7 +271,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex';
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import CartField from '../CartField.vue';
 
   export default {
@@ -294,7 +293,7 @@ import CartField from '../CartField.vue';
       return {
         entity: "false", /// Физ. или Юр. лицо
         selectedShop: null,
-        person: 'Ефимов Сергей',    ///null,
+        person: null, //'Ефимов Сергей',    ///null,
         phone: '+75654554554',    ///null,
         email: 'sys@tehnosvar.ru',  ///null,
         comment: 'This is comment', ///null,
@@ -315,10 +314,17 @@ import CartField from '../CartField.vue';
         // "delivery_summ":0,
       }
     },
+    watch: {
+      person() {
+        console.log('this.person')
+        // this.clientData(this.person)
+      },
+    },
     computed: {
     ...mapState({
+      client: (state) => state.client,
       cart: (state) => state.modules.cart.products,
-      person: (state) => state.storage.clientName,
+      // person: (state) => state.storage.clientName,
     }),
     phoneState() {
       const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
@@ -341,6 +347,7 @@ import CartField from '../CartField.vue';
   },
   methods: {
     ...mapActions({
+      clientData: 'clientData',
       incProductToCart: 'modules/cart/incProductToCart',
       decProductToCart: 'modules/cart/decProductToCart',
       delProductToCart: 'modules/cart/delProductToCart',
@@ -409,12 +416,12 @@ import CartField from '../CartField.vue';
         // "corresponding":null,
         // "bic":null,
 
-        client_product: this.cart,
+        // client_product: this.cart,
       }
+      this.clientData({name: "Сергей Ефимов", phone: "+79116965424"})
 
-      this.$storage.setCookie(data)
       this.sendData = data
-      this.$axios.$post('o/order/', data)
+      // this.$axios.$post('o/order/', data)
     },
     
     // sendOrder() {

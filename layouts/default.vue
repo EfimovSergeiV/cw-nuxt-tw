@@ -24,6 +24,7 @@
 
       <CartModal v-if="cartModal" />
       <requestPriceModal v-if="requestModal" />
+      <privacyPolicy />
 
 
     </transition>
@@ -39,6 +40,7 @@
   import CartModal from '~/components/CartModal.vue';
   import ShopsModal from '~/components/ShopsModal.vue';
   import requestPriceModal from '~/components/requestPriceModal.vue';
+  import privacyPolicy from '~/components/privacyPolicy.vue';
 
   export default {
     // head: {
@@ -59,6 +61,7 @@
       CartModal,
       ShopsModal,
       requestPriceModal,
+      privacyPolicy,
     },
     data() {
       return {
