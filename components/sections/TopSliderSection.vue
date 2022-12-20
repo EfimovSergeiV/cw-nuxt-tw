@@ -10,9 +10,8 @@
           :auto-play="false"
           :play-speed="7000"
           style="height: 100%;"
-          class="main-hooper "
-        >
-          
+          class="main-hooper ">
+         
             <slide v-for="slide in widebanners" :key="slide.id" class="">
               <div class="relative">
                 <img
@@ -23,13 +22,12 @@
                   onerror="this.src='./noimage-960-540.jpg'"
                 />
                 <div class="absolute bottom-0 right-0 z-50">
-                  <div v-if="slide.path" class="px-4 py-1 bg-gray-700">
-                    <nuxt-link :to="slide.path" class="text-sm font-bold text-gray-300 shadow-2xl hover:underline">Подробнее</nuxt-link>
+                  <div v-if="slide.path" class="px-4 py-0.5 bg-gray-700 rounded-tl-lg">
+                    <nuxt-link :to="slide.path" class="text-sm text-gray-300 shadow-2xl hover:underline mdi mdi-perspective-more"> Подробнее</nuxt-link>
                   </div>
                 </div>
               </div>              
             </slide>
-
 
           <hooper-navigation slot="hooper-addons"></hooper-navigation>
           <hooper-pagination slot="hooper-addons"></hooper-pagination>

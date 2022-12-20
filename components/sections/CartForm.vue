@@ -70,9 +70,25 @@
 
       </div>
 
-      <div v-else class="">
-        <p>Ваша корзина пуста</p>
+      <div v-else class="flex justify-center my-10">
+
+        <div class="flex items-center gap-8">
+          <div class="grid gap-2 grid-cols-1">
+            <div class="">
+              <p class="text-xl">Ваша корзина пуста</p>
+            </div>
+            <div class=" border-b"></div>
+            <div class="">
+              <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
+            </div>
+          </div>
+          <div>
+            <p class="mdi mdi-close-outline mdi-36px"></p>
+          </div>          
+        </div>
+        
       </div>
+
 
       <div class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
