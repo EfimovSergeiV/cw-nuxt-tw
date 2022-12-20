@@ -93,7 +93,7 @@ export default {
   storage: {
     initialState: { 
       cookies: true, 
-      clientName: null  
+      // clientName: null  
     }
   },
 

@@ -58,7 +58,7 @@
               </div> -->
               <div class="flex gap-2">
                 <p>Итог:</p>
-                <p class="font-bold">{{ cartTotalPrice() }} руб.</p>
+                <p class="text-2xl italic">{{ cartTotalPrice().toLocaleString() }} руб.</p>
               </div>
             </div>
           </div>
@@ -77,7 +77,7 @@
             <div class="mx-4 text-center">
               <p class="text-xl">Ваша корзина пуста</p>
             </div>
-            <div class="border-b"></div>
+            <div class="border-b border-gray-700 dark:border-gray-300"></div>
             <div class="mx-4 text-center">
               <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
             </div>
@@ -253,7 +253,7 @@
               <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                 Сделать заказ
               </span>
-            </button>              
+            </button>
           </div>
 
           <p class="text-xs">A: {{ $storage.state }}</p>
@@ -273,8 +273,7 @@
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex';
-import CartField from '../CartField.vue'
-import cities from '@/cities.js'
+import CartField from '../CartField.vue';
 
   export default {
     name: 'CartForm',
@@ -293,22 +292,27 @@ import cities from '@/cities.js'
     },
     data() {
       return {
-        selectedShop: null,
         entity: "false", /// Физ. или Юр. лицо
-
-
-        bic: null,
-
+        selectedShop: null,
         person: 'Ефимов Сергей',    ///null,
-        phone: '+7565455455454',    ///null,
+        phone: '+75654554554',    ///null,
         email: 'sys@tehnosvar.ru',  ///null,
         comment: 'This is comment', ///null,
 
-        cities: cities,
+        // "company":null,
+        // "legaladress":null,
+        // "inn":null,
+        // "kpp":null,
+        // "okpo":null,
+        // "bankname":null,
+        // "currentacc":null,
+        // "corresponding":null,
+        // "bic":null,
 
         totalPrice: 0,
         delivery: false,
-
+        // "delivery_adress":"this.deliverycity",
+        // "delivery_summ":0,
       }
     },
     computed: {
@@ -344,12 +348,12 @@ import cities from '@/cities.js'
       delProductToFav: 'modules/favorites/delProductToFav',
       cleanCart: 'modules/cart/cleanCart',
     }),
-    cookiesStorage() {
-      // this.counter += 1
-      this.$storage.setCookie("clientName", "IvanovIvanIvanovich")
-      // this.client =  this.$storage.getCookie("clientName")
-      // console.log(client)
-    },
+    // cookiesStorage() {
+    //   this.counter += 1
+    //   this.$storage.setCookie("clientName", "IvanovIvanIvanovich")
+    //   this.client =  this.$storage.getCookie("clientName")
+    //   console.log(client)
+    // },
     cartTotalPrice() {
       let result = 0
       this.cart.forEach(
@@ -383,15 +387,33 @@ import cities from '@/cities.js'
         
       )
       const data = {
+        shop_id: this.selectedShop.id,
+        region_code: this.selectedShop.region_code,
         person: this.person,
         phone: this.phone,
         email: this.email,
         comment: this.comment,
+        delivery: this.delivery,
+        // "delivery_adress":"this.deliverycity",
+        // "delivery_summ":0,        
+        adress: this.selectedShop.adress,
         total: this.totalPrice,
+
+        // "company":null,
+        // "legaladress":null,
+        // "inn":null,
+        // "kpp":null,
+        // "okpo":null,
+        // "bankname":null,
+        // "currentacc":null,
+        // "corresponding":null,
+        // "bic":null,
 
         client_product: this.cart,
       }
 
+      this.$storage.setCookie(data)
+      this.sendData = data
       this.$axios.$post('o/order/', data)
     },
     
@@ -441,3 +463,32 @@ import cities from '@/cities.js'
   }
 }
 </script>
+
+
+<!-- 
+
+{
+  "region_code":"PSK",
+  "shop_id":6,
+  "person":"Сергей Ефимов",
+  "phone":"89116965424",
+  "email":"my-mail@mail.ru",
+  "adress":"Псков, ул.Леона Поземского, 92, Павильон 28 (рынок на Алмазной)",
+  "comment":"Комментарий к заказу",
+  "total":311639,
+  "delivery":false,
+  "delivery_adress":"this.deliverycity",
+  "delivery_summ":0,
+  "company":null,
+  "legaladress":null,
+  "inn":null,
+  "kpp":null,
+  "okpo":null,
+  "bankname":null,
+  "currentacc":null,
+  "corresponding":null,
+  "bic":null,
+  "client_product":[{"id":806,"vcode":"0700300985","name":"Сварочный инвертор Rebel™ EMP 215ic","rating":"3.9","prod_price":[{"shop":1,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":6,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":10,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":11,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":2,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":3,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":4,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":5,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":9,"price":311639,"currency":"RUB","quantity":0,"status":"order"}],"preview_image":"http://127.0.0.1:8000/files/img/c/preview/215ic.png","propstrmodel":[{"id":4539,"name":"Дополнительные режимы работы","qname":"1jwq","value":"MMA/TIG"},{"id":4543,"name":"Габаритные размеры, мм","qname":"3b0e","value":"584x229x406"},{"id":4545,"name":"Вес, кг","qname":"7z26","value":"18,2"},{"id":4542,"name":"Потребляемый ток, А","qname":"b869","value":"240"},{"id":4541,"name":"Максимальный сварочный ток, А","qname":"jnzs","value":"130"},{"id":4540,"name":"Основной режим работы","qname":"pa0s","value":"MIG/MAG"},{"id":4544,"name":"Электропитание, В","qname":"s7n4","value":"однофазная сеть 220 В 50 Гц"}],"quantity":1}]
+}
+
+ -->

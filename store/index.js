@@ -3,7 +3,7 @@
 export const state = () => ({
   shops: null,
   region: null,
-  // cookies: true,
+  cookies: true,
   shopModal: false,
 })
 

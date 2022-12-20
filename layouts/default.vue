@@ -8,6 +8,7 @@
 
         <!-- <p class="text-sm">{{ JSON.stringify($storage.state) }}/ {{ cookies }}</p> -->
 
+        cookie {{ cookies }} {{ cookiestore }}
         <transition name="fade" mode="out-in">
           <Nuxt id="page" />
         </transition>
