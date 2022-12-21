@@ -54,15 +54,9 @@ export const mutations = {
     }
     state.region = translated[location.city]
   },
-
-
   clientData(state, data) {
     console.log('shfdsjhf', data )
     state.client[data.key] = data.value
-  },
-  clientPerson(state, person) {
-    console.log('Work mutation', person)
-    state.client.person = person
   },
 }
 

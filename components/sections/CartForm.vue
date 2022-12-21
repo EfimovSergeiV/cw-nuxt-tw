@@ -139,7 +139,8 @@
                   <p class="mdi mdi-email"></p>
                 </div>
                 <input :value="client.email" @change="clientPerson" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
-              </div>                
+              </div>
+              {{ emailState }}
             </div>
             <div class="">
               <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
@@ -148,7 +149,8 @@
                   <p class="mdi mdi-phone"></p>
                 </div>
                 <input :value="client.phone" @change="clientPerson" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
-              </div>                
+              </div> 
+              {{ phoneState }}               
             </div>
 
           </div>
@@ -161,19 +163,17 @@
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm transition-all duration-300">
           <p class="">Дополнительные поля для юр.лиц:</p>
           <div class="grid md:grid-cols-3 gap-4">
-            <CartField v-model="legaladress" placeholder="Россия, Москва, 117312, ул. Вавилова, д. 123" title="Юридический адрес" />
-            <CartField v-model="company" placeholder="ООО Полное название компании" title="Полное наименование" />
-            <CartField v-model="inn" placeholder="Россия, Москва, 117312, ул. Вавилова, д. 123" title="ИНН" />
-            <CartField v-model="legaladress" placeholder="1234567890" title="Юридический адрес" />
-            <CartField v-model="kpp" placeholder="12356789" title="КПП" />
-            <CartField v-model="okpo" placeholder="12345678" title="ОКПО (необязательно)" />
-            <CartField v-model="bankname" placeholder="ПАО Сбербанк" title="Наименование банка" />
-            <CartField v-model="currentacc" placeholder="12312123112341234567" title="Расчетный счет (необязательно)" />
-            <CartField v-model="corresponding" placeholder="12312123112341234567" title="Корреспондентский счет (необязательно)" />
-            <CartField v-model="bic" placeholder="123456789" title="БИК (необязательно)" />
+            <CartField keyword="'legaladress'" placeholder="Россия, Москва, 117312, ул. Вавилова, д. 123" title="Юридический адрес" />
+            <CartField keyword="'company'" placeholder="ООО Полное название компании" title="Полное наименование" />
+            <CartField keyword="'inn'" placeholder="3664069397" title="ИНН" />
+            <CartField keyword="'kpp'" placeholder="12356789" title="КПП" />
+            <CartField keyword="'okpo'" placeholder="12345678" title="ОКПО (необязательно)" />
+            <CartField keyword="'bankname'" placeholder="ПАО Сбербанк" title="Наименование банка" />
+            <CartField keyword="'currentacc'" placeholder="12312123112341234567" title="Расчетный счет (необязательно)" />
+            <CartField keyword="'corresponding'" placeholder="12312123112341234567" title="Корреспондентский счет (необязательно)" />
+            <CartField keyword="'bic'" placeholder="123456789" title="БИК (необязательно)" />
           </div>
         </div>
-        {{ bic }}kx
       </div>
       
 
@@ -268,7 +268,7 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
+import { mapState, mapActions, mapGetters } from 'vuex';
 import CartField from '../CartField.vue';
 
   export default {
@@ -290,33 +290,13 @@ import CartField from '../CartField.vue';
       return {
         entity: "false", /// Физ. или Юр. лицо
         selectedShop: null,
-        // person: null, //'Ефимов Сергей',    ///null,
-        phone: '+75654554554',    ///null,
-        email: 'sys@tehnosvar.ru',  ///null,
-        comment: 'This is comment', ///null,
-
-        // "company":null,
-        // "legaladress":null,
-        // "inn":null,
-        // "kpp":null,
-        // "okpo":null,
-        // "bankname":null,
-        // "currentacc":null,
-        // "corresponding":null,
-        // "bic":null,
-
+        comment: null, ///null,
         totalPrice: 0,
         delivery: false,
         // "delivery_adress":"this.deliverycity",
         // "delivery_summ":0,
       }
     },
-    // watch: {
-    //   person() {
-    //     console.log('this.person')
-    //     // this.clientData(this.person)
-    //   },
-    // },
     computed: {
     ...mapState({
       client: (state) => state.client,
@@ -395,16 +375,12 @@ import CartField from '../CartField.vue';
       }
     },
     sendOrder() {
-      console.log(
-        this.person, this.phone, this.email, this.comment
-        
-      )
       const data = {
         shop_id: this.selectedShop.id,
         region_code: this.selectedShop.region_code,
-        person: this.person,
-        phone: this.phone,
-        email: this.email,
+        person: this.client.person,
+        phone: this.client.phone,
+        email: this.client.email,
         comment: this.comment,
         delivery: this.delivery,
         // "delivery_adress":"this.deliverycity",
@@ -412,22 +388,19 @@ import CartField from '../CartField.vue';
         adress: this.selectedShop.adress,
         total: this.totalPrice,
 
-        // "company":null,
-        // "legaladress":null,
-        // "inn":null,
-        // "kpp":null,
-        // "okpo":null,
-        // "bankname":null,
-        // "currentacc":null,
-        // "corresponding":null,
-        // "bic":null,
+        company: this.client.company,
+        legaladress: this.client.legaladress,
+        inn: this.client.inn,
+        kpp: this.client.kpp,
+        okpo: this.client.okpo,
+        bankname: this.client.bankname,
+        currentacc: this.client.currentacc,
+        corresponding: this.client.corresponding,
+        bic: this.client.bic,
 
-        // client_product: this.cart,
+        client_product: this.cart,
       }
-      this.clientData({name: "Сергей Ефимов", phone: "+79116965424"})
-
-      this.sendData = data
-      // this.$axios.$post('o/order/', data)
+      this.$axios.$post('o/order/', data)
     },
     
     // sendOrder() {
