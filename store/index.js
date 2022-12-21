@@ -90,7 +90,6 @@ export const actions = {
     commit('showCookiesModal')
   },
   clientPerson({ commit }, event ) {
-    console.log('im work', event.target.id)
     commit('clientData', { key: event.target.id, value: event.target.value })
   }
 }

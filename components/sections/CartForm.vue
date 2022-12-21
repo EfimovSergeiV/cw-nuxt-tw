@@ -163,15 +163,15 @@
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm transition-all duration-300">
           <p class="">Дополнительные поля для юр.лиц:</p>
           <div class="grid md:grid-cols-3 gap-4">
-            <CartField keyword="'legaladress'" placeholder="Россия, Москва, 117312, ул. Вавилова, д. 123" title="Юридический адрес" />
-            <CartField keyword="'company'" placeholder="ООО Полное название компании" title="Полное наименование" />
-            <CartField keyword="'inn'" placeholder="3664069397" title="ИНН" />
-            <CartField keyword="'kpp'" placeholder="12356789" title="КПП" />
-            <CartField keyword="'okpo'" placeholder="12345678" title="ОКПО (необязательно)" />
-            <CartField keyword="'bankname'" placeholder="ПАО Сбербанк" title="Наименование банка" />
-            <CartField keyword="'currentacc'" placeholder="12312123112341234567" title="Расчетный счет (необязательно)" />
-            <CartField keyword="'corresponding'" placeholder="12312123112341234567" title="Корреспондентский счет (необязательно)" />
-            <CartField keyword="'bic'" placeholder="123456789" title="БИК (необязательно)" />
+            <CartField keyword="legaladress" placeholder="Россия, Москва, 117312, ул. Вавилова, д. 123" title="Юридический адрес" />
+            <CartField keyword="company" placeholder="ООО Полное название компании" title="Полное наименование" />
+            <CartField keyword="inn" placeholder="3664069397" title="ИНН" />
+            <CartField keyword="kpp" placeholder="12356789" title="КПП" />
+            <CartField keyword="okpo" placeholder="12345678" title="ОКПО (необязательно)" />
+            <CartField keyword="bankname" placeholder="ПАО Сбербанк" title="Наименование банка" />
+            <CartField keyword="currentacc" placeholder="12312123112341234567" title="Расчетный счет (необязательно)" />
+            <CartField keyword="corresponding" placeholder="12312123112341234567" title="Корреспондентский счет (необязательно)" />
+            <CartField keyword="bic" placeholder="123456789" title="БИК (необязательно)" />
           </div>
         </div>
       </div>
@@ -256,11 +256,6 @@
             </button>
           </div>
 
-          <div class="flex gap-4">
-            <p class="text-xs">data: {{ client }}</p>
-
-          </div>
-
         </div>
       </div>
     </div>
@@ -301,7 +296,6 @@ import CartField from '../CartField.vue';
     ...mapState({
       client: (state) => state.client,
       cart: (state) => state.modules.cart.products,
-      // person: (state) => state.storage.clientName,
     }),
     phoneState() {
       const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
@@ -332,15 +326,6 @@ import CartField from '../CartField.vue';
       delProductToFav: 'modules/favorites/delProductToFav',
       cleanCart: 'modules/cart/cleanCart',
     }),
-    // ...mapMutations([
-    //   'clientPerson',
-    //   'clientPhone',
-    //   'clientEmail',
-    //   'clientComment',
-    // ]),
-    // setInputValue: (event) => {
-    //   store.commit("setInputValue", event.target.value);
-    // },
     // cookiesStorage() {
     //   this.counter += 1
     //   this.$storage.setCookie("clientName", "IvanovIvanIvanovich")
