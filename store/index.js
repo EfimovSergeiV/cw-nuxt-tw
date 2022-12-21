@@ -56,8 +56,9 @@ export const mutations = {
   },
 
 
-  clientData(state, person) {
-    state.client.person = person
+  clientData(state, data) {
+    console.log('shfdsjhf', data )
+    state.client[data.key] = data.value
   },
   clientPerson(state, person) {
     console.log('Work mutation', person)
@@ -96,6 +97,6 @@ export const actions = {
   },
   clientPerson({ commit }, event ) {
     console.log('im work', event.target.id)
-    commit('clientData', event.target.value)
+    commit('clientData', { key: event.target.id, value: event.target.value })
   }
 }
