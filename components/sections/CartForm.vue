@@ -318,6 +318,7 @@ import CartField from '../CartField.vue';
   },
   methods: {
     ...mapActions({
+      addToast: 'addToast',
       clientPerson: 'clientPerson',
       incProductToCart: 'modules/cart/incProductToCart',
       decProductToCart: 'modules/cart/decProductToCart',
@@ -385,7 +386,14 @@ import CartField from '../CartField.vue';
 
         client_product: this.cart,
       }
-      this.$axios.$post('o/order/', data)
+
+      if ( data.phone ) {
+        this.$axios.$post('o/order/', data)
+      } else {
+        this.addToast("Напиши свой номер телефона придурок")
+      }
+
+      
     },
     
     // sendOrder() {

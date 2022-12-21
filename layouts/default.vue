@@ -8,6 +8,8 @@
 
         <!-- <p class="text-sm">{{ JSON.stringify($storage.state) }}/ {{ cookies }}</p> -->
 
+        <TopLeftToasts />
+
         <transition name="fade" mode="out-in">
           <Nuxt id="page" />
         </transition>
@@ -25,7 +27,7 @@
       <CartModal v-if="cartModal" />
       <RequestPriceModal v-if="requestModal" />
       <!-- <PrivacyPolicy /> -->
-      <TopLeftToasts />
+      
 
 
     </transition>

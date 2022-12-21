@@ -1,21 +1,19 @@
 <template>
 
-  <div id="myToast" class="fixed right-5 top-2 ">
-    
-    
-      <div v-for="toast in toasts" :key="toast.id" class="">
-        <transition tag="div" name="left-emergence">
-          <div :id="toast.id" v-if="toast.show" @click="hideToast(toast.id)" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-500 bg-white drop-shadow-lg cursor-pointer">
+  <div id="toasts" class="fixed z-50 right-5 top-2 ">
+
+    <transition-group tag="div" name="left-emergence">
+      <div v-for="toast in toasts" :key="toast.id" class="w-96">
+        
+          <div :id="toast.id" @click="hideToast(toast.id)" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-600 bg-white drop-shadow-lg cursor-pointer rounded-l-sm">
             <p class="text-sm">
-              <!-- Polish the toast with an circle blue "i" (stands for information) -->
-              <span class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-500 text-white font-extrabold">i</span>
+              <span class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-600 text-white font-bold">i</span>
               {{ toast.text }}
             </p>      
           </div>
-        </transition>
+        
       </div>
-
-    
+    </transition-group>
 
   </div>
 
@@ -65,35 +63,11 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 
   export default {
     name: 'TopLeftToasts',
     components: {
-
-    },
-    props: {
-      title: {
-        type: String,
-        default: null,
-      },
-      text: {
-        type: String,
-        default: null,
-      },
-      icon: {
-        type: String,
-        default: null,
-      },
-      toasts: {
-        type: Array,
-        default: [
-          { id: 1, show: true, text: 'This is a toast 1. Welcome to glsvar.ru'},
-          { id: 2, show: true, text: 'This is a toast 2. Welcome to glsvar.ru'},
-          { id: 3, show: true, text: 'This is a toast 3. Welcome to glsvar.ru'},
-          { id: 4, show: true, text: 'This is a toast 4. Welcome to glsvar.ru'},
-          { id: 5, show: true, text: 'This is a toast 5. Welcome to glsvar.ru'},
-        ]
-      }
 
     },
     data() {
@@ -102,17 +76,22 @@
       }
     },
     computed: {
-
+      ...mapState({
+        toasts: (state) => state.toasts,
+      }),
     },
     methods: {
-      hideToast(id) {
-        for ( var toast in this.toasts) {
-          console.log(this.toasts[toast], id)
-          if (this.toasts[toast].id == id) {
-            this.toasts[toast].show = false
-          }
-        }
-      }
+      ...mapActions({
+        hideToast: 'hideToast',
+      }),
+      // hideToast(id) {
+      //   for ( var toast in this.toasts) {
+      //     console.log(this.toasts[toast], id)
+      //     if (this.toasts[toast].id == id) {
+      //       this.toasts[toast].show = false
+      //     }
+      //   }
+      // }
     }
   }
 </script>
