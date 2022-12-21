@@ -1,11 +1,22 @@
 <template>
 
-  <div id="myToast" class="fixed right-5 top-5 px-5 py-4 border-r-8 border-blue-500 bg-white drop-shadow-lg">
-    <p class="text-sm">
-      <!-- Polish the toast with an circle blue "i" (stands for information) -->
-      <span class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-500 text-white font-extrabold">i</span>
-      This is a toast. Welcome to KindaCode.com
-    </p>
+  <div id="myToast" class="fixed right-5 top-2 ">
+    
+    
+      <div v-for="toast in toasts" :key="toast.id" class="">
+        <transition tag="div" name="left-emergence">
+          <div :id="toast.id" v-if="toast.show" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-500 bg-white drop-shadow-lg">
+            <p class="text-sm">
+              <!-- Polish the toast with an circle blue "i" (stands for information) -->
+              <span @click="hideToast(toast.id)" class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-500 text-white font-extrabold">i</span>
+              {{ toast.text }}
+            </p>      
+          </div>
+        </transition>
+      </div>
+
+    
+
   </div>
 
   <!-- <div class="absolute right-5 top-5" id="my-modal" >
@@ -14,6 +25,7 @@
       <div class="fixed">
         <div class=" p-5 border w-96 shadow-lg rounded-md bg-white">
 
+          <transition name="fade" mode="out-in">
 
           <div class="text-center">
             <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
@@ -55,7 +67,7 @@
 <script>
 
   export default {
-    name: 'TopLeftAlert',
+    name: 'TopLeftToasts',
     components: {
 
     },
@@ -72,6 +84,16 @@
         type: String,
         default: null,
       },
+      toasts: {
+        type: Array,
+        default: [
+          { id: 1, show: true, text: 'This is a toast 1. Welcome to glsvar.ru'},
+          { id: 2, show: true, text: 'This is a toast 2. Welcome to glsvar.ru'},
+          { id: 3, show: true, text: 'This is a toast 3. Welcome to glsvar.ru'},
+          { id: 4, show: true, text: 'This is a toast 4. Welcome to glsvar.ru'},
+          { id: 5, show: true, text: 'This is a toast 5. Welcome to glsvar.ru'},
+        ]
+      }
 
     },
     data() {
@@ -83,7 +105,14 @@
 
     },
     methods: {
-
+      hideToast(id) {
+        for ( var toast in this.toasts) {
+          console.log(this.toasts[toast], id)
+          if (this.toasts[toast].id == id) {
+            this.toasts[toast].show = false
+          }
+        }
+      }
     }
   }
 </script>
