@@ -2,7 +2,7 @@
 
   <div id="toasts" class="fixed z-50 right-5 top-2 ">
 
-    <transition-group tag="div" name="left-emergence">
+    <transition-group tag="div" name="right-emergence">
       <div v-for="toast in toasts" :key="toast.id" class="w-96">
         
           <div :id="toast.id" @click="hideToast(toast.id)" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-600 bg-white drop-shadow-lg cursor-pointer rounded-l-sm">
