@@ -98,7 +98,7 @@
 import { mapActions, mapState } from 'vuex';
 
   export default {
-      name: 'requestPriceModal',
+      name: 'RequestPriceModal',
       components: {
     },
     props: {

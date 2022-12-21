@@ -23,8 +23,8 @@
       <ShopsModal v-if="shopModal" />
 
       <CartModal v-if="cartModal" />
-      <requestPriceModal v-if="requestModal" />
-      <privacyPolicy />
+      <RequestPriceModal v-if="requestModal" />
+      <PrivacyPolicy />
 
 
     </transition>
@@ -39,8 +39,8 @@
   import CookiesMsg from '~/components/CookiesMsg.vue';
   import CartModal from '~/components/CartModal.vue';
   import ShopsModal from '~/components/ShopsModal.vue';
-  import requestPriceModal from '~/components/requestPriceModal.vue';
-  import privacyPolicy from '~/components/privacyPolicy.vue';
+  import RequestPriceModal from '~/components/RequestPriceModal.vue';
+  import PrivacyPolicy from '~/components/PrivacyPolicy.vue';
 
   export default {
     // head: {
@@ -60,8 +60,8 @@
       CookiesMsg,
       CartModal,
       ShopsModal,
-      requestPriceModal,
-      privacyPolicy,
+      RequestPriceModal,
+      PrivacyPolicy,
     },
     data() {
       return {
