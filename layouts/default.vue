@@ -24,7 +24,7 @@
 
       <CartModal v-if="cartModal" />
       <RequestPriceModal v-if="requestModal" />
-      <PrivacyPolicy />
+      <!-- <PrivacyPolicy /> -->
 
 
     </transition>

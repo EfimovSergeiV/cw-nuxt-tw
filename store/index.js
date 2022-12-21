@@ -2,7 +2,20 @@
 
 export const state = () => ({
   client: {
-    name: null
+    person: null,
+    phone: null,
+    email: null,
+    adress: null,
+    comment: null,
+    company: null,
+    legaladress: null,
+    inn: null,
+    kpp: null,
+    okpo: null,
+    bankname: null,
+    currentacc: null,
+    corresponding: null,
+    bic: null,
   },
   shops: null,
   region: null,
@@ -41,9 +54,15 @@ export const mutations = {
     }
     state.region = translated[location.city]
   },
-  clientData(state, client) {
-    state.client = client
-  }
+
+
+  clientData(state, person) {
+    state.client.person = person
+  },
+  clientPerson(state, person) {
+    console.log('Work mutation', person)
+    state.client.person = person
+  },
 }
 
 export const actions = {
@@ -75,7 +94,8 @@ export const actions = {
   showCookiesModal({ commit }) {
     commit('showCookiesModal')
   },
-  clientData({ commit }, client ) {
-    commit('clientData', client)
+  clientPerson({ commit }, event ) {
+    console.log('im work', event.target.id)
+    commit('clientData', event.target.value)
   }
 }
