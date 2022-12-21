@@ -5,10 +5,10 @@
     
       <div v-for="toast in toasts" :key="toast.id" class="">
         <transition tag="div" name="left-emergence">
-          <div :id="toast.id" v-if="toast.show" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-500 bg-white drop-shadow-lg">
+          <div :id="toast.id" v-if="toast.show" @click="hideToast(toast.id)" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-500 bg-white drop-shadow-lg cursor-pointer">
             <p class="text-sm">
               <!-- Polish the toast with an circle blue "i" (stands for information) -->
-              <span @click="hideToast(toast.id)" class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-500 text-white font-extrabold">i</span>
+              <span class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-500 text-white font-extrabold">i</span>
               {{ toast.text }}
             </p>      
           </div>
