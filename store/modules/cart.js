@@ -17,6 +17,11 @@ export const state = () => ({
     //     state.products.forEach((el) => (result += el.price * el.quantity))
     //     return result
     //   },
+    cartID: (state) => {
+      return state.products.map(({ id }) => {
+        return id
+      })
+    },
   }
   
   export const mutations = {
