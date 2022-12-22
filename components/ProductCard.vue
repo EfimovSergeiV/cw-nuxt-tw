@@ -18,7 +18,7 @@
         <p v-if="product.only_price === 0" class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
         <p v-else class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">{{ product.only_price.toLocaleString() }} руб.</p>
         
-        <p class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">В наличии {{ product.only_price }}</p>
+        <p class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">В наличии</p>
         <p class="mt-2 h-20 text-sm text-gray-700 dark:text-gray-200 text-center">{{ product.name }}</p>
       </nuxt-link>
 
