@@ -89,7 +89,7 @@
                     </span>
                   </button> -->
 
-                  <CartBtn :product="product" />
+                  <CartBtn cls=" px-5 py-2.5" :product="product" />
 
 
                 </div>
