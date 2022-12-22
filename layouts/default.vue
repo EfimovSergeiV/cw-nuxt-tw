@@ -26,7 +26,9 @@
 
       <CartModal v-if="cartModal" />
       <RequestPriceModal v-if="requestModal" />
-      <PrivacyPolicy v-if="showWriteUs" />
+      <ShowWriteUsModal v-if="showWriteUs" />
+      
+      <!-- <PrivacyPolicy /> -->
 
 
     </transition>
@@ -70,6 +72,7 @@
   import ShopsModal from '~/components/ShopsModal.vue';
   import RequestPriceModal from '~/components/RequestPriceModal.vue';
   import PrivacyPolicy from '~/components/PrivacyPolicy.vue';
+  import ShowWriteUsModal from '~/components/ShowWriteUsModal.vue';
   import TopLeftToasts from '~/components/TopLeftToasts.vue';
 
   export default {
@@ -92,6 +95,7 @@
       ShopsModal,
       RequestPriceModal,
       PrivacyPolicy,
+      ShowWriteUsModal,
       TopLeftToasts,
     },
     data() {
