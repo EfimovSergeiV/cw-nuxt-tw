@@ -70,12 +70,35 @@
               class="main-hooper"
             >
               <slide v-for="banner in banners" :key="banner.id" style="height: 348px; width: 598px;" class="">
-                <img
-                  style="height: 348px; width: 598px;"
-                  :src="banner.image"
-                  class="rounded-sm"
-                  onerror="this.src='./noimage-960-540.jpg'"
-                />
+                <div v-if="banner.link" class="">
+                  <nuxt-link :to="banner.link">
+                    <img
+                      style="height: 348px; width: 598px;"
+                      :src="banner.image"
+                      class="rounded-sm"
+                      onerror="this.src='./noimage-960-540.jpg'"
+                    /> 
+                  </nuxt-link>
+                </div>
+                <div v-else-if="banner.outlink" class="">
+                  <a :href="banner.outlink" target="blank">
+                    <img
+                      style="height: 348px; width: 598px;"
+                      :src="banner.image"
+                      class="rounded-sm"
+                      onerror="this.src='./noimage-960-540.jpg'"
+                    /> 
+                  </a>
+                </div>
+                <div v-else class="">
+                  <img
+                    style="height: 348px; width: 598px;"
+                    :src="banner.image"
+                    class="rounded-sm"
+                    onerror="this.src='./noimage-960-540.jpg'"
+                  /> 
+                </div>
+
               </slide>
               <hooper-navigation slot="hooper-addons"></hooper-navigation>
               <hooper-pagination slot="hooper-addons"></hooper-pagination>
