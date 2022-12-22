@@ -26,49 +26,37 @@
 
       <CartModal v-if="cartModal" />
       <RequestPriceModal v-if="requestModal" />
-      <!-- <PrivacyPolicy /> -->
+      <PrivacyPolicy v-if="showWriteUs" />
 
 
     </transition>
 
 
-    <div class="">
+
       <div class="absolute">
-        <div class="">
+
           <div class="relative">
-            <div class="fixed bottom-40 right-28 hover:right-32 transition-all duration-500">
+            <div class="fixed bottom-40 right-20 hover:right-24 transition-all duration-500">
               <div class="relative">
-
                 <div class="absolute z-50">
-
-                  <div class="-rotate-90 bg-gray-700 px-4 pb-4 pt-1 rounded-md w-40">
-                    <div class="flex items-center justify-center">
+                  <div @click="showWriteUs = !showWriteUs" class="-rotate-90 bg-blue-700 px-4 pb-12  group rounded-md w-44 cursor-pointer">
+                    <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
                       <div class="">
-                        <p class="text-sm font-bold mx-1">Напишите нам</p>
+                        <p class="text-sm mx-2">Напишите нам</p>
                       </div>
                       <div class="rotate-90">
-                        <p class="mdi mdi-message-text-outline"></p>
+                        <p class="mdi mdi-24px mdi-message-text-outline"></p>
                       </div>
                     </div>
-                    
                   </div>
-
-                  
                 </div>
- 
-                  
-
               </div>
-              
             </div>
-
           </div>
-          
 
-          
-        </div>
       </div>
-    </div>
+ 
+
 
   </div>
    
@@ -109,6 +97,7 @@
     data() {
       return {
         dataset: true,
+        showWriteUs: false,
       }
     },
     methods: {
@@ -118,7 +107,7 @@
       },
       ...mapMutations({
         toggle: 'todos/toggle'
-      })
+      }),
     },
     computed: {
       ...mapState({
