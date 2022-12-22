@@ -15,6 +15,17 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# create conf.js file with link to backend
+$ touch conf.js
+$ nano conf.js
+```
+
+```javascript
+/// conf.js 
+
+const backend = 'http://127.0.0.1:8000'
+export default backend
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
