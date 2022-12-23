@@ -69,7 +69,8 @@
 
                 </div>
                 <div class="flex justify-end my-2 mx-2">
-                  <p class="text-base">В наличии</p>
+                  <p v-if="product.status === 'stock'" class="text-base">в наличии</p>
+                  <p v-if="product.status === 'order'" class="text-base">под заказ</p>
                 </div>
                 
                 <div class="flex gap-2 justify-end">

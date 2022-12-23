@@ -6,10 +6,14 @@
       <div v-for="toast in toasts" :key="toast.id" class="w-96">
         
           <div :id="toast.id" @click="hideToast(toast.id)" class="my-2 dark:text-gray-700 px-5 py-4 border-r-8 border-blue-600 bg-white drop-shadow-lg cursor-pointer rounded-l-sm">
-            <p class="text-sm">
-              <span class="mr-2 inline-block px-3 py-1 rounded-full bg-blue-600 text-white font-bold">i</span>
-              {{ toast.text }}
-            </p>      
+            <div class="flex items-center justify-between">
+              <div class="">
+                <p class="mdi mdi-36px mdi-information-outline text-blue-600"></p>
+              </div>
+              <div class="">
+                <p class="text-sm text-center">{{ toast.text }}</p>
+              </div>
+            </div>
           </div>
         
       </div>

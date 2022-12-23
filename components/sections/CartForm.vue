@@ -9,7 +9,7 @@
           <div class="">
 
             <div class="grid gap-2 px-2 py-4">
-              <div class="flex">
+              <div class="flex lg:items-center lg:gap-2">
                 <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
                 <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
                 <div class="flex justify-center w-32"><p class="text-sm">Количество</p></div>
@@ -34,7 +34,10 @@
                       <div class="mx-2"><p>{{ product.quantity }}</p></div>
                       <button @click="incProductToCart(product)" class="mdi mdi-plus cursor-pointer"></button>
                     </div>
-                    <div class="flex justify-center w-32"><p class="text-sm">В наличии</p></div>
+                    <div class="flex justify-center w-32">
+                      <p v-if="product.status === 'stock'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
+                      <p v-if="product.status === 'order'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">под заказ</p>
+                    </div>
                     <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
                     <div class="flex justify-center w-20">
                       <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close cursor-pointer"></button>

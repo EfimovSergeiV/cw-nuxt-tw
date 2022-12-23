@@ -21,15 +21,7 @@
             </div>
 
 
-            <div v-if="sended" class="">
-              <div class="flex items-center px-6 h-40">
-                <p class="text-base">
-                  Мы уточним стоимость товара и сразу с вами свяжемся по указанным вами контактам
-                </p>                
-              </div>
-            </div>
-
-            <div v-else class="p-6 space-y-6 h-96 overflow-y-auto">
+            <div class="p-6 space-y-6 h-96 overflow-y-auto">
               <div class="grid justify-center md:flex gap-4">
                 <div class="flex justify-center w-full">
                   <div class="bg-white rounded-sm p-1 w-[235px]">
@@ -74,8 +66,8 @@
 
             <div class="grid grid-cols-2 px-4 py-4 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
               <div class="">
-                <p class="text-xs my-1">Ваш номер телефона или email:</p>
-                <input v-model="contact" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" :placeholder="placeholder">
+                <p class="text-xs my-1">Как с вами связаться?</p>
+                <input v-model="contact" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш номер телефона или email">
               </div>
               <div class="flex justify-end items-end">
                 <div class="">
@@ -109,19 +101,21 @@ import { mapActions, mapState } from 'vuex';
     },
     data() {
       return {
-        city: "Псков",
         contact: null,
         sended: false,
       }
     },
     computed: {
       ...mapState({
+        region: (state) => state.region,
         requestPrice: (state) => state.modules.cart.requestPrice,
         pricerequest: (state) => state.modules.pricerequest,
       }),
     },
     methods: {
       ...mapActions({
+        addToast: 'addToast',
+        displayForm: 'displayForm',
         showCartModal: 'modules/cart/showCartModal',
         delProductToCart: 'modules/cart/delProductToCart',
         incProductToCart: 'modules/cart/incProductToCart',
@@ -137,16 +131,17 @@ import { mapActions, mapState } from 'vuex';
       sendRequestPrice() {
         this.$axios
           .$post('o/request-price/', {
-            city: this.city,
+            city: this.region,
             contact: this.contact,
             product: `id: ${this.requestPrice.id} vc: ${this.requestPrice.vcode} name: ${this.requestPrice.name}`,
           })
           .then((resp) => {
-            this.sended = true
-            console.log("Заявка отправлена")
+            this.addToast('Запрос отправлен, мы свяжемся с вами в ближайшее время.')
+            this.hideRequestModal()
           })
           .catch(() => {
-            console.log("Произошла ошибка")
+            this.hideRequestModal
+            this.addToast('Произошла ошибка.')
           })
         },
       },

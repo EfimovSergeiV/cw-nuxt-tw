@@ -18,7 +18,8 @@
         <p v-if="product.only_price === 0" class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
         <p v-else class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">{{ product.only_price.toLocaleString() }} руб.</p>
         
-        <p class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">В наличии</p>
+        <p v-if="product.status === 'stock'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
+        <p v-if="product.status === 'order'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">под заказ</p>
         <p class="mt-2 h-20 text-sm text-gray-700 dark:text-gray-200 text-center">{{ product.name }}</p>
       </nuxt-link>
 
@@ -27,6 +28,8 @@
           <!-- <button class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
             <span class="relative px-3 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-equalizer-outline">
             </span>
+                    ("stock", "в наличии"),
+                    ("order", "под заказ"),
           </button> -->
           <CompBtn cls="px-3 py-1.5" :product="product" />
 
@@ -46,7 +49,7 @@
               Запросить
           </span>
         </button>
-        <CartBtn v-else cls="px-5 py-1.5" :product="product" />
+        <CartBtn v-else cls="px-6 py-1.5" :product="product" />
         <!-- <button @click="addProductToCart(product)" v-else class="w-full relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
           <span class="w-full relative px-3 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
               В корзину
