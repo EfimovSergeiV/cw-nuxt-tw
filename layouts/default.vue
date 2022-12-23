@@ -26,7 +26,7 @@
 
       <CartModal v-if="cartModal" />
       <RequestPriceModal v-if="requestModal" />
-      <ShowWriteUsModal v-if="showWriteUs" />
+      <ShowWriteUsModal v-if="contactForm" />
       
       <!-- <PrivacyPolicy /> -->
 
@@ -41,7 +41,7 @@
             <div class="fixed bottom-48 right-20 hover:right-24 transition-all duration-500">
               <div class="relative">
                 <div class="absolute z-50">
-                  <div @click="showWriteUs = !showWriteUs" class="-rotate-90 bg-blue-700 px-4 pb-12  group rounded-md w-44 cursor-pointer">
+                  <div @click="displayForm('contactForm')" class="-rotate-90 bg-blue-700 px-4 pb-12  group rounded-md w-44 cursor-pointer">
                     <div class="flex items-center justify-center group-hover:text-gray-100 text-gray-300 font-bold transition-all duration-500">
                       <div class="">
                         <p class="text-sm mx-2">Напишите нам</p>
@@ -66,7 +66,7 @@
 </template>
   
 <script>
-  import { mapState, mapMutations } from 'vuex';
+  import { mapState, mapMutations, mapActions } from 'vuex';
   import CookiesMsg from '~/components/CookiesMsg.vue';
   import CartModal from '~/components/CartModal.vue';
   import ShopsModal from '~/components/ShopsModal.vue';
@@ -105,12 +105,15 @@
       }
     },
     methods: {
-      addTodo (e) {
-        this.$store.commit('todos/add', e.target.value)
-        e.target.value = ''
-      },
+      // addTodo (e) {
+      //   this.$store.commit('todos/add', e.target.value)
+      //   e.target.value = ''
+      // },
       ...mapMutations({
         toggle: 'todos/toggle'
+      }),
+      ...mapActions({
+        displayForm: 'displayForm',
       }),
     },
     computed: {
@@ -120,6 +123,7 @@
         requestModal: (state) => state.modules.cart.requestModal,
         shopModal: (state) => state.shopModal,
         cookies: (state) => state.cookies,
+        contactForm: (state) => state.contactForm,
         cookiestore: (state) => state.storage.cookies
       }),
     },

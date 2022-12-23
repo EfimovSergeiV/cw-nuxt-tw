@@ -21,7 +21,8 @@ export const state = () => ({
   region: null,
   cookies: true,
   shopModal: false,
-  toasts: []
+  toasts: [],
+  contactForm: false,
 })
 
 export const getters = {
@@ -67,6 +68,10 @@ export const mutations = {
     const toast = state.toasts.findIndex((item) => item.id === id)
     state.toasts.splice(toast, 1)
   },
+  displayForm(state, id) {
+    state[id] = !state[id]
+    console.log("Display form", id)
+  }
 }
 
 export const actions = {
@@ -101,11 +106,14 @@ export const actions = {
   clientPerson({ commit }, event ) {
     commit('clientData', { key: event.target.id, value: event.target.value })
   },
-  addToast({ commit }, text ){
+  addToast({ commit }, text ) {
     /// Сделать присваивание ID
     commit('addToast', text,)
   },
-  hideToast({ commit }, toast ){
+  hideToast({ commit }, toast ) {
     commit('hideToast', toast)
   },
+  displayForm({ commit }, id ) {
+    commit('displayForm', id)
+  }
 }
