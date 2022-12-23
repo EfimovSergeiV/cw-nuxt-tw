@@ -38,7 +38,7 @@
       <div class="absolute">
 
           <div class="relative">
-            <div class="fixed bottom-40 right-20 hover:right-24 transition-all duration-500">
+            <div class="fixed bottom-48 right-20 hover:right-24 transition-all duration-500">
               <div class="relative">
                 <div class="absolute z-50">
                   <div @click="showWriteUs = !showWriteUs" class="-rotate-90 bg-blue-700 px-4 pb-12  group rounded-md w-44 cursor-pointer">
