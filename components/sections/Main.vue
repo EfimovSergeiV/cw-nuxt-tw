@@ -41,8 +41,8 @@
                           </div>
                         </div>
                         <div class="absolute bottom-0 left-0 w-full">
-                          <div class="flex items-center bg-gray-800/60 group-hover:bg-gray-800/70 p-1 h-10 rounded-sm">
-                            <p class="text-gray-200 text-xs">{{ product.name }}</p>
+                          <div class="flex items-center justify-center p-1 h-10 rounded-sm">
+                            <p class="text-gray-900 text-xs">{{ product.name }}</p>
                           </div>
                         </div>
                       </div>

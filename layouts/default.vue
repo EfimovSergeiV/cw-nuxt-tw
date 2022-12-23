@@ -101,7 +101,7 @@
     data() {
       return {
         dataset: true,
-        showWriteUs: false,
+        showWriteUs: true,
       }
     },
     methods: {
