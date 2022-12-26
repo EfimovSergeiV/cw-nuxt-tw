@@ -33,7 +33,7 @@ export const state = () => ({
       },
     addProductToCart(
       state,
-      { id, vcode, name, rating, prod_price, status, preview_image, propstrmodel }
+      { id, vcode, name, rating, only_price, status, preview_image, propstrmodel }
     ) {
       state.cartModal = !state.cartModal
       state.products.push({
@@ -41,7 +41,7 @@ export const state = () => ({
         vcode,
         name,
         rating,
-        prod_price,
+        only_price,
         status,
         preview_image,
         propstrmodel,
@@ -97,7 +97,7 @@ export const state = () => ({
           vcode: product.vcode,
           name: product.name,
           rating: product.rating,
-          prod_price: product.only_price,
+          only_price: product.only_price,
           status: product.status,
           preview_image: product.preview_image,
           propstrmodel: product.propstrmodel,

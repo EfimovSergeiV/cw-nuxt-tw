@@ -38,7 +38,7 @@
                       <p v-if="product.status === 'stock'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>
                       <p v-if="product.status === 'order'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">под заказ</p>
                     </div>
-                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.prod_price.toLocaleString() }} руб/шт</p></div>
+                    <div class="flex justify-center w-32"><p class="text-sm">{{ product.only_price.toLocaleString() }} руб/шт</p></div>
                     <div class="flex justify-center w-20">
                       <button @click="delProductToCart(product)" class="mdi mdi-24px mdi-close cursor-pointer"></button>
                     </div>
@@ -340,7 +340,7 @@ import CartField from '../CartField.vue';
       let result = 0
       this.cart.forEach(
         (ell) =>
-          (result += ell.prod_price * ell.quantity)
+          (result += ell.only_price * ell.quantity)
       )
       this.totalPrice = Math.ceil(result)
       return Math.ceil(result)
