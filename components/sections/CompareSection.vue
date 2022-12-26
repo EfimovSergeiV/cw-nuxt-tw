@@ -99,12 +99,12 @@
         </div>
 
         <div id="comp-leer" v-else class="">
-          <div class="flex gap-4 items-center justify-center h-full my-40 md:my-80">
+          <div class="flex gap-4 items-center justify-center h-full my-20 md:my-40">
 
             <div class="flex items-center gap-8">
               <div class="grid gap-2 grid-cols-1">
                 <div class="mx-4 text-center">
-                  <p class="text-2xl">Этой страницы больше нет</p>
+                  <p class="text-2xl">У вас нет товаров для сравнения</p>
                 </div>
                 <div class="border-b border-gray-700 dark:border-gray-300"></div>
                 <div class="mx-4 text-center">
@@ -112,8 +112,8 @@
                 </div>
               </div>
               <div>
-                <p class="mdi mdi-close-outline text-3xl md:text-6xl"> 404</p>
-              </div>          
+                <p class="mdi mdi-close-outline text-3xl md:text-6xl"></p>
+              </div>
             </div>
 
           </div>  
