@@ -20,6 +20,7 @@
 </template>
   
 <script>
+import { mapActions } from 'vuex'
 import Navbar from '~/components/Navbar.vue'
 import TopSliderSection from '~/components/sections/TopSliderSection.vue'
 import CompareSection from '~/components/sections/CompareSection.vue'

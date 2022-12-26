@@ -73,10 +73,10 @@ import { mapState, mapActions } from 'vuex';
       }),
     },
     methods: {
-    ...mapActions({
-      displayForm: 'displayForm',
-      addToast: 'addToast',
-    }),
+      ...mapActions({
+        displayForm: 'displayForm',
+        addToast: 'addToast',
+      }),
     sendMessage() {
       if (this.contact) {
         this.$axios
