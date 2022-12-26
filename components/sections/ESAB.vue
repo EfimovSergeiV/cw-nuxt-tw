@@ -34,12 +34,27 @@
 
         
         <div class="border dark:border-gray-700 rounded-sm shadow-md">
-          <img 
-            class="rounded-sm"
-            src="https://glsvar.ru/ws-esab.jpg"
-            loading=lazy
-          />
+
+          <hooper
+            :wheel-control="false"
+            :infinite-scroll="true"
+            :play-speed="12000"
+            :transition="1200"
+            :auto-play="true"
+            style="height: 100%"
+          >
+            <slide v-for="banner in esabbanners" :key="banner.id">
+              <nuxt-link :to="banner.path">
+                <img :src="banner.image" fluid :alt="banner.image" />
+              </nuxt-link>
+            </slide>
+
+            <hooper-navigation slot="hooper-addons"></hooper-navigation>
+            <hooper-pagination slot="hooper-addons"></hooper-pagination>
+          </hooper>
+
         </div>
+
       </div>
 
 
@@ -68,15 +83,29 @@
 </template>
 
 <script>
+import {
+  Hooper,
+  Slide,
+  Navigation as HooperNavigation,
+  Pagination as HooperPagination,
+} from 'hooper'
+
   export default {
     name: 'ESABSection',
     components: {
-      // Hooper,
+      Hooper,
+      Slide,
+      HooperNavigation,
+      HooperPagination,
     },
     props: {
       esab: {
         type: Object,
         default: Object,
+      },
+      esabbanners: {
+        type: Array,
+        default: Array,
       },
     },
     data() {

@@ -6,7 +6,7 @@
     <Navbar :cts="cts" />
     <Main :latest="latest" :banners="banners" />
     <Reviews :reviews="banners" />
-    <ESAB :esab="esab" />
+    <ESAB :esab="esab" :esabbanners="esabbanners" />
     <CorouselProducts :latest="latest" />
     <MWeld :mweld="mweld" />
     <Svarog :mpromobs="mpromobs" />
@@ -65,12 +65,18 @@ import Footer from '~/components/Footer.vue'
       const brands = await $axios.$get('/c/brands/')
       const cts = await $axios.$get('c/ct/')
       const esab = await $axios.$get('c/prods/?brnd=3')
+      const esabbanners = [
+        {id: 1, image: 'esab-ok.jpg', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
+        {id: 1, image: 'rogue-banner.jpg', path: { name: 'product-id', params: { id: 1705 } } },
+        {id: 1, image: 'ws-esab.jpg', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
+        {id: 1, image: 'handy-esab.jpg', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
+      ]
       const latest = await $axios.$get('c/neues/')
       const mpromobs = await $axios.$get('c/mpromob/')
       const recommends = await $axios.$get(`c/recommend/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
 
-      return { widebanners, banners, brands, cts, latest, mpromobs, esab, recommends, mweld }
+      return { widebanners, banners, brands, cts, latest, mpromobs, esab, esabbanners, recommends, mweld }
     },
     methods: {
         filterCarouselBrands(brands) {
