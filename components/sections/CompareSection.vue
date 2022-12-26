@@ -90,17 +90,16 @@
               </div>            
             </div>
 
-
           </div>
         </div>
 
 
+        
       </div>
 
 
 
 
-      <p class="text-xs mt-10">{{ comp }}</p>
     </div>
 
     
