@@ -8,6 +8,17 @@
 
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
+
+      <div class="bg-white dark:bg-gray-800 px-12 py-4 mb-4 border border-gray-300 dark:border-gray-700">
+        <div class="flex gap-8">
+          <nuxt-link to="#">Link one</nuxt-link>
+          <nuxt-link to="#">Link two</nuxt-link>
+          <nuxt-link to="#">Link third</nuxt-link>
+          <nuxt-link to="#">Link five</nuxt-link>
+        </div>
+      </div>
+
+
       <div class="bg-white dark:bg-gray-800 px-12 py-4 border border-gray-300 dark:border-gray-700">
 
 
@@ -63,7 +74,7 @@ import Order from '~/components/sections/Order.vue'
   },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
-      const order = await $axios.$get(`o/orderinfo/PSK1156363/`)
+      const order = await $axios.$get(`o/orderinfo/MOW1485499/`)
       return { cts, order }
     },
     data() {

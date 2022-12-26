@@ -65,15 +65,13 @@
 
 <script>
 import { mapActions } from 'vuex';
-import CartModal from './CartModal.vue'
 import CartBtn from './CartBtn.vue';
-import LikeBtn from './LikeBtn.vue'
+import LikeBtn from './LikeBtn.vue';
 import CompBtn from './CompBtn.vue';
 
   export default {
     name: 'ProductSection',
     components: {
-      CartModal,
       CartBtn,
       LikeBtn,
       CompBtn,
@@ -94,7 +92,6 @@ import CompBtn from './CompBtn.vue';
         showCartModal: 'showCartModal',
         addProductToCart: 'modules/cart/addProductToCart',
         requestPriceProduct: 'modules/cart/requestPriceProduct'
-        // delProductToCart: 'modules/cart/delProductToCart',
       }),
       requestPrice(price) {
         console.log(price)
