@@ -3,102 +3,110 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div v-if="comp.length > 0" class="">
+      <transition name="fade" mode="out-in">
+        <div id="comp-data" v-if="comp.length > 0" class="">
 
-        <div class="">
+          <div class="">
 
 
-          <transition-group tag="div" name="left-emergence" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <transition-group tag="div" name="left-emergence" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
 
-            
-            <div v-for="product in comp.slice(0, 4)" :key="product.id" class="">
+              
+              <div v-for="product in comp.slice(0, 4)" :key="product.id" class="">
 
-              <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 h-full">
+                <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 h-full">
 
-                <div class="">
+                  <div class="">
 
-                  <div class="bg-white flex items-center justify-center m-1 rounded-sm relative">
-                    <div class="">
-                      <img :src="product.preview_image" />
+                    <div class="bg-white flex items-center justify-center m-1 rounded-sm relative">
+                      <div class="">
+                        <img :src="product.preview_image" />
+                      </div>
+                      <div class="absolute top-0 right-0">
+                        <div class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-700 hover:dark:text-gray-900">
+                          <p @click="delToComparison(product)" class="mdi mdi-24px mdi-window-close"></p>
+                        </div>
+                      </div>
+                      
                     </div>
-                    <div class="absolute top-0 right-0">
-                      <div class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-700 hover:dark:text-gray-900">
-                        <p @click="delToComparison(product)" class="mdi mdi-24px mdi-window-close"></p>
+
+                    <div class="flex items-center justify-center h-28">
+                      <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }" class="text-sm text-center">{{ product.name }}</nuxt-link>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-2 px-2">
+                      <div class="">
+                        <LikeBtn cls="px-3 py-1.5" :product="product" />
+                      </div>
+                      <div class="">
+                        <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="w-full relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
+                          <span class="w-full relative px-10 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                            Запросить
+                          </span>
+                        </button>
+                        <CartBtn v-else cls="px-10 py-1.5" :product="product" />
                       </div>
                     </div>
                     
                   </div>
 
-                  <div class="flex items-center justify-center h-28">
-                    <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }" class="text-sm text-center">{{ product.name }}</nuxt-link>
-                  </div>
 
-                  <div class="flex items-center justify-center gap-2 px-2">
-                    <div class="">
-                      <LikeBtn cls="px-3 py-1.5" :product="product" />
-                    </div>
-                    <div class="">
-                      <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="w-full relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                        <span class="w-full relative px-10 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                          Запросить
-                        </span>
-                      </button>
-                      <CartBtn v-else cls="px-10 py-1.5" :product="product" />
-                    </div>
+                </div>
+
+              </div>
+            </transition-group>
+          </div>
+
+
+          <div class="grid grid-cols-2 lg:grid-cols-4">
+            <div v-for="prod in comp.slice(0, 4)" :key="prod.id" class="my-4">
+
+              <div class="flex gap-2 justify-center items-center">
+                <div class="">
+                  <p class="text-xl">{{ prod.only_price.toLocaleString() }}</p>
+                </div>
+                <div class="">
+                  <p class="">руб.</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+
+          <div class="my-4">
+            <div v-for="prop in comp[0].propstrmodel" :key="prop.id" class="">
+
+
+              <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 px-2 py-1">
+                <p class="text-sm">{{ prop.name }}</p>
+              </div>
+
+              <div class="grid grid-cols-2 lg:grid-cols-4 items-center gap-4">
+                <div v-for="product in comp.slice(0, 4)" :key="product.id">
+                  <div class="text-center my-2">
+                    <p>{{ getPropValue(product.propstrmodel, prop.name) }}</p>
                   </div>
                   
-                </div>
-
-
+                </div>            
               </div>
 
             </div>
-          </transition-group>
-        </div>
-
-
-        <div class="grid grid-cols-2 lg:grid-cols-4">
-          <div v-for="prod in comp.slice(0, 4)" :key="prod.id" class="my-4">
-
-            <div class="flex gap-2 justify-center items-center">
-              <div class="">
-                <p class="text-xl">{{ prod.only_price.toLocaleString() }}</p>
-              </div>
-              <div class="">
-                <p class="">руб.</p>
-              </div>
-            </div>
-            
           </div>
+
+
+
         </div>
 
+        <div id="comp-leer" v-else class="">
+          <div class=" my-52">
 
-        <div class="my-4">
-          <div v-for="prop in comp[0].propstrmodel" :key="prop.id" class="">
-
-
-            <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 px-2 py-1">
-              <p class="text-sm">{{ prop.name }}</p>
-            </div>
-
-            <div class="grid grid-cols-2 lg:grid-cols-4 items-center gap-4">
-              <div v-for="product in comp.slice(0, 4)" :key="product.id">
-                <div class="text-center my-2">
-                  <p>{{ getPropValue(product.propstrmodel, prop.name) }}</p>
-                </div>
-                
-              </div>            
-            </div>
+            <p class="">У вас нет товаров для сравнения</p>
 
           </div>
         </div>
 
-
-        
-      </div>
-
-
-
+      </transition>
 
     </div>
 
