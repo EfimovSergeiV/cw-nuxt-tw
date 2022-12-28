@@ -118,23 +118,58 @@
         
         <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
           <div class="flex">
-            <p class="text-sm">Товары в избранном</p>
+            <p class="text-sm my-2">Товары в избранном</p>
           </div>
-          <div class="flex justify-center items-center h-24 min-h-full">
-            <p>Нет товаров в избранном</p>
+          <div v-if="favorites.length == 0" class="flex justify-center items-center h-24 min-h-full">
+            <p>Нет товаров для сравнения</p>
+          </div>
+          <div v-else class="">
+            <div class="grid grid-cols-3 gap-4">
+              <div v-for="product in favorites" :key="product.id" class="">
+                
+                <div class="flex items-center justify-center bg-white rounded-sm pb-12 relative">
+                  <img :src="product.preview_image" class="h-20 rounded-sm"/>
+                  <div class="absolute top-0 right-0 px-1">
+                    <button @click="delProductToFav(product)" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
+                  </div>   
+                  <div class="absolute bottom-0 p-1">
+                    <div  class="flex justify-center items-center text-center">
+                      <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="text-xs text-gray-700 font-semibold">{{ product.name }}</nuxt-link>
+                    </div>
+                  </div>    
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
 
 
         <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
           <div class="flex">
-            <p class="text-sm">Товары в сравнении</p>
+            <p class="text-sm my-2">Товары в сравнении</p>
           </div>
           <div v-if="comp.length == 0" class="flex justify-center items-center h-24 min-h-full">
             <p>Нет товаров для сравнения</p>
           </div>
           <div v-else class="">
-            {{ comp }}{{ comp.length }}
+            <div class="grid grid-cols-3 gap-4">
+              <div v-for="product in comp" :key="product.id" class="">
+                
+                <div class="flex items-center justify-center bg-white rounded-sm pb-12 relative">
+                  <img :src="product.preview_image" class="h-20 rounded-sm"/>
+                  <div class="absolute top-0 right-0 px-1">
+                    <button @click="delToComparison(product)" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
+                  </div>   
+                  <div class="absolute bottom-0 p-1">
+                    <div  class="flex justify-center items-center text-center">
+                      <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="text-xs text-gray-700 font-semibold">{{ product.name }}</nuxt-link>
+                    </div>
+                  </div>    
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
 
@@ -200,7 +235,6 @@ import Order from '~/components/sections/Order.vue'
     data() {
       return {
         stat: true,
-        allCookie: null,
       }
     },
     methods: {
@@ -209,6 +243,7 @@ import Order from '~/components/sections/Order.vue'
         clientPerson: 'clientPerson',
         createCookieData: 'createCookieData',
         createMainCookie: 'createMainCookie',
+        delProductToFav: 'modules/favorites/delProductToFav',
         delToComparison: 'modules/comparison/delToComparison',
       }),
       savePerson(){
@@ -237,6 +272,7 @@ import Order from '~/components/sections/Order.vue'
     ...mapState({
       client: (state) => state.client,
       comp: (state) => state.modules.comparison.products,
+      favorites: (state) => state.modules.favorites.products,
     }),
   },
   }
