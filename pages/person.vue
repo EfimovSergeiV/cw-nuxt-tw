@@ -24,7 +24,7 @@
                 <div v-for="i in 15" :key="i" class="">
                   <div class="bg-white dark:bg-gray-700 rounded-sm border dark:border-gray-600 p-1">
                     <div class="">
-                      <p class="text-xs font-bold my-1">{{ order.order_number }}</p>
+                      <p class="text-xs font-bold my-1 mx-1">{{ order.order_number }}</p>
                       
                       <div v-for="product, item in order.client_product" :key="item" class="py-2 mx-1 flex items-center justify-between">
                         <p class="text-xs">{{ item + 1 }}. {{ product.name }}</p>
