@@ -364,37 +364,49 @@ import CartField from '../CartField.vue';
       }
     },
     sendOrder() {
-      const data = {
-        shop_id: this.selectedShop.id,
-        region_code: this.selectedShop.region_code,
-        person: this.client.person,
-        phone: this.client.phone,
-        email: this.client.email,
-        comment: this.comment,
-        delivery: this.delivery,
-        // "delivery_adress":"this.deliverycity",
-        // "delivery_summ":0,        
-        adress: this.selectedShop.adress,
-        total: this.totalPrice,
+      if (this.selectedShop) {
+        const data = {
+          shop_id: this.selectedShop.id,
+          region_code: this.selectedShop.region_code,
+          person: this.client.person,
+          phone: this.client.phone,
+          email: this.client.email,
+          comment: this.comment,
+          delivery: this.delivery,
+          // "delivery_adress":"this.deliverycity",
+          // "delivery_summ":0,        
+          adress: this.selectedShop.adress,
+          total: this.totalPrice,
 
-        company: this.client.company,
-        legaladress: this.client.legaladress,
-        inn: this.client.inn,
-        kpp: this.client.kpp,
-        okpo: this.client.okpo,
-        bankname: this.client.bankname,
-        currentacc: this.client.currentacc,
-        corresponding: this.client.corresponding,
-        bic: this.client.bic,
+          company: this.client.company,
+          legaladress: this.client.legaladress,
+          inn: this.client.inn,
+          kpp: this.client.kpp,
+          okpo: this.client.okpo,
+          bankname: this.client.bankname,
+          currentacc: this.client.currentacc,
+          corresponding: this.client.corresponding,
+          bic: this.client.bic,
 
-        client_product: this.cart,
-      }
+          client_product: this.cart,
+        }
 
-      if ( data.phone ) {
-        this.$axios.$post('o/order/', data)
+        if ( data.phone || data.email ) {
+          this.$axios.$post('o/order/', data)
+          this.cleanCart()
+          this.$router.push({
+            name: 'person',
+          })
+
+        } else {
+          this.addToast("Введите номер телефона или адрес электронной почты")
+        }
+
       } else {
-        this.addToast("Напиши свой номер телефона придурок")
+        this.addToast("Выберите адрес магазина")
       }
+
+
 
       
     },

@@ -24,7 +24,7 @@
                 <div v-for="i in 15" :key="i" class="">
                   <div class="bg-white dark:bg-gray-700 rounded-sm border dark:border-gray-600 p-1">
                     <div class="">
-                      <p class="text-xs font-bold my-1 mx-1">{{ order.order_number }}</p>
+                      <p class="text-sm font-bold my-1 mx-1">{{ order.order_number }}</p>
                       
                       <div v-for="product, item in order.client_product" :key="item" class="py-2 mx-1 flex items-center justify-between">
                         
@@ -38,9 +38,9 @@
                       </div>
                       
                     </div>
-                    <div class="flex items-end justify-end gap-2 mx-1 my-2">
-                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-sm">Удалить</button>
-                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-sm">Отменить</button>
+                    <div class="flex items-end justify-end gap-4 mx-1 my-2">
+                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs">Удалить</button>
+                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs">Отменить</button>
                     </div>
                     
                   </div>
@@ -121,7 +121,7 @@
             <p class="text-sm my-2">Товары в избранном</p>
           </div>
           <div v-if="favorites.length == 0" class="flex justify-center items-center h-24 min-h-full">
-            <p>Нет товаров для сравнения</p>
+            <p>Нет товаров в избранном</p>
           </div>
           <div v-else class="">
             <div class="grid grid-cols-3 gap-4">
@@ -130,7 +130,7 @@
                 <div class="flex items-center justify-center bg-white rounded-sm pb-12 relative">
                   <img :src="product.preview_image" class="h-20 rounded-sm"/>
                   <div class="absolute top-0 right-0 px-1">
-                    <button @click="delProductToFav(product)" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
+                    <button @click="delProductToFav(product) && addToast('Товар удалён из избранных')" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
                   </div>   
                   <div class="absolute bottom-0 p-1">
                     <div  class="flex justify-center items-center text-center">
@@ -159,7 +159,7 @@
                 <div class="flex items-center justify-center bg-white rounded-sm pb-12 relative">
                   <img :src="product.preview_image" class="h-20 rounded-sm"/>
                   <div class="absolute top-0 right-0 px-1">
-                    <button @click="delToComparison(product)" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
+                    <button @click="delToComparison(product) && addToast('Товар удалён из сравниваемых')" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
                   </div>   
                   <div class="absolute bottom-0 p-1">
                     <div  class="flex justify-center items-center text-center">
