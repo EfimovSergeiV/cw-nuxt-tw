@@ -28,7 +28,7 @@
                       
                       <div v-for="product, item in order.client_product" :key="item" class="py-2 mx-1 flex items-center justify-between">
                         
-                        <p class="text-xs">{{ item + 1 }}. {{ product.name }}</p>
+                        <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="text-xs">{{ item + 1 }}. {{ product.name }}</nuxt-link>
                         <div class="flex items-center justify-end gap-2">
                           <p class="text-xs">{{ product.price }} руб.</p>
                           <p class="text-xs">X</p>
@@ -72,7 +72,7 @@
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                       <p class="mdi mdi-account"></p>
                     </div>
-                    <input type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
+                    <input :value="client.person" @change="clientPerson" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
                   </div>
                 </div>
 
@@ -82,7 +82,7 @@
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                       <p class="mdi mdi-email"></p>
                     </div>
-                    <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+                    <input :value="client.email" @change="clientPerson" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
                   </div>
                 </div>
 
@@ -92,14 +92,14 @@
                     <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                       <p class="mdi mdi-phone"></p>
                     </div>
-                    <input  type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+                    <input :value="client.phone" @change="clientPerson" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
                   </div>               
                 </div>
               </div>
 
               <div class="flex items-center justify-end gap-4 h-full my-2">
                 <div class="">
-                  <button class="w-full relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
+                  <button @click="savePerson" class="w-full relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
                     <span class="px-8 py-2 relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
                       Сохранить
                     </span>
@@ -120,7 +120,7 @@
           <div class="flex">
             <p class="text-sm">Товары в избранном</p>
           </div>
-          <div class="flex justify-center items-center h-28">
+          <div class="flex justify-center items-center h-24 min-h-full">
             <p>Нет товаров в избранном</p>
           </div>
         </div>
@@ -130,8 +130,11 @@
           <div class="flex">
             <p class="text-sm">Товары в сравнении</p>
           </div>
-          <div class="flex justify-center items-center h-28">
+          <div v-if="comp.length == 0" class="flex justify-center items-center h-24 min-h-full">
             <p>Нет товаров для сравнения</p>
+          </div>
+          <div v-else class="">
+            {{ comp }}{{ comp.length }}
           </div>
         </div>
 
@@ -196,15 +199,22 @@ import Order from '~/components/sections/Order.vue'
     },
     data() {
       return {
-        stat: false,
+        stat: true,
         allCookie: null,
       }
     },
     methods: {
       ...mapActions({
+        addToast: 'addToast',
+        clientPerson: 'clientPerson',
         createCookieData: 'createCookieData',
-        createMainCookie: 'createMainCookie'
+        createMainCookie: 'createMainCookie',
+        delToComparison: 'modules/comparison/delToComparison',
       }),
+      savePerson(){
+        /// Передача и присваение id на сервер, для определения клиента
+        this.addToast("Ваши данные успешно сохранены")
+      },
       createCookie() {
         console.log("Create cookie")
         this.$storage.setCookie("cookie", true)
@@ -223,10 +233,11 @@ import Order from '~/components/sections/Order.vue'
         // this.$storage.removeCookie('clientName')
       },
     },
-  //   computed: {
-  //   ...mapState({
-  //     clientName: (state) => state.storage.clientName
-  //   }),
-  // },
+    computed: {
+    ...mapState({
+      client: (state) => state.client,
+      comp: (state) => state.modules.comparison.products,
+    }),
+  },
   }
 </script>
