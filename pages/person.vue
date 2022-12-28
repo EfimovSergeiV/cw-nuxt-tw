@@ -24,9 +24,22 @@
                 <div v-for="i in 15" :key="i" class="">
                   <div class="bg-white dark:bg-gray-700 rounded-sm border dark:border-gray-600 p-1">
                     <div class="">
-                      <p class="text-sm">PSK0000{{ i }}</p>
+                      <p class="text-xs font-bold my-1">{{ order.order_number }}</p>
+                      
+                      <div v-for="product, item in order.client_product" :key="item" class="py-2 mx-1 flex items-center justify-between">
+                        <p class="text-xs">{{ item + 1 }}. {{ product.name }}</p>
+
+                        <div class="flex items-center justify-end gap-2">
+                          <p class="text-xs">{{ product.price }} руб.</p>
+                          <p class="text-xs">X</p>
+                          <p class="text-xs">{{ product.quantity }}</p>                          
+                        </div>
+
+                      </div>
+                      
                     </div>
-                    <div class="">
+                    <div class="flex items-end justify-end gap-2 mx-1 my-2">
+                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-sm">Удалить</button>
                       <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-sm">Отменить</button>
                     </div>
                     
