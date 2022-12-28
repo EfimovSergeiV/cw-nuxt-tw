@@ -18,7 +18,7 @@
               <p class="text-sm">История заказов</p>
             </div>
 
-            <div class="overflow-y-scroll h-80">
+            <div v-if="stat" class="overflow-y-scroll h-80">
               <div class="grid grid-cols-1 gap-2">
                 
                 <div v-for="i in 15" :key="i" class="">
@@ -27,8 +27,8 @@
                       <p class="text-xs font-bold my-1 mx-1">{{ order.order_number }}</p>
                       
                       <div v-for="product, item in order.client_product" :key="item" class="py-2 mx-1 flex items-center justify-between">
+                        
                         <p class="text-xs">{{ item + 1 }}. {{ product.name }}</p>
-
                         <div class="flex items-center justify-end gap-2">
                           <p class="text-xs">{{ product.price }} руб.</p>
                           <p class="text-xs">X</p>
@@ -44,9 +44,12 @@
                     </div>
                     
                   </div>
-                  
                 </div>
-
+              </div>
+            </div>
+            <div v-else>
+              <div class="flex items-center justify-center h-80">
+                <p>Нет товаров в истории</p>
               </div>
             </div>
 
@@ -117,12 +120,21 @@
           <div class="flex">
             <p class="text-sm">Товары в избранном</p>
           </div>
+          <div class="flex justify-center items-center h-28">
+            <p>Нет товаров в избранном</p>
+          </div>
         </div>
+
+
         <div class="bg-white dark:bg-gray-800 px-4 py-4 mb-4 border border-gray-300 dark:border-gray-700">
           <div class="flex">
             <p class="text-sm">Товары в сравнении</p>
           </div>
+          <div class="flex justify-center items-center h-28">
+            <p>Нет товаров для сравнения</p>
+          </div>
         </div>
+
       </div>
 
 
@@ -185,7 +197,6 @@ import Order from '~/components/sections/Order.vue'
     data() {
       return {
         stat: false,
-        activeTab: 'orders',
         allCookie: null,
       }
     },
