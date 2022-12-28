@@ -2,6 +2,15 @@
   <div class="">
 
     <Header />
+
+    <TopSliderSection :widebanners="widebanners" />
+
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+      <div id="cat-title" class="flex justify-end mt-2">
+        <p class="text-3xl font-bold">Личный кабинет</p>
+      </div>
+    </div>
+
     <Navbar :cts="cts" />
 
 
@@ -220,17 +229,21 @@ import Navbar from '~/components/Navbar.vue'
 import Footer from '~/components/Footer.vue'
 import Order from '~/components/sections/Order.vue'
 
+import TopSliderSection from '~/components/sections/TopSliderSection.vue'
+
   export default {
     name: 'OrderPage',
       components: {
-      Navbar,
-      Order,
-      Footer,
-  },
+        TopSliderSection,
+        Navbar,
+        Order,
+        Footer,
+    },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
       const order = await $axios.$get(`o/orderinfo/MOW1485499/`)
-      return { cts, order }
+      const widebanners = await $axios.$get('c/widebanners/')
+      return { widebanners, cts, order }
     },
     data() {
       return {
