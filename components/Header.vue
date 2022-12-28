@@ -24,7 +24,17 @@
       <div class="flex text-right items-center gap-2 md:gap-4">
         <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
         <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
-        <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>          
+        
+        <div class="relative">
+          <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
+
+          <!-- <div class="absolute">
+            <div class="">
+              <p>Hallo welt</p>
+            </div>
+          </div> -->
+        </div>
+        
       </div>
       
     </div>
