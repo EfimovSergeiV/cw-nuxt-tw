@@ -11,7 +11,7 @@
       <div class="grid md:grid-cols-2 gap-4">
 
 
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 mb-4 border border-gray-300 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
           <div class="grid gap-2">
 
             <div class="flex">
@@ -58,7 +58,7 @@
 
 
 
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 mb-4 border border-gray-300 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
           <div class="grid gap-4 h-full">
             <div class="flex">
               <p class="text-sm">Персональные данные</p>
@@ -116,7 +116,7 @@
 
 
         
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 mb-4 border border-gray-300 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
           <div class="flex">
             <p class="text-sm">Товары в избранном</p>
           </div>
@@ -126,7 +126,7 @@
         </div>
 
 
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 mb-4 border border-gray-300 dark:border-gray-700">
+        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
           <div class="flex">
             <p class="text-sm">Товары в сравнении</p>
           </div>
