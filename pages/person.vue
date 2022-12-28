@@ -9,13 +9,70 @@
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
 
-      <div class="bg-white dark:bg-gray-800 px-12 py-4 mb-4 border border-gray-300 dark:border-gray-700">
-        <div class="flex gap-8">
-          <nuxt-link to="#">Link one</nuxt-link>
-          <nuxt-link to="#">Link two</nuxt-link>
-          <nuxt-link to="#">Link third</nuxt-link>
-          <nuxt-link to="#">Link five</nuxt-link>
+      <div class="bg-white dark:bg-gray-800 px-4 py-4 mb-4 border border-gray-300 dark:border-gray-700">
+        
+        <div class="grid gap-4">
+          <div class="flex gap-8 text-sm">
+
+            <div class="grid gap-4">
+              <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">История заказов</button>
+              <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Избранное</button>
+              <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Товары в сравнении</button>
+              <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Персональные данные</button>
+            </div>
+            
+            <div class="">
+
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Имя</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-account"></p>
+                  </div>
+                  <input type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
+                </div>
+              </div>
+
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-email"></p>
+                  </div>
+                  <input type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+                </div>
+              </div>
+
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-phone"></p>
+                  </div>
+                  <input  type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+                </div>               
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <div class="flex items-center justify-end gap-4">
+            <div class="">
+              <button class="w-full relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
+                <span class="px-8 py-1 relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                  Сохранить
+                </span>
+              </button>
+            </div>
+            <div class="">
+              <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-sm">Удалить профиль</button>
+            </div>
+
+          </div>
         </div>
+
       </div>
 
 
