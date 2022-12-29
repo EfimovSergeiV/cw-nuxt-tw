@@ -1,42 +1,86 @@
 <template>
   <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
-    <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
+
+    <div class="relative">
+      <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
  
-      <div id="color-mode" class="flex gap-1">
 
-        <div class="flex gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 py-1 rounded-2xl">
-          <ColorScheme tag="span">
-            <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-laptop"></p></span>
-            <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-weather-night"></p></span>
-            <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-white-balance-sunny"></p></span>
-          </ColorScheme>
-        </div>
-
-        <div class="flex gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-3 py-1 rounded-2xl">
-          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-          <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-          <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-        </div>
-
-      </div>
       
-      <div class="flex text-right items-center gap-2 md:gap-4">
-        <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
-        <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
-        
-        <div class="relative">
-          <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
+        <div id="color-mode" class="flex gap-1">
 
-          <!-- <div class="absolute">
-            <div class="">
-              <p>Hallo welt</p>
+          <div class="flex gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 py-1 rounded-2xl">
+            <ColorScheme tag="span">
+              <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-laptop"></p></span>
+              <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-weather-night"></p></span>
+              <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-white-balance-sunny"></p></span>
+            </ColorScheme>
+          </div>
+
+          <div class="flex gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-3 py-1 rounded-2xl">
+            <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+            <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+            <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+          </div>
+
+        </div>
+
+
+
+        <!-- <div class="flex text-right items-center gap-2 md:gap-4">
+          <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+          <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
+          
+          <div class="relative">
+            <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
+
+            <div class="absolute">
+              <div class="">
+                <p>Hallo welt</p>
+              </div>
             </div>
-          </div> -->
+
+          </div>
+          
+        </div> -->
+
+        <div class="">
+          <ul class="flex items-center text-sm flex-row space-x-2 mt-0">
+
+            <li>
+              <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+            </li>
+
+            <li>
+              <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
+            </li>
+
+            <li id="navabar-menu" class=" group">
+              <p id="change-city" data-collapse-toggle="change-city" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
+              
+              <div class="absolute top-0 right-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
+
+                <div class="menu-section pt-7">
+                  <div id="change-city-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
+
+                    
+                    <div class="px-10 py-4">
+
+                      <h3>Change your city</h3>
+
+                    </div>
+
+
+                  </div>
+                </div>
+                
+              </div>
+            </li>
+
+          </ul>
         </div>
-        
       </div>
-      
+
     </div>
 
 
@@ -112,12 +156,12 @@ import { mapActions, mapState } from 'vuex';
       components: {
 
     },
-    // props: {
-    //   searchresult: {
-    //     type: Array,
-    //     default: Array,
-    //   },
-    // },
+    props: {
+      cts: {
+        type: Array,
+        default: Array,
+      },
+    },
     data() {
       return {
         search: '',

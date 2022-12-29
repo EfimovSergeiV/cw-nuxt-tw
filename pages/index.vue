@@ -1,7 +1,7 @@
 <template>
   <div class="">
 
-    <Header />
+    <Header :cts="cts" />
     <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <Main :latest="latest" :banners="banners" />

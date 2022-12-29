@@ -46,12 +46,12 @@
                                 :get-suggestion-value="getSuggestionValue"
                                 :should-render-suggestions="shouldRenderSuggestions"
                                 :input-props="{ id:'', placeholder:'Введите название' }"
-                                :section-configs="{ 'default': { limit: 10 } }"
+                                :section-configs="{ 'default': { limit: 6 } }"
                                 class="text-gray-500 h-96">
 
                                 <div slot-scope="{suggestion}" class="dark:text-gray-300 text-gray-700 my-2 mx-1 cursor-pointer">
                                   <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
-                                  <div>{{ suggestion.item }}</div>
+                                  <div class="text-sm mx-1">{{ suggestion.item }}</div>
                                 </div>
 
                               </vue-autosuggest>
