@@ -59,22 +59,22 @@
             <li id="navabar-menu" class=" group">
               <p hover="true" id="change-city" data-collapse-toggle="change-city" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
               
-              <div class="absolute top-0 right-0  z-50 w-96">
+              <div class="absolute top-0 right-0 transition group-hover:translate-y-7 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-96">
 
                 <div class="menu-section pt-5">
-                  <div id="change-city-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
+                  <div id="change-city-dropdown" class="rounded-md bg-white">
 
                     
-                    <div class="px-2 py-2">
+                    <div class="px-2 py-4">
 
-                      <div class="flex gap-2 my-2">
+                      <div class="flex gap-2 my-4 text-sm text-gray-700">
                         <p>Сейчас:</p>
-                        <p >{{ region }}</p>
+                        <p> {{ region }}</p>
                       </div>
 
 
-                      <div class="flex gap-2">
-                        <div class="">
+                      <div class="flex items-start gap-1">
+                        <div class="text-gray-700">
                           <vue-autosuggest
                             v-model="query"
                             @focus="focusMe"
@@ -86,25 +86,27 @@
                             :should-render-suggestions="shouldRenderSuggestions"
                             :input-props="{ id:'', placeholder:'Введите название' }"
                             :section-configs="{ 'default': { limit: 6 } }"
-                            class="text-gray-500 h-96">
+                            class="">
 
-                            <div slot-scope="{suggestion}" class="dark:text-gray-300 text-gray-700 my-2 mx-1 cursor-pointer">
-                              <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
+                            <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 mx-1 py-2 px-2 cursor-pointer">
                               <div class="text-sm mx-1">{{ suggestion.item }}</div>
-                            </div>
+                            </div>                              
 
                           </vue-autosuggest>
                         </div>
 
                         <div class="">
-                          <!-- <p>free rectangle</p> -->
+                          <button @click="changeRegionHandler(selected.item)" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-600 focus:ring-1 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-8 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
                         </div>
 
+
+
+
+
+
                       </div>
 
-                      <div class="flex items-center justify-end">
-                        <button @click="changeRegion(selected.item)" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
-                      </div>
+
 
 
 
@@ -264,7 +266,11 @@ import { VueAutosuggest } from "vue-autosuggest";
             })
           }
         },
-
+      changeRegionHandler(city){
+        if (city) {
+          this.changeRegion(city)
+        }
+      },
       clickHandler(item) {
       // event fired when clicking on the input
       },
