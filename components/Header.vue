@@ -59,7 +59,7 @@
             <li id="navabar-menu" class=" group">
               <p hover="true" id="change-city" data-collapse-toggle="change-city" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
               
-              <div class="absolute top-0 right-0 transition group-hover:translate-y-7 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-96">
+              <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50">
 
                 <div class="menu-section pt-5">
                   <div id="change-city-dropdown" class="rounded-md bg-white">
@@ -73,7 +73,7 @@
                       </div>
 
 
-                      <div class="flex items-start gap-1">
+                      <div class="flex items-center justify-center gap-1">
                         <div class="text-gray-700">
                           <vue-autosuggest
                             v-model="query"
@@ -94,15 +94,6 @@
 
                           </vue-autosuggest>
                         </div>
-
-                        <div class="">
-                          <button @click="changeRegionHandler(selected.item)" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-600 focus:ring-1 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-8 py-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
-                        </div>
-
-
-
-
-
 
                       </div>
 
@@ -222,6 +213,9 @@ import { VueAutosuggest } from "vue-autosuggest";
       search() {
         this.debouncedGetAnswer()
       },
+      selected() {
+        this.changeRegion(this.selected.item)
+      }
     },
     created() {
       this.debouncedGetAnswer = this.lodash.debounce(this.goSearch, 300)
@@ -266,11 +260,7 @@ import { VueAutosuggest } from "vue-autosuggest";
             })
           }
         },
-      changeRegionHandler(city){
-        if (city) {
-          this.changeRegion(city)
-        }
-      },
+
       clickHandler(item) {
       // event fired when clicking on the input
       },
