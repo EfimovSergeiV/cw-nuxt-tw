@@ -48,16 +48,16 @@
           <ul class="flex flex-col items-end space-y-2 md:flex-row md:items-center md:space-x-4 md:space-y-0">
 
             <li class="">
-              <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+              <a href="mailto:zakaz@glsvar.ru" class="uppercase mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
             </li>
 
             <li>
-              <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
+              <a href="tel:+78112606005" class="uppercase mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
             </li>
 
 
             <li id="navabar-menu" class=" group">
-              <p hover="true" id="change-city" data-collapse-toggle="change-city" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
+              <p hover="true" id="change-city" data-collapse-toggle="change-city" class="uppercase mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
               
               <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50">
 
