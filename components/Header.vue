@@ -45,16 +45,15 @@
         </div> -->
 
         <div class="">
-          <ul class="flex items-center text-sm flex-row space-x-2 mt-0">
+          <ul class="flex flex-col items-end space-y-2 md:flex-row md:items-center md:space-x-4 md:space-y-0">
 
-            <li>
+            <li class="">
               <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
             </li>
 
             <li>
               <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
             </li>
-
 
 
             <li id="navabar-menu" class=" group">
