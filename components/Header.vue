@@ -55,18 +55,54 @@
               <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
             </li>
 
-            <li id="navabar-menu" class=" group">
-              <p id="change-city" data-collapse-toggle="change-city" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
-              
-              <div class="absolute top-0 right-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
 
-                <div class="menu-section pt-7">
+
+            <li id="navabar-menu" class=" group">
+              <p hover="true" id="change-city" data-collapse-toggle="change-city" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
+              
+              <div class="absolute top-0 right-0 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform transform z-50 w-96">
+
+                <div class="menu-section pt-5">
                   <div id="change-city-dropdown" class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600 p-2">
 
                     
-                    <div class="px-10 py-4">
+                    <div class="px-5 py-4">
 
-                      <h3>Change your city</h3>
+
+                      <div class="flex gap-2">
+                        <div class="">
+                          <vue-autosuggest
+                            v-model="query"
+                            @focus="focusMe"
+                            @click="clickHandler"
+                            @input="onInputChange"
+                            @selected="onSelected"
+                            :suggestions="filteredOptions"
+                            :get-suggestion-value="getSuggestionValue"
+                            :should-render-suggestions="shouldRenderSuggestions"
+                            :input-props="{ id:'', placeholder:'Введите название' }"
+                            :section-configs="{ 'default': { limit: 6 } }"
+                            class="text-gray-500 h-96">
+
+                            <div slot-scope="{suggestion}" class="dark:text-gray-300 text-gray-700 my-2 mx-1 cursor-pointer">
+                              <!-- <img :style="{ display: 'flex', width: '25px', height: '25px', borderRadius: '15px', marginRight: '10px'}" :src="suggestion" /> -->
+                              <div class="text-sm mx-1">{{ suggestion.item }}</div>
+                            </div>
+
+                          </vue-autosuggest>
+                        </div>
+
+                        <div class="">
+                          <!-- <p>free rectangle</p> -->
+                        </div>
+
+                      </div>
+
+                      <div class="">
+                        <button @click="changeRegion(selected.item)" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Сохранить</button>
+                      </div>
+
+
 
                     </div>
 
@@ -76,6 +112,8 @@
                 
               </div>
             </li>
+
+
 
           </ul>
         </div>
@@ -150,11 +188,14 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import cities from '@/cities.js';
+import { VueAutosuggest } from "vue-autosuggest";
+
 
   export default {
       name: 'Header',
       components: {
-
+        VueAutosuggest
     },
     props: {
       cts: {
@@ -165,6 +206,9 @@ import { mapActions, mapState } from 'vuex';
     data() {
       return {
         search: '',
+        query: "",
+        selected: "",
+        cities: cities,
         searchResult: [],
       }
     },
@@ -180,9 +224,19 @@ import { mapActions, mapState } from 'vuex';
       ...mapState({
         region: (state) => state.region,
       }),
+      filteredOptions() {
+        return [
+          { 
+            data: this.cities.filter(option => {
+              return option.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+            })
+          }
+        ];
+      },
     },
     methods: {
       ...mapActions({
+        changeRegion: 'changeRegion',
         showShopsModal: 'showShopsModal',
         // delProductToCart: 'modules/cart/delProductToCart',
         // addToComparison: 'modules/comparison/addToComparison',
@@ -191,21 +245,47 @@ import { mapActions, mapState } from 'vuex';
         // delProductToFav: 'modules/favorites/delProductToFav',
       }),
       goSearch() {
-      if (this.search.length > 3) {
-        this.$axios
-          .$post('/c/search/', { name: this.search.toLowerCase() })
-          // .then((response) => {
-          //   this.searchResult = response
-          // })
-          .then((response) => {
-            if (response.length > 0) {
-              this.searchResult = response
-            } else {
-              this.searchResult = [{"id":0,"name":"По запросу ничего не найдено"}]
-            }
-          })
-        }
-      }
+        if (this.search.length > 3) {
+          this.$axios
+            .$post('/c/search/', { name: this.search.toLowerCase() })
+            // .then((response) => {
+            //   this.searchResult = response
+            // })
+            .then((response) => {
+              if (response.length > 0) {
+                this.searchResult = response
+              } else {
+                this.searchResult = [{"id":0,"name":"По запросу ничего не найдено"}]
+              }
+            })
+          }
+        },
+
+      clickHandler(item) {
+      // event fired when clicking on the input
+      },
+      onSelected(item) {
+        this.selected = item;
+      },
+      onInputChange(text) {
+        // event fired when the input changes
+        console.log(text)
+      },
+      /**
+       * This is what the <input/> value is set to when you are selecting a suggestion.
+       */
+      getSuggestionValue(suggestion) {
+        return suggestion.item;
+      },
+      shouldRenderSuggestions (size, loading) {
+        // This is the default behavior
+        return size >= 0 && !loading
+      },
+      focusMe(e) {
+        console.log('FocusEvent') // FocusEvent
+      } 
+
+
     }
   }
   </script>
