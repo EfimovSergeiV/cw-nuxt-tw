@@ -1,11 +1,12 @@
 /* eslint-disable camelcase */
 
 export const state = () => ({
-    products: [], /// Товары в корзине
-    requestPrice: {}, /// Товары для запроса стоимости
+    products: [],           /// Товары в корзине
+    orders: [],             /// Заказы клиента
+    requestPrice: {},       /// Товары для запроса стоимости
     // counter: 0,
-    cartModal: false,
-    requestModal: false,
+    cartModal: false,       /// Окно перейти в корзину при покупке
+    requestModal: false,    /// Окно запроса стоимости
   })
   
   export const getters = {
@@ -81,6 +82,10 @@ export const state = () => ({
     hideRequestModal(state) {
       state.requestPrice = {}
       state.requestModal = false
+    },
+    /// Сохраняем заказы в истории
+    saveOrder(state, order) {
+      state.orders.push(order)
     }
   }
   
@@ -125,7 +130,11 @@ export const state = () => ({
     },
     hideRequestModal({ commit }) {
       commit('hideRequestModal')
-    }
+    },
+    /// Сохраняем заказы в истории
+    saveOrder({ commit }, order) {
+      commit('saveOrder', order)
+    },
   }
 
 

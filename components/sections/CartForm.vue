@@ -323,6 +323,7 @@ import CartField from '../CartField.vue';
     ...mapActions({
       addToast: 'addToast',
       clientPerson: 'clientPerson',
+      saveOrder: 'modules/cart/saveOrder',
       incProductToCart: 'modules/cart/incProductToCart',
       decProductToCart: 'modules/cart/decProductToCart',
       delProductToCart: 'modules/cart/delProductToCart',
@@ -345,24 +346,24 @@ import CartField from '../CartField.vue';
       this.totalPrice = Math.ceil(result)
       return Math.ceil(result)
     },
-    phoneState() {
-      const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
-      if (this.client.phone) {
-        return this.client.phone.search(re) !== -1
-      } else {
-        return false
-      }
-    },
-    emailState() {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      if (this.client.email) {
-        return this.client.email.search(re) !== -1
-      } else if (this.payMethod === 'online') {
-        return false
-      } else {
-        return true
-      }
-    },
+    // phoneState() {
+    //   const re = /^((8|\+7)[ \- ]?)?(\(?\d{3}\)?[ \- ]?)?[\d\- ]{7,10}$/
+    //   if (this.client.phone) {
+    //     return this.client.phone.search(re) !== -1
+    //   } else {
+    //     return false
+    //   }
+    // },
+    // emailState() {
+    //   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    //   if (this.client.email) {
+    //     return this.client.email.search(re) !== -1
+    //   } else if (this.payMethod === 'online') {
+    //     return false
+    //   } else {
+    //     return true
+    //   }
+    // },
     sendOrder() {
       if (this.selectedShop) {
         const data = {
@@ -392,12 +393,18 @@ import CartField from '../CartField.vue';
         }
 
         if ( data.phone || data.email ) {
-          this.$axios.$post('o/order/', data)
-          this.cleanCart()
-          this.$router.push({
-            name: 'person',
-          })
+          this.$axios.$post('o/order/', data).then((response) => {
 
+            this.$axios.$get(`o/orderinfo/${response.order}/`).then((resp) => {
+              this.saveOrder(resp)
+            })
+            
+            this.addToast('Ваш заказ успешно принят. Мы свяжемся с вами в ближайшее время.')
+            this.cleanCart()
+            this.$router.push({name: 'person',})            
+          }).catch(() => {
+            this.addToast('Ошибка при обработке заказа, пожайлуста свяжитесь с нами по адресу zakaz@glsvar.ru')
+          })
         } else {
           this.addToast("Введите номер телефона или адрес электронной почты")
         }
@@ -405,84 +412,7 @@ import CartField from '../CartField.vue';
       } else {
         this.addToast("Выберите адрес магазина")
       }
-
-
-
-      
     },
-    
-    // sendOrder() {
-    //   this.$axios.$post('o/order/', {
-    //     region_code: this.shop.region_code,
-    //     shop_id: this.shop.shop_id,
-
-    //     person: this.client.person,
-    //     phone: this.client.phone,
-    //     email: this.client.email,
-    //     adress: this.shop.adress,
-    //     comment: this.client.comment,
-    //     total: this.totalPrice,
-    //     delivery: this.delivery,
-    //     delivery_adress: 'this.deliverycity',
-    //     delivery_summ: this.deliverysumm,
-    //     company: this.client.company,
-    //     legaladress: this.client.legaladress,
-    //     inn: this.client.inn,
-    //     kpp: this.client.kpp,
-    //     okpo: this.client.okpo,
-    //     bankname: this.client.bankname,
-    //     currentacc: this.client.currentacc,
-    //     corresponding: this.client.corresponding,
-    //     bic: this.client.bic,
-    //     client_product: this.cart,
-    //   }).then((response) => {
-    //     if (this.payMethod === 'online') {
-    //       this.$router.push({
-    //         name: 'payment',
-    //         query: { order: response.order },
-    //       })
-    //     } else {
-    //       this.$router.push({
-    //         name: 'success',
-    //         params: { order: response.order },
-    //       })
-    //     }
-    //   }).catch(() => {
-    //     this.$bvToast.toast('Проверьте правильность заполнения формы', {
-    //       title: 'Заказ не принят',
-    //       variant: 'danger',
-    //     })
-    //   })
-    // }
   }
 }
 </script>
-
-
-<!-- 
-
-{
-  "region_code":"PSK",
-  "shop_id":6,
-  "person":"Сергей Ефимов",
-  "phone":"89116965424",
-  "email":"my-mail@mail.ru",
-  "adress":"Псков, ул.Леона Поземского, 92, Павильон 28 (рынок на Алмазной)",
-  "comment":"Комментарий к заказу",
-  "total":311639,
-  "delivery":false,
-  "delivery_adress":"this.deliverycity",
-  "delivery_summ":0,
-  "company":null,
-  "legaladress":null,
-  "inn":null,
-  "kpp":null,
-  "okpo":null,
-  "bankname":null,
-  "currentacc":null,
-  "corresponding":null,
-  "bic":null,
-  "client_product":[{"id":806,"vcode":"0700300985","name":"Сварочный инвертор Rebel™ EMP 215ic","rating":"3.9","prod_price":[{"shop":1,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":6,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":10,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":11,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":2,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":3,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":4,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":5,"price":311639,"currency":"RUB","quantity":0,"status":"order"},{"shop":9,"price":311639,"currency":"RUB","quantity":0,"status":"order"}],"preview_image":"http://127.0.0.1:8000/files/img/c/preview/215ic.png","propstrmodel":[{"id":4539,"name":"Дополнительные режимы работы","qname":"1jwq","value":"MMA/TIG"},{"id":4543,"name":"Габаритные размеры, мм","qname":"3b0e","value":"584x229x406"},{"id":4545,"name":"Вес, кг","qname":"7z26","value":"18,2"},{"id":4542,"name":"Потребляемый ток, А","qname":"b869","value":"240"},{"id":4541,"name":"Максимальный сварочный ток, А","qname":"jnzs","value":"130"},{"id":4540,"name":"Основной режим работы","qname":"pa0s","value":"MIG/MAG"},{"id":4544,"name":"Электропитание, В","qname":"s7n4","value":"однофазная сеть 220 В 50 Гц"}],"quantity":1}]
-}
-
- -->
