@@ -231,7 +231,7 @@
                   <div class="" v-if="selectedShop.phone">
                     <div class="flex items-center">
                       <div class="border-r">
-                        <a class="text-2xl mx-2" :href="'tel:' + selectedShop.phone.replace(/[^+\d]/g, '')">{{ selectedShop.phone }}</a>
+                        <a class="text-base md:text-2xl mx-2" :href="'tel:' + selectedShop.phone.replace(/[^+\d]/g, '')">{{ selectedShop.phone }}</a>
                       </div>
                       <div class="mx-2">
                         <p class="text-xs font-bold mt-1">{{ selectedShop.wday }}</p>

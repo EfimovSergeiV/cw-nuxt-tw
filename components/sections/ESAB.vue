@@ -7,12 +7,13 @@
         <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300">{{ title }}</p>
       </div> -->
 
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
         <div class="border dark:border-gray-700 rounded-sm shadow-md">
 
           <div class="relative">
             <img 
-                class="rounded-sm"
+                class="rounded-sm w-full h-full"
                 loading=lazy
                 src="https://glsvar.ru/esab-banner-one.jpg" 
               />  
@@ -35,23 +36,29 @@
         
         <div class="border dark:border-gray-700 rounded-sm shadow-md">
 
-          <hooper
-            :wheel-control="false"
-            :infinite-scroll="true"
-            :play-speed="12000"
-            :transition="1200"
-            :auto-play="true"
-            style="height: 100%"
-          >
-            <slide v-for="banner in esabbanners" :key="banner.id">
-              <nuxt-link :to="banner.path">
-                <img :src="banner.image" fluid :alt="banner.image" />
-              </nuxt-link>
-            </slide>
+          <div id="esab-slider" class="">
 
-            <hooper-navigation slot="hooper-addons"></hooper-navigation>
-            <hooper-pagination slot="hooper-addons"></hooper-pagination>
-          </hooper>
+            <hooper
+              :wheel-control="false"
+              :infinite-scroll="true"
+              :play-speed="12000"
+              :transition="1200"
+              :auto-play="true"
+              class="h-full"
+            >
+              <slide v-for="banner in esabbanners" :key="banner.id">
+                <nuxt-link :to="banner.path">
+                  <img :src="banner.image" class="" :alt="banner.image" />
+                </nuxt-link>
+              </slide>
+
+              <hooper-navigation slot="hooper-addons"></hooper-navigation>
+              <hooper-pagination slot="hooper-addons"></hooper-pagination>
+            </hooper>
+
+          </div>
+
+
 
         </div>
 
