@@ -25,9 +25,6 @@
                       onerror="this.src='../../noimage-235-177.jpg'"
                       class="rounded-sm p-3"
                       loading=lazy
-                      style="width:150px; height: 100px"
-                      width="150"
-                      height="100"
                       :src="brand.image"
                       fluid
                       />                  
