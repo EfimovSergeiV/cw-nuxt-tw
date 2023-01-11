@@ -13,6 +13,8 @@
     <Breadcrumbs class="my-4" :breadcrumbs="breadcrumbs" />
 
     <ProductDetail :product="product" />
+    <Recommend :recommends="recommends" />
+
     <Footer />
   </div>
 </template>
@@ -20,8 +22,9 @@
 <script>
 import Header from '~/components/Header.vue'
 import Navbar from '~/components/Navbar.vue'
-import ProductDetail from '~/components/sections/ProductDetail.vue'
 import Breadcrumbs from '~/components/Breadcrumbs.vue'
+import ProductDetail from '~/components/sections/ProductDetail.vue'
+import Recommend from '~/components/sections/Recommend.vue'
 import Footer from '~/components/Footer.vue'
 
   export default {
@@ -29,8 +32,9 @@ import Footer from '~/components/Footer.vue'
       components: {
         Header,
         Navbar,
-        ProductDetail,
         Breadcrumbs,
+        ProductDetail,
+        Recommend,
         Footer,
     },
     async asyncData({ params, $axios }) {
@@ -39,8 +43,9 @@ import Footer from '~/components/Footer.vue'
       const reviews = await $axios.$get(`u/reviews/?prod_id=${params.id}`)
       const regions = await $axios.$get(`o/cdek/regions/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
+      const recommends = await $axios.$get(`c/recommend/`)
       const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
-      return { cts, product, breadcrumbs, reviews, regions, mweld }
+      return { cts, recommends, product, breadcrumbs, reviews, regions, mweld }
     },
     head() {
       return {

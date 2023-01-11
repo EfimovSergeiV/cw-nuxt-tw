@@ -61,7 +61,7 @@
               
               <div class="">
                 <div class="">
-                  <p v-if="product.only_price === 0" class="text-4xl font-bold dark:text-gray-300">По запросу</p>
+                  <p v-if="product.only_price === 0" class="text-base text-right px-2 font-bold dark:text-gray-300">Стоимось по запросу</p>
                   <div v-else class="flex gap-1 justify-end">
                     <p class="text-4xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
                     <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>                    
@@ -117,7 +117,7 @@
       </div>
 
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
+      <!-- <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
         <div class="p-2">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-end">
             <div class="">
@@ -177,7 +177,7 @@
                       <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                         Оставить комментарий
                       </button>
-                        <!-- <div class="flex pl-0 space-x-1 sm:pl-2">
+                        <div class="flex pl-0 space-x-1 sm:pl-2">
                             <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
                                 <span class="sr-only">Attach file</span>
@@ -190,7 +190,7 @@
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
                                 <span class="sr-only">Upload image</span>
                             </button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
               </form>
@@ -200,7 +200,7 @@
             <p class="text-base text-center">Нет комментариев</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="text-xs mt-6">
         <p>{{ product }}</p>

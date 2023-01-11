@@ -17,7 +17,7 @@
               class=""
               style="height:100px"
             >
-              <slide v-for="(brand, br) in brands" :key="br" class="flex items-center">
+              <slide v-for="(brand, br) in brands" :key="br" class="flex items-center justify-center">
                 <div class="grid justify-items-center">
                   <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">
                     <img
