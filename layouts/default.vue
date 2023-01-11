@@ -21,7 +21,7 @@
     <!-- <div v-if="cartModal" class="z-40 fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div> -->
     
     <transition name="fade" mode="out-in">
-      <CookiesMsg v-if="(cookies && cookiestore)" />
+      <!-- <CookiesMsg v-if="(cookies && cookiestore)" /> -->
       <ShopsModal v-if="shopModal" />
 
       <CartModal v-if="cartModal" />
