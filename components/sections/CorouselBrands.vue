@@ -17,13 +17,13 @@
               class=""
               style="height:100px"
             >
-              <slide v-for="(brand, br) in brands" :key="br">
+              <slide v-for="(brand, br) in brands" :key="br" class="flex items-center">
                 <div class="grid justify-items-center">
                   <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">
                     <img
                       :alt="brand.brand"
                       onerror="this.src='../../noimage-235-177.jpg'"
-                      class="rounded-sm p-3"
+                      class="rounded-sm p-3 w-32"
                       loading=lazy
                       :src="brand.image"
                       fluid
