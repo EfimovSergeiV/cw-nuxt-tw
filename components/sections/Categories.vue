@@ -14,7 +14,10 @@
               <div>
                 <ul>
                   <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-3 my-1 group">
-                    <nuxt-link :to="{ name: 'prods', query: {ct: sct.id, page: 1}}" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                    
+                    <nuxt-link v-if="sct.inserted.length === 0" :to="{ name: 'prods', query: {ct: sct.id, page: 1}}" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                    <button v-else class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</button>
+
                     <div class="absolute invisible group-hover:opacity-100 group-hover:visible" v-if="sct.inserted.length > 0">
                       
                       <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 p-4">
