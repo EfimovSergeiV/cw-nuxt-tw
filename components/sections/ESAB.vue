@@ -12,16 +12,20 @@
         <div class="border dark:border-gray-700 rounded-sm shadow-md">
 
           <div class="relative">
+            
             <img 
                 class="rounded-sm w-full h-full"
                 loading=lazy
                 src="https://glsvar.ru/esab-banner-one.jpg" 
-              />  
+              />              
+
             <div class="absolute bottom-0 left-0 top-0">
               <div class="">
                 <div class="flex items-center bg-gray-800/80">
                   <div class="p-1">
-                    <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" loading=lazy width="140" />
+                    <nuxt-link :to="{ name: 'prods', query: { brnd: 3, page: 1 } }">
+                      <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" loading=lazy width="140" />
+                    </nuxt-link>
                   </div>
                   <div class="p-1 text-gray-300">
                     <p class="text-sm xl:text-base">{{ title }}</p>
@@ -36,7 +40,7 @@
         
         <div class="border dark:border-gray-700 rounded-sm shadow-md">
 
-          <div id="esab-slider" class="">
+          <div id="esab-slider">
 
             <hooper
               :wheel-control="false"
@@ -44,11 +48,11 @@
               :play-speed="12000"
               :transition="1200"
               :auto-play="true"
-              class="h-full"
+              style="height: 100%"
             >
               <slide v-for="banner in esabbanners" :key="banner.id">
                 <nuxt-link :to="banner.path">
-                  <img :src="banner.image" class="" :alt="banner.image" />
+                  <img :src="banner.image" :alt="banner.image"/>
                 </nuxt-link>
               </slide>
 
