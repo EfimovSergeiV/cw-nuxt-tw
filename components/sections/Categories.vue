@@ -5,7 +5,7 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
       <div class="bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-700 p-2">
-        <div class="columns-2 md:columns-3 lg:columns-4">
+        <div class="columns-1 md:columns-3 lg:columns-4">
           <div v-for="ct in cts" :key="ct.id" class="break-inside-avoid-column">
             <div class="p-2">
               <div class="mb-1">
