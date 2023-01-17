@@ -49,7 +49,7 @@
                     </div>
                     <div class="absolute bottom-0 left-0 w-full">
                       <div class="flex items-center justify-center p-1 rounded-sm h-12">
-                        <p class="text-gray-900 text-xs">{{ product.name }}</p>
+                        <p class="text-gray-900 text-xs text-center">{{ product.name }}</p>
                       </div>
                     </div>
                   </div>
