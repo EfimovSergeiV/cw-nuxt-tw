@@ -302,7 +302,7 @@ import CompBtn from '../CompBtn.vue';
     },
     data() {
       return {
-        largeImage: true,
+        largeImage: false,
       }
     },
   }
