@@ -12,7 +12,7 @@
     <Svarog :mpromobs="mpromobs" />
     <Recommend :recommends="recommends" />
     <Latest :latest="latest" />
-    <ShopMaps />
+    <ShopMaps class="my-4" />
     <CorouselBrands :brands="filterCarouselBrands(brands)" />
     <Footer />
 

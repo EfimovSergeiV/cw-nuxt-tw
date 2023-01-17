@@ -2,72 +2,112 @@
   <section if="about">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md relative">
 
-        <div class="px-2 py-4">
+
+
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
+          <div class="grid grid-cols-1">
+            <div class="">
+              <div class="p-2">
+                <p class="text-xl">ГАРАНТИРУЕМ</p>
+                <p class="text-base">
+                  хорошее качество продукции и профессиональную консультацию по любым вопросам
+                </p>
+              </div>
+            </div>
+            <div class="">
+              <div class="p-2">
+                <p class="text-xl">ПОМОЖЕМ</p>
+                <p class="text-base">
+                  вам сделать выбор среди огромного ассортимента аппаратов для сварки.
+                </p>
+              </div>
+            </div>
+            <div class="">
+              <div class="p-2">
+                <p class="text-xl">ПОДСКАЖЕМ</p>
+                <p class="text-base">
+                  вам, как приобрести высококачественное сварочное оборудование.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-4 items-center justify-center h-full">
 
           <div class="">
+            <img @click="cert = 'esab-cert.jpg'" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+          </div>
 
-            <div class="">
-              <p class="text-sm md:text-2xl">Главный Сварщик
+          <div class="">
+            <img @click="cert = 'cert-redius.jpg'" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+          </div>
+
+          <div class="">
+            <img @click="cert = 'cert-svarog.jpg'" src="cert-svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+          </div>
+
+        </div>
+      </div>
+
+
+      <transition name="fade">
+        <div v-if="cert" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
+          <div class="flex min-h-full justify-center text-center items-center">
+
+            <div class="relative rounded-sm px-10">
+              <div class="overflow-y-auto h-screen">
+                <div class="flex min-h-full justify-center text-center items-center">
+                  <!-- <img src="cert-redius.jpg" class="rounded-sm cursor-zoom-out" fluid/> -->
+                  <!-- <img src="esab-cert.jpg" class="rounded-sm cursor-zoom-out" fluid/> -->
+                  <img @click="cert = null" :src="cert" class="rounded-sm cursor-zoom-out" fluid/>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </transition>
+
+
+      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md relative">
+        <div class="px-2 py-4">
+          <div class="">
+
+            <div class="my-8 text-center">
+              <p class="text-sm md:text-xl">Главный Сварщик
                 <span class="text-xs md:text-base">
-                  - предлогает Вам большой выбор расходных материалов для любых целей: омеднённая, порошковая проволока, электроды. Также, в нашем интернет-магазине вы можете приобрести сопутствующие товары: кабельные разъёмы, электроды, держатели или клеммы заземления, необходимые приспособления при проведении электросварочных работ и многое другое.
+                  предлогает Вам большой выбор расходных материалов для любых целей: омеднённая, порошковая проволока, электроды. Также, в нашем интернет-магазине вы можете приобрести сопутствующие товары: кабельные разъёмы, электроды, держатели или клеммы заземления, необходимые приспособления при проведении электросварочных работ и многое другое.
                   У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок! Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
                 </span>    
               </p>               
             </div>
 
-            <!-- <div class="flex gap-4 items-center justify-center">
+            <div class="p-2 my-8">
+              <p class="text-base text-center">
+                Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!<br />Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!
+              </p>
+            </div>
 
+
+            <div class="flex justify-center items-center my-4">
               <div class="">
-                <img src="cert-redius.jpg" class=" w-48" fluid />
+                <nuxt-link to="/">
+                  <img src="../../assets/images/blue-svar.png" alt="glsvar-logo" width="380" />
+                </nuxt-link>
               </div>
+            </div>
 
-              <div class="">
-                <img src="cert-svarog.jpg"  class=" w-48" fluid/>
-              </div>
-
-            </div> -->
-
-          </div>
-         
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md md:mb-4">
-          <div class="p-2 text-center">
-            <p class="text-2xl my-2">ГАРАНТИРУЕМ:</p>
-            <p class="text-sm">
-              Хорошее качество продукции и профессиональную консультацию по любым вопросам
-            </p>
-          </div>
-        </div>
-        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md md:mt-4">
-          <div class="p-2 text-center">
-            <p class="text-2xl my-2">ПОМОЖЕМ:</p>
-            <p class="text-sm">
-              Вам сделать выбор среди огромного ассортимента аппаратов для сварки.
-            </p>
-          </div>
-        </div>
-        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md md:mb-2">
-          <div class="p-2 text-center">
-            <p class="text-2xl my-2">ПОДСКАЖЕМ:</p>
-            <p class="text-sm">
-              Вам, как приобрести высококачественное сварочное оборудование.
-            </p>
           </div>
         </div>
       </div>
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 mt-4 shadow-md">
-        <div class="p-2 my-4">
-          <p class="text-base text-center">
-            Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!<br />Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!
-          </p>
-        </div>
-      </div>
+
+
+
      
     </div>
 
@@ -87,7 +127,7 @@
     },
     data() {
       return {
-        
+        cert: null,
       }
     },
   }

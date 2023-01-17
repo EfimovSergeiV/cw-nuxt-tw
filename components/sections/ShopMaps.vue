@@ -1,8 +1,8 @@
 <template>
   <section id="shop-maps">
-    <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 text-center">
-        <div class="mt-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">
+        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md cursor-pointer group" v-for="(city, pk) in ['Москва', 'Санкт-Петербург', 'Псков', 'Смоленск', 'Петрозаводск', 'Великие луки',]" :key="pk">
           <p class="text-base my-1" @click="selectCity = city"> {{ city }}</p>
         </div>
       </div>

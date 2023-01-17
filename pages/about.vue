@@ -4,8 +4,8 @@
     <Header />
     <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
+    <ShopMaps />
     <About :shops="shops" />
-    <ShopMaps /> 
     <Footer class="" />
 
   </div>
