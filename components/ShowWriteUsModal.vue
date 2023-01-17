@@ -1,7 +1,8 @@
 <template>
     <div class="fixed inset-0" id="my-modal" >
-      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-
+      <div class="flex min-h-full justify-center text-center items-center">
+      <div class="relative mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        
 
         <div class="flex justify-end items-center">
           <button @click="displayForm('contactForm')" type="button" class="text-gray-700 hover:text-gray-900 bg-transparent text-sm p-1.5 ml-auto inline-flex items-center" data-modal-toggle="defaultModal">
@@ -9,7 +10,7 @@
           </button>
         </div>
 
-        <div class="mt-3 text-center">
+        <div class="text-center">
 
           <div class="py-4">
             <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-700">Где вы находитесь?</label>
@@ -45,6 +46,7 @@
         </div>
       </div>
 
+    </div>
     </div>
   </template>
 

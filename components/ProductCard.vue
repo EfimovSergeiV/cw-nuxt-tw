@@ -2,19 +2,19 @@
   <div class="">
 
     <div class="p-2">
-      <div class="grid justify-items-center bg-white rounded-sm">
-        <img 
-          :src="product.preview_image"
-          onerror="this.src='../../noimage-235-177.jpg'"
-          :alt="product.imageAlt"
-          loading=lazy
-          width="235"
-          height="177"
-          class="p-4" 
-        />
-      </div>
-
       <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }">
+        <div class="grid justify-items-center bg-white rounded-sm">
+          <img 
+            :src="product.preview_image"
+            onerror="this.src='../../noimage-235-177.jpg'"
+            :alt="product.imageAlt"
+            loading=lazy
+            width="235"
+            height="177"
+            class="p-4" 
+          />
+        </div>
+
         <p v-if="product.only_price === 0" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
         <p v-else class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">{{ product.only_price.toLocaleString() }} руб.</p>
         
