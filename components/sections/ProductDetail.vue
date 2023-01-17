@@ -8,7 +8,7 @@
       </div> -->
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
-        <div class="p-2">
+        <div class="px-2 pb-8">
 
           <div class="flex justify-end my-2">
             <p class="text-sm">Артикул: {{ product.vcode }}</p>
@@ -30,9 +30,44 @@
               </div>              
             </div>
             <div class="md:basis-3/4">
-              <div class="flex items-center h-full">
-                <p class="text-sm">{{ product.description }}</p>
+
+              <div class="flex justify-between items-end h-full">
+
+                <div class="">
+                  <!-- Слева от картинки, можно что нибудь добывить -->
+                </div>
+                
+                <div class="">
+                  <div class="">
+                    <div class="">
+                      <p v-if="product.only_price === 0" class="text-base text-right px-2 font-bold dark:text-gray-300">Стоимось по запросу</p>
+                      <div v-else class="flex gap-1 justify-end">
+                        <p class="text-4xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
+                        <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>                    
+                      </div>
+
+                    </div>
+                    <div class="flex justify-end my-2 mx-2">
+                      <p v-if="product.status === 'stock'" class="text-base">в наличии</p>
+                      <p v-if="product.status === 'order'" class="text-base">под заказ</p>
+                    </div>
+                    
+                    <div class="flex gap-2 justify-end">
+
+                      <CompBtn cls="px-5 py-2.5" :product="product" />
+                      <LikeBtn cls="px-5 py-2.5" :product="product"/>
+                      <CartBtn cls=" px-5 py-2.5" :product="product" />
+
+                    </div>
+                  </div>
+                </div>
+
+
               </div>
+
+
+
+
             </div>
           </div>
 
@@ -40,8 +75,11 @@
 
 
 
-          <div class="my-4">
-            <div class="flex flex-col md:flex-row md:justify-between gap-8">
+          <div class="my-8">
+            <div class="">
+              <p class="text-sm">{{ product.description }}</p>
+            </div>
+            <!-- <div class="fflex flex-col md:flex-row md:justify-between gap-8 hidden">
               
               <div class="w-96">
                 <div class="flex items-center mb-3">
@@ -78,32 +116,16 @@
                 
                 <div class="flex gap-2 justify-end">
 
-
-                  <!-- <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-equalizer-outline">
-                    </span>
-                  </button> -->
                   <CompBtn cls="px-5 py-2.5" :product="product" />
-
-
-                  <!-- <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0 mdi mdi-heart-multiple-outline">
-                    </span>
-                  </button> -->
                   <LikeBtn cls="px-5 py-2.5" :product="product"/>
-                  <!-- <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mx-1 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        В корзину
-                    </span>
-                  </button> -->
-
                   <CartBtn cls=" px-5 py-2.5" :product="product" />
-
 
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
+
+
 
 
           <p class="text-base my-2">Характеристики:</p>
