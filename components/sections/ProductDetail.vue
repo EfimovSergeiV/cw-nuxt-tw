@@ -37,6 +37,9 @@
           </div>
 
 
+
+
+
           <div class="my-4">
             <div class="flex flex-col md:flex-row md:justify-between gap-8">
               
@@ -206,6 +209,27 @@
         <p>{{ product }}</p>
       </div> -->
     </div>
+
+
+    <!-- <transition name="fade">
+      <div class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
+        <div class="flex min-h-full justify-center text-center items-center">
+
+          <div class="relative rounded-sm px-10">
+            <div class="overflow-y-auto h-screen">
+              <div class="flex min-h-full justify-center text-center items-center">
+
+                <img :src="product.preview_image" class="rounded-sm cursor-zoom-out" fluid/>
+              
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </transition> -->
+
 
   </section>
 </template>
