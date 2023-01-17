@@ -107,7 +107,7 @@
 
 
           <p class="text-base my-2">Характеристики:</p>
-          <div class="columns-1 lg:columns-2 gap-4">
+          <div class="columns-1 lg:columns-2 gap-8">
             <div v-for="param in product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
               <div class="flex justify-between">
                 <div class=""><small>{{ param.name }} :</small></div>
