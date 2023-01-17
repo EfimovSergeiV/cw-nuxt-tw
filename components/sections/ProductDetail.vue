@@ -242,7 +242,7 @@
             <div class="overflow-y-auto h-screen">
               <div class="flex min-h-full justify-center text-center items-center">
                 <div class="bg-white p-2 rounded-sm">
-                  <div class="w-[640px] h-[480px]">
+                  <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px]">
                     <hooper
                       :wheel-control="false"
                       :infinite-scroll="true"
