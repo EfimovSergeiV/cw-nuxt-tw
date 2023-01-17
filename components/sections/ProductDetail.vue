@@ -18,7 +18,8 @@
             <div class="md:basis-1/4">
               <div class="cursor-pointer">
                 <div class="bg-white flex items-center justify-center rounded-sm">
-                  <img 
+                  <img
+                    @click="largeImage = true"
                     :src="product.preview_image" 
                     :alt="product.name" 
                     width="235" 
@@ -79,6 +80,7 @@
             <div class="">
               <p class="text-sm">{{ product.description }}</p>
             </div>
+            
             <!-- <div class="fflex flex-col md:flex-row md:justify-between gap-8 hidden">
               
               <div class="w-96">
@@ -233,30 +235,50 @@
     </div>
 
 
-    <!-- <transition name="fade">
-      <div class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
+    <transition name="fade">
+      <div v-if="largeImage" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
         <div class="flex min-h-full justify-center text-center items-center">
-
           <div class="relative rounded-sm px-10">
             <div class="overflow-y-auto h-screen">
               <div class="flex min-h-full justify-center text-center items-center">
-
-                <img :src="product.preview_image" class="rounded-sm cursor-zoom-out" fluid/>
-              
+                <div class="bg-white p-2 rounded-sm">
+                  <div class="w-[640px] h-[480px]">
+                    <hooper
+                      :wheel-control="false"
+                      :infinite-scroll="true"
+                      :play-speed="12000"
+                      :transition="1200"
+                      :auto-play="true"
+                      style="height: 100%"
+                    >
+                      <slide v-for="image in product.prod_img" :key="image.id" class="rounded-sm">
+                        <div @click="largeImage = false" class="">
+                          <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out" fluid/>
+                        </div>
+                      </slide>
+                      <hooper-navigation slot="hooper-addons"></hooper-navigation>
+                      <hooper-pagination slot="hooper-addons"></hooper-pagination>
+                    </hooper>
+                    </div>
+                </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
-    </transition> -->
+    </transition>
 
 
   </section>
 </template>
 
 <script>
+import {
+  Hooper,
+  Slide,
+  Navigation as HooperNavigation,
+  Pagination as HooperPagination,
+} from 'hooper';
 import CartBtn from '../CartBtn.vue';
 import LikeBtn from '../LikeBtn.vue';
 import CompBtn from '../CompBtn.vue';
@@ -264,6 +286,10 @@ import CompBtn from '../CompBtn.vue';
   export default {
     name: 'ProductDetail',
       components: {
+        Hooper,
+        Slide,
+        HooperNavigation,
+        HooperPagination,
         CartBtn,
         LikeBtn,
         CompBtn,
@@ -276,7 +302,7 @@ import CompBtn from '../CompBtn.vue';
     },
     data() {
       return {
-        //// data
+        largeImage: true,
       }
     },
   }
