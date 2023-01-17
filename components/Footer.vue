@@ -3,8 +3,8 @@
 
     <div class="">
 
-      <div class="md:flex md:justify-between items-center">
-        <div class="flex">
+      <div class="md:flex md:justify-between items-center my-4">
+        <div class="flex my-4">
           <img src="~/assets/images/vk-logo.svg" alt="vk-logo" width="20px" height="20px"/>
           <a href="https://vk.com/glsvar" target="_blank" class="font-bold text-base mx-2">МЫ ВКОНТАКТЕ</a>
         </div>
@@ -17,24 +17,21 @@
       </div>
 
       <div class="md:flex md:justify-between">
-
-
-        <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end">© 2023 <p class="mx-1">Главный сварщик</p>
-        </span>
-        <ul class="flex flex-wrap items-center justify-center text-xs mt-3 md:text-sm sm:mt-0">
-            <li>
-                <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</a>
-            </li>
-            <li>
-              <nuxt-link :to="{name: 'about'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Сертификаты</nuxt-link>
-            </li>
-            <li>
-                <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</a>
-            </li>
-            <li>
-                <a href="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</a>
-            </li>
+        <ul class="flex flex-wrap items-center justify-center text-xs mt-3 md:text-sm sm:mt-0 md:order-last my-2">
+          <li>
+              <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</a>
+          </li>
+          <li>
+            <nuxt-link :to="{name: 'about'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Сертификаты</nuxt-link>
+          </li>
+          <li>
+              <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</a>
+          </li>
+          <li>
+              <a href="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</a>
+          </li>
         </ul>
+        <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end justify-center md:justify-start my-2">© 2023 <p class="mx-1">Главный сварщик</p></span>
       </div>
 
     
