@@ -102,14 +102,14 @@ export default {
   pwa: {
     manifest: {
       lang: 'ru',
-      name: 'Интернет магазин: Главный сварщик',
+      name: 'Интернет магазин - Главный сварщик',
       short_name: 'Главный сварщик',
       theme_color: '#182130',
       background_color: '#ffffff',
       description:
         'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
-      start_url: 'https://glsvar.ru',
-      categories: ['shop'],
+      start_url: 'https://mirror.glsvar.ru',
+      categories: ['shop', 'welding'],
     },
   },
 
