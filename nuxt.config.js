@@ -113,6 +113,24 @@ export default {
     },
   },
 
+  workbox: {
+    runtimeCaching: [
+      {
+        urlPattern: 'https://api.glsvar.ru/.*',
+        strategyOptions: {
+          cacheName: 'backend',
+        },
+        strategyPlugins: [{
+           use: 'Expiration',
+           config: {
+             maxEntries: 10,
+             maxAgeSeconds: 60
+           }
+         }]
+      }
+    ]
+ },
+
   loading: {
     color: 'yellow',
     height: '1px',
