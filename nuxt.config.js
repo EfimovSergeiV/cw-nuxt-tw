@@ -51,6 +51,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/onesignal',
     '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
@@ -83,6 +84,16 @@ export default {
   //     return { x: 0, y: 0 }
   //   }
   // },
+
+  oneSignal: {
+    init: {
+      appId: 'GLSVAR',
+      allowLocalhostAsSecureOrigin: true,
+      welcomeNotification: {
+          disable: false ///true
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
