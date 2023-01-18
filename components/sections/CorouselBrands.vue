@@ -22,7 +22,7 @@
                   <nuxt-link :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">
                     <img
                       :alt="brand.brand"
-                      onerror="this.src='../../noimage-235-177.jpg'"
+                      onerror="this.src='../../noimage-235-177.png'"
                       class="rounded-sm p-3 w-32"
                       loading=lazy
                       :src="brand.image"

@@ -27,7 +27,7 @@
                   <div class="bg-white rounded-sm p-1 w-[235px]">
                     <img 
                       :src="requestPrice.preview_image"
-                      onerror="this.src='../../noimage-235-177.jpg'"
+                      onerror="this.src='../../noimage-235-177.png'"
                       :alt="requestPrice.preview_image"
                       loading=lazy
                       width="235"

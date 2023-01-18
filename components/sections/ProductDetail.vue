@@ -24,7 +24,7 @@
                     :alt="product.name" 
                     width="235" 
                     height="177"
-                    onerror="this.src='../../noimage-235-177.jpg'"
+                    onerror="this.src='../../noimage-235-177.png'"
                     class="rounded-sm cursor-zoom-in"
                   />
                 </div>
@@ -41,7 +41,7 @@
                 <div class="">
                   <div class="">
                     <div class="">
-                      <p v-if="product.only_price === 0" class="text-base text-right px-2 font-bold dark:text-gray-300">Стоимось по запросу</p>
+                      <p v-if="product.only_price === 0" class="text-base text-right px-2 font-bold dark:text-gray-300">Стоимость по запросу</p>
                       <div v-else class="flex gap-1 justify-end">
                         <p class="text-4xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
                         <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>                    

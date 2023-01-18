@@ -61,7 +61,7 @@
               </div> -->
               <div class="flex gap-2">
                 <p>Итог:</p>
-                <p class="text-2xl italic">{{ cartTotalPrice().toLocaleString() }} руб.</p>
+                <p class="text-2xl">{{ cartTotalPrice().toLocaleString() }} руб.</p>
               </div>
             </div>
           </div>

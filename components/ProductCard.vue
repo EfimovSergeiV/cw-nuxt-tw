@@ -6,7 +6,7 @@
         <div class="grid justify-items-center bg-white rounded-sm">
           <img 
             :src="product.preview_image"
-            onerror="this.src='../../noimage-235-177.jpg'"
+            onerror="this.src='../../noimage-235-177.png'"
             :alt="product.imageAlt"
             loading=lazy
             width="235"

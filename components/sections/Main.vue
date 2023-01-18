@@ -21,7 +21,7 @@
                         <div class="flex justify-center">
                           <img 
                             :src="product.preview_image"
-                            onerror="this.src='../../noimage-235-177.jpg'"
+                            onerror="this.src='../../noimage-235-177.png'"
                             :alt="product.name"
                             loading=lazy
                             width="160"
