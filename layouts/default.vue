@@ -84,11 +84,59 @@
             name: "description",
             content: "Cварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск",
           },
+
+          // {
+          //   hid: 'og:image',
+          //   property: 'og:image',
+          //   content: 'https://api.glsvar.ru/files/og-image.png',
+          // },
+
+          {
+            hid: 'twitter:title',
+            name: 'twitter:title',
+            content: 'Интернет магазин - Главный сварщик'
+          },
+          {
+            hid: 'twitter:description',
+            name: 'twitter:description',
+            content: 'Cварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск'
+          },
+          {
+            hid: 'twitter:image',
+            name: 'twitter:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'twitter:image:alt',
+            name: 'twitter:image:alt',
+            content: 'Главный сварщик - логотип'
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: 'Интеренет магазин - Главный сварщик'
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: 'Cварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск'
+          },
           {
             hid: 'og:image',
             property: 'og:image',
-            content: 'https://api.glsvar.ru/files/og-image.png',
+            content: 'https://api.glsvar.ru/files/og-image.png'
           },
+          {
+            hid: 'og:image:secure_url',
+            property: 'og:image:secure_url',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:alt',
+            property: 'og:image:alt',
+            content: 'Главный сварщик - логотип'
+          }
+
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     },
