@@ -194,12 +194,12 @@ import { VueAutosuggest } from "vue-autosuggest";
       components: {
         VueAutosuggest
     },
-    props: {
-      cts: {
-        type: Array,
-        default: Array,
-      },
-    },
+    // props: {
+    //   cts: {
+    //     type: Array,
+    //     default: Array,
+    //   },
+    // },
     data() {
       return {
         search: '',

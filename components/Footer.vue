@@ -19,7 +19,7 @@
       <div class="md:flex md:justify-between">
         <ul class="flex flex-wrap items-center justify-center text-xs mt-3 md:text-sm sm:mt-0 md:order-last my-2">
           <li>
-            <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</a>
+            <nuxt-link :to="{ name: 'policy'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</nuxt-link>
           </li>
           <li>
             <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Сертификаты</nuxt-link>
