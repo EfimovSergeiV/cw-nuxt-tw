@@ -122,7 +122,20 @@ export default {
       start_url: '', ///https://app.glsvar.ru change later to main domain
       categories: ['shop', 'welding'],
     },
-    workbox: false,
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://api.glsvar.ru/.*',
+          handler: 'networkFirst',
+          method: 'GET',
+          strategyOptions: {
+            cacheName: 'api-cache',
+            cacheableResponse: {statuses: [0, 200]}
+          }
+        }
+      ]
+    },
+     
     // workbox: {
     //   runtimeCaching: [
     //     {
