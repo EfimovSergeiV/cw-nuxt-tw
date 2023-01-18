@@ -51,8 +51,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/onesignal',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/onesignal',
+    // '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/universal-storage',
@@ -110,32 +110,32 @@ export default {
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'ru',
-      name: 'Интернет магазин - Главный сварщик',
-      short_name: 'Главный сварщик',
-      theme_color: '#182130',
-      background_color: '#ffffff',
-      description:
-        'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
-      start_url: '', ///https://app.glsvar.ru change later to main domain
-      categories: ['shop', 'welding'],
-    },
-    workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://api.glsvar.ru/.*',
-          handler: 'networkFirst',
-          method: 'GET',
-          strategyOptions: {
-            cacheName: 'api-cache',
-            cacheableResponse: {statuses: [0, 200]}
-          }
-        }
-      ]
-    },
-     
+  // pwa: {
+  //   manifest: {
+  //     lang: 'ru',
+  //     name: 'Интернет магазин - Главный сварщик',
+  //     short_name: 'Главный сварщик',
+  //     theme_color: '#182130',
+  //     background_color: '#ffffff',
+  //     description:
+  //       'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
+  //     start_url: '',
+  //     categories: ['shop', 'welding'],
+  //   },
+  //   workbox: {
+  //     runtimeCaching: [
+  //       {
+  //         urlPattern: 'https://api.glsvar.ru/.*',
+  //         handler: 'networkFirst',
+  //         method: 'GET',
+  //         strategyOptions: {
+  //           cacheName: 'api-cache',
+  //           cacheableResponse: {statuses: [0, 200]}
+  //         }
+  //       }
+  //     ]
+  //   },
+  // },   
     // workbox: {
     //   runtimeCaching: [
     //     {
@@ -153,7 +153,7 @@ export default {
     //     }
     //   ]
     // },
-  },
+  
 
 
 
