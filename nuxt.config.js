@@ -111,25 +111,26 @@ export default {
       start_url: '', ///https://app.glsvar.ru change later to main domain
       categories: ['shop', 'welding'],
     },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://api.glsvar.ru/*',
+          strategyOptions: {
+            cacheName: 'backend-data',
+          },
+          strategyPlugins: [{
+            use: 'Expiration',
+            config: {
+              maxEntries: 10,
+              maxAgeSeconds: 10
+            }
+          }]
+        }
+      ]
+    },
   },
 
-  workbox: {
-    runtimeCaching: [
-      {
-        urlPattern: 'https://api.glsvar.ru/.*',
-        strategyOptions: {
-          cacheName: 'backend',
-        },
-        strategyPlugins: [{
-           use: 'Expiration',
-           config: {
-             maxEntries: 10,
-             maxAgeSeconds: 60
-           }
-         }]
-      }
-    ]
- },
+
 
   loading: {
     color: 'yellow',
