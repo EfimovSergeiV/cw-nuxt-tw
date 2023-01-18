@@ -108,7 +108,7 @@ export default {
       background_color: '#ffffff',
       description:
         'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
-      start_url: 'https://mirror.glsvar.ru/cts/', /// change later to main domain
+      start_url: '', /// change later to main domain
       categories: ['shop', 'welding'],
     },
   },
