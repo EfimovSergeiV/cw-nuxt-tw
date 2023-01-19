@@ -122,27 +122,27 @@ export default {
       start_url: 'https://mirror.glsvar.ru',
       categories: ['shop', 'welding'],
     },
-    // workbox: {
-    //   runtimeCaching: [
-    //     {
-    //       urlPattern: 'https://mirror.glsvar.ru/.*',
-    //       handler: 'networkFirst',
-    //       method: 'GET',
-    //       strategyOptions: {
-    //         cacheName: 'api-cache',
-    //         cacheableResponse: {statuses: [0, 200]},
-    //         maxAgeSeconds: 60
-    //       },
-    //       strategyPlugins: [{
-    //         use: 'Expiration',
-    //         config: {
-    //           maxEntries: 10,
-    //           maxAgeSeconds: 60
-    //         }
-    //       }]
-    //     }
-    //   ]
-    // },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://api.glsvar.ru/.*',
+          handler: 'networkFirst',
+          method: 'GET',
+          strategyOptions: {
+            cacheName: 'api-cache',
+            cacheableResponse: {statuses: [0, 200]},
+            maxAgeSeconds: 60
+          },
+          strategyPlugins: [{
+            use: 'Expiration',
+            config: {
+              maxEntries: 10,
+              maxAgeSeconds: 60
+            }
+          }]
+        }
+      ]
+    },
   },   
     // workbox: {
     //   runtimeCaching: [
