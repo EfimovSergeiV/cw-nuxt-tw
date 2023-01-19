@@ -119,7 +119,7 @@ export default {
       background_color: '#ffffff',
       description:
         'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
-      start_url: '',
+      start_url: 'https://mirror.glsvar.ru',
       categories: ['shop', 'welding'],
     },
     // workbox: {
