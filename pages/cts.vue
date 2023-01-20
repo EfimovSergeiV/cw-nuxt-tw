@@ -71,7 +71,7 @@ import Footer from '~/components/Footer.vue'
           {
             hid: 'og:description',
             property: 'og:description',
-            content: 'https://api.glsvar.ru/files/og-image.png'
+            content: 'Сварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск'
           },
           {
             hid: 'og:image',

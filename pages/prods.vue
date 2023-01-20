@@ -69,13 +69,6 @@ export default {
             name: "description",
             content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`,
           },
-
-          // {
-          //   hid: 'og:image',
-          //   property: 'og:image',
-          //   content: 'https://api.glsvar.ru/files/og-image.png',
-          // },
-
           {
             hid: 'twitter:title',
             name: 'twitter:title',
