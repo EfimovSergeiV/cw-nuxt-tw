@@ -12,11 +12,11 @@
           <div class="flex justify-center items-center h-full">
           <div class="grid grid-cols-1 gap-1 text-blue-600 dark:text-yellow-300">
             <div class="px-2 py-2">
-              <div class="text-blue-600 dark:text-yellow-300 text-xl flex gap-1">Магазин "<div class="font-bold ">Главный сварщик</div>"</div>
+              <div class=" text-xl flex gap-1">Магазин "<div class="font-bold ">Главный сварщик</div>"</div>
             </div>
             <div class="">
               <div class="px-2 flex gap-4 items-center">
-                <p class=" mdi mdi-36px mdi-minus text-blue-600 dark:text-yellow-300"></p>
+                <p class=" mdi mdi-36px mdi-minus"></p>
                 <p class="text-sm uppercase">
                   гарантирует хорошее качество продукции и профессиональную консультацию по любым вопросам
                 </p>
@@ -24,7 +24,7 @@
             </div>
             <div class="">
               <div class="px-2 flex gap-4 items-center">
-                <p class=" mdi mdi-36px mdi-minus text-blue-600 dark:text-yellow-300"></p>
+                <p class=" mdi mdi-36px mdi-minus"></p>
                 <p class="text-sm uppercase">
                   поможет вам сделать выбор среди огромного ассортимента аппаратов для сварки.
                 </p>
@@ -32,7 +32,7 @@
             </div>
             <div class="">
               <div class="px-2 flex gap-4 items-center">
-                <p class=" mdi mdi-36px mdi-minus text-blue-600 dark:text-yellow-300"></p>
+                <p class=" mdi mdi-36px mdi-minus"></p>
                 <p class="text-sm uppercase">
                   подскажет как приобрести высококачественное сварочное оборудование.
                 </p>

@@ -251,6 +251,9 @@
               <div class="flex min-h-full justify-center text-center items-center">
                 <div class="bg-white p-2 rounded-sm">
                   <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px]">
+                    <div class="flex justify-end items-center">
+                      <p @click="largeImage = false" class="mdi mdi-24px mdi-close text-gray-700 hover:text-gray-900 cursor-zoom-out"></p>
+                    </div>
                     <hooper
                       :wheel-control="false"
                       :infinite-scroll="true"
