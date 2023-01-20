@@ -8,32 +8,40 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
-          <div class="grid grid-cols-1">
+          
+          <div class="flex justify-center items-center h-full">
+          <div class="grid grid-cols-1 gap-1 text-blue-600 dark:text-yellow-300">
+            <div class="px-2 py-2">
+              <div class="text-blue-600 dark:text-yellow-300 text-xl flex gap-1">Магазин "<div class="font-bold ">Главный сварщик</div>"</div>
+            </div>
             <div class="">
-              <div class="p-2">
-                <p class="text-xl">ГАРАНТИРУЕМ</p>
-                <p class="text-base">
-                  хорошее качество продукции и профессиональную консультацию по любым вопросам
+              <div class="px-2 flex gap-4 items-center">
+                <p class=" mdi mdi-36px mdi-minus text-blue-600 dark:text-yellow-300"></p>
+                <p class="text-sm uppercase">
+                  гарантирует хорошее качество продукции и профессиональную консультацию по любым вопросам
                 </p>
               </div>
             </div>
             <div class="">
-              <div class="p-2">
-                <p class="text-xl">ПОМОЖЕМ</p>
-                <p class="text-base">
-                  вам сделать выбор среди огромного ассортимента аппаратов для сварки.
+              <div class="px-2 flex gap-4 items-center">
+                <p class=" mdi mdi-36px mdi-minus text-blue-600 dark:text-yellow-300"></p>
+                <p class="text-sm uppercase">
+                  поможет вам сделать выбор среди огромного ассортимента аппаратов для сварки.
                 </p>
               </div>
             </div>
             <div class="">
-              <div class="p-2">
-                <p class="text-xl">ПОДСКАЖЕМ</p>
-                <p class="text-base">
-                  вам, как приобрести высококачественное сварочное оборудование.
+              <div class="px-2 flex gap-4 items-center">
+                <p class=" mdi mdi-36px mdi-minus text-blue-600 dark:text-yellow-300"></p>
+                <p class="text-sm uppercase">
+                  подскажет как приобрести высококачественное сварочное оборудование.
                 </p>
               </div>
             </div>
           </div>
+          </div>
+
+
         </div>
         <div class="flex gap-4 items-center justify-center h-full">
 
@@ -78,7 +86,7 @@
           <div class="">
 
             <div class="my-8 text-center">
-              <p class="text-sm md:text-xl">Главный Сварщик
+              <p class="text-sm md:text-xl">Наш магазин
                 <span class="text-xs md:text-base">
                   предлогает Вам большой выбор расходных материалов для любых целей: омеднённая, порошковая проволока, электроды. Также, в нашем интернет-магазине вы можете приобрести сопутствующие товары: кабельные разъёмы, электроды, держатели или клеммы заземления, необходимые приспособления при проведении электросварочных работ и многое другое.
                   У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок! Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.

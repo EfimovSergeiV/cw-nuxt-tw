@@ -124,7 +124,7 @@ export default {
   //   workbox: {
   //     runtimeCaching: [
   //       {
-  //         urlPattern: 'https://api.glsvar.ru/.*',
+  //         urlPattern: 'https://site.com/.*',
   //         handler: 'networkFirst',
   //         method: 'GET',
   //         strategyOptions: {
@@ -146,7 +146,7 @@ export default {
     // workbox: {
     //   runtimeCaching: [
     //     {
-    //       urlPattern: 'https://api.glsvar.ru/*',
+    //       urlPattern: 'https://site.com/*',
     //       strategyOptions: {
     //         cacheName: 'backend-data',
     //       },
@@ -161,8 +161,6 @@ export default {
     //   ]
     // },
   
-
-
 
   loading: {
     color: 'yellow',
