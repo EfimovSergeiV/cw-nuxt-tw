@@ -2,7 +2,7 @@
   <section id="" class="">
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="mt-2 p-2 bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
+      <div class="mt-2 p-2 bg-gray-400 rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
         <div class="text-gray-700 dark:text-gray-300 font-bold">
           <!-- <p class="text-gray-700 dark:text-gray-300 font-bold">Папулярные бренды:</p> -->
 
