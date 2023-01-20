@@ -39,13 +39,13 @@
 
                                   <div class="p-2">
                                     <div class="mb-1">
-                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id, page: 1 } }" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
+                                      <nuxt-link :to="{ name: 'prods', query: { ct: ct.id } }" class="font-bold text-gray-700 dark:text-gray-300 text-base">{{ ct.name }}</nuxt-link>              
                                     </div>
 
                                     <div>
                                       <ul>
                                         <li v-for="sct in ct.inserted" :key="sct.id" class="inline-block mr-3 my-1">
-                                          <nuxt-link :to="{ name: 'prods', query: { ct: sct.id, page: 1 } }" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
+                                          <nuxt-link :to="{ name: 'prods', query: { ct: sct.id } }" class="text-gray-700 text-sm hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ sct.name }}</nuxt-link>
                                         </li>
                                       </ul>
                                     </div>              

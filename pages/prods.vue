@@ -67,7 +67,7 @@ export default {
           {
             hid: "description",
             name: "description",
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`,
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске`,
           },
           {
             hid: 'twitter:title',
@@ -77,7 +77,7 @@ export default {
           {
             hid: 'twitter:description',
             name: 'twitter:description',
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске`
           },
           {
             hid: 'twitter:image',
@@ -97,7 +97,7 @@ export default {
           {
             hid: 'og:description',
             property: 'og:description',
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске`
           },
           {
             hid: 'og:image',
