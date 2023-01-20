@@ -50,9 +50,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/onesignal',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/onesignal',
+    // '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/universal-storage',
@@ -85,15 +84,15 @@ export default {
   //   }
   // },
 
-  oneSignal: {
-    init: {
-      appId: 'GLSVAR',
-      allowLocalhostAsSecureOrigin: true,
-      welcomeNotification: {
-          disable: false ///true
-      }
-    }
-  },
+  // oneSignal: {
+  //   init: {
+  //     appId: 'GLSVAR',
+  //     allowLocalhostAsSecureOrigin: true,
+  //     welcomeNotification: {
+  //         disable: false ///true
+  //     }
+  //   }
+  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -110,40 +109,40 @@ export default {
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'ru',
-      name: 'Интернет магазин - Главный сварщик',
-      short_name: 'Главный сварщик',
-      theme_color: '#182130',
-      background_color: '#ffffff',
-      description:
-        'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
-      start_url: 'https://mirror.glsvar.ru',
-      categories: ['shop', 'welding'],
-    },
-    workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://api.glsvar.ru/.*',
-          handler: 'networkFirst',
-          method: 'GET',
-          strategyOptions: {
-            cacheName: 'api-cache',
-            cacheableResponse: {statuses: [0, 200]},
-            maxAgeSeconds: 60
-          },
-          strategyPlugins: [{
-            use: 'Expiration',
-            config: {
-              maxEntries: 10,
-              maxAgeSeconds: 60
-            }
-          }]
-        }
-      ]
-    },
-  },   
+  // pwa: {
+  //   manifest: {
+  //     lang: 'ru',
+  //     name: 'Интернет магазин - Главный сварщик',
+  //     short_name: 'Главный сварщик',
+  //     theme_color: '#182130',
+  //     background_color: '#ffffff',
+  //     description:
+  //       'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
+  //     start_url: 'https://mirror.glsvar.ru',
+  //     categories: ['shop', 'welding'],
+  //   },
+  //   workbox: {
+  //     runtimeCaching: [
+  //       {
+  //         urlPattern: 'https://api.glsvar.ru/.*',
+  //         handler: 'networkFirst',
+  //         method: 'GET',
+  //         strategyOptions: {
+  //           cacheName: 'api-cache',
+  //           cacheableResponse: {statuses: [0, 200]},
+  //           maxAgeSeconds: 60
+  //         },
+  //         strategyPlugins: [{
+  //           use: 'Expiration',
+  //           config: {
+  //             maxEntries: 10,
+  //             maxAgeSeconds: 60
+  //           }
+  //         }]
+  //       }
+  //     ]
+  //   },
+  // },
     // workbox: {
     //   runtimeCaching: [
     //     {
