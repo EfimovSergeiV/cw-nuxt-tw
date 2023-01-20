@@ -64,11 +64,18 @@ export default {
       return {
         title: this.response.meta.title,
         meta: [
-          { 
-            hid: 'description', 
-            name: 'description', 
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
+          {
+            hid: "description",
+            name: "description",
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`,
           },
+
+          // {
+          //   hid: 'og:image',
+          //   property: 'og:image',
+          //   content: 'https://api.glsvar.ru/files/og-image.png',
+          // },
+
           {
             hid: 'twitter:title',
             name: 'twitter:title',
@@ -80,16 +87,41 @@ export default {
             content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
           },
           {
+            hid: 'twitter:image',
+            name: 'twitter:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'twitter:image:alt',
+            name: 'twitter:image:alt',
+            content: 'Главный сварщик - логотип'
+          },
+          {
             hid: 'og:title',
             property: 'og:title',
-            content: this.response.meta.name 
+            content: this.response.meta.title
           },
           {
             hid: 'og:description',
             property: 'og:description',
             content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
           },
-        ]
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:secure_url',
+            property: 'og:image:secure_url',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:alt',
+            property: 'og:image:alt',
+            content: this.response.meta.title
+          }
+        ],
       }
     },
     data() {
