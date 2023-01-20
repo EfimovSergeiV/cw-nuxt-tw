@@ -138,7 +138,7 @@
           }
 
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+      // link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     },
     components: {
       CookiesMsg,

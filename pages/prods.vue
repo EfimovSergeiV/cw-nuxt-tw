@@ -49,6 +49,7 @@ export default {
       Pagination,
       Footer
     },
+
     async asyncData({ query, $axios }) {
       const cts = await $axios.$get('c/ct/')
       const brands = await $axios.$get(`c/ctbrand/`, {params: { ct: query.ct },})
@@ -58,6 +59,38 @@ export default {
       const breadcrumbs = await $axios.$get(`c/breadcrumb/`, { params: query })
 
       return { cts, response, brands, props, rands, breadcrumbs }
+    },
+    head() {
+      return {
+        title: this.response.meta.title,
+        meta: [
+          { 
+            hid: 'description', 
+            name: 'description', 
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
+          },
+          {
+            hid: 'twitter:title',
+            name: 'twitter:title',
+            content: this.response.meta.title
+          },
+          {
+            hid: 'twitter:description',
+            name: 'twitter:description',
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: this.response.meta.name 
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
+          },
+        ]
+      }
     },
     data() {
       return {
