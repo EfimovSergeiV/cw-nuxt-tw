@@ -1,0 +1,28 @@
+ser-agent: *
+Clean-param: finalize&unused&code
+Allow: /
+Allow: /cts
+Allow: /prods
+Allow: /product/
+Allow: /assets/*.css
+Allow: /assets/*.js
+
+Disallow: /*.woff2
+Disallow: /*?
+Disallow: /cart/
+Disallow: /profile/feedback/
+
+User-agent: Googlebot
+Allow: /
+Allow: /cts
+Allow: /prods
+Allow: /product/
+Allow: /assets/*.css
+Allow: /assets/*.js
+
+Disallow: /*.woff2
+Disallow: /*?
+Disallow: /cart/
+Disallow: /profile/feedback/
+
+Sitemap: https://glsvar.ru/sitemap.xml
