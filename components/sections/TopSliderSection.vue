@@ -7,8 +7,9 @@
         <hooper
           :center-mode="true"
           :wheel-control="false"
-          :auto-play="false"
-          :play-speed="7000"
+          :play-speed="12000"
+          :transition="200"
+          :auto-play="true"
           style="height: 100%;"
           class="main-hooper ">
          
