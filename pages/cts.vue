@@ -34,6 +34,63 @@ import Footer from '~/components/Footer.vue'
       const recommends = await $axios.$get(`c/recommend/`)
       return { widebanners, cts, recommends }
     },
+    head() {
+      return {
+        title: `Категории товаров - интернет магазин Главный Сварщик`,
+        meta: [
+          { 
+            hid: 'description', 
+            name: 'description', 
+            content: `Сварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск`
+          },
+          {
+            hid: 'twitter:title',
+            name: 'twitter:title',
+            content: `Категории товаров - интернет магазин Главный Сварщик`
+          },
+          {
+            hid: 'twitter:description',
+            name: 'twitter:description',
+            content: `Сварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск`
+          },
+          {
+            hid: 'twitter:image',
+            name: 'twitter:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'twitter:image:alt',
+            name: 'twitter:image:alt',
+            content: `Категории товаров - интернет магазин Главный Сварщик`
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: `Категории товаров - интернет магазин Главный Сварщик`
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:secure_url',
+            property: 'og:image:secure_url',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:alt',
+            property: 'og:image:alt',
+            content: `Категории товаров - интернет магазин Главный Сварщик`
+          }
+        ]
+      }
+    },
     data() {
       return {
         stat: false,

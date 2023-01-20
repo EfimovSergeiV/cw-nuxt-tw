@@ -78,6 +78,63 @@ import Footer from '~/components/Footer.vue'
 
       return { widebanners, banners, brands, cts, latest, mpromobs, esab, esabbanners, recommends, mweld }
     },
+    head() {
+      return {
+        title: `Интернет магазин Главный Сварщик`,
+        meta: [
+          { 
+            hid: 'description', 
+            name: 'description', 
+            content: `Сварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск`
+          },
+          {
+            hid: 'twitter:title',
+            name: 'twitter:title',
+            content: `Интернет магазин Главный Сварщик`
+          },
+          {
+            hid: 'twitter:description',
+            name: 'twitter:description',
+            content: `Сварочное оборудование и всё для сварки в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске`
+          },
+          {
+            hid: 'twitter:image',
+            name: 'twitter:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'twitter:image:alt',
+            name: 'twitter:image:alt',
+            content: `Интернет магазин Главный Сварщик`
+          },
+          {
+            hid: 'og:title',
+            property: 'og:title',
+            content: `Интернет магазин Главный Сварщик`
+          },
+          {
+            hid: 'og:description',
+            property: 'og:description',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image',
+            property: 'og:image',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:secure_url',
+            property: 'og:image:secure_url',
+            content: 'https://api.glsvar.ru/files/og-image.png'
+          },
+          {
+            hid: 'og:image:alt',
+            property: 'og:image:alt',
+            content: `Интернет магазин Главный Сварщик`
+          }
+        ]
+      }
+    },
     methods: {
         filterCarouselBrands(brands) {
           const truebrand = []

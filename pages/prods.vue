@@ -62,12 +62,12 @@ export default {
     },
     head() {
       return {
-        title: this.response.meta.title,
+        title: `${this.response.meta.title} - Главный сварщик`,
         meta: [
           {
             hid: "description",
             name: "description",
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`,
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`,
           },
 
           // {
@@ -79,12 +79,12 @@ export default {
           {
             hid: 'twitter:title',
             name: 'twitter:title',
-            content: this.response.meta.title
+            content: `${ this.response.meta.title} - Главный Сварщик`
           },
           {
             hid: 'twitter:description',
             name: 'twitter:description',
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`
           },
           {
             hid: 'twitter:image',
@@ -99,12 +99,12 @@ export default {
           {
             hid: 'og:title',
             property: 'og:title',
-            content: this.response.meta.title
+            content: `${ this.response.meta.title} - Главный Сварщик`
           },
           {
             hid: 'og:description',
             property: 'og:description',
-            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интеренет магазине Главный Сварщик`
+            content: `${this.response.meta.title} - купить в Москве, Санкт-Петербурге, Пскове, Великих Луках, Смоленске, Петрозаводске в интернет магазине Главный Сварщик`
           },
           {
             hid: 'og:image',
@@ -119,7 +119,7 @@ export default {
           {
             hid: 'og:image:alt',
             property: 'og:image:alt',
-            content: this.response.meta.title
+            content: `${ this.response.meta.title} - Главный Сварщик`
           }
         ],
       }
