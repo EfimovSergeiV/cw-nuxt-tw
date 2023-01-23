@@ -4,7 +4,7 @@
     <Header />
     <Navbar :cts="cts" />
 
-    <Order :order="order" />
+    <Order />
 
     <Footer class="" />
 
@@ -25,8 +25,8 @@ import Order from '~/components/sections/Order.vue'
   },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
-      const order = await $axios.$get(`o/orderinfo/PSK1156363/`)
-      return { cts, order }
+      // const order = await $axios.$get(`o/orderinfo/PSK1156363/`)
+      return { cts }
     },
     data() {
       return {

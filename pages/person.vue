@@ -236,11 +236,11 @@ import TopSliderSection from '~/components/sections/TopSliderSection.vue'
         /// Передача и присваение id на сервер, для определения клиента
         this.addToast("Ваши данные успешно сохранены")
       },
-      createCookie() {
-        console.log("Create cookie")
-        this.$storage.setCookie("cookie", true)
-        // this.$storage.setCookie("clientName", "EfimovSergeiV")
-      },
+      // createCookie() {
+      //   console.log("Create cookie")
+      //   this.$storage.setCookie("cookie", true)
+      //   this.$storage.setCookie("clientName", "EfimovSergeiV")
+      // },
       readCookie() {
         console.log("Read cookie")
         this.allCookie = this.$storage.getCookies()
@@ -248,11 +248,11 @@ import TopSliderSection from '~/components/sections/TopSliderSection.vue'
       editCookie() {
         console.log("Edit cookie")
       },
-      removeCookie() {
-        console.log("Remove cookie")
-        this.$storage.removeCookie('cookie')
-        // this.$storage.removeCookie('clientName')
-      },
+      // removeCookie() {
+      //   console.log("Remove cookie")
+      //   this.$storage.removeCookie('cookie')
+      //   this.$storage.removeCookie('clientName')
+      // },
     },
     computed: {
     ...mapState({

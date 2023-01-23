@@ -1,4 +1,7 @@
-import backend from "./conf"
+import { backend, yandexMetrika, gtmId, googleAnalyticsId } from "./conf" 
+// import yandexMetrika from "./conf" 
+// import gtmId from "./conf"
+// import googleAnalyticsId from "./conf"
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -55,7 +58,21 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/universal-storage',
+    ['@nuxtjs/yandex-metrika', 
+      {
+        id: yandexMetrika,
+        webvisor: true,
+      },  
+    ],
   ],
+
+  gtm: {
+    id: gtmId,
+  },
+
+  googleAnalytics: {
+    id: googleAnalyticsId,
+  },
 
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
