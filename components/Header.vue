@@ -52,7 +52,7 @@
             </li>
 
             <li>
-              <a href="tel:+78112606005" class="uppercase mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
+              <a :href="`tel:${shop.phone}`" class="uppercase mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ shop.phone }}</a>
             </li>
 
 
@@ -195,7 +195,7 @@ import { VueAutosuggest } from "vue-autosuggest";
         VueAutosuggest
     },
     // props: {
-    //   cts: {
+    //   shops: {
     //     type: Array,
     //     default: Array,
     //   },
@@ -215,14 +215,18 @@ import { VueAutosuggest } from "vue-autosuggest";
       },
       selected() {
         this.changeRegion(this.selected.item)
+        this.findSelectedShop()
       }
     },
     created() {
+      this.findSelectedShop()
       this.debouncedGetAnswer = this.lodash.debounce(this.goSearch, 300)
     },
     computed: {
       ...mapState({
         region: (state) => state.region,
+        shop: (state) => state.shop,
+        shops: (state) => state.shops,
       }),
       filteredOptions() {
         return [
@@ -238,6 +242,7 @@ import { VueAutosuggest } from "vue-autosuggest";
       ...mapActions({
         changeRegion: 'changeRegion',
         showShopsModal: 'showShopsModal',
+        selectShop: 'selectShop',
         // delProductToCart: 'modules/cart/delProductToCart',
         // addToComparison: 'modules/comparison/addToComparison',
         // delToComparison: 'modules/comparison/delToComparison',
@@ -260,6 +265,13 @@ import { VueAutosuggest } from "vue-autosuggest";
             })
           }
         },
+      findSelectedShop() {
+        this.shops.forEach((element) => {
+          if (element.city.toLowerCase() === this.region.toLowerCase()) {
+            this.selectShop(element)
+          }
+        })
+      },
 
       clickHandler(item) {
       // event fired when clicking on the input

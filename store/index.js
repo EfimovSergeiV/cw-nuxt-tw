@@ -17,6 +17,7 @@ export const state = () => ({
     corresponding: null,
     bic: null,
   },
+  shop: null, /// Определённый или выбранный магазин ( сделать глобальным )
   shops: null,
   region: null,
   cookies: true,
@@ -71,6 +72,9 @@ export const mutations = {
   displayForm(state, id) {
     state[id] = !state[id]
     console.log("Display form", id)
+  },
+  selectShop(state, shop) {
+    state.shop = shop
   }
 }
 
@@ -115,5 +119,8 @@ export const actions = {
   },
   displayForm({ commit }, id ) {
     commit('displayForm', id)
+  },
+  selectShop({ commit }, shop ) {
+    commit('selectShop', shop)
   }
 }
