@@ -1,4 +1,4 @@
-import { backend, yandexMetrika, gtmId, googleAnalyticsId } from "./conf" 
+import cfg from "./conf"   ///{ backend, yandexMetrika, gtmId, googleAnalyticsId } from "./conf" 
 // import yandexMetrika from "./conf" 
 // import gtmId from "./conf"
 // import googleAnalyticsId from "./conf"
@@ -58,20 +58,22 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/universal-storage',
+    '@nuxtjs/google-gtag',
+    '@nuxtjs/google-analytics',
     ['@nuxtjs/yandex-metrika', 
       {
-        id: yandexMetrika,
+        id: cfg.yandexMetrika,
         webvisor: true,
       },  
     ],
   ],
 
   gtm: {
-    id: gtmId,
+    id: cfg.gtmId,
   },
 
   googleAnalytics: {
-    id: googleAnalyticsId,
+    id: cfg.googleAnalyticsId,
   },
 
   tailwindcss: {
@@ -114,7 +116,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: backend,
+    baseURL: cfg.backend,
   },
 
   // https://github.com/nuxt-community/universal-storage-module
