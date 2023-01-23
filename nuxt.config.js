@@ -47,6 +47,7 @@ export default {
     // "@nuxtjs/color-mode",
     // // Doc: https://github.com/nuxt-community/tailwindcss-module
     // "@nuxtjs/tailwindcss",
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -59,7 +60,7 @@ export default {
     '@nuxtjs/color-mode',
     '@nuxtjs/universal-storage',
     '@nuxtjs/google-gtag',
-    '@nuxtjs/google-analytics',
+    // '@nuxtjs/google-analytics',
     ['@nuxtjs/yandex-metrika', 
       {
         id: cfg.yandexMetrika,
@@ -68,8 +69,17 @@ export default {
     ],
   ],
 
-  gtm: {
+  'google-gtag': {
     id: cfg.gtmId,
+    config: {
+      anonymize_ip: true,
+      send_page_view: false,
+      linker: {
+        domains: ['www.glsvar.ru', 'glsvar.ru'],
+      },
+    },
+    debug: false,
+    disableAutoPageTrack: false,
   },
 
   googleAnalytics: {
