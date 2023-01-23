@@ -15,6 +15,7 @@
          
             <slide v-for="slide in widebanners" :key="slide.id" class="">
               <div class="relative">
+
                 <img
                   :src="slide.image"
                   style="width: 100%;"
@@ -22,11 +23,17 @@
                   :alt="slide.name"
                   onerror="this.src='./noimage-960-540.jpg'"
                 />
-                <div class="absolute bottom-0 right-0 z-50">
-                  <div v-if="slide.path" class="px-4 py-0.5 bg-gray-700 rounded-tl-lg">
-                    <nuxt-link :to="slide.path" class="text-sm text-gray-300 shadow-2xl hover:underline mdi mdi-perspective-more"> Подробнее</nuxt-link>
+
+                <nuxt-link v-if="slide.path" :to="slide.path">  
+                  <div class="absolute top-0 right-0 z-50 w-full h-full">
+                    <div class="flex justify-end">
+                      <div class="relative mx-2 md:mx-4 md:my-2">
+                        <span class="mdi mdi-24px mdi-link-variant text-yellow-400 shadow-2xl"></span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </nuxt-link>
+
               </div>              
             </slide>
 

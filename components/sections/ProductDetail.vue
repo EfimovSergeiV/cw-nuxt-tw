@@ -244,15 +244,15 @@
 
 
     <transition name="fade">
-      <div v-if="largeImage" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-50 my-10">
+      <div v-if="largeImage" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-40 my-10">
         <div class="flex min-h-full justify-center text-center items-center">
           <div class="relative rounded-sm px-10">
             <div class="overflow-y-auto h-screen">
               <div class="flex min-h-full justify-center text-center items-center">
                 <div class="bg-white p-2 rounded-sm">
-                  <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px]">
-                    <div class="flex justify-end items-center">
-                      <p @click="largeImage = false" class="mdi mdi-24px mdi-close text-gray-700 hover:text-gray-900 cursor-zoom-out"></p>
+                  <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px] relative">
+                    <div class="flex justify-end items-center absolute z-50 right-0">
+                      <p @click="largeImage = false" class="mdi mdi-24px mdi-close text-gray-700 hover:text-gray-900 cursor-pointer"></p>
                     </div>
                     <hooper
                       :wheel-control="false"
