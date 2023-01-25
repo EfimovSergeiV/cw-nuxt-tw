@@ -16,7 +16,7 @@
             <img 
                 class="rounded-sm w-full h-full"
                 loading=lazy
-                src="https://glsvar.ru/esab-banner-one.jpg" 
+                src="https://api.glsvar.ru/files/c/esab-banner-one.jpg" 
               />              
 
             <div class="absolute bottom-0 left-0 top-0">
