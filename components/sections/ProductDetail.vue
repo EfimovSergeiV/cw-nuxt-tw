@@ -258,7 +258,6 @@
                       :wheel-control="false"
                       :infinite-scroll="true"
                       :play-speed="12000"
-                      :transition="200"
                       :auto-play="true"
                       style="height: 100%"
                     >
