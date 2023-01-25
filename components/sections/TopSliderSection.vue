@@ -28,7 +28,7 @@
                   <div class="absolute top-0 right-0 z-50 w-full h-full">
                     <div class="flex justify-end">
                       <div class="relative mx-2 md:mx-4 md:my-2">
-                        <span class="mdi mdi-24px mdi-link-variant text-yellow-400 shadow-2xl"></span>
+                        <span class="mdi mdi-24px mdi-link-variant text-whitw shadow-2xl"></span>
                       </div>
                     </div>
                   </div>
