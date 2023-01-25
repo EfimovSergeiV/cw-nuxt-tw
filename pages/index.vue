@@ -69,7 +69,7 @@ import Footer from '~/components/Footer.vue'
         {id: 1, image: 'esab-ok.jpg', path: { name: 'prods', query: { ct: 31, w4r4: 'ok48.00' } } },
         {id: 1, image: 'rogue-banner.jpg', path: { name: 'product-id', params: { id: 1705 } } },
         {id: 1, image: 'ws-esab.jpg', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
-        {id: 1, image: 'handy-esab.jpg', path: { name: 'prods', query: { ct: 14, brnd: 3 } } },
+        {id: 1, image: 'handy-esab.jpg', path: { name: 'product-id', params: { id: 699 } } },
       ]
       const latest = await $axios.$get('c/neues/')
       const mpromobs = await $axios.$get('c/mpromob/')
