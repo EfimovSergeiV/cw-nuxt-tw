@@ -16,7 +16,7 @@
               <div class="">
                 <div class="my-1" v-for="shop in shops" :key="shop.id">
                   <div class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs" v-if="shop.city == selectCity">
-                    <div class="border border-gray-200 dark:border-gray-300/30 w-2/3 p-1 transition-all duration-500 rounded-sm hover:border-gray-300 dark:hover:border-gray-100 cursor-pointer hover:bg-white/50 dark:hover:bg-gray-700/50 ">
+                    <div class="border border-gray-200 dark:border-gray-300/30 w-2/3 p-1 transition-all duration-500 rounded-sm hover:border-gray-300/50 dark:hover:border-gray-100/50 cursor-pointer bg-white/60 dark:bg-gray-700/60 hover:bg-white/80 dark:hover:bg-gray-700/80 ">
                       <p class="mdi mdi-map-marker"> {{ shop.adress }}</p>
                       <a href="tel:+78112606005"><p class="my-1 mdi mdi-phone"> {{ shop.phone }}</p></a>
                       <p class="">{{ shop.wday }}</p>

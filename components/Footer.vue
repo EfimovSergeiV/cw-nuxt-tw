@@ -25,10 +25,10 @@
             <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Сертификаты</nuxt-link>
           </li>
           <li>
-            <a href="#" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</a>
+            <button @click="showAllert()" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</button>
           </li>
           <li>
-            <a href="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</a>
+            <button @click="showAllert()" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Доставка</button>
           </li>
         </ul>
         <span class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 flex items-end justify-center md:justify-start my-2">© 2023 <p class="mx-1">Главный сварщик</p></span>
@@ -103,7 +103,9 @@
   </div>
 </template>
 
-<script>    
+<script>
+import { mapActions } from 'vuex';
+
   export default {
       name: 'Footer',
       components: {
@@ -119,5 +121,13 @@
   
       }
     },
+    methods: {
+      ...mapActions({
+        addToast: 'addToast',
+      }),
+      showAllert() {
+        this.addToast('Раздел временно не доступен')
+      }
+    }
   }
 </script>
