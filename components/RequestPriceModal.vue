@@ -122,7 +122,6 @@ import { mapActions, mapState } from 'vuex';
         decProductToCart: 'modules/cart/decProductToCart',
         delProductToCart: 'modules/cart/delProductToCart',
         hideRequestModal: 'modules/cart/hideRequestModal',
-
         addToComparison: 'modules/comparison/addToComparison',
         delToComparison: 'modules/comparison/delToComparison',
         addProductToFav: 'modules/favorites/addProductToFav',
