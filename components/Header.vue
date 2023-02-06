@@ -5,47 +5,43 @@
     <div class="relative">
       <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
  
-
-      
-        <div id="color-mode" class="flex gap-1">
-
-          <div class="flex gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 py-1 rounded-2xl">
-            <ColorScheme tag="span">
-              <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-laptop"></p></span>
-              <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-weather-night"></p></span>
-              <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-white-balance-sunny"></p></span>
-            </ColorScheme>
+        <div class="my-4">
+          <div class="flex justify-center md:justify-start">
+            <nuxt-link to="/">
+              <img src="../assets/images/blue-svar.png" alt="glsvar-logo" class=" h-14 md:h-16" />
+            </nuxt-link>
           </div>
-
-          <div class="flex gap-3 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-3 py-1 rounded-2xl">
-            <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-            <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-            <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
-          </div>
-
         </div>
 
+        <div class="">
+          <div id="color-mode" class="flex gap-1">
 
+            <div class="flex gap-2 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-2 py-1 rounded-2xl">
+              <ColorScheme tag="span">
+                <span v-if="$colorMode.preference === 'system'" @click="$colorMode.preference = 'dark'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-laptop"></p></span>
+                <span v-if="$colorMode.preference === 'dark'" @click="$colorMode.preference = 'light'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-weather-night"></p></span>
+                <span v-if="$colorMode.preference === 'light'" @click="$colorMode.preference = 'system'" class="cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"><p class="text-base mdi mdi-white-balance-sunny"></p></span>
+              </ColorScheme>
+            </div>
 
-        <!-- <div class="flex text-right items-center gap-2 md:gap-4">
-          <a href="mailto:zakaz@glsvar.ru" class="mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
-          <a href="tel:+78112606005" class="mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> +7 (8112) 60-60-05</a>
-          
-          <div class="relative">
-            <p @click="showShopsModal" class="mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ region }}</p>
-
-            <div class="absolute">
-              <div class="">
-                <p>Hallo welt</p>
-              </div>
+            <div class="flex gap-3 bg-white hover:bg-gray-100 dark:bg-gray-800 hover:dark:bg-gray-700 border border-gray-300 hover:border-gray-400 dark:border-gray-700 hover:dark:border-gray-600 px-3 py-1 rounded-2xl">
+              <nuxt-link :to="{ name: 'person' }" class="mdi mdi-account text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+              <nuxt-link :to="{ name: 'compare' }" class="mdi mdi-compare text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
+              <nuxt-link :to="{ name: 'person' }" class="mdi mdi-heart-outline text-base cursor-pointer text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></nuxt-link>
             </div>
 
           </div>
-          
-        </div> -->
+        </div>
 
-        <div class="">
-          <ul class="flex flex-col items-end space-y-2 md:flex-row md:items-center md:space-x-4 md:space-y-0">
+
+      </div>
+
+    </div>
+
+
+    <div class="flex justify-end items-center">
+      <div class="">
+          <ul class="flex items-center flex-row space-x-3">
 
             <li class="">
               <a href="mailto:zakaz@glsvar.ru" class="uppercase mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
@@ -114,19 +110,17 @@
 
           </ul>
         </div>
-      </div>
-
     </div>
 
 
     <div class="grid grid-cols-1 md:grid-cols-2 items-center">
 
-      <div class="my-4">
-        <div class="flex justify-center md:justify-start">
+      <div class="">
+        <!-- <div class="flex justify-center md:justify-start">
           <nuxt-link to="/">
             <img src="../assets/images/blue-svar.png" alt="glsvar-logo" class=" h-14 md:h-16" />
           </nuxt-link>
-        </div>
+        </div> -->
       </div>
 
       
