@@ -18,18 +18,18 @@
                 <hooper
                   :wheel-control="false"
                   :infinite-scroll="true"
-                  :play-speed="12000"
-                  :auto-play="true"
+                  :auto-play="false"
                   style="height: 100%"
+                  :play-speed="12000"
                   class="w-[500px] h-[250px]"
                 >
-                  <slide v-for="image in 10" :key="image" class="rounded-sm w-[500px] h-[250px]">
+                  <slide v-for="image in shopImages" :key="image.id" class="rounded-sm w-[500px] h-[250px]">
                     <div class="w-[500px] h-[250px]">
-                      <img src="https://picsum.photos/600/300/?image=41" class="w-[500px] h-[250px] cursor-zoom-in" fluid/>
+                      <img :src="image.url" class="w-[500px] h-[250px] cccursor-zoom-in" fluid/>
                     </div>
                   </slide>
                   <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                  <hooper-pagination slot="hooper-addons"></hooper-pagination>
+                  <!-- <hooper-pagination slot="hooper-addons"></hooper-pagination> -->
                 </hooper>
               </div>
 
@@ -68,7 +68,46 @@
           </div>
         </div>
 
+
         <div class=" my-40"></div>
+
+
+        <div class="flex justify-center items-center gap-16 text-center text-base mx-8">
+
+          <div class="">
+            <div class="flex justify-center items-center">
+              <img src="/icons/thumb-up.png" class="my-4 h-20" />
+            </div>
+            <p>Широкий выбор оборудования</p>
+          </div>
+
+          <div class="">
+            <div class="flex justify-center items-center">
+              <img src="/icons/businessman.png" class="my-4 h-20" />
+            </div>
+            <p>Профессиональная консультация специалистов</p>
+          </div>
+
+          <div class="">
+            <div class="flex justify-center items-center">
+              <img src="/icons/high-quality.png" class="my-4 h-20" />
+            </div>
+            <p>Гарантия качества продукции</p>
+          </div>
+
+
+        </div>
+
+
+            <!--  
+              ГАРАНТИРУЕТ ХОРОШЕЕ КАЧЕСТВО ПРОДУКЦИИ И ПРОФЕССИОНАЛЬНУЮ КОНСУЛЬТАЦИЮ ПО ЛЮБЫМ ВОПРОСАМ
+
+              ПОМОЖЕТ ВАМ СДЕЛАТЬ ВЫБОР СРЕДИ ОГРОМНОГО АССОРТИМЕНТА АППАРАТОВ ДЛЯ СВАРКИ.
+
+              ПОДСКАЖЕТ КАК ПРИОБРЕСТИ ВЫСОКОКАЧЕСТВЕННОЕ СВАРОЧНОЕ ОБОРУДОВАНИЕ. 
+            -->
+
+        <div class=" my-20"></div>
 
         <div class="flex items-center justify-center">
           <div class="text-center">
@@ -139,6 +178,14 @@
     data() {
       return {
         cert: null,
+        shopImages: [
+          { "id": 1, "url": "/shops/1.webp"},
+          { "id": 2, "url": "/shops/2.webp"},
+          { "id": 3, "url": "/shops/3.webp"},
+          { "id": 4, "url": "/shops/4.webp"},
+          { "id": 5, "url": "/shops/5.webp"},
+          { "id": 6, "url": "/shops/6.webp"},
+        ]
       }
     },
   }

@@ -48,8 +48,54 @@ import Footer from '~/components/Footer.vue'
       return { cts, recommends, product, breadcrumbs, reviews, regions, mweld }
     },
     head() {
+
+      const structuredData = {
+        '@context': 'http://schema.org',
+        '@type': 'Product',
+        id: this.product.vcode,
+        name: this.product.name,
+        image: this.product.preview_image,
+        description: this.product.description,
+        mpn: this.product.vcode,
+        brand: {
+          '@type': 'Brand',
+          name: this.product.brand.brand,
+        },
+        // review: {
+        //   '@type': 'Review',
+        //   reviewRating: {
+        //     '@type': 'Rating',
+        //     ratingValue: this.product.rating,
+        //     bestRating: '3',
+        //   },
+        //   author: {
+        //     '@type': 'Person',
+        //     name: '/',
+        //   },
+        // },
+        // aggregateRating: {
+        //   '@type': 'AggregateRating',
+        //   ratingValue: this.product.rating,
+        //   reviewCount: '5',
+        // },
+        offers: {
+          '@type': 'Offer',
+          url: 'https://glsvar.ru/product/' + this.product.id,
+          priceCurrency: 'руб.',
+          price: this.product.only_price,
+          itemCondition: 'https://schema.org/UsedCondition',
+          availability: 'https://schema.org/InStock',
+        },
+      }
+
       return {
         title: `${this.product.name} - купить в интернет магазине Главный сварщик`,
+        script: [
+          {
+            type: 'application/ld+json',
+            json: structuredData,
+          },
+        ],
         meta: [
           { 
             hid: 'description', 
