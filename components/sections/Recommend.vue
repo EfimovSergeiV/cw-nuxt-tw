@@ -27,9 +27,9 @@
                   <div class="relative h-full rounded-sm">
                     <div class="flex justify-center">
                       <img 
-                        :src="product.preview_image"
+                        src="noimage-235-177.png"
                         onerror="this.src='../../noimage-235-177.png'"
-                        alt="product.imageAlt"
+                        :alt="product.name"
                         loading=lazy
                         width="160"
                         height="120"

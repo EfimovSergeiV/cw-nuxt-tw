@@ -7,7 +7,7 @@
           <img 
             :src="product.preview_image"
             onerror="this.src='../../noimage-235-177.png'"
-            :alt="product.imageAlt"
+            :alt="product.name"
             loading=lazy
             width="235"
             height="177"

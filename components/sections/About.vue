@@ -3,62 +3,91 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
 
+      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
+
+        <div class="flex gap-8 items-center justify-between my-8 mx-4">
+          <div class="flex">
+            <!-- <nuxt-link to="/">
+              <img src="../../assets/images/blue-svar.png" alt="glsvar-logo" width="380" />
+            </nuxt-link> -->
+
+            <div class="border dark:border-gray-700 rounded-sm">
 
 
+              <div class="w-[500px] h-[250px]">
+                <hooper
+                  :wheel-control="false"
+                  :infinite-scroll="true"
+                  :play-speed="12000"
+                  :auto-play="true"
+                  style="height: 100%"
+                  class="w-[500px] h-[250px]"
+                >
+                  <slide v-for="image in 10" :key="image" class="rounded-sm w-[500px] h-[250px]">
+                    <div class="w-[500px] h-[250px]">
+                      <img src="https://picsum.photos/600/300/?image=41" class="w-[500px] h-[250px] cursor-zoom-in" fluid/>
+                    </div>
+                  </slide>
+                  <hooper-navigation slot="hooper-addons"></hooper-navigation>
+                  <hooper-pagination slot="hooper-addons"></hooper-pagination>
+                </hooper>
+              </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-        <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md">
-          
-          <div class="flex justify-center items-center h-full">
-          <div class="grid grid-cols-1 gap-1 text-blue-600 dark:text-yellow-300">
-            <div class="px-2 py-2">
-              <div class=" text-xl flex gap-1">Магазин "<div class="font-bold ">Главный сварщик</div>"</div>
             </div>
-            <div class="">
-              <div class="px-2 flex gap-4 items-center">
-                <p class=" mdi mdi-36px mdi-minus"></p>
-                <p class="text-sm uppercase">
-                  гарантирует хорошее качество продукции и профессиональную консультацию по любым вопросам
-                </p>
-              </div>
-            </div>
-            <div class="">
-              <div class="px-2 flex gap-4 items-center">
-                <p class=" mdi mdi-36px mdi-minus"></p>
-                <p class="text-sm uppercase">
-                  поможет вам сделать выбор среди огромного ассортимента аппаратов для сварки.
-                </p>
-              </div>
-            </div>
-            <div class="">
-              <div class="px-2 flex gap-4 items-center">
-                <p class=" mdi mdi-36px mdi-minus"></p>
-                <p class="text-sm uppercase">
-                  подскажет как приобрести высококачественное сварочное оборудование.
-                </p>
-              </div>
-            </div>
+
+
           </div>
+          <div class=" w-6/12">
+            <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Магазины</p>
+            <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+               У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
+            </p>
+            <!-- Предлагаем вам большой выбор расходных материалов для любых целей: омеднённая, порошковая проволока, электроды. Также, в нашем интернет-магазине вы можете приобрести сопутствующие товары: кабельные разъёмы, электроды, держатели или клеммы заземления, необходимые приспособления при проведении электросварочных работ и многое другое.  -->
           </div>
-
-
         </div>
-        <div class="flex gap-4 items-center justify-center h-full">
 
-          <div class="">
-            <img @click="cert = 'esab-cert.jpg'" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+        <div class=" my-40"></div>
+
+        <div class="flex gap-8 items-center justify-between my-8 mx-4">
+          <div class=" w-5/12">
+            <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
+            <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+              Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
+            </p>
           </div>
-
-          <div class="">
-            <img @click="cert = 'cert-redius.jpg'" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+          <div class="flex items-center gap-4">
+            <div class="">
+              <img @click="cert = 'esab-cert.jpg'" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+            </div>
+            <div class="">
+              <img @click="cert = 'cert-redius.jpg'" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+            </div>
+            <div class="">
+              <img @click="cert = 'cert-svarog.jpg'" src="cert-svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+            </div>                
           </div>
-
-          <div class="">
-            <img @click="cert = 'cert-svarog.jpg'" src="cert-svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
-          </div>
-
         </div>
+
+        <div class=" my-40"></div>
+
+        <div class="flex items-center justify-center">
+          <div class="text-center">
+            <p class="text-gray-900 dark:text-gray-100">Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!</p>
+            <p class="text-gray-900 dark:text-gray-100">Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!</p>            
+          </div>
+        </div>
+
+
+        <div class="flex items-center justify-center my-8">
+          <nuxt-link to="/">
+            <img src="../../assets/images/blue-svar.png" alt="glsvar-logo" class=" h-14" />
+          </nuxt-link>
+        </div>
+
+
       </div>
+
+
 
 
       <transition name="fade">
@@ -79,53 +108,27 @@
           </div>
         </div>
       </transition>
-
-
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md relative">
-        <div class="px-2 py-4">
-          <div class="">
-
-            <div class="my-8 text-center">
-              <p class="text-sm md:text-xl">Наш магазин
-                <span class="text-xs md:text-base">
-                  предлогает Вам большой выбор расходных материалов для любых целей: омеднённая, порошковая проволока, электроды. Также, в нашем интернет-магазине вы можете приобрести сопутствующие товары: кабельные разъёмы, электроды, держатели или клеммы заземления, необходимые приспособления при проведении электросварочных работ и многое другое.
-                  У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок! Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
-                </span>    
-              </p>               
-            </div>
-
-            <div class="p-2 my-8">
-              <p class="text-base text-center">
-                Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!<br />Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!
-              </p>
-            </div>
-
-
-            <div class="flex justify-center items-center my-4">
-              <div class="">
-                <nuxt-link to="/">
-                  <img src="../../assets/images/blue-svar.png" alt="glsvar-logo" width="380" />
-                </nuxt-link>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
-
      
     </div>
 
   </section>
 </template>
 
-<script>    
+<script>
+  import {
+    Hooper,
+    Slide,
+    Navigation as HooperNavigation,
+    Pagination as HooperPagination,
+  } from 'hooper'
+
   export default {
       name: 'About',
       components: {
+        Hooper,
+        Slide,
+        HooperNavigation,
+        HooperPagination,
     },
     props: {
       shops: {

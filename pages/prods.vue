@@ -6,7 +6,7 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div id="cat-title" class="flex justify-end mb-1">
-        <p class="text-3xl font-bold">{{ response.meta.title }}</p>
+        <p class="text-2xl">{{ response.meta.title }}</p>
       </div>
     </div>
 

@@ -6,7 +6,7 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div class="flex my-2 items-center justify-end">
-        <h1>{{ product.name }}</h1>
+        <p class="text-2xl">{{ product.name }}</p>
       </div>      
     </div>
 
