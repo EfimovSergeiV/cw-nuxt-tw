@@ -7,12 +7,7 @@
 
         <div class="flex gap-8 items-center justify-between my-8 mx-4">
           <div class="flex">
-            <!-- <nuxt-link to="/">
-              <img src="../../assets/images/blue-svar.png" alt="glsvar-logo" width="380" />
-            </nuxt-link> -->
-
             <div class="border dark:border-gray-700 rounded-sm">
-
 
               <div class="w-[500px] h-[250px]">
                 <hooper
@@ -29,7 +24,6 @@
                     </div>
                   </slide>
                   <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                  <!-- <hooper-pagination slot="hooper-addons"></hooper-pagination> -->
                 </hooper>
               </div>
 
@@ -42,7 +36,6 @@
             <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
                У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
             </p>
-            <!-- Предлагаем вам большой выбор расходных материалов для любых целей: омеднённая, порошковая проволока, электроды. Также, в нашем интернет-магазине вы можете приобрести сопутствующие товары: кабельные разъёмы, электроды, держатели или клеммы заземления, необходимые приспособления при проведении электросварочных работ и многое другое.  -->
           </div>
         </div>
 
@@ -72,45 +65,37 @@
         <div class=" my-40"></div>
 
 
-        <div class="flex justify-center items-center gap-16 text-center text-base mx-8">
+
+        <div class="flex justify-center items-center gap-8 md:gap-16 text-center text-sm md:text-base px-8">
 
           <div class="">
             <div class="flex justify-center items-center">
-              <img src="/icons/thumb-up.png" class="my-4 h-20" />
+              <img src="/icons/thumb-up.png" class="my-4 h-10 md:h-20" />
             </div>
             <p>Широкий выбор оборудования</p>
           </div>
 
           <div class="">
             <div class="flex justify-center items-center">
-              <img src="/icons/businessman.png" class="my-4 h-20" />
+              <img src="/icons/businessman.png" class="my-4 h-10 md:h-20" />
             </div>
             <p>Профессиональная консультация специалистов</p>
           </div>
 
           <div class="">
             <div class="flex justify-center items-center">
-              <img src="/icons/high-quality.png" class="my-4 h-20" />
+              <img src="/icons/high-quality.png" class="my-4 h-10 md:h-20" />
             </div>
             <p>Гарантия качества продукции</p>
           </div>
 
-
         </div>
 
 
-            <!--  
-              ГАРАНТИРУЕТ ХОРОШЕЕ КАЧЕСТВО ПРОДУКЦИИ И ПРОФЕССИОНАЛЬНУЮ КОНСУЛЬТАЦИЮ ПО ЛЮБЫМ ВОПРОСАМ
-
-              ПОМОЖЕТ ВАМ СДЕЛАТЬ ВЫБОР СРЕДИ ОГРОМНОГО АССОРТИМЕНТА АППАРАТОВ ДЛЯ СВАРКИ.
-
-              ПОДСКАЖЕТ КАК ПРИОБРЕСТИ ВЫСОКОКАЧЕСТВЕННОЕ СВАРОЧНОЕ ОБОРУДОВАНИЕ. 
-            -->
-
-        <div class=" my-20"></div>
+        <div class="my-10 md:my-20"></div>
 
         <div class="flex items-center justify-center">
-          <div class="text-center">
+          <div class="text-center text-sm md:text-base">
             <p class="text-gray-900 dark:text-gray-100">Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!</p>
             <p class="text-gray-900 dark:text-gray-100">Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!</p>            
           </div>
