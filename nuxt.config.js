@@ -6,14 +6,14 @@ import cfg from "./conf"   ///{ backend, yandexMetrika, gtmId, googleAnalyticsId
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Главный сварщик - сварочное оборудование и всё для сварки Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск',
+    title: 'Главный сварщик - сварочное оборудование и всё для сварки',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { 
         hid: 'description', 
         name: 'description', 
-        content: 'Сварочное оборудование и всё для сварки: Москва, Санкт-Петербург, Псков, Великие Луки, Смоленск, Петрозаводск' 
+        content: 'Купите высококачественное сварочное оборудование в интернет-магазине Главный Сварщик. Мы являемся официальным дистрибьютором ведущих брендов. Большой выбор, гарантия качества, доставка по всей России.' 
       },
       { name: 'format-detection', content: 'telephone=yes' }
     ],

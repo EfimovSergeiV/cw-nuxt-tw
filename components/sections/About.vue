@@ -5,44 +5,42 @@
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
 
-        <div class="flex gap-8 items-center justify-between my-8 mx-4">
-          <div class="flex">
-            <div class="border dark:border-gray-700 rounded-sm">
+        <div class="px-4 py-4">
 
-              <div class="w-[500px] h-[250px]">
-                <hooper
-                  :wheel-control="false"
-                  :infinite-scroll="true"
-                  :auto-play="false"
-                  style="height: 100%"
-                  :play-speed="12000"
-                  class="w-[500px] h-[250px]"
-                >
-                  <slide v-for="image in shopImages" :key="image.id" class="rounded-sm w-[500px] h-[250px]">
-                    <div class="w-[500px] h-[250px]">
-                      <img :src="image.url" class="w-[500px] h-[250px] cccursor-zoom-in" fluid/>
-                    </div>
-                  </slide>
-                  <hooper-navigation slot="hooper-addons"></hooper-navigation>
-                </hooper>
-              </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
 
+            <div class="max-w-[500px]">
+              <hooper
+                :center-mode="true"
+                :wheel-control="false"
+                :infinite-scroll="true"
+                :auto-play="false"
+                style="height: 100%;"
+                :play-speed="12000"
+                class=""
+              >
+                <slide v-for="image in shopImages" :key="image.id" class="rounded-sm">
+                  <div class="">
+                    <img :src="image.url" class="cccursor-zoom-in" width="500px" height="250px" fluid/>
+                  </div>
+                </slide>
+                <hooper-navigation slot="hooper-addons"></hooper-navigation>
+              </hooper>            
             </div>
 
-
-          </div>
-          <div class=" w-6/12">
-            <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Магазины</p>
-            <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
-               У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
-            </p>
+            <div class="">
+              <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Магазины</p>
+              <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+                У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class=" my-40"></div>
+        <div class="my-20 lg:my-40"></div>
 
-        <div class="flex gap-8 items-center justify-between my-8 mx-4">
-          <div class=" w-5/12">
+        <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
+          <div class="w-full lg:w-5/12">
             <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
             <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
               Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
@@ -62,29 +60,28 @@
         </div>
 
 
-        <div class=" my-40"></div>
+        <div class="my-20 lg:my-40"></div>
 
 
-
-        <div class="flex justify-center items-center gap-8 md:gap-16 text-center text-sm md:text-base px-8">
+        <div class="flex justify-center items-center gap-8 md:gap-16 text-center text-sm lg:text-base px-8">
 
           <div class="">
             <div class="flex justify-center items-center">
-              <img src="/icons/thumb-up.png" class="my-4 h-10 md:h-20" />
+              <img src="/icons/thumb-up.png" class="my-4 h-10 lg:h-20" />
             </div>
             <p>Широкий выбор оборудования</p>
           </div>
 
           <div class="">
             <div class="flex justify-center items-center">
-              <img src="/icons/businessman.png" class="my-4 h-10 md:h-20" />
+              <img src="/icons/businessman.png" class="my-4 h-10 lg:h-20" />
             </div>
             <p>Профессиональная консультация специалистов</p>
           </div>
 
           <div class="">
             <div class="flex justify-center items-center">
-              <img src="/icons/high-quality.png" class="my-4 h-10 md:h-20" />
+              <img src="/icons/high-quality.png" class="my-4 h-10 lg:h-20" />
             </div>
             <p>Гарантия качества продукции</p>
           </div>
@@ -92,7 +89,7 @@
         </div>
 
 
-        <div class="my-10 md:my-20"></div>
+        <div class="my-10 lg:my-20"></div>
 
         <div class="flex items-center justify-center">
           <div class="text-center text-sm md:text-base">

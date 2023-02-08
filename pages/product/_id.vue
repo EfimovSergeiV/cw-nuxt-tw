@@ -89,7 +89,7 @@ import Footer from '~/components/Footer.vue'
       }
 
       return {
-        title: `${this.product.name} - купить в интернет магазине Главный сварщик`,
+        title: `${this.product.name}`,
         script: [
           {
             type: 'application/ld+json',
@@ -100,7 +100,7 @@ import Footer from '~/components/Footer.vue'
           { 
             hid: 'description', 
             name: 'description', 
-            content: `${this.product.name} - купить в интернет магазине Главный сварщик`
+            content: `${this.product.description.slice(0, 147)}...`
           },
           {
             hid: 'twitter:title',
