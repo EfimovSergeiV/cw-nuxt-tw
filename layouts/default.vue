@@ -153,18 +153,17 @@
       return {
         dataset: true,
         showWriteUs: true,
+        latitude: null,
+        longitude: null,
       }
     },
     methods: {
-      // addTodo (e) {
-      //   this.$store.commit('todos/add', e.target.value)
-      //   e.target.value = ''
-      // },
       ...mapMutations({
         toggle: 'todos/toggle'
       }),
       ...mapActions({
         displayForm: 'displayForm',
+        sendCoordinates: 'sendCoordinates',
       }),
     },
     computed: {
@@ -178,5 +177,21 @@
         cookiestore: (state) => state.storage.cookies
       }),
     },
+    mounted() {
+      this.$nextTick(function () {
+        if ("geolocation" in navigator) {
+          /* местоположение доступно */
+          navigator.geolocation.getCurrentPosition(position => {
+            let location = {
+              "latitude": position.coords.latitude, 
+              "longitude": position.coords.longitude 
+            }
+            this.sendCoordinates(location)
+          });
+        } else {
+          /* местоположение НЕ доступно */
+        }
+      })
+    }
   };
 </script>

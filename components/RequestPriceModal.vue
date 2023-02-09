@@ -60,11 +60,22 @@
             </div>
 
 
+            <div class="grid grid-cols-2 px-4 pt-4 pb-1 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+              <div class="">
+                <div class="text-xs flex items-center">
+                  <p class="my-1 mr-2">Ваш город {{ region }}</p>
+                  <p>(</p>
+                  <button @click="regionForm = !regionForm">Изменить</button>
+                  <p>)</p>
+                </div>
+                
+                <transition name="fade">
+                  <input v-if="regionForm" v-model="regionHand" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш город">
+                </transition>
+              </div>
+            </div>
 
-
-
-
-            <div class="grid grid-cols-2 px-4 py-4 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+            <div class="grid grid-cols-2 px-4 pb-4">
               <div class="">
                 <p class="text-xs my-1">Как с вами связаться?</p>
                 <input v-model="contact" type="text" id="contacts" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-50 dark:border-gray-600 placeholder-gray-600 dark:text-gray-900 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ваш номер телефона или email">
@@ -103,11 +114,19 @@ import { mapActions, mapState } from 'vuex';
       return {
         contact: null,
         sended: false,
+        regionForm: false,
+        regionHand: null,
       }
     },
+    // watch: {
+    //   regionHand() {
+    //     this.changeRegion(this.regionHand)
+    //   }
+    // },
     computed: {
       ...mapState({
         region: (state) => state.region,
+        adress: (state) => state.adress,
         requestPrice: (state) => state.modules.cart.requestPrice,
         pricerequest: (state) => state.modules.pricerequest,
       }),
@@ -116,6 +135,7 @@ import { mapActions, mapState } from 'vuex';
       ...mapActions({
         addToast: 'addToast',
         displayForm: 'displayForm',
+        changeRegion: 'changeRegion',
         showCartModal: 'modules/cart/showCartModal',
         delProductToCart: 'modules/cart/delProductToCart',
         incProductToCart: 'modules/cart/incProductToCart',
@@ -128,9 +148,19 @@ import { mapActions, mapState } from 'vuex';
         delProductToFav: 'modules/favorites/delProductToFav',
       }),
       sendRequestPrice() {
+        let city = this.region
+
+        if (this.adress) {
+          city = String(this.adress)
+        }
+
+        if (this.regionHand) {
+          city = String(this.regionHand)
+        }
+
         this.$axios
           .$post('o/request-price/', {
-            city: this.region,
+            city: city,
             contact: this.contact,
             product: `id: ${this.requestPrice.id} vc: ${this.requestPrice.vcode} name: ${this.requestPrice.name}`,
           })

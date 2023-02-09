@@ -24,6 +24,7 @@ export const state = () => ({
   shopModal: false,
   toasts: [],
   contactForm: false,
+  adress: null,
 })
 
 export const getters = {
@@ -75,6 +76,11 @@ export const mutations = {
   },
   selectShop(state, shop) {
     state.shop = shop
+  },
+  adressFromCoordinates(state, adress) {
+    state.adress = adress
+    state.region = adress.at(-1)
+    // console.log(String(adress))
   }
 }
 
@@ -87,6 +93,9 @@ export const actions = {
   async nuxtServerInit({ commit, dispatch }) {
     await dispatch('storeDispatchFunc')
   },
+
+
+
   async storeDispatchFunc({ commit }) {
     const shops = await this.$axios.$get('c/shops/')
     const location = await this.$axios.$get('location/')
@@ -94,8 +103,15 @@ export const actions = {
     //   const likeserver = await this.$axios.$get('u/likes/')
     //   commit('addLikesProducts', likeserver)
     // }
+
     commit('shopsData', shops)
     commit('changeLocation', location)
+  },
+
+  sendCoordinates({ commit }, location) {
+    this.$axios.$post('coordinates/', location ).then((resp) => {
+      commit('adressFromCoordinates', resp)
+    }).catch(() => {})
   },
 
   showShopsModal({ commit }) {
@@ -112,7 +128,7 @@ export const actions = {
   },
   addToast({ commit }, text ) {
     /// Сделать присваивание ID
-    commit('addToast', text,)
+    commit('addToast', text)
   },
   hideToast({ commit }, toast ) {
     commit('hideToast', toast)

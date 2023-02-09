@@ -15,7 +15,7 @@
           />
         </div>
 
-        <p v-if="product.only_price === 0" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">стоимость по запросу</p>
+        <p v-if="product.only_price === 0" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200 min-h-[28px]">стоимость по запросу</p>
         <p v-else class="text-lg text-right font-medium text-gray-900 dark:text-gray-200">{{ product.only_price.toLocaleString() }} руб.</p>
         
         <p v-if="product.status === 'stock'" class="text-sm text-right font-medium text-gray-900 dark:text-gray-200">в наличии</p>

@@ -55,10 +55,11 @@
             <li id="navabar-menu" class=" group">
               <p hover="true" id="change-city" data-collapse-toggle="change-city" class="uppercase mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
               
-              <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50">
+              <!-- <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50"> -->
+                <div class="absolute right-0 top-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
 
-                <div class="menu-section pt-5">
-                  <div id="change-city-dropdown" class="rounded-md bg-white">
+                <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
+                  <div id="change-city-dropdown" class="rounded-md bg-white w-[240px] flex justify-start">
 
                     
                     <div class="px-2 py-4">
@@ -92,11 +93,6 @@
                         </div>
 
                       </div>
-
-
-
-
-
                     </div>
 
 
@@ -194,6 +190,7 @@ import { VueAutosuggest } from "vue-autosuggest";
     //     default: Array,
     //   },
     // },
+
     data() {
       return {
         search: '',
@@ -219,6 +216,7 @@ import { VueAutosuggest } from "vue-autosuggest";
     computed: {
       ...mapState({
         region: (state) => state.region,
+        adress: (state) => state.adress,
         shop: (state) => state.shop,
         shops: (state) => state.shops,
       }),
@@ -289,9 +287,7 @@ import { VueAutosuggest } from "vue-autosuggest";
       },
       focusMe(e) {
         console.log('FocusEvent') // FocusEvent
-      } 
-
-
+      },
     }
   }
   </script>
