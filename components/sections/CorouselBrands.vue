@@ -2,7 +2,7 @@
   <section id="" class="">
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="mt-2 p-2 bg-gray-400 rounded-sm border dark:border-gray-500 dark:bg-gray-600 shadow-md">
+      <div class="mt-2 md:p-2 bg-gray-400 rounded-sm border dark:border-gray-500 dark:bg-gray-600 shadow-md">
         <div class="text-gray-700 dark:text-gray-300 font-bold">
           <!-- <p class="text-gray-700 dark:text-gray-300 font-bold">Папулярные бренды:</p> -->
 
@@ -25,6 +25,8 @@
                       onerror="this.src='../../noimage-235-177.png'"
                       class="rounded-sm p-3 w-32"
                       loading=lazy
+                      width="235px"
+                      height="177px"
                       :src="brand.image"
                       fluid
                       />                  

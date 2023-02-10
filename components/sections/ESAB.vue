@@ -16,6 +16,9 @@
             <img 
                 class="rounded-sm w-full h-full"
                 loading=lazy
+                width="800px"
+                height="400px"
+                alt="esab-1"
                 src="https://api.glsvar.ru/files/c/esab-banner-one.jpg" 
               />              
 
@@ -24,7 +27,7 @@
                 <div class="flex items-center bg-gray-800/80">
                   <div class="p-1">
                     <nuxt-link :to="{ name: 'prods', query: { brnd: 3, page: 1 } }">
-                      <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" loading=lazy width="140" />
+                      <img src="https://api.glsvar.ru/files/img/c/brand/esab_8CnTsO3.png" loading=lazy width="140px" />
                     </nuxt-link>
                   </div>
                   <div class="p-1 text-gray-300">
@@ -51,7 +54,12 @@
             >
               <slide v-for="banner in esabbanners" :key="banner.id">
                 <nuxt-link :to="banner.path">
-                  <img :src="banner.image" :alt="banner.image"/>
+                  <img
+                    :src="banner.image"
+                    :alt="banner.image"
+                    width="800px"
+                    height="400px"
+                    />
                 </nuxt-link>
               </slide>
 

@@ -21,7 +21,7 @@
               >
                 <slide v-for="image in shopImages" :key="image.id" class="rounded-sm">
                   <div class="">
-                    <img :src="image.url" class="cccursor-zoom-in" width="500px" height="250px" fluid/>
+                    <img :src="image.url" class="cccursor-zoom-in" width="500px" height="250px" :alt="image.id" fluid/>
                   </div>
                 </slide>
                 <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -48,13 +48,13 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="">
-              <img @click="cert = 'esab-cert.jpg'" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
             </div>
             <div class="">
-              <img @click="cert = 'cert-redius.jpg'" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
             </div>
             <div class="">
-              <img @click="cert = 'cert-svarog.jpg'" src="cert-svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'cert-svarog.jpg'" alt="cert-3" src="cert-svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
             </div>                
           </div>
         </div>

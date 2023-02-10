@@ -9,8 +9,8 @@
             onerror="this.src='../../noimage-235-177.png'"
             :alt="product.name"
             loading=lazy
-            width="235"
-            height="177"
+            width="235px"
+            height="177px"
             class="p-4" 
           />
         </div>
