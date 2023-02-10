@@ -13,7 +13,23 @@
     
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <Filters :props="props" :brands="brands" :response="response" />
-    <Products :products="response.results" />
+    <Products :products="response.results" class="" />
+
+    <div v-if="response.results.length < 1" class="">
+      <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2 min-h-[600px]">
+
+
+        <div class="flex h-full min-h-[400px] items-center justify-center">
+          <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md px-20 py-24 w-3/4">
+            <p class=" md:text-2xl my-2 text-gray-900 dark:text-gray-100 text-center">Ничего не найдено : (</p>
+          </div>
+        </div>
+
+
+
+        
+      </div>
+    </div>
 
 
     <div class="mx-auto px-4 py-4 lg:max-w-7xl lg:px-8">
