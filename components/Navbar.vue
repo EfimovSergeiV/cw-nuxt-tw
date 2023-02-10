@@ -7,7 +7,7 @@
         <!-- <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 py-4 md:px-4 relative"> -->
         <div class="
           from-white
-          via-gray-300/80
+          via-gray-100
           to-white
           border-gray-200
 
@@ -272,18 +272,18 @@ export default {
 .background-animate {
     background-size: 400%;
 
-    -webkit-animation: AnimationName 6s ease infinite;
-    -moz-animation: AnimationName 6s ease infinite;
-    animation: AnimationName 6s ease infinite;
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
   }
 
   @keyframes AnimationName {
-    0%,
-    100% {
-      background-position: 0% 50%;
+    
+    0%, 100% {
+      background-position: 0% 100%;
     }
-    50% {
-      background-position: 100% 50%;
+    70% {
+      background-position: 100% 0%;
     }
   }
 </style>
