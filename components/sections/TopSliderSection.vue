@@ -2,7 +2,7 @@
   <section id="top-slider-section">
     <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
-      <div class="border dark:border-gray-700 rounded-sm">
+      <div class="border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-sm">
 
         <hooper
           :center-mode="true"
@@ -10,7 +10,7 @@
           :play-speed="12000"
           :auto-play="true"
           style="height: 100%;"
-          class="main-hooper ">
+          class="main-hooper min-h-[120px] md:min-h-[240px] lg:min-h-[330px] xl:min-h-[370px]">
          
             <slide v-for="slide in widebanners" :key="slide.id" class="">
               <div class="relative">
@@ -18,6 +18,8 @@
                 <img
                   :src="slide.image"
                   style="width: 100%;"
+                  width="1024px"
+                  height="320px"
                   class="rounded-sm"
                   :alt="slide.name"
                   onerror="this.src='./noimage-960-540.jpg'"
