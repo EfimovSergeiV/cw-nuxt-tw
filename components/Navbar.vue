@@ -4,10 +4,26 @@
       <!-- THIS IS BUG FOR SHORT PAGE (hidden UP) -->
       <nav class="">
     
-        <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 py-4 md:px-4 relative">
+        <!-- <div class="bg-white border-gray-200 border rounded-sm dark:border-gray-700 dark:bg-gray-800 py-4 md:px-4 relative"> -->
+        <div class="
+          from-white
+          via-gray-300/80
+          to-white
+          border-gray-200
+
+
+          border rounded-sm
+          dark:border-gray-700
+          py-4 md:px-4 relative
+          bg-gradient-to-r
+          dark:from-gray-800
+          dark:via-gray-700
+          dark:to-gray-800
+          background-animate
+          ">
 
           <div id="mobile" class="md:hidden">
-            <div class="flex justify-center md:justify-end text-sm">
+            <div class="flex justify-center md:justify-end text-sm font-semibold">
               <nuxt-link :to="{ name: 'index' }" class="mx-2 mdi mdi-home"> Главная</nuxt-link>
               <nuxt-link :to="{ name: 'cts' }" class="mx-2 mdi mdi-book-open-page-variant md:hidden"> Каталог</nuxt-link>
               <nuxt-link :to="{ name: 'cart' }" class="mx-2 mdi mdi-cart"> Корзина</nuxt-link>
@@ -24,9 +40,11 @@
                       <nuxt-link :to="{ name: 'index' }" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home font-semibold" aria-current="page"> Главная</nuxt-link>
                     </li>
 
+
                     <li id="navabar-menu" class=" group">
+
                       <nuxt-link :to="{ name: 'cts' }" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant font-semibold"> Каталог</nuxt-link>
-                      
+
                       <div v-if="$nuxt.$route.name != 'cts'" class="absolute top-0 left-0 transition group-hover:translate-y-7 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
 
                         <div class="menu-section pt-7">
@@ -251,4 +269,21 @@ export default {
 /* a.nuxt-link-exact-active {
   text-decoration: solid;
 } */
+.background-animate {
+    background-size: 400%;
+
+    -webkit-animation: AnimationName 6s ease infinite;
+    -moz-animation: AnimationName 6s ease infinite;
+    animation: AnimationName 6s ease infinite;
+  }
+
+  @keyframes AnimationName {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 </style>
