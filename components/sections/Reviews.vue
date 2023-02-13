@@ -20,7 +20,7 @@
           >
             <slide v-for="review in reviews" :key="review.id" class="hooper-ul">
 
-                <div class="h-60 border dark:border-gray-700 shadow-md relative">
+                <div class="h-28 md:h-60 border dark:border-gray-700 shadow-md relative">
 
                   <iframe
                     :src="review.video"
