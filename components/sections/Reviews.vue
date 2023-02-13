@@ -20,7 +20,7 @@
           >
             <slide v-for="review in reviews" :key="review.id" class="hooper-ul">
 
-                <div class="h-28 md:h-60 border dark:border-gray-700 shadow-md relative">
+                <div class="h-28 md:h-60 border dark:border-gray-700 bg-gray-100 dark:bg-gray-900 shadow-md relative">
 
                   <iframe
                     :src="review.video"
@@ -34,7 +34,7 @@
                   <nuxt-link :to="{ name: 'reviews-id', params: { id: review.id } }">
                     <div class="absolute hover:bg-gray-800/90 top-0 h-full w-full transition-all duration-700 group">
                       <div class="flex w-full h-full justify-center items-center">
-                        <div class="">
+                        <div class="text-xs md:text-sm">
                           <div class="grid grid-cols-1 text-center">
                             <div class="">
                               <p class="text-gray-100/0 group-hover:text-gray-100 border-gray-100/0 group-hover:border-gray-100 border-b-2 transition-all duration-700">{{ review.name }}</p>
