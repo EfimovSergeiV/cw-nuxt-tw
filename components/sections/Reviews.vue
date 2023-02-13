@@ -4,7 +4,7 @@
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
         <div class="px-2 mt-2">
-          <nuxt-link to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-200 font-bold">Обзоры на оборудование</nuxt-link>
+          <nuxt-link :to="{ name: 'reviews' }" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-200">Обзоры на оборудование</nuxt-link>
         </div>
         
         <div class="">
@@ -18,21 +18,41 @@
             style="height: 100%;"
             class="main-hooper"
           >
-            <slide v-for="video in videos" :key="video.id" class="hooper-ul">
-              <div class="h-60 border dark:border-gray-700 shadow-md">
-                <!-- <img
-                  :src="review.image"
-                  class="rounded-sm h-full"
-                  onerror="this.src='./noimage-960-540.jpg'"
-                /> -->
-                <iframe
-                  :src="video.video"
-                  loading="lazy"
-                  height="100%"
-                  width="100%"
-                  allowfullscreen="0"
-                  frameborder="0"
-                ></iframe>
+            <slide v-for="review in reviews" :key="review.id" class="hooper-ul">
+
+                <div class="h-60 border dark:border-gray-700 shadow-md relative">
+
+                  <iframe
+                    :src="review.video"
+                    loading="lazy"
+                    height="100%"
+                    width="100%"
+                    allowfullscreen="0"
+                    frameborder="0"
+                  ></iframe>
+
+                  <nuxt-link :to="{ name: 'reviews-id', params: { id: review.id } }">
+                    <div class="absolute hover:bg-gray-800/90 top-0 h-full w-full transition-all duration-700 group">
+                      <div class="flex w-full h-full justify-center items-center">
+                        <div class="">
+                          <div class="grid grid-cols-1 text-center">
+                            <div class="">
+                              <p class="text-gray-100/0 group-hover:text-gray-100 border-gray-100/0 group-hover:border-gray-100 border-b-2 transition-all duration-700">{{ review.name }}</p>
+                            </div>
+
+                            <div class="">
+                              <p class="text-gray-100/0 group-hover:text-gray-100 transition-all duration-700">Перейти к видео</p>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                        
+
+                    </div>                  
+                  </nuxt-link>
+
+
               </div>
 
 
@@ -66,15 +86,15 @@
       HooperNavigation,
       HooperPagination,
     },
-    props: {
-      reviews: {
-        type: Array,
-        default: Array,
-      },
-    },
+    // props: {
+    //   reviews: {
+    //     type: Array,
+    //     default: Array,
+    //   },
+    // },
     data() {
       return {
-        videos: [
+        reviews: [
           {
             id: 1,
             name: 'Правильная сварка - Сварог',
@@ -102,6 +122,35 @@
             link: { name: 'product-id', params: { id: 1058 } },
             video:
               'https://www.youtube.com/embed/owyfZ-ATr9Y?autoplay=0&amp;loop=1&amp;&amp;playlist=owyfZ-ATr9Y',
+          },
+
+          {
+            id: 5,
+            name: 'REAL SMART ARC 160 - Сварог',
+            link: { name: 'product-id', params: { id: 1058 } },
+            video:
+              'https://www.youtube.com/embed/RMXycPSo6WE',
+          },
+          {
+            id: 6,
+            name: 'REAL SMART ARC 160 - Сварог',
+            link: { name: 'product-id', params: { id: 1058 } },
+            video:
+              'https://www.youtube.com/embed/LIRjPeQSP_w',
+          },
+          {
+            id: 7,
+            name: 'REAL SMART ARC 160 - Сварог',
+            link: { name: 'product-id', params: { id: 1058 } },
+            video:
+              'https://www.youtube.com/embed/rg7rONVwq6A',
+          },
+          {
+            id: 8,
+            name: 'REAL SMART ARC 160 - Сварог',
+            link: { name: 'product-id', params: { id: 1058 } },
+            video:
+              'https://www.youtube.com/embed/k1f8S3K3m5w',
           },
         ],
       }
