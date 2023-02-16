@@ -150,7 +150,7 @@
                             </div>
                             <div class="">
                               <div class="flex items-center">
-                                <div v-if="searchresult.only_price" class="text-right">
+                                <div v-if="searchresult.only_price >= 0" class="text-right">
                                   <p v-if="searchresult.only_price > 0" class="text-sm">{{ searchresult.only_price }} руб.</p>
                                   <p v-else class="text-xs text-center">По запросу</p>
                                 </div>
