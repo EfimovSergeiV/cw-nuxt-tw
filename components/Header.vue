@@ -137,13 +137,32 @@
                   
                   <div v-if="searchResult.length > 0" class="h-96 overflow-y-auto">
 
-                    <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-4 py-2">
-                      <div>
-                        <nuxt-link :to="{ name: 'product-id', params: { id: searchresult.id } }" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">
-                          {{ searchresult.name }}
+
+                    <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-2 py-1">
+                      <div class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-1 px-1">
+                        <nuxt-link :to="{ name: 'product-id', params: { id: searchresult.id } }" class="">
+                          
+
+                          <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center gap-2">
+                              <img :src="searchresult.preview_image" class=" rounded-sm h-14 bg-white p-1" />
+                              <p class="text-sm">{{ searchresult.name }}</p>
+                            </div>
+                            <div class="">
+                              <div class="flex items-center">
+                                <div class="text-right">
+                                  <p v-if="searchresult.only_price > 0" class="text-sm">{{ searchresult.only_price }} руб.</p>
+                                  <p v-else class="text-xs text-center">По запросу</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          
                         </nuxt-link>                      
                       </div>
                     </div>
+
 
                   </div>
 
