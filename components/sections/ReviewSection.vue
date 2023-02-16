@@ -23,7 +23,7 @@
           </li>
         </ol>
       </nav>
-
+  
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div class="h-96 border dark:border-gray-700 shadow-md rounded-sm bg-gray-100 dark:bg-gray-900">
           <iframe
