@@ -145,12 +145,12 @@
 
                           <div class="flex items-center justify-between gap-1">
                             <div class="flex items-center gap-2">
-                              <img :src="searchresult.preview_image" class=" rounded-sm h-14 bg-white p-1" />
+                              <img v-if="searchresult.preview_image" :src="searchresult.preview_image" class=" rounded-sm h-14 bg-white p-1" />
                               <p class="text-sm">{{ searchresult.name }}</p>
                             </div>
                             <div class="">
                               <div class="flex items-center">
-                                <div class="text-right">
+                                <div v-if="searchresult.only_price" class="text-right">
                                   <p v-if="searchresult.only_price > 0" class="text-sm">{{ searchresult.only_price }} руб.</p>
                                   <p v-else class="text-xs text-center">По запросу</p>
                                 </div>
