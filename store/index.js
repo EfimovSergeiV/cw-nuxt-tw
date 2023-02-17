@@ -59,11 +59,11 @@ export const mutations = {
     state.region = translated[location.city]
   },
   clientData(state, data) {
-    console.log('shfdsjhf', data )
+    // console.log('shfdsjhf', data )
     state.client[data.key] = data.value
   },
   addToast(state, text) {
-    console.log({ id: state.toasts.length + 1, text: text})
+    // console.log({ id: state.toasts.length + 1, text: text})
     state.toasts.push({ id: state.toasts.length + 1, text: text})
   },
   hideToast(state, id) {

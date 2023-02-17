@@ -2,7 +2,7 @@
   <section id="top-slider-section">
     <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 pt-2">
 
-      <div class="border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-sm">
+      <div class="border border-gray-100 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-sm">
 
         <hooper
           :center-mode="true"

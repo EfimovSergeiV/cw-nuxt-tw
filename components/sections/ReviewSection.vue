@@ -25,7 +25,7 @@
       </nav>
   
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div class="h-96 border dark:border-gray-700 shadow-md rounded-sm bg-gray-100 dark:bg-gray-900">
+        <div class="h-96 border border-gray-300 dark:border-gray-700 shadow-md rounded-sm bg-white dark:bg-gray-900">
           <iframe
             :src="review.video"
             loading="lazy"
@@ -37,8 +37,10 @@
           ></iframe>
 
         </div>
-        <div v-if="review.link" class="flex h-full w-full justify-center items-center">
+        <div v-if="review.link" class="fflex h-full w-full justify-center items-center">
           <nuxt-link :to="review.link" class="text-2xl">Перейти к товару</nuxt-link>
+          <br />
+          <p class="text-xs">{{ product }}</p>
         </div>
       </div>
 
@@ -56,6 +58,10 @@
     },
     props: {
       review: {
+        type: Object,
+        default: Object,
+      },
+      product: {
         type: Object,
         default: Object,
       },
