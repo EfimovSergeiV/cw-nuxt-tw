@@ -191,7 +191,7 @@
 
     </div>
 
-    <Footer class="" />
+    <Footer :brands="brands" class="" />
 
   </div>
 </template>
@@ -216,7 +216,7 @@ import TopSliderSection from '~/components/sections/TopSliderSection.vue'
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
       const widebanners = await $axios.$get('c/widebanners/')
-      return { widebanners, cts }
+      return { widebanners, cts, brands }
     },
     data() {
       return {

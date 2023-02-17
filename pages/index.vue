@@ -14,7 +14,7 @@
     <Latest :latest="latest" />
     <ShopMaps class="my-4" />
     <CorouselBrands :brands="filterCarouselBrands(brands)" />
-    <Footer />
+    <Footer :brands="brands" />
 
     <!-- <ShopsModal :shops="shops" /> -->
 

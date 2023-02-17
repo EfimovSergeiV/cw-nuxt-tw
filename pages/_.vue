@@ -44,7 +44,7 @@
 
 
     
-    <Footer />
+    <Footer :brands="brands" />
     
   </div>
 </template>

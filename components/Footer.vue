@@ -21,9 +21,28 @@
           <li>
             <nuxt-link :to="{ name: 'policy'}" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Политика обработки данных</nuxt-link>
           </li>
+
+          <li>
+
+            <div class=" relative group">
+              <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Производители</nuxt-link>
+              <div class="absolute pb-4 bottom-2 translate-y-4 group-hover:translate-y-0 transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-50">
+                <!-- -->
+                <div class="bg-white border border-gray-300 rounded-sm px-6 py-2 w-48">
+                  <div v-for="brand in brands" :key="brand.id" class="my-1">
+                    <nuxt-link class="text-gray-700 :hover:text-gray-900 hover:font-semibold" :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">{{ brand.brand }}</nuxt-link>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </li>
+
           <li>
             <nuxt-link :to="{ name: 'about' }" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Сертификаты</nuxt-link>
           </li>
+
           <li>
             <button @click="showAllert()" class="mr-4 md:mr-6 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">Способы оплаты</button>
           </li>
@@ -111,7 +130,7 @@ import { mapActions } from 'vuex';
       components: {
     },
     props: {
-      shops: {
+      brands: {
         type: Array,
         default: Array,
       },

@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <Footer />
+    <Footer :brands="brandsAll" />
     
   </div>
 </template>
@@ -69,12 +69,13 @@ export default {
     async asyncData({ query, $axios }) {
       const cts = await $axios.$get('c/ct/')
       const brands = await $axios.$get(`c/ctbrand/`, {params: { ct: query.ct },})
+      const brandsAll = await $axios.$get('/c/brands/')
       const props = await $axios.$get(`c/props/`, {params: { ct: query.ct },})
       const rands = await $axios.$get(`c/random/`, {params: { ct: query.ct },})
       const response = await $axios.$get(`c/prods/`, {params: query,})
       const breadcrumbs = await $axios.$get(`c/breadcrumb/`, { params: query })
 
-      return { cts, response, brands, props, rands, breadcrumbs }
+      return { cts, response, brands, props, rands, breadcrumbs, brandsAll }
     },
     head() {
       return {

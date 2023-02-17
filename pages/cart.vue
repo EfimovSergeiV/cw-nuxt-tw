@@ -5,7 +5,7 @@
     <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <CartForm :shops="shops" />
-    <Footer class="" />
+    <Footer :brands="brands" class="" />
 
   </div>
 </template>
@@ -27,8 +27,9 @@ import CartForm from '~/components/sections/CartForm.vue'
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
       const shops = await $axios.$get('/c/shops/')
+      const brands = await $axios.$get('/c/brands/')
       const widebanners = await $axios.$get('c/widebanners/')
-      return { widebanners, cts, shops }
+      return { widebanners, cts, shops, brands }
     },
     data() {
       return {

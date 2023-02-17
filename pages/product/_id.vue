@@ -15,7 +15,7 @@
     <ProductDetail :product="product" />
     <Recommend :recommends="recommends" />
 
-    <Footer />
+    <Footer :brands="brands" />
   </div>
 </template>
   
@@ -40,12 +40,13 @@ import Footer from '~/components/Footer.vue'
     async asyncData({ params, $axios }) {
       const cts = await $axios.$get('c/ct/')
       const product = await $axios.$get(`c/prod/${params.id}`)
+      const brands = await $axios.$get('/c/brands/')
       const reviews = await $axios.$get(`u/reviews/?prod_id=${params.id}`)
       const regions = await $axios.$get(`o/cdek/regions/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
       const recommends = await $axios.$get(`c/recommend/`)
       const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
-      return { cts, recommends, product, breadcrumbs, reviews, regions, mweld }
+      return { cts, brands, recommends, product, breadcrumbs, reviews, regions, mweld }
     },
     head() {
 

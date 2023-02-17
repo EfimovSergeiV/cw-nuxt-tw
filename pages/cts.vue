@@ -6,7 +6,7 @@
     <Navbar :cts="cts" />
     <Categories :cts="cts" />
     <Recommend :recommends="recommends" />
-    <Footer class="" />
+    <Footer :brands="brands" class="" />
 
   </div>
 </template>
@@ -31,8 +31,9 @@ import Footer from '~/components/Footer.vue'
     async asyncData({ $axios }) {
       const widebanners = await $axios.$get('c/widebanners/')
       const cts = await $axios.$get(`c/ct/`)
+      const brands = await $axios.$get('/c/brands/')
       const recommends = await $axios.$get(`c/recommend/`)
-      return { widebanners, cts, recommends }
+      return { widebanners, cts, recommends, brands }
     },
     head() {
       return {

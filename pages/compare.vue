@@ -14,7 +14,7 @@
 
     <CompareSection />
 
-    <Footer class="" />
+    <Footer :brands="brands" class="" />
 
   </div>
 </template>
@@ -39,8 +39,9 @@ import Footer from '~/components/Footer.vue'
     },
     async asyncData({ $axios }) {
       const widebanners = await $axios.$get('c/widebanners/')
+      const brands = await $axios.$get('/c/brands/')
       const cts = await $axios.$get('c/ct/')
-      return { widebanners, cts }
+      return { widebanners, cts, brands }
     },
     data() {
       return {

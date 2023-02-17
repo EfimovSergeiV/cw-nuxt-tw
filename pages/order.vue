@@ -6,7 +6,7 @@
 
     <Order />
 
-    <Footer class="" />
+    <Footer :brands="brands" class="" />
 
   </div>
 </template>
@@ -25,8 +25,9 @@ import Order from '~/components/sections/Order.vue'
   },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
+      const brands = await $axios.$get('/c/brands/')
       // const order = await $axios.$get(`o/orderinfo/PSK1156363/`)
-      return { cts }
+      return { cts, brands }
     },
     data() {
       return {
