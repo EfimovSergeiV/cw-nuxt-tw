@@ -1,7 +1,6 @@
 <template>
   <section id="reviews" class="">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 my-4 shadow-md">
         <div class="px-2 mt-2">
           <nuxt-link :to="{ name: 'reviews' }" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-200">Обзоры на оборудование</nuxt-link>
@@ -86,15 +85,15 @@
       HooperNavigation,
       HooperPagination,
     },
-    // props: {
-    //   reviews: {
-    //     type: Array,
-    //     default: Array,
-    //   },
-    // },
+    props: {
+      reviews: {
+        type: Array,
+        default: Array,
+      },
+    },
     data() {
       return {
-        reviews: [
+        reviewss: [
           {
             id: 1,
             name: 'Правильная сварка - Сварог',

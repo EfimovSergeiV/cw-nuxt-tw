@@ -5,7 +5,7 @@
     <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <Main :latest="latest" :banners="banners" />
-    <Reviews :reviews="banners" />
+    <Reviews :reviews="randomreviews" />
     <ESAB :esab="esab" :esabbanners="esabbanners" />
     <CorouselProducts :latest="latest" />
     <MWeld :mweld="mweld" />
@@ -75,8 +75,9 @@ import Footer from '~/components/Footer.vue'
       const mpromobs = await $axios.$get('c/mpromob/')
       const recommends = await $axios.$get(`c/recommend/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
+      const randomreviews = await $axios.$get(`c/random-reviews/`)
 
-      return { widebanners, banners, brands, cts, latest, mpromobs, esab, esabbanners, recommends, mweld }
+      return { widebanners, banners, brands, cts, latest, mpromobs, esab, esabbanners, recommends, mweld, randomreviews }
     },
     head() {
       return {

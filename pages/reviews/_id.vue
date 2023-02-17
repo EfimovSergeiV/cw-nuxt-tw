@@ -26,12 +26,13 @@ import CartForm from '~/components/sections/CartForm.vue'
         Footer,
         CartForm
     },
-    async asyncData({ $axios }) {
+    async asyncData({ params, $axios }) {
       const cts = await $axios.$get(`c/ct/`)
       const shops = await $axios.$get('/c/shops/')
       const brands = await $axios.$get('/c/brands/')
+      const review = await $axios.$get(`c/reviews/${params.id}`)
       const widebanners = await $axios.$get('c/widebanners/')
-      return { widebanners, cts, shops, brands }
+      return { widebanners, cts, shops, brands, review }
     },
     data() {
       return {
