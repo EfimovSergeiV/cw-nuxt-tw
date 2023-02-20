@@ -35,6 +35,16 @@
                   </div>
                 </nuxt-link>
 
+                <a :href="slide.link" target="blank" v-if="slide.link">  
+                  <div class="absolute top-0 right-0 z-50 w-full h-full">
+                    <div class="flex justify-end">
+                      <div class="relative mx-2 md:mx-4 md:my-2">
+                        <span class="mdi mdi-16px mdi-link-variant text-whitw shadow-2xl"></span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
               </div>              
             </slide>
 
