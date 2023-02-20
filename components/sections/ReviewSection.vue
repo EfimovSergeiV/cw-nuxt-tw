@@ -37,11 +37,11 @@
           ></iframe>
 
         </div>
-        <div v-if="review.link" class="fflex h-full w-full justify-center items-center">
+        <!-- <div v-if="review.link" class="fflex h-full w-full justify-center items-center">
           <nuxt-link :to="review.link" class="text-2xl">Перейти к товару</nuxt-link>
           <br />
           <p class="text-xs">{{ product }}</p>
-        </div>
+        </div> -->
       </div>
 
     </div>
