@@ -4,7 +4,7 @@
     <Header />
     <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
-    <ReviewSection :review="review" :product="product" />
+    <ReviewSection :review="review" :product="product" :randomReviews="randomReviews" />
     <Footer :brands="brands" class="" />
 
   </div>
@@ -31,9 +31,10 @@ import CartForm from '~/components/sections/CartForm.vue'
       const shops = await $axios.$get('/c/shops/')
       const brands = await $axios.$get('/c/brands/')
       const review = await $axios.$get(`/c/reviews/${params.id}`)
+      const randomReviews = await $axios.$get(`/c/random-reviews/`)
       const widebanners = await $axios.$get('/c/widebanners/')
 
-      const data = { widebanners, cts, shops, brands, review }
+      const data = { widebanners, cts, shops, brands, review, randomReviews }
 
       if ( review.link.params ) {
         data.product = await $axios.$get(`/c/prod/${ review.link.params.id }/`)
