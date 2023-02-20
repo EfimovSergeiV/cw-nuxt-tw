@@ -24,7 +24,7 @@
         </ol>
       </nav>
   
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 offse">
         <div class="h-96 border border-gray-300 dark:border-gray-700 shadow-md rounded-sm bg-white dark:bg-gray-900">
           <iframe
             :src="review.video"
@@ -37,12 +37,50 @@
           ></iframe>
 
         </div>
-        <!-- <div v-if="review.link" class="fflex h-full w-full justify-center items-center">
-          <nuxt-link :to="review.link" class="text-2xl">Перейти к товару</nuxt-link>
-          <br />
-          <p class="text-xs">{{ product }}</p>
-        </div> -->
+        <div v-if="review.link.params" class="fflex h-full w-full justify-center items-center">
+          
+          
+          <div class="flex md:justify-end my-4">
+            <nuxt-link :to="review.link" class="text-lg">{{ product.name }}</nuxt-link>
+          </div>
+
+          
+          <div class="">
+            <p class="text-base mt-4 mb-1">Описание:</p>
+            <p class="text-sm">{{ product.description }}</p>
+          </div>
+
+
+          <div class="flex justify-end items-center my-4">
+            <p v-if="product.only_price > 0" class="text-xl">{{ product.only_price.toLocaleString() }} руб.</p>
+            <p v-else class="text-base">Стоимость по запросу</p>
+          </div>
+          
+                    
+          <div class="">
+            <p class="text-base mt-4 mb-1">Характеристики:</p>
+            <div class="columns-1 lg:columns-2 gap-8">
+              <div v-for="param in product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
+                <div class="flex justify-between">
+                  <div class=""><small>{{ param.name }} :</small></div>
+                  <div class="text-right"><small>{{ param.value }}</small></div>                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="flex justify-end items-center mt-6">
+            <nuxt-link :to="review.link" class="text-sm">Перейти к товару</nuxt-link>
+          </div>
+          
+
+        </div>
       </div>
+
+
+      <div class="flex border-b my-4"></div>
+
 
     </div>
 

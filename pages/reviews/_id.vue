@@ -35,9 +35,9 @@ import CartForm from '~/components/sections/CartForm.vue'
 
       const data = { widebanners, cts, shops, brands, review }
 
-      // if ( review.link ) {
-      //   data.product = await $axios.$get(`/c/prod/${ review.link.params.id }/`)
-      // }
+      if ( review.link.params ) {
+        data.product = await $axios.$get(`/c/prod/${ review.link.params.id }/`)
+      }
 
       return data
     },
