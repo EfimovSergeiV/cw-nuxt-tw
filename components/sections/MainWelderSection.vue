@@ -14,8 +14,8 @@
                   <div class="grid grid-cols-1 gap-2">
 
                     <div class="flex gap-2">
-                      <p class="text-xl font-semibold uppercase shadow-2xl text-gray-200">Становись профессионалом</p>
-                      <p class="text-xl font-bold uppercase shadow-2xl text-white ">с нами!</p>
+                      <p class="text-xl font-semibold uppercase shadow-2xl text-red-500">Становись профессионалом</p>
+                      <p class="text-xl font-bold uppercase shadow-2xl text-gray-100 ">с нами!</p>
                     </div>
                     
                     <nuxt-link :to="{ name: 'cts'}" class="lowercase text-gray-100">Перейти в каталог</nuxt-link>
