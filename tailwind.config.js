@@ -8,6 +8,13 @@ module.exports = {
     'plugins/**/*.js',
   ],
   theme: {
+    fontFamily: {
+      'sans': ['Play', 'Helvetica', 'Arial', 'sans-serif' ],
+      'serif': ['ui-serif', 'Georgia',],
+      'mono': ['ui-monospace', 'SFMono-Regular',],
+      'display': ['Oswald',],
+      'body': ['"Open Sans"',],
+    },
     extend: {
       screens: {
         sm: '520px',
