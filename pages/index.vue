@@ -5,6 +5,7 @@
     <TopSliderSection :widebanners="widebanners" />
     <Navbar :cts="cts" />
     <Main :latest="latest" :banners="banners" />
+    <MainWelderSection />
     <Reviews :reviews="randomreviews" />
     <ESAB :esab="esab" :esabbanners="esabbanners" />
     <CorouselProducts :latest="latest" />
@@ -26,6 +27,7 @@ import Header from '~/components/Header.vue'
 import TopSliderSection from '~/components/sections/TopSliderSection.vue'
 import Navbar from '~/components/Navbar.vue'
 import Main from '~/components/sections/Main.vue'
+import MainWelderSection from '~/components/sections/MainWelderSection.vue'
 import Reviews from '~/components/sections/Reviews.vue'
 import ESAB from '~/components/sections/ESAB.vue'
 import CorouselProducts from '~/components/sections/CorouselProducts.vue'
@@ -46,6 +48,7 @@ import Footer from '~/components/Footer.vue'
       TopSliderSection,
       Navbar,
       Main,
+      MainWelderSection,
       Reviews,
       ESAB,
       CorouselProducts,
