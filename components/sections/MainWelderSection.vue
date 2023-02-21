@@ -14,8 +14,8 @@
                   <div class="grid grid-cols-1 gap-2">
 
                     <div class="flex gap-2">
-                      <p class="text-xl font-semibold uppercase shadow-2xl text-red-500">Становись профессионалом</p>
-                      <p class="text-xl font-bold uppercase shadow-2xl text-gray-100 ">с нами!</p>
+                      <p class="text-base md:text-xl font-semibold uppercase shadow-2xl text-red-500">Становись профессионалом</p>
+                      <p class="text-base md:text-xl font-bold uppercase shadow-2xl text-gray-100 ">с нами!</p>
                     </div>
                     
                     <nuxt-link :to="{ name: 'cts'}" class="lowercase text-gray-100">Перейти в каталог</nuxt-link>
@@ -39,8 +39,8 @@
                   <div class="">
                     <div class="flex gap-2">
                       <div class="px-2 grid grid-cols-1 gap-4">
-                        <p class="text-base font-bold text-white">Ручная дуговая сварка</p>
-                        <nuxt-link :to="{ name: 'prods', query: { ct: 8 } }" class="uppercase text-xs font-semibold underline text-gray-100">Перейти в категорию</nuxt-link>
+                        <p class="text-sm font-bold text-white">Ручная дуговая сварка</p>
+                        <nuxt-link :to="{ name: 'prods', query: { ct: 8 } }" class="uppercase text-xs font-semibold text-gray-100">Перейти в категорию</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -58,8 +58,8 @@
                     <div class="">
                       <div class="flex gap-2">
                         <div class="px-2 grid grid-cols-1 gap-4">
-                          <p class="text-base font-bold text-white">Полуавтоматическая сварка</p>
-                          <nuxt-link :to="{ name: 'prods', query: { ct: 9 } }" class="uppercase text-xs font-semibold underline text-gray-100">Перейти в категорию</nuxt-link>
+                          <p class="text-sm font-bold text-white">Полуавтоматическая сварка</p>
+                          <nuxt-link :to="{ name: 'prods', query: { ct: 9 } }" class="uppercase text-xs font-semibold text-gray-100">Перейти в категорию</nuxt-link>
                         </div>
                       </div>
                     </div>
