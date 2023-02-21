@@ -2,20 +2,20 @@
   <section id="main-welder" class="">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="grid grid-cols-2 gap-4 mt-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
 
         <div class="">
           <div class="bg-white dark:bg-gray-800 h-full rounded-sm border dark:border-gray-600 border-gray-200 shadow-sm">
             <div class="relative">
-              <img src="main-mw-banner.png" class="rounded-sm" />
+              <img src="main-mw-banner.png" class="rounded-sm" fluid />
               <div class="absolute h-full w-full top-0 bg-gray-800/50 rounded-sm">
                 <div class="flex items-center h-full px-2">
                   
                   <div class="grid grid-cols-1 gap-2">
 
                     <div class="flex gap-2">
-                      <p class="text-2xl font-semibold uppercase shadow-2xl text-gray-200">Становись профессионалом</p>
-                      <p class="text-2xl font-bold uppercase shadow-2xl text-white ">с нами!</p>
+                      <p class="lg:text-2xl font-semibold uppercase shadow-2xl text-gray-200">Становись профессионалом</p>
+                      <p class="lg:text-2xl font-bold uppercase shadow-2xl text-white ">с нами!</p>
                     </div>
                     
                     <nuxt-link :to="{ name: 'cts'}" class="lowercase text-gray-100">Перейти в каталог</nuxt-link>
