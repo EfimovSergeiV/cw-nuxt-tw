@@ -39,8 +39,8 @@
                   <div class="">
                     <div class="flex gap-2">
                       <div class="px-2 grid grid-cols-1 gap-4">
-                        <p class="text-sm font-bold text-white">Ручная дуговая сварка</p>
-                        <nuxt-link :to="{ name: 'prods', query: { ct: 8 } }" class="uppercase text-xs font-semibold text-gray-100">Перейти в категорию</nuxt-link>
+                        <!-- <p class="text-sm font-bold text-white">Ручная дуговая сварка</p> -->
+                        <nuxt-link :to="{ name: 'prods', query: { ct: 8 } }" class="uppercase text-base md:text-lg text-center font-sans text-white">Ручная дуговая сварка</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -58,8 +58,8 @@
                     <div class="">
                       <div class="flex gap-2">
                         <div class="px-2 grid grid-cols-1 gap-4">
-                          <p class="text-sm font-bold text-white">Полуавтоматическая сварка</p>
-                          <nuxt-link :to="{ name: 'prods', query: { ct: 9 } }" class="uppercase text-xs font-semibold text-gray-100">Перейти в категорию</nuxt-link>
+                          <!-- <p class="text-sm font-bold text-white">Полуавтоматическая сварка</p> -->
+                          <nuxt-link :to="{ name: 'prods', query: { ct: 9 } }" class="uppercase text-base md:text-lg text-center font-sans text-white">Полуавтоматическая сварка</nuxt-link>
                         </div>
                       </div>
                     </div>
