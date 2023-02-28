@@ -3,12 +3,12 @@
 
 
     <div class="relative">
-      <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
+      <div id="main-info" class="flex justify-between items-start md:items-center gap-2 my-2 md:gap-6">
  
         <div class="my-4">
           <div class="flex justify-center md:justify-start">
             <nuxt-link to="/">
-              <img src="../assets/images/blue-svar.png" alt="glsvar-logo" width="340px" height="64px" class=" h-14 md:h-16" />
+              <img src="../assets/images/blue-svar.png" alt="glsvar-logo" class=" h-12 md:h-16" />
             </nuxt-link>
           </div>
         </div>
