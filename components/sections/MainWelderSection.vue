@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
 
         <div class="">
-          <div class="bg-white dark:bg-gray-800 h-full rounded-sm border dark:border-gray-600 border-gray-200 shadow-sm">
+          <div class="bg-white dark:bg-gray-800 h-full rounded-sm border border-gray-100 dark:border-gray-700 shadow-sm">
             <div class="relative">
               <img src="main-mw-banner.png" class="rounded-sm h-full w-full" fluid />
               <div class="absolute h-full w-full top-0 bg-gray-800/70 rounded-sm">
@@ -31,7 +31,7 @@
 
 
         <div class="grid grid-cols-2 gap-4">
-          <div class="bg-white dark:bg-gray-800 h-full rounded-sm border dark:border-gray-600 border-gray-200 shadow-sm">
+          <div class="bg-white dark:bg-gray-800 h-full rounded-sm border border-gray-100 dark:border-gray-700 shadow-sm">
             <div class="relative h-full w-full">
               <img src="first-mw-banner.jpg" class="overflow-hidden rounded-sm h-full w-full" />
               <div class="absolute h-full w-full top-0 bg-gray-800/70 rounded-sm">
@@ -50,7 +50,7 @@
           </div>
 
           <div class="relative">
-            <div class="bg-white dark:bg-gray-800 h-full rounded-sm border dark:border-gray-600 border-gray-200 shadow-sm">
+            <div class="bg-white dark:bg-gray-800 h-full rounded-sm border border-gray-100 dark:border-gray-700 shadow-sm">
               <div class="relative h-full w-full">
                 <img src="two-mw-banner.jpg" class="overflow-hidden rounded-sm h-full w-full"/>
                 <div class="absolute h-full w-full top-0 bg-gray-800/70 rounded-sm">
