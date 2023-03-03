@@ -33,7 +33,7 @@
 
 
     <div class="mx-auto px-4 py-4 lg:max-w-7xl lg:px-8">
-      <div class="flex justify-end">
+      <div class="flex justify-center md:justify-end">
         <Pagination :response="response" />
       </div>
     </div>

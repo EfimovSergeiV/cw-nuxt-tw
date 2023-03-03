@@ -4,11 +4,11 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
-
+<!-- grid grid-cols-1 md:grid-cols-2 my-3 gap-4 -->
       <div class="grid grid-cols-1 md:grid-cols-2 my-3 gap-4">
 
         <div class="">
-          <div class="flex gap-1 justify-start items-center ">
+          <div class="flex gap-1 justify-center md:justify-start items-center ">
             <button @click="(show = !show)" class="py-2.5 md:py-2 px-3 text-xs md:text-sm leading-tight text-gray-500 bg-white rounded-sm border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"> Фильтр</button>
             
             <ul class="flex gap-1">
