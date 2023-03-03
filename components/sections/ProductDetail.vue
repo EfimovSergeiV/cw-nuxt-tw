@@ -1,5 +1,5 @@
 <template>
-  <section id="product-detail">
+  <section id="product-detail" class="">
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <!-- <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
         <div class="p-2">
@@ -243,13 +243,15 @@
     </div>
 
 
+
     <transition name="fade">
-      <div v-if="largeImage" class="fixed inset-0 overflow-y-hidden overscroll-y-none z-40 my-10">
-        <div class="flex min-h-full justify-center text-center items-center">
-          <div class="relative rounded-sm px-10">
+      <!-- fixed inset-0 overflow-y-hidden overscroll-y-none w-full h-full top-0 left-0 my-10 -->
+      <div v-if="largeImage" class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-white/10 z-40">
+        <div class="flex min-h-full bg-gray-500/50 justify-center text-center items-center">
+          <div class="relative rounded-sm">
             <div class="overflow-y-auto h-screen">
               <div class="flex min-h-full justify-center text-center items-center">
-                <div class="bg-white p-2 rounded-sm">
+                <div class="bg-white p-2 rounded-sm border border-gray-200 dark:border-gray-600">
                   <div class="w-[380px] h-[300] md:w-[640px] md:h-[480px] relative">
                     <div class="flex justify-end items-center absolute z-50 right-0">
                       <p @click="largeImage = false" class="mdi mdi-24px mdi-close text-gray-700 hover:text-gray-900 cursor-pointer"></p>
