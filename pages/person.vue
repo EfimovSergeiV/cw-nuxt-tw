@@ -215,6 +215,7 @@ import TopSliderSection from '~/components/sections/TopSliderSection.vue'
     },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
+      const brands = await $axios.$get('/c/brands/')
       const widebanners = await $axios.$get('c/widebanners/')
       return { widebanners, cts, brands }
     },
