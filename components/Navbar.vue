@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="mx-auto my-4 pb-1 px-4 lg:max-w-7xl lg:px-8">
+    <div class="mx-auto my-4 px-4 lg:max-w-7xl lg:px-8">
       <!-- THIS IS BUG FOR SHORT PAGE (hidden UP) -->
       <nav class="">
     
