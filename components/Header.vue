@@ -59,7 +59,7 @@
                 <div class="absolute right-0 top-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
 
                 <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
-                  <div id="change-city-dropdown" class="rounded-md bg-white w-[240px] flex justify-start">
+                  <div id="change-city-dropdown" class="rounded-md bg-white w-[250px] flex justify-start">
 
                     
                     <div class="px-2 py-4">
