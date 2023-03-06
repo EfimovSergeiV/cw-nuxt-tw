@@ -54,7 +54,7 @@
               <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
             </div>
             <div class="">
-              <img @click="cert = 'cert-svarog.jpg'" alt="cert-3" src="cert-svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'cert-svarog.jpg'" alt="cert-3" src="svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
             </div>                
           </div>
         </div>
