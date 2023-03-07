@@ -140,14 +140,14 @@
                       </div>
 
 
-                      <div class="flex items-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600 justify-between">
+                      <div class="grid grid-cols-1 md:flex items-end justify-between p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                         <div class="">
                           <div class="flex items-center mb-4">
                             <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                             <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Не показывать больше</label>
                           </div>
                         </div>
-                        <div class="flex justify-end">
+                        <div class="flex justify-center w-full md:justify-end">
                           <button @click="showCartModal" data-modal-toggle="defaultModal" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mx-2">Продолжить покупки</button>
                           <button @click="goCart" data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Перейти в корзину</button>
                         </div>
