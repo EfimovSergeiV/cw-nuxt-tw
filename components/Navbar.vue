@@ -23,7 +23,7 @@
           ">
 
           <div id="mobile" class="md:hidden">
-            <div class="flex justify-center md:justify-end text-sm font-semibold">
+            <div class="flex justify-center md:justify-end text-sm">
               <nuxt-link :to="{ name: 'index' }" class="mx-2 mdi mdi-home"> Главная</nuxt-link>
               <nuxt-link :to="{ name: 'cts' }" class="mx-2 mdi mdi-book-open-page-variant md:hidden"> Каталог</nuxt-link>
               <nuxt-link :to="{ name: 'cart' }" class="mx-2 mdi mdi-cart"> Корзина</nuxt-link>
@@ -37,13 +37,13 @@
                 <ul class="flex flex-col mt-4 text-sm md:flex-row md:space-x-4 md:mt-0">
 
                     <li>
-                      <nuxt-link :to="{ name: 'index' }" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home font-semibold" aria-current="page"> Главная</nuxt-link>
+                      <nuxt-link :to="{ name: 'index' }" class="block text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-900 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-home uppercase" aria-current="page"> Главная</nuxt-link>
                     </li>
 
 
                     <li id="navabar-menu" class=" group">
 
-                      <nuxt-link :to="{ name: 'cts' }" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant font-semibold"> Каталог</nuxt-link>
+                      <nuxt-link :to="{ name: 'cts' }" id="mega-menu-full-dropdown-button" data-collapse-toggle="mega-menu-full-dropdown" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 items-center border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 mdi mdi-book-open-page-variant uppercase"> Каталог</nuxt-link>
 
                       <div v-if="$nuxt.$route.name != 'cts'" class="absolute top-0 left-0 transition group-hover:translate-y-7 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[560px] transform">
 
@@ -182,7 +182,7 @@
                     </li>
 
                     <li class="relative px-2">
-                        <nuxt-link :to="{ name: 'cart' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-cart font-semibold"> Корзина</nuxt-link>
+                        <nuxt-link :to="{ name: 'cart' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-cart uppercase"> Корзина</nuxt-link>
                         <div v-if="cart.length > 0" class="absolute top-0 right-0">
                           <!-- <p class="text-xs">{{ cart.length }}</p> -->
                           <span class="flex h-2 w-2">
@@ -193,7 +193,7 @@
                         
                     </li>
                     <li>
-                        <nuxt-link :to="{ name: 'about' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-store-marker font-semibold"> Магазины</nuxt-link>
+                        <nuxt-link :to="{ name: 'about' }" class="block border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700 text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mdi mdi-store-marker uppercase"> Магазины</nuxt-link>
                     </li>
 
 
