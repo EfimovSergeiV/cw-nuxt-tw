@@ -1,6 +1,20 @@
 <template>
   <div>
-    <transition name="fade">
+
+    <div class="">
+      <div class="w-5 h-5 flex items-center justify-center border-2 border-blue-600 rounded-md cursor-pointer">
+        <transition name="fade">
+          <div v-if="filterComp(product.id)" class="">
+            <button @click="delToComparison(product) && addToast('Товар удалён из сравнения')" class="mdi mdi-check-bold text-gray-700 dark:text-gray-300"></button>
+          </div>
+          <div v-else class="">
+            <button @click="addToComparison(product) && addToast('Товар добавлен к сравнению')" class="w-5 h-5"></button>
+          </div>
+        </transition>
+      </div>      
+    </div>
+
+    <!-- <transition name="fade">
       <div class="" v-if="filterComp(product.id)">
         <button @click="delToComparison(product) && addToast('Товар удалён из сравнения')" class="w-full relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 text-gray-100 dark:text-gray-100 ring-1 outline-none ring-cyan-200 dark:ring-blue-700">
           <span :class="`${ cls } relative transition-all ease-in duration-75 rounded-md bg-opacity-0 mdi mdi-equalizer`">
@@ -15,7 +29,7 @@
           </span>
         </button>
       </div>
-    </transition>
+    </transition> -->
   </div>
 </template>
   
