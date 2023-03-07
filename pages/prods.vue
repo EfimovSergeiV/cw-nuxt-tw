@@ -10,6 +10,11 @@
       </div>
     </div>
 
+
+    <div class="">
+      <button @click="runTimer()"> Timer </button>
+    </div>
+
     
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <Filters :props="props" :brands="brands" :response="response" />
@@ -26,8 +31,6 @@
         </div>
 
 
-
-        
       </div>
     </div>
 
@@ -139,6 +142,14 @@ export default {
         stat: false,
       }
     },
+    // methods: {
+    //   runTimer() {
+        
+    //     setTimeout(() => {
+    //       console.log("Thie is timer")
+    //     }, "5000" )
+    //   }
+    // }
     // watch: {
     //   $route(to, from) {
     //     this.scrollTop()

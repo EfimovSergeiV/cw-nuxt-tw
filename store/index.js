@@ -63,8 +63,10 @@ export const mutations = {
     state.client[data.key] = data.value
   },
   addToast(state, text) {
-    // console.log({ id: state.toasts.length + 1, text: text})
     state.toasts.push({ id: state.toasts.length + 1, text: text})
+  },
+  clearToast(state) {
+    state.toasts.shift()
   },
   hideToast(state, id) {
     const toast = state.toasts.findIndex((item) => item.id === id)
@@ -129,6 +131,11 @@ export const actions = {
   addToast({ commit }, text ) {
     /// Сделать присваивание ID
     commit('addToast', text)
+
+    setTimeout(() => {
+      commit('clearToast')
+    }, "5000" )
+
   },
   hideToast({ commit }, toast ) {
     commit('hideToast', toast)
