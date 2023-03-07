@@ -87,7 +87,7 @@
         <div class=" md:p-4">
           <div class="">
             <!-- <p class="text-sm lg:text-base text-gray-900 dark:text-gray-200 font-medium">{{ text }}</p> -->
-            <p class="bg-clip-text text-gray-700 dark:text-gray-300 text-xs md:text-base">
+            <p class="bg-clip-text text-gray-700 dark:text-gray-300 text-xs lg:text-base">
             {{ text }}
             </p>
           </div>
