@@ -10,12 +10,6 @@
       </div>
     </div>
 
-
-    <div class="">
-      <button @click="runTimer()"> Timer </button>
-    </div>
-
-    
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
     <Filters :props="props" :brands="brands" :response="response" />
     <Products :products="response.results" class="" />
