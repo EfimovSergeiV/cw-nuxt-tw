@@ -47,8 +47,8 @@
       return {
         curPage: 1,
         opts: this.$route.query,
-        ceil: Math.ceil(this.response.count/20),
-        pagination: Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7),
+        ceil: Math.ceil(this.response.count/36),
+        pagination: Array.from({length: Math.ceil(this.response.count/36)}, (v, k) => k + 1).slice(0, 7),
       }
     },
     watch: {
@@ -57,18 +57,18 @@
         this.opts = this.$route.query
         
         let currentPage = Number(this.$route.query.page)
-        let a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(0, 7)
+        let a = Array.from({length: Math.ceil(this.response.count/36)}, (v, k) => k + 1).slice(0, 7)
 
         if (currentPage > 4) {
-          a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(currentPage - 4, currentPage + 3)
+          a = Array.from({length: Math.ceil(this.response.count/36)}, (v, k) => k + 1).slice(currentPage - 4, currentPage + 3)
         }
-        if (Math.ceil(this.response.count/20) - currentPage < 3) {
-          a = Array.from({length: Math.ceil(this.response.count/20)}, (v, k) => k + 1).slice(-7)
+        if (Math.ceil(this.response.count/36) - currentPage < 3) {
+          a = Array.from({length: Math.ceil(this.response.count/36)}, (v, k) => k + 1).slice(-7)
         }
 
         this.pagination = a
         this.curPage = currentPage
-        this.ceil = Math.ceil(this.response.count/20)
+        this.ceil = Math.ceil(this.response.count/36)
 
       },
     },
