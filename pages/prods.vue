@@ -5,27 +5,21 @@
     <Navbar :cts="cts" />
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8 mb-4">
-
       <div class="">
-
         <div id="cat-title" class="flex items-center justify-end mb-2">
           <p class="text-2xl">{{ response.meta.title }}</p>
         </div>
-
         <div v-if="response.meta.inserted" class="flex items-center justify-end">
           <div id="" class="">
-
             <div class="flex flex-wrap gap-2 justify-end max-w-[700px]">
               <div v-for="inserted in response.meta.inserted" :key="inserted.id" class="">
                 <div class="bg-white dark:bg-gray-800 px-4 rounded-xl border hover:border-gray-300 dark:border-gray-700 border-gray-200 hover:dark:border-gray-600 transition-all shadow-md">
-                  <nuxt-link :to="{ name: 'prods', query: { ct: inserted.id}}" class="text-xs">{{ inserted.name }}</nuxt-link>
+                  <nuxt-link :to="{ name: 'prods', query: { ct: inserted.id}}" class="text-[10px] md:text-xs">{{ inserted.name }}</nuxt-link>
                 </div>
               </div>          
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
 
