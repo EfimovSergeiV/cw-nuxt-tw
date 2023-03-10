@@ -10,7 +10,24 @@
       </div>
     </div>
 
+    
+
     <Breadcrumbs :breadcrumbs="breadcrumbs" />
+
+    <div v-if="response.meta.inserted" class="mx-auto px-4 lg:max-w-7xl lg:px-8">
+      <div id="" class="my-4">
+
+
+        <div class="flex flex-wrap gap-8 items-center justify-center">
+          <div v-for="inserted in response.meta.inserted" :key="inserted.id" class="h-full">
+            <nuxt-link :to="{ name: 'prods', query: { ct: inserted.id}}" class="text-sm">{{ inserted.name }}</nuxt-link>
+          </div>          
+        </div>
+
+
+      </div>
+    </div>
+
     <Filters :props="props" :brands="brands" :response="response" />
     <Products :products="response.results" class="" />
 
@@ -134,8 +151,34 @@ export default {
     data() {
       return {
         stat: false,
+        insertedCts: null
       }
     },
+    // methods: {
+
+    //   getInserted() {
+    //       // const cartProduct = state.products.find((item) => item.id === product.id)
+    //       // state.setcomplete.forEach((el) => (result += el.price * el.quantity))
+          
+    //       const mainCategory = this.breadcrumbs[0].id
+    //       const currentCategory = this.breadcrumbs.slice(-1)[0].id
+    //       let results = this.cts.find(obj => obj.id === mainCategory)
+
+    //       console.log('Current: ', currentCategory)
+    //       console.log('Main: ', mainCategory)
+
+    //       if (results.inserted) {
+            
+    //         results = results.inserted.find(obj => obj.id === currentCategory)
+
+    //       }
+          
+          
+          
+    //       return results
+    //     }
+    //   }
+
     // methods: {
     //   runTimer() {
         
