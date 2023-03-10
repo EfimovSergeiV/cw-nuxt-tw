@@ -25,11 +25,6 @@
 
           </div>
         </div>
-        <div v-else></div>
-
-
-
-
 
       </div>
     </div>
