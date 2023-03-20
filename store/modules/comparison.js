@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 export const state = () => ({
   products: [],
+  showCompModal: true,
 })
 
 export const getters = {
@@ -12,6 +13,12 @@ export const getters = {
 }
 
 export const actions = {
+  actionShowCompModal({commit}) {
+    commit('mutationShowCompModal')
+  },
+  clearAllCompare({commit}) {
+    commit('mutationClearAllCompare')
+  },
   addToComparison({ state, commit }, product) {
     const cartProduct = state.products.find((item) => item.id === product.id)
     if (!cartProduct) {
@@ -55,6 +62,7 @@ export const mutations = {
       category,
     }
   ) {
+    state.showCompModal = true
     state.products.push({
       id,
       vcode,
@@ -71,6 +79,14 @@ export const mutations = {
     })
   },
 
+  mutationShowCompModal( state ) {
+    console.log("sgjhfdghsjgdf")
+    state.showCompModal = false
+    // state.showCompModal = !showCompModal
+  },
+  mutationClearAllCompare(state) {
+    state.products = []
+  },
   delToComparison(state, { id }) {
     const cartProduct = state.products.findIndex((item) => item.id === id)
     state.products.splice(cartProduct, 1)

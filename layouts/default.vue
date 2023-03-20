@@ -23,7 +23,7 @@
     <transition name="fade" mode="out-in">
       <!-- <CookiesMsg v-if="(cookies && cookiestore)" /> -->
       <ShopsModal v-if="shopModal" />
-
+      <CompareModal v-if="showCompModal && comp.length > 1" />
       <CartModal v-if="cartModal && !stateCartModal" />
       <RequestPriceModal v-if="requestModal" />
       <ShowWriteUsModal v-if="contactForm" />
@@ -67,6 +67,7 @@
   import { mapState, mapMutations, mapActions } from 'vuex';
   import CookiesMsg from '~/components/CookiesMsg.vue';
   import CartModal from '~/components/CartModal.vue';
+  import CompareModal from '~/components/CompareModal.vue';
   import ShopsModal from '~/components/ShopsModal.vue';
   import RequestPriceModal from '~/components/RequestPriceModal.vue';
   import PrivacyPolicy from '~/components/PrivacyPolicy.vue';
@@ -144,6 +145,7 @@
       CookiesMsg,
       CartModal,
       ShopsModal,
+      CompareModal,
       RequestPriceModal,
       PrivacyPolicy,
       ShowWriteUsModal,
@@ -168,6 +170,8 @@
     },
     computed: {
       ...mapState({
+        showCompModal: (state) => state.modules.comparison.showCompModal,
+        comp: (state) => state.modules.comparison.products,
         stateCartModal: (state) => state.modules.cart.stateCartModal,
         cartModal: (state) => state.modules.cart.cartModal,
         requestPrice: (state) => state.modules.cart.requestPrice,
