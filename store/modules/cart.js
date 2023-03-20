@@ -7,6 +7,7 @@ export const state = () => ({
     // counter: 0,
     cartModal: false,       /// Окно перейти в корзину при покупке
     requestModal: false,    /// Окно запроса стоимости
+    stateCartModal: false,   /// Чекбокс отображения модальки корзины
   })
   
   export const getters = {
@@ -26,6 +27,9 @@ export const state = () => ({
   }
   
   export const mutations = {
+    mutationStateCartModal(state) {
+      state.stateCartModal = !state.stateCartModal
+    },
     increment(state) {
       state.counter++
     },
@@ -90,12 +94,14 @@ export const state = () => ({
   }
   
   export const actions = {
+    actionStateCartModal({ commit }) {
+      commit('mutationStateCartModal')
+    },
     showCartModal({ commit }) {
       commit('showCartModal')
     },
     addProductToCart({ state, commit }, product) {
       const cartProduct = state.products.find((item) => item.id === product.id)
-      console.log(product)
       if (!cartProduct) {
         commit('addProductToCart', {
           id: product.id,

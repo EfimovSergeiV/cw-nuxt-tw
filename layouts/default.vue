@@ -24,7 +24,7 @@
       <!-- <CookiesMsg v-if="(cookies && cookiestore)" /> -->
       <ShopsModal v-if="shopModal" />
 
-      <CartModal v-if="cartModal" />
+      <CartModal v-if="cartModal && !stateCartModal" />
       <RequestPriceModal v-if="requestModal" />
       <ShowWriteUsModal v-if="contactForm" />
       
@@ -168,6 +168,7 @@
     },
     computed: {
       ...mapState({
+        stateCartModal: (state) => state.modules.cart.stateCartModal,
         cartModal: (state) => state.modules.cart.cartModal,
         requestPrice: (state) => state.modules.cart.requestPrice,
         requestModal: (state) => state.modules.cart.requestModal,
