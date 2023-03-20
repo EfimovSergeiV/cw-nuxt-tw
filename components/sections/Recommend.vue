@@ -28,8 +28,9 @@
                       height="120"
                     />
                   </div>
-                  <div class="">
-                    <p class="text-xs text-center">{{ product.name }}</p>
+                  <div class="grid grid-cols-1 h-24 w-full content-between">
+                    <p class="text-xs text-center my-1">{{ product.name }}</p>
+                    <p class=" text-xs text-right">{{ product.only_price.toLocaleString() }} руб</p>
                   </div>
                 </div>
 
