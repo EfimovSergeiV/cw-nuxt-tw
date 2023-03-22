@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div itemscope itemtype="http://schema.org/Product">
 
     <Header />
     <Navbar :cts="cts" />
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div class="flex my-2 items-center justify-center md:justify-end">
-        <p class="text-base md:text-2xl">{{ product.name }}</p>
+        <p itemprop="name" class="text-base md:text-2xl">{{ product.name }}</p>
       </div>      
     </div>
 

@@ -3,6 +3,9 @@ import cfg from "./conf"   ///{ backend, yandexMetrika, gtmId, googleAnalyticsId
 // import gtmId from "./conf"
 // import googleAnalyticsId from "./conf"
 
+// <meta data-n-head="ssr" data-hid="description" name="description" content="Всё для дома, дачи, строительства и ремонта. Крупнейший онлайн гипермаркет в сфере DIY в России - более 1 000 000 товаров по выгодным ценам.">
+// <meta data-n-head="ssr" name="description" content="Купить высококачественное сварочное оборудование. Мы являемся официальным дистрибьютором ведущих брендов. Большой выбор, гарантия качества, доставка по всей России.">
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -10,7 +13,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'description', content: 'Купить высококачественное сварочное оборудование. Мы являемся официальным дистрибьютором ведущих брендов. Большой выбор, гарантия качества, доставка по всей России.' },
       { 
         hid: 'description', 
         name: 'description', 

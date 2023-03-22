@@ -11,7 +11,7 @@
         <div class="px-2 pb-8">
 
           <div class="flex justify-end my-2">
-            <p class="text-sm">Артикул: {{ product.vcode }}</p>
+            <p itemprop="identifier" class="text-sm">Артикул: {{ product.vcode }}</p>
           </div>
 
           <div class="flex flex-col md:flex-row gap-4">
@@ -24,6 +24,7 @@
                     :alt="product.name" 
                     width="235" 
                     height="177"
+                    itemprop="image"
                     onerror="this.src='../../noimage-235-177.png'"
                     class="rounded-sm cursor-zoom-in"
                   />
@@ -108,7 +109,7 @@
 
           <div class="my-8">
             <div class="">
-              <p class="text-sm">{{ product.description }}</p>
+              <p itemprop="description" class="text-sm">{{ product.description }}</p>
             </div>
             
             <!-- <div class="fflex flex-col md:flex-row md:justify-between gap-8 hidden">
