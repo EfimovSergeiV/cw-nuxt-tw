@@ -89,7 +89,7 @@
         </div>
 
 
-        <div class="my-20 lg:my-40"></div>
+        <div class="my-10 lg:my-20"></div>
 
         <div class="flex items-center justify-center">
           <div class="text-center text-sm md:text-base">
