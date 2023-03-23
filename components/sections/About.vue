@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="my-20 lg:my-40"></div>
+        <div class="my-10 lg:my-20"></div>
 
         <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
           <div class="w-full lg:w-5/12">
@@ -60,7 +60,7 @@
         </div>
 
 
-        <div class="my-20 lg:my-40"></div>
+        <div class="my-10 lg:my-20"></div>
 
 
         <div class="flex justify-center items-center gap-8 md:gap-16 text-center text-sm lg:text-base px-8">
