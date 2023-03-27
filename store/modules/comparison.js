@@ -80,7 +80,7 @@ export const mutations = {
   },
 
   mutationShowCompModal( state ) {
-    console.log("sgjhfdghsjgdf")
+    // console.log("sgjhfdghsjgdf")
     state.showCompModal = false
     // state.showCompModal = !showCompModal
   },
