@@ -40,16 +40,45 @@
 
 
     <div class="flex justify-end items-center">
-      <div class="">
-          <ul class="flex items-center flex-row space-x-3">
+      <div class="grid grid-cols-1 gap-3">
+
+
+        <ul class="flex items-center flex-row space-x-3 justify-end">
+            <li>
+              <a :href="`tel:${shop.phone}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
+            </li>
+            <li>
+              <a class="" :href="`https://t.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
+                <div class="bg-white w-8 h-8 flex items-center justify-center rounded-md border border-white">
+                  <img src="/telegr-logo.png" class="w-6" />
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="" :href="`https://wa.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
+                <div class="bg-white w-8 h-8 flex items-center justify-center rounded-md border border-white">
+                  <img src="/WhatsApp-logo.png" class="w-8" />
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="" :href="`https://wa.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
+                <div class="bg-white w-8 h-8 flex items-center justify-center rounded-md border border-white">
+                  <img src="/viber-logo.png" class="w-6" />
+                </div>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="flex items-center flex-row justify-end space-x-3">
 
             <li class="">
               <a href="mailto:zakaz@glsvar.ru" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
             </li>
 
-            <li>
-              <a :href="`tel:${shop.phone}`" class=" mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100">{{ shop.phone }}</a>
-            </li>
+            <!-- <li>
+              <a :href="`tel:${shop.phone}`" class=" mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ shop.phone }}</a>
+            </li> -->
 
 
             <li id="navabar-menu" class=" group">
@@ -61,14 +90,12 @@
                 <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
                   <div id="change-city-dropdown" class="rounded-md bg-white w-[250px] flex justify-start">
 
-                    
                     <div class="px-2 py-4">
 
                       <div class="flex gap-2 my-4 text-sm text-gray-700">
                         <p>Сейчас:</p>
                         <p> {{ region }}</p>
                       </div>
-
 
                       <div class="flex items-center justify-center gap-1">
                         <div class="text-gray-700">
@@ -87,24 +114,20 @@
 
                             <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 mx-1 py-2 px-2 cursor-pointer">
                               <div class="text-sm mx-1">{{ suggestion.item }}</div>
-                            </div>                              
+                            </div>
 
                           </vue-autosuggest>
                         </div>
-
                       </div>
                     </div>
-
-
                   </div>
                 </div>
-                
               </div>
             </li>
-
-
-
           </ul>
+
+
+
         </div>
     </div>
 
