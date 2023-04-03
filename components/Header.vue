@@ -49,22 +49,22 @@
             </li>
             <li>
               <a class="" :href="`https://t.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
-                <div class="bg-white w-8 h-8 flex items-center justify-center rounded-md border border-white">
-                  <img src="/telegr-logo.png" class="w-6" />
+                <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
+                  <img src="/telegr-logo.webp" class="w-5" />
                 </div>
               </a>
             </li>
             <li>
               <a class="" :href="`https://wa.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
-                <div class="bg-white w-8 h-8 flex items-center justify-center rounded-md border border-white">
-                  <img src="/WhatsApp-logo.png" class="w-8" />
+                <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
+                  <img src="/WhatsApp-logo.webp" class="w-8" />
                 </div>
               </a>
             </li>
             <li>
               <a class="" :href="`https://wa.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
-                <div class="bg-white w-8 h-8 flex items-center justify-center rounded-md border border-white">
-                  <img src="/viber-logo.png" class="w-6" />
+                <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
+                  <img src="/viber-logo.webp" class="w-5" />
                 </div>
               </a>
             </li>
@@ -85,12 +85,12 @@
               <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
               
               <!-- <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50"> -->
-                <div class="absolute right-0 top-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
+                <div class="absolute right-0 ttop-0 transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
 
                 <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
                   <div id="change-city-dropdown" class="rounded-md bg-white w-[250px] flex justify-start">
 
-                    <div class="px-2 py-4">
+                    <div class="px-2 py- 4">
 
                       <div class="flex gap-2 my-4 text-sm text-gray-700">
                         <p>Сейчас:</p>
