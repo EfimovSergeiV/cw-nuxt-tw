@@ -39,13 +39,13 @@
     </div>
 
 
-    <div class="flex justify-end items-center">
+    <div class="flex justify-center md:justify-end items-center">
       <div class="grid grid-cols-1 gap-3">
 
 
         <ul class="flex items-center flex-row space-x-3 justify-end">
             <li>
-              <a :href="`tel:${shop.phone}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
+              <a :href="`tel:${shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
             </li>
             <li>
               <a class="" :href="shop.telegram" target="_blank">
@@ -55,7 +55,7 @@
               </a>
             </li>
             <li>
-              <a class="" :href="shop.telegram" target="_blank">
+              <a class="" :href="shop.whatsapp" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/WhatsApp-logo.webp" class="w-8" />
                 </div>
@@ -210,10 +210,6 @@
         </label>
 
       </div>
-    </div>
-
-    <div class="">
-      <p class="text-xs">{{ shop }}</p>
     </div>
 
   </div>
