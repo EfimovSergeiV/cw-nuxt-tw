@@ -48,21 +48,21 @@
               <a :href="`tel:${shop.phone}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
             </li>
             <li>
-              <a class="" :href="`https://t.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
+              <a class="" :href="shop.telegram" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/telegr-logo.webp" class="w-5" />
                 </div>
               </a>
             </li>
             <li>
-              <a class="" :href="`https://wa.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
+              <a class="" :href="shop.telegram" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/WhatsApp-logo.webp" class="w-8" />
                 </div>
               </a>
             </li>
             <li>
-              <a class="" :href="`https://wa.me/${shop.phone.replace('+', '').replace('(', '').replace(')', '').replace(/ /ig, '')}`">
+              <a class="" :href="shop.viber" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/viber-logo.webp" class="w-5" />
                 </div>
@@ -73,7 +73,7 @@
           <ul class="flex items-center flex-row justify-end space-x-3">
 
             <li class="">
-              <a href="mailto:zakaz@glsvar.ru" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+              <a :href="`mailto:${ shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
             </li>
 
             <!-- <li>
@@ -210,6 +210,10 @@
         </label>
 
       </div>
+    </div>
+
+    <div class="">
+      <p class="text-xs">{{ shop }}</p>
     </div>
 
   </div>
