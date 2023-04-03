@@ -39,57 +39,105 @@
     </div>
 
 
-    <div class="flex justify-center md:justify-end items-center">
+    <div class="flex justify-end items-center">
       <div class="grid grid-cols-1 gap-3">
 
 
         <ul class="flex items-center flex-row space-x-3 justify-end">
-            <li>
-              <a :href="`tel:${shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
-            </li>
-            <li>
+
+          <li>
+            <a :href="`tel:${shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
+          </li>
+
+          <transition name="right-emergence">
+            <li v-if="shop.telegram">
               <a class="" :href="shop.telegram" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/telegr-logo.webp" class="w-5" />
                 </div>
               </a>
             </li>
-            <li>
+          </transition>
+          <transition name="right-emergence">
+            <li v-if="shop.whatsapp">
               <a class="" :href="shop.whatsapp" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/WhatsApp-logo.webp" class="w-8" />
                 </div>
               </a>
             </li>
-            <li>
+          </transition>
+          <transition name="right-emergence">
+            <li v-if="shop.viber">
               <a class="" :href="shop.viber" target="_blank">
                 <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
                   <img src="/viber-logo.webp" class="w-5" />
                 </div>
               </a>
             </li>
-          </ul>
+          </transition>
+        </ul>
 
-          <ul class="flex items-center flex-row justify-end space-x-3 ">
+        <ul class="flex items-center flex-row justify-end space-x-3 ">
 
-            <li class="">
-              <a :href="`mailto:${ shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
-            </li>
+          <li class="">
+            <a :href="`mailto:${ shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+          </li>
 
-            <!-- <li>
-              <a :href="`tel:${shop.phone}`" class=" mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ shop.phone }}</a>
-            </li> -->
+          <!-- <li>
+            <a :href="`tel:${shop.phone}`" class=" mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ shop.phone }}</a>
+          </li> -->
 
 
-            <li id="navabar-menu" class=" group">
+          <li id="navabar-menu" class=" group">
 
-              <div class="relative">
-                <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
-                
-                <div class="absolute invisible group-hover:visible right-0 z-50">
-                  <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
-                    
-                    <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
+            <div class="relative">
+              <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
+              
+              <div class="absolute invisible group-hover:visible right-0 z-50">
+                <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
+                  
+                  <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
+                    <div class="flex items-center justify-center gap-1">
+                      <div class="text-gray-700">
+                        <vue-autosuggest
+                          v-model="query"
+                          @focus="focusMe"
+                          @click="clickHandler"
+                          @input="onInputChange"
+                          @selected="onSelected"
+                          :suggestions="filteredOptions"
+                          :get-suggestion-value="getSuggestionValue"
+                          :should-render-suggestions="shouldRenderSuggestions"
+                          :input-props="{ id:'', placeholder:'Введите название' }"
+                          :section-configs="{ 'default': { limit: 6 } }"
+                          class="">
+
+                          <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 py-2 cursor-pointer">
+                            <div class="text-sm mx-1">{{ suggestion.item }}</div>
+                          </div>
+
+                        </vue-autosuggest>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <!-- <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50"> -->
+              <!-- <div class="absolute rright-0 top-0 transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
+
+                <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
+                  <div id="change-city-dropdown" class="rounded-md bg-white w-[250px] flex justify-start">
+
+                    <div class="px-2 py- 4">
+
+                      <div class="flex gap-2 my-4 text-sm text-gray-700">
+                        <p>Сейчас:</p>
+                        <p> {{ region }}</p>
+                      </div>
+
                       <div class="flex items-center justify-center gap-1">
                         <div class="text-gray-700">
                           <vue-autosuggest
@@ -105,7 +153,7 @@
                             :section-configs="{ 'default': { limit: 6 } }"
                             class="">
 
-                            <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 py-2 cursor-pointer">
+                            <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 mx-1 py-2 px-2 cursor-pointer">
                               <div class="text-sm mx-1">{{ suggestion.item }}</div>
                             </div>
 
@@ -113,56 +161,16 @@
                         </div>
                       </div>
                     </div>
-                    
                   </div>
                 </div>
-
-                <!-- <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50"> -->
-                <!-- <div class="absolute rright-0 top-0 transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
-
-                  <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
-                    <div id="change-city-dropdown" class="rounded-md bg-white w-[250px] flex justify-start">
-
-                      <div class="px-2 py- 4">
-
-                        <div class="flex gap-2 my-4 text-sm text-gray-700">
-                          <p>Сейчас:</p>
-                          <p> {{ region }}</p>
-                        </div>
-
-                        <div class="flex items-center justify-center gap-1">
-                          <div class="text-gray-700">
-                            <vue-autosuggest
-                              v-model="query"
-                              @focus="focusMe"
-                              @click="clickHandler"
-                              @input="onInputChange"
-                              @selected="onSelected"
-                              :suggestions="filteredOptions"
-                              :get-suggestion-value="getSuggestionValue"
-                              :should-render-suggestions="shouldRenderSuggestions"
-                              :input-props="{ id:'', placeholder:'Введите название' }"
-                              :section-configs="{ 'default': { limit: 6 } }"
-                              class="">
-
-                              <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 mx-1 py-2 px-2 cursor-pointer">
-                                <div class="text-sm mx-1">{{ suggestion.item }}</div>
-                              </div>
-
-                            </vue-autosuggest>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              </div>
-            </li>
-          </ul>
+              </div> -->
+            </div>
+          </li>
+        </ul>
 
 
 
-        </div>
+      </div>
     </div>
 
 
