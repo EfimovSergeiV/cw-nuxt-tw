@@ -287,7 +287,7 @@
                       style="height: 100%"
                     >
                       <slide v-for="image in product.prod_img" :key="image.id" class="rounded-sm">
-                        <div @click="largeImage = false" class="">
+                        <div @click="largeImage = false" class="flex items-center justify-center">
                           <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out" fluid/>
                         </div>
                       </slide>
