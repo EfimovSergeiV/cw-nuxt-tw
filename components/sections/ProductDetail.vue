@@ -26,7 +26,7 @@
                     height="177"
                     itemprop="image"
                     onerror="this.src='../../noimage-235-177.png'"
-                    class="rounded-sm cursor-zoom-in"
+                    class="rounded-sm cursor-zoom-in p-6"
                   />
                 </div>
               </div>              
@@ -288,7 +288,7 @@
                     >
                       <slide v-for="image in product.prod_img" :key="image.id" class="rounded-sm">
                         <div @click="largeImage = false" class="flex items-center justify-center">
-                          <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out" fluid/>
+                          <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out p-6" fluid/>
                         </div>
                       </slide>
                       <hooper-navigation slot="hooper-addons"></hooper-navigation>
