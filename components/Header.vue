@@ -122,13 +122,13 @@
         </div>
       </div>
 
-      <div class="group">
-        <label class="relative">
+      <div class="relative">
+        <label class="group">
           <span class="absolute inset-y-0 left-0 flex items-center pl-2">
             <div class="mdi mdi-magnify text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
           </span>
           <input v-model="search" class="text-gray-700 w-full hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 placeholder:text-slate-500 focus:ring-0 peer block bg-white dark:bg-gray-800 dark:placeholder:text-slate-400 border dark:border-slate-600 border-slate-300 rounded-sm py-2 pl-7 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
-          <div class="absolute z-40 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
+          <div class="absolute z-50 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
             <div class="container">
               <div class="">
                 <div class="search-result bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
