@@ -3,16 +3,8 @@
 
 
     <div class="relative">
-      <div id="main-info" class="flex justify-between items-center gap-2 my-2 md:gap-6">
+      <div id="main-info" class="flex justify-between items-start gap-2 md:gap-6 mt-2">
  
-        <div class="my-4">
-          <div class="flex justify-center md:justify-start">
-            <nuxt-link to="/">
-              <img src="../assets/images/blue-svar.webp" alt="glsvar-logo" class=" h-10 md:h-16 select-none" />
-            </nuxt-link>
-          </div>
-        </div>
-
         <div class="">
           <div id="color-mode" class="flex gap-1">
 
@@ -33,111 +25,58 @@
           </div>
         </div>
 
+        <div class="grid grid-cols-1 gap-1">
 
-      </div>
+          <ul class="flex items-center flex-row space-x-2 md:space-x-3 justify-end">
 
-    </div>
-
-
-    <div class="flex justify-end items-center">
-      <div class="grid grid-cols-1 gap-3">
-
-
-        <ul class="flex items-center flex-row space-x-3 justify-end">
-
-          <li>
-            <a :href="`tel:${shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class=" text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
-          </li>
-
-          <transition name="right-emergence">
-            <li v-if="shop.telegram">
-              <a class="" :href="shop.telegram" target="_blank">
-                <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
-                  <img src="/telegr-logo.webp" class="w-5" />
-                </div>
-              </a>
+            <li>
+              <a :href="`tel:${shop.phone.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.phone }}</a>
             </li>
-          </transition>
-          <transition name="right-emergence">
-            <li v-if="shop.whatsapp">
-              <a class="" :href="shop.whatsapp" target="_blank">
-                <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
-                  <img src="/WhatsApp-logo.webp" class="w-8" />
-                </div>
-              </a>
-            </li>
-          </transition>
-          <transition name="right-emergence">
-            <li v-if="shop.viber">
-              <a class="" :href="shop.viber" target="_blank">
-                <div class="bg-white w-7 h-7 flex items-center justify-center rounded-md border border-white/10">
-                  <img src="/viber-logo.webp" class="w-5" />
-                </div>
-              </a>
-            </li>
-          </transition>
-        </ul>
 
-        <ul class="flex items-center flex-row justify-end space-x-3 ">
-
-          <li class="">
-            <a :href="`mailto:${ shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
-          </li>
-
-          <!-- <li>
-            <a :href="`tel:${shop.phone}`" class=" mdi mdi-phone text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> {{ shop.phone }}</a>
-          </li> -->
-
-
-          <li id="navabar-menu" class=" group">
-
-            <div class="relative">
-              <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
-              
-              <div class="absolute invisible group-hover:visible right-0 z-50">
-                <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
-                  
-                  <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
-                    <div class="flex items-center justify-center gap-1">
-                      <div class="text-gray-700">
-                        <vue-autosuggest
-                          v-model="query"
-                          @focus="focusMe"
-                          @click="clickHandler"
-                          @input="onInputChange"
-                          @selected="onSelected"
-                          :suggestions="filteredOptions"
-                          :get-suggestion-value="getSuggestionValue"
-                          :should-render-suggestions="shouldRenderSuggestions"
-                          :input-props="{ id:'', placeholder:'Введите название' }"
-                          :section-configs="{ 'default': { limit: 6 } }"
-                          class="">
-
-                          <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 py-2 cursor-pointer">
-                            <div class="text-sm mx-1">{{ suggestion.item }}</div>
-                          </div>
-
-                        </vue-autosuggest>
-                      </div>
-                    </div>
+            <transition name="right-emergence">
+              <li v-if="shop.telegram">
+                <a class="" :href="shop.telegram" target="_blank">
+                  <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
+                    <img src="/telegr-logo.webp" class="w-4 md:w-5" />
                   </div>
-                  
-                </div>
-              </div>
+                </a>
+              </li>
+            </transition>
+            <transition name="right-emergence">
+              <li v-if="shop.whatsapp">
+                <a class="" :href="shop.whatsapp" target="_blank">
+                  <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
+                    <img src="/WhatsApp-logo.webp" class="w-5 md:w-8" />
+                  </div>
+                </a>
+              </li>
+            </transition>
+            <transition name="right-emergence">
+              <li v-if="shop.viber">
+                <a class="" :href="shop.viber" target="_blank">
+                  <div class="bg-white w-6 h-6 md:w-7 md:h-7 flex items-center justify-center rounded-md border border-white/10">
+                    <img src="/viber-logo.webp" class="w-4 md:w-5" />
+                  </div>
+                </a>
+              </li>
+            </transition>
+          </ul>
 
-              <!-- <div class="absolute top-0 right-0 transition group-hover:translate-y-4 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50"> -->
-              <!-- <div class="absolute rright-0 top-0 transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full">
+          <ul class="flex items-center flex-row justify-end space-x-3 ">
 
-                <div class="mx-auto max-w-7xl px-4 lg:max-w-7xl lg:px-8 flex justify-end">
-                  <div id="change-city-dropdown" class="rounded-md bg-white w-[250px] flex justify-start">
+            <li class="">
+              <a :href="`mailto:${ shop.email }`" class=" mdi mdi-email-open-outline text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"> zakaz@glsvar.ru</a>
+            </li>
 
-                    <div class="px-2 py- 4">
+            <li id="navabar-menu" class=" group">
 
-                      <div class="flex gap-2 my-4 text-sm text-gray-700">
-                        <p>Сейчас:</p>
-                        <p> {{ region }}</p>
-                      </div>
-
+              <div class="relative">
+                <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
+                
+                <div class="absolute invisible group-hover:visible right-0 z-50">
+                  <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
+                    
+                    <div class="bg-white rounded-md border border-gray-500/50 px-4 py-4">
                       <div class="flex items-center justify-center gap-1">
                         <div class="text-gray-700">
                           <vue-autosuggest
@@ -153,7 +92,7 @@
                             :section-configs="{ 'default': { limit: 6 } }"
                             class="">
 
-                            <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 mx-1 py-2 px-2 cursor-pointer">
+                            <div slot-scope="{suggestion}" class="text-gray-700 hover:text-gray-900 bg-white rounded-sm border my-2 py-2 cursor-pointer">
                               <div class="text-sm mx-1">{{ suggestion.item }}</div>
                             </div>
 
@@ -161,27 +100,78 @@
                         </div>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
-              </div> -->
-            </div>
-          </li>
-        </ul>
 
-
-
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
 
       <div class="">
-        <!-- <div class="flex justify-center md:justify-start">
+        <div class="flex justify-center md:justify-start">
           <nuxt-link to="/">
-            <img src="../assets/images/blue-svar.png" alt="glsvar-logo" class=" h-14 md:h-16" />
+            <img src="../assets/images/blue-svar.webp" alt="glsvar-logo" class=" h-18 md:h-16 select-none" />
           </nuxt-link>
-        </div> -->
+        </div>
+      </div>
+
+      <div class="group">
+        <label class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+            <div class="mdi mdi-magnify text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100"></div>
+          </span>
+          <input v-model="search" class="text-gray-700 w-full hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 placeholder:text-slate-500 focus:ring-0 peer block bg-white dark:bg-gray-800 dark:placeholder:text-slate-400 border dark:border-slate-600 border-slate-300 rounded-sm py-2 pl-7 pr-3 shadow-sm focus:outline-none focus:border-sky-800 focus:ring-sky-800 sm:text-sm" placeholder="Поиск по товарам" type="text" name="search"/>
+          <div class="absolute z-40 w-full invisible group-focus-within:visible hover:visible group-hover:opacity-100">
+            <div class="container">
+              <div class="">
+                <div class="search-result bg-white border-gray-200 shadow-sm border dark:bg-gray-800 dark:border-gray-600">
+                  <div v-if="searchResult.length > 0" class="h-96 overflow-y-auto">
+                    <div v-for="searchresult in searchResult" :key="searchresult.id" class="px-2 py-1">
+                      <div class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 py-1 px-1">
+                        <nuxt-link :to="{ name: 'product-id', params: { id: searchresult.id } }" class="">
+                          <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center gap-2">
+                              <img v-if="searchresult.preview_image" :src="searchresult.preview_image" class=" rounded-sm h-14 bg-white p-1" />
+                              <p class="text-sm">{{ searchresult.name }}</p>
+                            </div>
+                            <div class="">
+                              <div class="flex items-center">
+                                <div v-if="searchresult.only_price >= 0" class="text-right">
+                                  <p v-if="searchresult.only_price > 0" class="text-sm">{{ searchresult.only_price.toLocaleString() }} руб.</p>
+                                  <p v-else class="text-xs text-center">По запросу</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </nuxt-link>                      
+                      </div>
+                    </div>
+                  </div>
+                  <div v-else class="px-4 py-4">
+                    <p class="text-sm">Начните вводить запрос</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+
+    </div>
+
+
+
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 items-center">
+
+      <div class="">
+
       </div>
 
       
@@ -235,15 +225,6 @@
                     <p class="text-sm">Начните вводить запрос</p>
                   </div>
 
-                  <!-- <div class="px-4 py-4 bg-white shadow-sm dark:bg-gray-900 dark:border-gray-600">
-                    <nuxt-link to="#">
-                       Показать все результаты
-                      <span class="inline-block items-center">
-                       <div class="mdi mdi-arrow-right-bold"></div>
-                      </span>
-                    </nuxt-link>
-                  </div> -->
-
                 </div>
               </div>
             </div>
@@ -252,7 +233,7 @@
         </label>
 
       </div>
-    </div>
+    </div> -->
 
   </div>
 </template>
