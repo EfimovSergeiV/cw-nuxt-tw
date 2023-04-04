@@ -112,7 +112,7 @@
     </div>
 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
 
       <div class="">
         <div class="flex justify-center md:justify-start">
