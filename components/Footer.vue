@@ -38,15 +38,7 @@
                     </div>
                   </div>
                 </div>
-                
-                <!-- <div class="absolute bottom-0 translate-y-4 group-hover:translate-y-0 transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-50">
-                  <div class="bg-white border border-gray-300 rounded-sm">
-                    <div v-for="brand in brands" :key="brand.id" class="py-1">
-                      <nuxt-link class="text-gray-700 :hover:text-gray-900 hover:font-semibold" :to="{ name: 'prods', query: { brnd: brand.id, page: 1 }}">{{ brand.brand }}</nuxt-link>
-                    </div>
-                  </div>
 
-                </div> -->
               </div>
 
             </li>
