@@ -6,7 +6,7 @@
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
 
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
 
           <div class="">
             <div class="flex h-full bg-white rounded-md cursor-zoom-in" @click="largeImage = true">
@@ -96,7 +96,7 @@
             <div class="my-2">
               <p class="text-sm">Аналоги</p>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
               <div v-for="prod_analogue in analogue" :key="prod_analogue.id" class="">
 
                 <ProductSmall :product="prod_analogue" />
@@ -113,7 +113,7 @@
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
           <p class="my-2">Сопутствующие товары</p>
 
-          <div class="grid grid-cols-4 gap-2">
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
             <div v-for="prod_related in related" :key="prod_related.id" class="">
 
               <ProductSmall :product="prod_related" />
