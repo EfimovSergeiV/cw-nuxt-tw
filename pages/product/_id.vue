@@ -12,7 +12,7 @@
 
     <Breadcrumbs class="my-4" :breadcrumbs="breadcrumbs" />
 
-    <ProductDetail :product="product" />
+    <ProductDetail :product="product" :related="related" :analogue="analogue" />
     <Recommend :recommends="recommends" />
 
     <Footer :brands="brands" />
@@ -40,13 +40,22 @@ import Footer from '~/components/Footer.vue'
     async asyncData({ params, $axios }) {
       const cts = await $axios.$get('c/ct/')
       const product = await $axios.$get(`c/prod/${params.id}`)
+      
+      let relCT = ''
+      for ( let i in product.related ) {
+        relCT += `ct=${product.related[i]}&`
+      }
+
+      const analogue = await $axios.$get(`c/related/?ct=${product.category.id}&ct=${product.category.id}`)
+      const related = await $axios.$get(`c/related/?${relCT}`)
+
       const brands = await $axios.$get('/c/brands/')
       const reviews = await $axios.$get(`u/reviews/?prod_id=${params.id}`)
       const regions = await $axios.$get(`o/cdek/regions/`)
       const mweld = await $axios.$get(`c/prod/1835/`)
       const recommends = await $axios.$get(`c/recommend/`)
       const breadcrumbs = await $axios.$get(`c/breadcrumb/?ct=${product.category.id}`)
-      return { cts, brands, recommends, product, breadcrumbs, reviews, regions, mweld }
+      return { cts, brands, recommends, product, related, analogue, breadcrumbs, reviews, regions, mweld }
     },
     head() {
 
