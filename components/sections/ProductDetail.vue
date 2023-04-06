@@ -96,7 +96,7 @@
             <div class="my-2">
               <p class="text-sm">Аналоги</p>
             </div>
-            <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
               <div v-for="prod_analogue in analogue" :key="prod_analogue.id" class="">
 
                 <ProductSmall :product="prod_analogue" />
