@@ -127,8 +127,8 @@
       <div class="">
         <div class="">
 
-          <div class="flex gap-4 ">
-            <div class="w-[400px] bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
+          <div class="grid grid-cols-1 md:flex gap-4 ">
+            <div class="md:w-[400px] bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
               <div class="">
                 <p class="text-base">Обзоры:</p>
               </div>
