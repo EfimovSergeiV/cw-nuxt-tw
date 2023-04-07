@@ -105,7 +105,7 @@
           </div>
         </div>
       </div>
-      <div v-if="related.length > 1" class="pb-4">
+      <div v-if="related.length > 0" class="pb-4">
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
           <p class="my-2">Сопутствующие товары</p>
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
