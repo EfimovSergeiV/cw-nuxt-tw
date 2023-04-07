@@ -8,11 +8,15 @@
           <div class="">
             <div class="flex h-full bg-white rounded-md cursor-zoom-in" @click="largeImage = true">
               <div class="flex gap-4">
+
+
                 <div class="grid grid-cols-1 gap-2 px-2 py-2">
                   <div v-for="image in product.prod_img" :key="image.id" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
                     <img :src="image.image" class="p-2" />
                   </div>
                 </div>
+
+
               </div>
               <div class="flex items-center justify-center w-full">
                 <div class="bg-white p-4">
@@ -44,6 +48,9 @@
                 <span class="flex gap-1 items-center text-xs">код товара:<p class="text-sm"> {{ product.vcode }}</p></span>
               </div>
             </div>
+
+
+
             <div class="border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all px-4 py-4 rounded-md my-4 shadow-xl shadow-black/30">
               <div class="flex justify-between items-center ">
                 <div class="">
@@ -77,6 +84,9 @@
                 </div>
               </div>
             </div>
+
+
+            
             <div class="my-2">
               <p class="text-sm">Аналоги</p>
             </div>
