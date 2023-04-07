@@ -1,6 +1,6 @@
 <template>
 
-    <div id="product-small" class="grid grid-cols-1 content-between bg-white rounded-md border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all shadow-md p-2 h-36">
+    <div id="product-small" class="grid grid-cols-1 content-between bg-gray-100 rounded-md border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 dark:bg-gray-700 transition-all shadow-md p-2 h-36">
       <nuxt-link :to="{ name: 'product-id', params: { id: product.id } }">
         <div class="flex items-center justify-between gap-2">
           <div class="">

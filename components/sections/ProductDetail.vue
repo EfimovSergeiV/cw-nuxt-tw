@@ -11,7 +11,7 @@
 
 
                 <div class="grid grid-cols-1 gap-2 px-2 py-2">
-                  <div v-for="image in product.prod_img" :key="image.id" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
+                  <div v-for="image in product.prod_img.slice(0, 4)" :key="image.id" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
                     <img :src="image.image" class="p-2" />
                   </div>
                 </div>
@@ -57,9 +57,10 @@
 
 
             <div class="border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all px-4 py-4 rounded-md my-4 shadow-xl shadow-black/30">
-              <div class="flex justify-between items-center ">
+              
+              <div class="flex justify-between items-center my-2">
                 <div class="">
-                  <p v-if="product.only_price === 0" class="text-base text-right px-2 font-bold dark:text-gray-300">Стоимость по запросу</p>
+                  <p v-if="product.only_price === 0" class="text-sm font-bold dark:text-gray-300">Стоимость по запросу</p>
                   <div v-else class="flex gap-1 justify-end">
                     <p class="text-3xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
                     <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>
@@ -74,18 +75,19 @@
                     </button>
                     <CartBtn v-else cls="px-10 py-2.5" :product="product" />                    
                   </div>
-                  <div class="flex items-center justify-end">
-                    <div class="flex gap-2">
-                      <LikeBtn cls="px-5 py-2.5" :product="product"/>
-                      <p class="text-sm">В избранное</p>
-                    </div>                    
-                  </div>
                 </div>
               </div>
-              <div class="flex">
+
+              <div class="flex justify-between items-center my-2">
                 <div class="flex justify-end my-2">
                   <p v-if="product.status === 'stock'" class="text-sm">в наличии</p>
                   <p v-if="product.status === 'order'" class="text-sm">под заказ</p>
+                </div>
+                <div class="flex items-center justify-end">
+                  <div class="flex gap-2">
+                    <LikeBtn cls="px-5 py-2.5" :product="product"/>
+                    <p class="text-sm">В избранное</p>
+                  </div>
                 </div>
               </div>
             </div>
