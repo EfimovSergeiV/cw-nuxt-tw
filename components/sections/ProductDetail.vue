@@ -125,8 +125,8 @@
               <div class="">
                 <p class="text-base">Документы:</p>
                 <div class="grid grid-cols-1 gap-2 py-2">
-                  <div v-if="false" class="">
-                    {{ product.prod_doc }}
+                  <div class="" v-for="file in product.prod_doc" :key="file.id">
+                    <a class="text-sm mx-2" :href="file.doc" target="_blank">{{ file.name }}</a>
                   </div>
                   <div class="" v-for="doc in product.prod_link" :key="doc.id">
                     <a class="text-sm mx-2" :href="doc.url" target="_blank">{{ doc.name }}</a>
