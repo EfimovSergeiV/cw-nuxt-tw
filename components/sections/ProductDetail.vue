@@ -3,38 +3,26 @@
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
 
 
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
-
-
+      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-
           <div class="">
             <div class="flex h-full bg-white rounded-md cursor-zoom-in" @click="largeImage = true">
-              
-              
               <div class="flex gap-4">
                 <div class="grid grid-cols-1 gap-2 px-2 py-2">
-                  <div v-for="i in 4" :key="i" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
-                    <img :src="product.prod_img[0].image" class="p-2" />
+                  <div v-for="image in product.prod_img" :key="image.id" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
+                    <img :src="image.image" class="p-2" />
                   </div>
                 </div>
-                
               </div>
-
               <div class="flex items-center justify-center w-full">
                 <div class="bg-white p-4">
                   <img :src="product.preview_image" />
                 </div>
-                
               </div>
-              
-              
             </div>
           </div>
 
           <div class="">
-
-
             <div class="flex gap-2">
               <div class="border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 rounded-md py-1 px-4 transition-all">
                 <div class="flex gap-2">
@@ -56,7 +44,6 @@
                 <span class="flex gap-1 items-center text-xs">код товара:<p class="text-sm"> {{ product.vcode }}</p></span>
               </div>
             </div>
-
             <div class="border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all px-4 py-4 rounded-md my-4 shadow-xl shadow-black/30">
               <div class="flex justify-between items-center ">
                 <div class="">
@@ -66,7 +53,6 @@
                     <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>
                   </div>
                 </div>
-
                 <div class="grid grid-cols-1 gap-2">
                   <div class="flex items-center justify-end">
                     <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
@@ -84,7 +70,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="flex">
                 <div class="flex justify-end my-2 mx-2">
                   <p v-if="product.status === 'stock'" class="text-base">в наличии</p>
@@ -92,61 +77,46 @@
                 </div>
               </div>
             </div>
-
             <div class="my-2">
               <p class="text-sm">Аналоги</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
               <div v-for="prod_analogue in analogue" :key="prod_analogue.id" class="">
-
                 <ProductSmall :product="prod_analogue" />
-
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
-
-      <div class="py-4">
+      <div v-if="related.length > 1" class="pb-4">
         <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
           <p class="my-2">Сопутствующие товары</p>
-
           <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2">
             <div v-for="prod_related in related" :key="prod_related.id" class="">
-
               <ProductSmall :product="prod_related" />
-
             </div>
           </div>
-
         </div>
       </div>
-
       <div class="">
         <div class="">
-
           <div class="grid grid-cols-1 md:flex gap-4 ">
             <div class="md:w-[400px] bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2">
-              <div class="">
+              <!-- <div class="">
                 <p class="text-base">Обзоры:</p>
-              </div>
+              </div> -->
               <div class="">
                 <p class="text-base">Документы:</p>
                 <div class="grid grid-cols-1 gap-2 py-2">
                   <div v-if="false" class="">
                     {{ product.prod_doc }}
                   </div>
-                  
                   <div class="" v-for="doc in product.prod_link" :key="doc.id">
-                    <a class="text-sm" :href="doc.url" target="_blank">{{ doc.name }}</a>
+                    <a class="text-sm mx-2" :href="doc.url" target="_blank">{{ doc.name }}</a>
                   </div>
-                  
                 </div>
               </div>
             </div>
-
             <div class="w-full">
               <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mb-4">
                 <p class="text-base my-2">Характеристики:</p>
@@ -159,129 +129,15 @@
                   </div>
                 </div>
               </div>
-              
               <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md p-2 mt-2">
                 <p class="text-base my-2">Описание:</p>
                 <p class="text-sm">{{ product.description }}</p> 
               </div>
             </div>
-
           </div>
-
         </div>
       </div>
-
     </div>
-        
-
-        
-        <!-- <div class="px-2 pb-8">
-
-          <div class="flex justify-end my-2">
-            <p itemprop="identifier" class="text-sm">Артикул: {{ product.vcode }}</p>
-          </div>
-
-          <div class="flex flex-col md:flex-row gap-4">
-            <div class="md:basis-1/4">
-              <div class="cursor-pointer">
-                <div class="bg-white flex items-center justify-center rounded-sm">
-                  <img
-                    @click="largeImage = true"
-                    :src="product.preview_image" 
-                    :alt="product.name" 
-                    width="235" 
-                    height="177"
-                    itemprop="image"
-                    onerror="this.src='../../noimage-235-177.png'"
-                    class="rounded-sm cursor-zoom-in p-6"
-                  />
-                </div>
-              </div>              
-            </div>
-            <div class="md:basis-3/4">
-
-              <div class="flex justify-between items-end h-full">
-
-                <div class="">
-
-                  <div class="my-4">
-                    <div class="flex items-center">
-                      <div v-for="i in Math.ceil(product.rating)" :key="i" class="">
-                        <svg aria-hidden="true" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                      </div>
-                      <div v-for="i in 5 - Math.ceil(product.rating)" :key="i" class="">
-                        <svg aria-hidden="true" class="w-5 h-5 text-gray-300 dark:text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="grid grid-cols-1 lg:flex gap-2 items-end">
-                    <div class="flex gap-2">
-                      <CompBtn cls="px-5 py-2.5" :product="product" />
-                      <p class="text-sm">Сравнить</p>
-                    </div>
-                    <div class="flex gap-2">
-                      <LikeBtn cls="px-5 py-2.5" :product="product"/>
-                      <p class="text-sm">Добавить в избранное</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="">
-                  <div class="">
-                    <div class="">
-                      <p v-if="product.only_price === 0" class="text-base text-right px-2 font-bold dark:text-gray-300">Стоимость по запросу</p>
-                      <div v-else class="flex gap-1 justify-end">
-                        <p class="text-4xl font-bold dark:text-gray-300">{{ product.only_price.toLocaleString() }}</p>
-                        <p class="text-base font-bold dark:text-gray-300 mx-2">руб.</p>
-                      </div>
-
-                    </div>
-                    <div class="flex justify-end my-2 mx-2">
-                      <p v-if="product.status === 'stock'" class="text-base">в наличии</p>
-                      <p v-if="product.status === 'order'" class="text-base">под заказ</p>
-                    </div>
-                    
-                    <div class="flex gap-2 justify-end">
-                      <div class="">
-                        <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                          <span class="w-full relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                              Запросить
-                          </span>
-                        </button>
-                        <CartBtn v-else cls="px-5 py-2.5" :product="product" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-          <div class="my-8">
-            <div class="">
-              <p itemprop="description" class="text-sm">{{ product.description }}</p>
-            </div>
-
-          </div>
-
-          <p class="text-base my-2">Характеристики:</p>
-          <div class="columns-1 lg:columns-2 gap-8">
-            <div v-for="param in product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
-              <div class="flex justify-between">
-                <div class=""><small>{{ param.name }} :</small></div>
-                <div class="text-right"><small>{{ param.value }}</small></div>                
-              </div>
-            </div>
-          </div>
-
-        </div> -->
-
-
 
     <transition name="fade">
       <!-- fixed inset-0 overflow-y-hidden overscroll-y-none w-full h-full top-0 left-0 my-10 -->
@@ -318,8 +174,6 @@
         </div>
       </div>
     </transition>
-
-
 
   </section>
 </template>
