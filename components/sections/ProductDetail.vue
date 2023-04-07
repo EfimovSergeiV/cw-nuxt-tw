@@ -10,9 +10,9 @@
               <div class="flex gap-4">
 
 
-                <div class="px-2 py-2">
+                <div class="px-3 py-3">
                   <div v-for="image in product.prod_img.slice(0, 4)" :key="image.id" class="w-[80px] h-[80px] rounded-md bg-white flex items-center justify-center">
-                    <img :src="image.image" class="p-2" />
+                    <img :src="image.image" class="" />
                   </div>
                 </div>
 
