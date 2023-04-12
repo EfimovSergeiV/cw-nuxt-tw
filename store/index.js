@@ -82,7 +82,13 @@ export const mutations = {
   adressFromCoordinates(state, adress) {
     state.adress = adress
     state.region = adress.at(-1)
-    // console.log(String(adress))
+
+    state.shops.forEach((element) => {
+      if (element.city.toLowerCase() === adress.at(-1).toLowerCase()) {
+        state.shop = element
+      }
+    })
+
   }
 }
 
@@ -101,6 +107,7 @@ export const actions = {
   async storeDispatchFunc({ commit }) {
     const shops = await this.$axios.$get('c/shops/')
     const location = await this.$axios.$get('location/')
+
     // if (this.state.auth.loggedIn) {
     //   const likeserver = await this.$axios.$get('u/likes/')
     //   commit('addLikesProducts', likeserver)
