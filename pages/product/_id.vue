@@ -12,7 +12,7 @@
 
     <Breadcrumbs class="my-4" :breadcrumbs="breadcrumbs" />
 
-    <ProductDetail :product="product" :related="related" :analogue="analogue" />
+    <ProductDetail :product="product" :related="related" :analogue="analogue.slice(0, 2)" />
     <Recommend :recommends="recommends" />
 
     <Footer :brands="brands" />
