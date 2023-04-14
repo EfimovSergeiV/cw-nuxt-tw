@@ -1,6 +1,6 @@
 <template>
   <div class="fixed inset-0" id="my-modal">
-    <div class="flex min-h-full justify-center text-center items-center">
+    <div class="flex min-h-full justify-center text-center items-center bg-gray-500/50 backdrop-blur-sm">
       <div class="relative mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
         
 

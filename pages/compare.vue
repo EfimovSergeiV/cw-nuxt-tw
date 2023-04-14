@@ -6,7 +6,7 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div id="cat-title" class="flex justify-end mt-2">
-        <p class="text-3xl font-bold">Сравнение параметров</p>
+        <p class="text-2xl ">Сравнение параметров</p>
       </div>
     </div>
 

@@ -68,12 +68,15 @@
                 </div>
                 <div class="grid grid-cols-1 gap-4">
                   <div class="flex items-center justify-end">
-                    <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="relative inline-flex items-center justify-center p-0.5 mb-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                      <span class="w-full relative px-10 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                          Запросить
-                      </span>
+                    <button @click="requestPriceProduct(product)" v-if="product.only_price === 0" class="">
+                      <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                        <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                          <p class="text-white text-base w-32 md:w-52 py-2.5">Запросить</p>
+                        </div>
+                      </div>
                     </button>
-                    <CartBtn v-else cls="px-10 py-2.5" :product="product" />                    
+
+                    <CartBtn v-else :product="product" />                    
                   </div>
                 </div>
               </div>
@@ -158,7 +161,7 @@
 
     <transition name="fade">
       <!-- fixed inset-0 overflow-y-hidden overscroll-y-none w-full h-full top-0 left-0 my-10 -->
-      <div v-if="largeImage" class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-white/10 z-40">
+      <div v-if="largeImage" class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-gray-500/50 backdrop-blur-sm z-40">
         <div class="flex min-h-full bg-gray-500/50 justify-center text-center items-center">
           <div class="relative rounded-sm">
             <div class="overflow-y-auto h-screen">

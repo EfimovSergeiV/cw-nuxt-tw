@@ -3,7 +3,7 @@
   <div class="relative z-50 " aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
 
-    <div class="fixed inset-0 overflow-y-hidden overscroll-y-none">
+    <div class="fixed inset-0 overflow-y-hidden overscroll-y-none bg-gray-500/50 backdrop-blur-sm">
       <div class="flex min-h-full justify-center p-4 text-center items-center">
 
         <div class="relative transform overflow-hidden rounded-lg bg-gray-700 text-left shadow-xl transition-all sm:my-8 sm:max-w-4xl mx-4">
@@ -22,9 +22,9 @@
 
 
             <div class="p-6 space-y-6 h-72 xl:h-96 overflow-y-auto">
-              <div class="grid justify-center md:flex gap-4">
-                <div class="flex items-center justify-between w-full">
-                  <div class="bg-white rounded-sm p-1 h-[157px] w-[215px]">
+              <div class="grid grid-cols-1 justify-center md:flex gap-4">
+                <div class="flex items-center justify-center rounded-sm w-full bg-white ">
+                  <div class="flex items-center justify-centerp-1 h-[157px] w-[215px]">
                     <img 
                       :src="requestPrice.preview_image"
                       onerror="this.src='../../noimage-235-177.png'"
