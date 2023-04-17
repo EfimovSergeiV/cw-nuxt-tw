@@ -74,6 +74,11 @@
             </transition>
           </ul>
 
+          <div v-if="shop.mobile" class="flex justify-end">
+            <a :href="`tel:${shop.mobile.replace('(', '').replace(')', '').replace(/ /ig, '')}`" class="text-sm md:text-xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all"> {{ shop.mobile }}</a>
+          </div>
+
+
           <ul class="flex items-center flex-row justify-end space-x-3 ">
 
             <li class="">
