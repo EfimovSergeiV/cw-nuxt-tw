@@ -15,7 +15,7 @@
 
         <div class="px-2 py-2">
 
-          <div class="flex gap-4">
+          <div class="flex gap-2">
 
             <!-- <div v-for="(image, index) in images" :key="index">
               <div class="cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-xl shadow-black/30">
@@ -29,24 +29,22 @@
             </div>  -->
 
 
-            <div v-for="image in reviews" :key="image.id">
-
-              <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class=" cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
-
-                
+            <div v-for="image in reviews.slice(0, 2)" :key="image.id"  class="">
+              <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class="w-[320px] h-[228px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
                 <div class="rounded-md transition-all duration-700">
-
-                  <img :src="image.show_image" alt="Your WebP Image" ref="webpImage" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
-
+                  <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                  <div class="px-1 py-4">
+                    <p class="text-xs font-semibold">{{ image.name }}</p>
+                  </div>                
                 </div>
 
-                <div class="px-1 py-4">
-                  <p class="text-xs">{{ image.show }}</p>
-                </div>
-                
               </div>
             </div>
-            
+
+
+            <div class="h-[228px] w-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+
+            </div>
 
 
           </div>
@@ -154,9 +152,11 @@
     methods: {
       startAnimation(image) {
         image.show_image = image.image;
+        console.log('jasfdhj')
       },
       stopAnimation(image) {
         image.show_image = image.static_image;
+        console.log('jasfdhjsdfhjksdh')
       }
     },
   }
