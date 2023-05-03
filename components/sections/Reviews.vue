@@ -15,44 +15,61 @@
 
         <div class="px-2 py-2">
 
-          <div class="flex gap-2">
+          <div class="flex flex-col md:flex-row gap-2">
 
-            <!-- <div v-for="(image, index) in images" :key="index">
-              <div class="cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-xl shadow-black/30">
-                <div class="rounded-md">
-                  <img :src="image.static" @mouseover="startAnimation(index)" @mouseout="stopAnimation(index)" alt="Your WebP Image" ref="webpImage" class="rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
-                </div>
-                <div class="px-1 py-4">
-                  <p class="text-xs font-semibold">Правильная сварка</p>
-                </div>
-              </div>
-            </div>  -->
+            <div class="flex-none">
+              <div class="grid grid-cols-2 gap-2">
 
-
-            <div v-for="image in reviews.slice(0, 2)" :key="image.id"  class="">
-              <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class="w-[320px] h-[228px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
-                <div class="rounded-md transition-all duration-700">
-                  <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
-                  <div class="px-1 py-4">
-                    <p class="text-xs font-semibold">{{ image.name }}</p>
-                  </div>                
+                <div v-for="image in reviews.slice(0, 2)" :key="image.id"  class="w-[220px] lg:w-[320px]">
+                  <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class=" h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+                    <div class="rounded-md transition-all duration-700">
+                      <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                      <div class="px-1 py-4">
+                        <p class="text-xs font-semibold">{{ image.name }}</p>
+                      </div>                
+                    </div>
+                  </div>
                 </div>
 
               </div>
             </div>
 
+            <div class="flex-1">
+              <div class="h-full min-w-[250px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
 
-            <div class="h-[228px] w-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
-
+              </div>
             </div>
-
-
           </div>
 
+          <!-- <div class="flex flex-row">
+            <div class="basis-1/4">01</div>
+            <div class="basis-1/4">02</div>
+            <div class="basis-1/2">03</div>
+          </div> -->
+
+          <!-- <div class="flex gap-2">
+            <div class="">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div v-for="image in reviews.slice(0, 2)" :key="image.id"  class="">
+                  <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class="w-[320px] h-[228px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+                    <div class="rounded-md transition-all duration-700">
+                      <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                      <div class="px-1 py-4">
+                        <p class="text-xs font-semibold">{{ image.name }}</p>
+                      </div>                
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
 
 
-          
+            <div class="h-[228px] ww-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
 
+            </div>
+          </div> -->
 
         </div>
 
