@@ -79,7 +79,7 @@
 
               <div class="border-b border-gray-300 ">
                 <p class="text-sm ">Продвинутые, для широкого круга пользователей <span class="mdi mdi-help-circle-outline"></span></p>
-                <div class="absolute bg-white rounded-xl px-2 py-6 w-[500px]">
+                <div class="absolute bg-white rounded-xl px-2 py-6 w-[500px] border shadow-xl shadow-black/30">
                   <div class="flex items-center">
                     <div class="flex-none w-[120px]">
                       <img src="/prod-img/invertor.webp" class=""/>
