@@ -104,7 +104,7 @@
                   <div class="absolute bottom-0 transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="flex items-center bg-white rounded-xl px-2 py-6 my-6 w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex-none w-[120px]">
-                        <img src="/prod-img/invertor.webp" class=""/>
+                        <img src="/prod-img/invertor-third.webp" class=""/>
                       </div>
                       <div class="flex-1">
                         <div class="flex flex-col gap-4 items-center justify-center">
@@ -128,7 +128,7 @@
                   <div class="absolute bottom-0 transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="flex items-center bg-white rounded-xl px-2 py-6 my-6 w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex-none w-[120px]">
-                        <img src="/prod-img/invertor.webp" class=""/>
+                        <img src="/prod-img/invertor-two.webp" class=""/>
                       </div>
                       <div class="flex-1">
                         <div class="flex flex-col gap-4 items-center justify-center">
@@ -150,14 +150,14 @@
                   <div class="absolute bottom-0 transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="flex items-center bg-white rounded-xl px-2 py-6 my-6 w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex-none w-[120px]">
-                        <img src="/prod-img/invertor.webp" class=""/>
+                        <img src="/prod-img/semi-automatic.webp" class=""/>
                       </div>
                       <div class="flex-1">
                         <div class="flex flex-col gap-4 items-center justify-center">
                           <p class="text-gray-700 px-4 py-4 text-sm">Полуавтоматы рекомендуются для кузовных работ и восстановления алюминиевых запчастей.</p>
                           <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
                             <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg px-12 py-2">
-                              <nuxt-link :to="{ name: 'prods', query: { ct: 8 } }" class="text-white text-base">Перейти в каталог</nuxt-link>
+                              <nuxt-link :to="{ name: 'prods', query: { ct: 9 } }" class="text-white text-base">Перейти в каталог</nuxt-link>
                             </div>
                           </div>
                         
