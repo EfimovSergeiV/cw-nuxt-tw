@@ -11,13 +11,11 @@
       </div>      
     </div>
 
-    <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
-
-      <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md py-4 px-4">
-        <div v-html="article.text" />
-      </div>
-
+    <div class="">
+      <Article :article="article.text" />
     </div>
+
+
 
 
 
@@ -31,8 +29,7 @@
 <script>
 import Navbar from '~/components/Navbar.vue'
 import TopSliderSection from '~/components/sections/TopSliderSection.vue'
-import About from '~/components/sections/About.vue'
-import ShopMaps from '~/components/sections/ShopMaps.vue'
+import Article from '~/components/sections/Article.vue' 
 import Footer from '~/components/Footer.vue'
 
   export default {
@@ -40,8 +37,7 @@ import Footer from '~/components/Footer.vue'
     components: {
       Navbar,
       TopSliderSection,
-      // About,
-      // ShopMaps,
+      Article,
       Footer,
     },
     async asyncData({ $axios }) {
