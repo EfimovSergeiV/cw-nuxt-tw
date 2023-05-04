@@ -74,10 +74,51 @@
               </p>
             </div>
 
-              <!-- Продвинутые, для широкого круга пользователей
-              Для нечастого использования, новичкам
-              Для опытных пользователей
-              Мастерам в автосервисах -->
+
+            <div class="flex gap-4 relative">
+
+              <div class="border-b border-gray-300 ">
+                <p class="text-sm ">Продвинутые, для широкого круга пользователей <span class="mdi mdi-help-circle-outline"></span></p>
+                <div class="absolute bg-white rounded-xl px-2 py-6 w-[500px]">
+                  <div class="flex items-center">
+                    <div class="flex-none w-[120px]">
+                      <img src="/prod-img/invertor.webp" class=""/>
+                    </div>
+                    <div class="flex-1">
+                      <div class="flex flex-col gap-4 items-center justify-center">
+                        <p class="text-gray-700 px-4 py-2 text-sm">Активное широкое распространение инверторных технологий послужило появлению домашних и профессиональных сварочных агрегатов — можно выбирать для любых целей.</p>
+                        <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                          <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg px-12 py-2">
+                            <nuxt-link :to="{ name: 'prods', query: { ct: 8 } }" class="text-white text-base">Перейти в каталог</nuxt-link>
+                          </div>
+                        </div>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-b border-gray-300">
+                <p class="text-sm ">Для нечастого использования, новичкам <span class="mdi mdi-help-circle-outline"></span></p>
+                <div class="hidden">
+                  <p>Выпрямители подойдут нетребовательным новичкам, которые не собираются часто прибегать к сварочным работам или заниматься этим профессионально.</p>
+                </div>
+              </div>
+              <div class="border-b border-gray-300 ">
+                <p class="text-sm ">Для опытных пользователей <span class="mdi mdi-help-circle-outline"></span></p>
+                <div class="hidden">
+                  <p>Трансформаторные сварочные аппараты подойдут опытным пользователям «старой школы», которые планируют использовать сварку как для домашних, так и для рабочих нужд. Нестабильность электрической дуги делает этот вид аппарата сложным в эксплуатации для новичков.</p>
+                </div>
+              </div>
+              <div class="border-b border-gray-300">
+                <p class="text-sm ">Мастерам в автосервисах <span class="mdi mdi-help-circle-outline"></span></p>
+                <div class="hidden">
+                  <p>Полуавтоматы рекомендуются для кузовных работ и восстановления алюминиевых запчастей.</p>
+                </div>
+              </div>
+            </div>
+
 
           </div>
 
