@@ -24,9 +24,21 @@
         </ol>
       </nav>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
-        <div class="" v-for="review in reviews" :key="review.id">
+        <div v-for="image in reviews" :key="image.id"  class="">
+          <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class=" h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+            <div class="rounded-md transition-all duration-700">
+              <nuxt-link :to="{ name: 'reviews-id', params: { id: image.id } }" class="">
+                <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                <div class="px-1 py-4">
+                  <p class="text-xs">{{ image.name }}</p>
+                </div>
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="" v-for="review in reviews" :key="review.id">
         
           <div class="h-60 border dark:border-gray-700 bg-gray-100 dark:bg-gray-900 shadow-md relative">
 
@@ -59,7 +71,7 @@
               </div>                  
             </nuxt-link>
           </div>
-        </div>
+        </div> -->
       </div>
 
 
@@ -87,6 +99,14 @@
     data() {
       return {
 
+      }
+    },
+    methods: {
+      startAnimation(image) {
+        image.show_image = image.image;
+      },
+      stopAnimation(image) {
+        image.show_image = image.static_image;
       }
     },
   }

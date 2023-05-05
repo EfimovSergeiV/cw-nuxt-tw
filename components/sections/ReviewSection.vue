@@ -88,14 +88,24 @@
 
 
       <div class="">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div v-for="review in randomReviews" :key="review.id" class="">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          
+          <div v-for="image in randomReviews" :key="image.id"  class="">
+            <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class=" h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+              <div class="rounded-md transition-all duration-700">
+                <nuxt-link :to="{ name: 'reviews-id', params: { id: image.id } }" class="">
+                  <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                  <div class="px-1 py-4">
+                    <p class="text-xs">{{ image.name }}</p>
+                  </div>
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div v-for="review in randomReviews" :key="review.id" class="">
             <div class="border border-gray-300 dark:border-gray-700 shadow-md rounded-sm bg-white dark:bg-gray-900">
-              
-
-
               <div class="h-60 md:h-60 border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 shadow-md relative">
-
                 <iframe
                   :src="review.video"
                   loading="lazy"
@@ -104,7 +114,6 @@
                   allowfullscreen="0"
                   frameborder="0"
                 ></iframe>
-
                 <nuxt-link :to="{ name: 'reviews-id', params: { id: review.id } }">
                   <div class="absolute hover:bg-gray-800/90 top-0 h-full w-full transition-all duration-700 group">
                     <div class="flex w-full h-full justify-center items-center">
@@ -113,28 +122,20 @@
                           <div class="">
                             <p class="text-gray-100/0 group-hover:text-gray-100 border-gray-100/0 group-hover:border-gray-100 border-b-2 transition-all duration-700">{{ review.name }}</p>
                           </div>
-
                           <div class="">
                             <p class="text-gray-100/0 group-hover:text-gray-100 transition-all duration-700">Перейти к видео</p>
                           </div>
-
                         </div>
                       </div>
                     </div>
-                      
-
                   </div>                  
                 </nuxt-link>
-
-
-                </div>
-
-
-
-
-              
+              </div>
             </div>
-          </div>
+          </div> -->
+
+
+
         </div>
       </div>
 
@@ -170,6 +171,13 @@
         
       }
     },
-
+    methods: {
+      startAnimation(image) {
+        image.show_image = image.image;
+      },
+      stopAnimation(image) {
+        image.show_image = image.static_image;
+      }
+    },
   }
   </script>
