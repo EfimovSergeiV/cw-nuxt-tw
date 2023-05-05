@@ -35,10 +35,16 @@
             </div>
 
             <div class="flex-1">
-              <div class="h-full min-w-[250px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
-                <div class="h-full w-full flex items-center px-2">
-                  <nuxt-link :to="{ name: 'articles-id', params: { id: 1 } }" class="">Как выбрать сварочный аппарат</nuxt-link>
+              <div class="h-full min-w-[250px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md rounded-bl-xl rounded-br-xl shadow-sm shadow-black/30">
+                
+                <div class="flex items-start justify-center">
+                  <img src="prod-img/how-sel-we.webp" class="rounded-md"/>
                 </div>
+                
+                <!-- <div class="h-full w-full flex items-center px-2">  
+                  <nuxt-link :to="{ name: 'articles-id', params: { id: 1 } }" class="">Как выбрать сварочный аппарат</nuxt-link>
+                </div> -->
+
               </div>
             </div>
           </div>

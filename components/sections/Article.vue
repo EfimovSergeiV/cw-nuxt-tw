@@ -221,40 +221,40 @@
             </p>
 
 
-            <table class="my-4 text-sm">
+            <table class="my-4 text-sm border-collapse  border border-gray-300 dark:border-slate-700">
               <tbody>
                 <tr>
-                  <td class="px-2 py-2">Толщина металла, мм</td>
-                  <td class="text-center px-4 py-2">1-3</td>
-                  <td class="text-center px-4 py-2">3-4</td>
-                  <td class="text-center px-4 py-2">4-5</td>
-                  <td class="text-center px-4 py-2">5–6</td>
-                  <td class="text-center px-4 py-2">6–8</td>
-                  <td class="text-center px-4 py-2">8–11</td>
-                  <td class="text-center px-4 py-2">11–15</td>
-                  <td class="text-center px-4 py-2">15-18</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 px-2 py-2">Толщина металла, мм</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">1-3</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">3-4</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">4-5</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">5–6</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">6–8</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">8–11</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">11–15</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">15-18</td>
                 </tr>
                 <tr>
-                  <td class="px-2 py-2">Диаметр электрода, мм</td>
-                  <td class="text-center px-4 py-2">1,0–1,5</td>
-                  <td class="text-center px-4 py-2">1,6–2,0</td>
-                  <td class="text-center px-4 py-2">2,0–2,4</td>
-                  <td class="text-center px-4 py-2">2,5–3,1</td>
-                  <td class="text-center px-4 py-2">3,2–3,9</td>
-                  <td class="text-center px-4 py-2">4,0–4,9</td>
-                  <td class="text-center px-4 py-2">5,0–5,9</td>
-                  <td class="text-center px-4 py-2">От 6,0</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 px-2 py-2">Диаметр электрода, мм</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">1,0–1,5</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">1,6–2,0</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">2,0–2,4</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">2,5–3,1</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">3,2–3,9</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">4,0–4,9</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">5,0–5,9</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">От 6,0</td>
                 </tr>
                 <tr>
-                  <td class="px-2 py-2">Рекомендуемый сварочный ток, А</td>
-                  <td class="text-center px-4 py-2">20–60</td>
-                  <td class="text-center px-4 py-2">50–90</td>
-                  <td class="text-center px-4 py-2">60–100</td>
-                  <td class="text-center px-4 py-2">80–120</td>
-                  <td class="text-center px-4 py-2">110–150</td>
-                  <td class="text-center px-4 py-2">140–180</td>
-                  <td class="text-center px-4 py-2">180–220</td>
-                  <td class="text-center px-4 py-2">220–260</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 px-2 py-2">Рекомендуемый сварочный ток, А</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">20–60</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">50–90</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">60–100</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">80–120</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">110–150</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">140–180</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">180–220</td>
+                  <td class=" border border-gray-300 dark:border-slate-700 text-center px-4 py-2">220–260</td>
                 </tr>
               </tbody>
             </table>
