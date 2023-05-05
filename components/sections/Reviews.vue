@@ -15,38 +15,43 @@
 
         <div class="px-2 py-2">
 
-          <div class="flex flex-col md:flex-row gap-2">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
 
-            <div class="flex-none">
-              <div class="grid grid-cols-2 gap-2">
-
-                <div v-for="image in reviews.slice(0, 2)" :key="image.id"  class="w-[220px] lg:w-[320px]">
-                  <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class=" h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
-                    <div class="rounded-md transition-all duration-700">
-                      <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
-                      <div class="px-1 py-4">
-                        <p class="text-xs font-semibold">{{ image.name }}</p>
-                      </div>                
-                    </div>
-                  </div>
+            <div v-for="image in reviews.slice(0, 3)" :key="image.id"  class="">
+              <div @mouseover="startAnimation(image)" @mouseout="stopAnimation(image)" class=" h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+                <div class="rounded-md transition-all duration-700">
+                  <img :src="image.show_image" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                  <div class="px-1 py-4">
+                    <p class="text-xs">{{ image.name }}</p>
+                  </div>                
                 </div>
-
               </div>
             </div>
 
-            <div class="flex-1">
+            <div  class="">
+              <div  class=" h-full cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md shadow-sm shadow-black/30">
+                <div class="rounded-md transition-all duration-700">
+                  <img src="prod-img/mig200_LZdS49o.webp" alt="Your WebP Image" class=" transition-all duration-700 rounded-md hh-36 rounded-bl-xl rounded-br-xl" />
+                  <div class="px-1 py-4">
+                    <p class="text-xs">Как выюрать сварочный аппарат</p>
+                  </div>                
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="flex-1">
               <div class="h-full min-w-[250px] cursor-pointer border border-gray-200 hover:border-gray-300 dark:border-gray-600 dark:hover:border-gray-500 bg-gray-100 dark:bg-gray-700 transition-all rounded-md rounded-bl-xl rounded-br-xl shadow-sm shadow-black/30">
                 
                 <div class="flex items-start justify-center">
                   <img src="prod-img/how-sel-we.webp" class="rounded-md"/>
                 </div>
                 
-                <!-- <div class="h-full w-full flex items-center px-2">  
+                <div class="h-full w-full flex items-center px-2">  
                   <nuxt-link :to="{ name: 'articles-id', params: { id: 1 } }" class="">Как выбрать сварочный аппарат</nuxt-link>
-                </div> -->
+                </div>
 
               </div>
-            </div>
+            </div> -->
           </div>
 
           <!-- <div class="flex flex-row">
