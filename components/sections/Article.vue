@@ -77,11 +77,11 @@
 
             <div class="relative">
               
-              <div class="flex gap-4 my-2 relative">
+              <div class="flex gap-4 my-2">
                 <div class="border-b border-gray-300 group">
                   <p class="text-sm cursor-pointer">Продвинутые, для широкого круга пользователей <span class="mdi mdi-help-circle-outline"></span></p>
                   
-                  <div class="absolute bottom-0 left-0 md:left-auto w-full transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
+                  <div class="absolute bottom-0 left-0 xl:left-auto transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="grid grid-cols-1 md:flex items-center bg-white rounded-xl px-2 py-6 my-6 w-full md:w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex lg:flex-none lg:w-[120px] justify-center">
                         <img src="/prod-img/invertor.webp" class="w-[120px]"/>
@@ -103,7 +103,7 @@
                 <div class="border-b border-gray-300 group">
                   <p class="text-sm cursor-pointer">Для нечастого использования, новичкам <span class="mdi mdi-help-circle-outline"></span></p>
                   
-                  <div class="absolute bottom-0 left-0 md:left-auto w-full transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
+                  <div class="absolute bottom-0 left-0 xl:left-auto transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="grid grid-cols-1 md:flex items-center bg-white rounded-xl px-2 py-6 my-6 w-full md:w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex lg:flex-none lg:w-[120px] justify-center">
                         <img src="/prod-img/invertor-third.webp" class="w-[120px]"/>
@@ -124,11 +124,10 @@
                 </div>
               </div>
 
-              <div class="flex gap-4 my-2 relative">
+              <div class="flex gap-4 my-2 ">
                 <div class="border-b border-gray-300 group">
                   <p class="text-sm cursor-pointer">Для опытных пользователей <span class="mdi mdi-help-circle-outline"></span></p>
-                  
-                  <div class="absolute bottom-0 left-0 md:left-auto w-full transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
+                  <div class="absolute bottom-0 left-0 xl:left-auto transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="grid grid-cols-1 md:flex items-center bg-white rounded-xl px-2 py-6 my-6 w-full md:w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex lg:flex-none lg:w-[120px] justify-center">
                         <img src="/prod-img/invertor-two.webp" class="w-[120px]"/>
@@ -148,12 +147,9 @@
                   </div>
                 </div>
 
-
-
-
                 <div class="border-b border-gray-300 group">
                   <p class="text-sm cursor-pointer">Мастерам в автосервисах <span class="mdi mdi-help-circle-outline"></span></p>
-                  <div class="absolute bottom-0 left-0 md:left-auto w-full transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
+                  <div class="absolute bottom-0 left-0 xl:left-auto transition invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-500 ease-in-out group-hover:transform z-40 translate-y-0 group-hover:-translate-y-4">
                     <div class="grid grid-cols-1 md:flex items-center bg-white rounded-xl px-2 py-6 my-6 w-full md:w-[500px] border shadow-xl shadow-black/30">
                       <div class="flex lg:flex-none lg:w-[120px] justify-center">
                         <img src="/prod-img/semi-automatic.webp" class="w-[120px]"/>
@@ -172,10 +168,6 @@
                     </div>
                   </div>
                 </div>
-                
-                
-
-
               </div>
             </div>
 
