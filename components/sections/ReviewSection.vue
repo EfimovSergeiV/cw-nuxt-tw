@@ -47,7 +47,7 @@
           
           <div class="">
             <p class="text-base mt-4 mb-1">Описание:</p>
-            <div v-if="product.description.lenght > 280" class="">
+            <div v-if="product.description.length > 280" class="">
               <p class="text-sm">{{ product.description.slice(0, 280) }}...</p>
             </div>
             <div v-else class="">
