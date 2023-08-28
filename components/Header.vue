@@ -276,7 +276,8 @@ import { VueAutosuggest } from "vue-autosuggest";
         },
       findSelectedShop() {
         this.shops.forEach((element) => {
-          if (element.city.toLowerCase() === this.region.toLowerCase()) {
+          // console.log(element)
+          if (element.city.toLowerCase() === 'москва') {
             this.selectShop(element)
           }
         })
