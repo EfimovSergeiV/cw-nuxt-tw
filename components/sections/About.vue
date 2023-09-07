@@ -9,7 +9,7 @@
           <img src="bnr/banner_image-1.webp" />
         </div>
 
-        <div class="border-b border-white/10">
+        <div class="border-b border-gray-700/20 dark:border-white/10">
           <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
             
             <span class="px-4">ЕСЛИ НУЖНО</span>
@@ -79,7 +79,7 @@
 
           <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
 
-            <div class="max-w-[500px]">
+            <div class="max-w-[500px] shadow-md shadow-black/50 rounded-md ">
               <hooper
                 :center-mode="true"
                 :wheel-control="false"
@@ -91,7 +91,7 @@
               >
                 <slide v-for="image in shopImages" :key="image.id" class="">
                   <div class="">
-                    <img :src="image.url" class="cccursor-zoom-in rounded-md" width="500px" height="250px" :alt="image.id" fluid/>
+                    <img :src="image.url" class="cccursor-zoom-in rounded-md " width="500px" height="250px" :alt="image.id" fluid/>
                   </div>
                 </slide>
                 <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -104,7 +104,7 @@
               </div>
               <div class="py-4">
                 <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
-                  <span class="font-semibold uppercase">Главный сварщик</span> с 2009 года – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты встречаются с лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
+                  <span class="font-semibold uppercase">Главный сварщик</span> с 2009 года – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
                 </p>
                 <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
                 </p>
@@ -147,13 +147,13 @@
           </div>
           <div class="flex items-center gap-4">
             <div class="">
-              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="esab-cert.jpg" class="rounded-sm cursor-zoom-in w-48" fluid/>
+              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="esab-cert.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md " fluid/>
             </div>
             <div class="">
-              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="cert-redius.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="cert-redius.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md" fluid />
             </div>
             <div class="">
-              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="svarog.jpg" class="rounded-sm cursor-zoom-in w-48" fluid />
+              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="svarog.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md " fluid />
             </div>                
           </div>
         </div>
