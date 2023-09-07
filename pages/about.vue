@@ -31,7 +31,8 @@ import Footer from '~/components/Footer.vue'
       const widebanners = await $axios.$get('c/widebanners/')
       const brands = await $axios.$get('/c/brands/')
       const cts = await $axios.$get('c/ct/')
-      return { widebanners, cts, brands }
+      const shops = await $axios.$get('c/shops/')
+      return { widebanners, cts, brands, shops }
     },
     data() {
       return {

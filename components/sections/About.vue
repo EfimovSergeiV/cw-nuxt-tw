@@ -5,9 +5,26 @@
 
       <div class="bg-white rounded-sm border dark:border-gray-700 dark:bg-gray-800 shadow-md my-4">
 
+        <div class="">
+          <img src="bnr/banner_image-1.webp" />
+        </div>
+
+        <div class="border-b border-white/10">
+          <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
+            
+            <span class="px-4">ЕСЛИ НУЖНО</span>
+            <span class="before:block before:absolute before:-inset-2 before:-skew-y-3 before:bg-blue-600 relative inline-block my-2">
+              <span class="relative text-white"> СВАРОЧНОЕ ОБОРУДОВАНИЕ </span>
+            </span>
+            <span class="px-4">,ЗАКАЗЫВАЙТЕ ОНЛАЙН </span>
+            <p class="mt-1">НА GLSVAR.RU!</p>
+            
+          </blockquote>
+        </div>
+
         <div class="px-4 py-4">
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
 
             <div class="max-w-[500px]">
               <hooper
@@ -19,9 +36,9 @@
                 :play-speed="12000"
                 class=""
               >
-                <slide v-for="image in shopImages" :key="image.id" class="rounded-sm">
+                <slide v-for="image in shopImages" :key="image.id" class="">
                   <div class="">
-                    <img :src="image.url" class="cccursor-zoom-in" width="500px" height="250px" :alt="image.id" fluid/>
+                    <img :src="image.url" class="cccursor-zoom-in rounded-md" width="500px" height="250px" :alt="image.id" fluid/>
                   </div>
                 </slide>
                 <hooper-navigation slot="hooper-addons"></hooper-navigation>
@@ -29,20 +46,46 @@
             </div>
 
             <div class="">
-              <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Магазины</p>
-              <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
-                У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
-              </p>
+              <div class="">
+                <p class="text-2xl text-gray-900 dark:text-gray-100">Наши магазины</p>
+              </div>
+              <div class="py-4">
+                <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+                  <span class="font-semibold uppercase">Главный сварщик</span> с 2009 года – ваш надежный партнер в мире сварочного оборудования! Наши магазины – это место, где профессионалы и энтузиасты встречаются с лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
+                </p>
+                <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+                  У нас представлен широкий выбор сварочного оборудования и аксессуаров от известных и проверенных производителей, таких как Сварог, Ресанта, Telwin, Кедр, Huter и другие. У нас вы найдете самые привлекательные цены и прогрессивные системы скидок!<br /> Если Вы ищите инверторный аппарат, полуавтомат или аргоно-дуговую установку, то доверьтесь нам.
+                </p>
+              </div>
             </div>
+
           </div>
         </div>
 
-        <div class="my-10 lg:my-20"></div>
+        <div class="">
+
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 px-4 py-2">
+            <div v-for="shop in shops" :key="shop.id">
+              <div class="bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <p class="text-xs h-8">{{ shop.adress }}</p>
+                <p class="py-1">{{ shop.phone }}</p>
+                <p class="text-xs">{{ shop.wday }}</p>
+                <p class="text-xs">{{ shop.wend }}</p>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
 
         <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
           <div class="w-full lg:w-5/12">
-            <p class="text-2xl my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
-            <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+            <p class="text-2xl text-center my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
+            <p class="text-sm text-center text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
               Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
             </p>
           </div>
@@ -61,32 +104,6 @@
 
 
         <div class="my-10 lg:my-20"></div>
-
-
-        <div class="flex justify-center items-center gap-8 md:gap-16 text-center text-sm lg:text-base px-8">
-
-          <div class="">
-            <div class="flex justify-center items-center">
-              <img src="/icons/thumb-up.png" class="my-4 h-10 lg:h-20" />
-            </div>
-            <p>Широкий выбор оборудования</p>
-          </div>
-
-          <div class="">
-            <div class="flex justify-center items-center">
-              <img src="/icons/businessman.png" class="my-4 h-10 lg:h-20" />
-            </div>
-            <p>Профессиональная консультация специалистов</p>
-          </div>
-
-          <div class="">
-            <div class="flex justify-center items-center">
-              <img src="/icons/high-quality.png" class="my-4 h-10 lg:h-20" />
-            </div>
-            <p>Гарантия качества продукции</p>
-          </div>
-
-        </div>
 
 
         <div class="my-10 lg:my-20"></div>
