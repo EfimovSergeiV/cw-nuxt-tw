@@ -22,6 +22,59 @@
           </blockquote>
         </div>
 
+        <div class="px-4 mt-8">
+          <div class="relative">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/arbeitsschutz-schweissen.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 77 }}" class="">
+                  <p class="text-center">Средства защиты головы, рук и лица</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/autogentechnik.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 3 }}" class="">
+                  <p class="text-center">Принадлежности для газокислородной сварки</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/Kreise-SH-hell4.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 1 }}" class="">
+                  <p class="text-center">Современные сварочные аппараты на дуговой сварке</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/schweissbrenner.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 2 }}" class="">
+                  <p class="text-center">Сварочные горелки и их изнашиваемые детали</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/schweisszusatzwerkstoffe.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 4 }}" class="">
+                  <p class="text-center">Сварочные электроды, проволока и присадочные материалы</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/oberflaechenbearbeitung.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 5 }}" class="">
+                  <p class="text-center">Инструменты и химия для очистки поверхности</p>
+                </nuxt-link>
+              </div>          
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/schweisszubehoer.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'cts' }" class="">
+                  <p class="text-center">Другие принадлежности для ваших сварочных работ</p>
+                </nuxt-link>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>
+
         <div class="px-4 py-4">
 
           <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
@@ -82,7 +135,9 @@
 
         </div> -->
 
-        
+
+
+
         <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
           <div class="w-full lg:w-5/12">
             <p class="text-2xl text-center my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
