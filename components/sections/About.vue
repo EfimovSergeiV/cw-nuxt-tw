@@ -47,7 +47,7 @@
 
             <div class="">
               <div class="">
-                <p class="text-2xl text-gray-900 dark:text-gray-100">Наши магазины</p>
+                <p class="text-2xl text-gray-900 dark:text-gray-100 text-center">Наши магазины</p>
               </div>
               <div class="py-4">
                 <p class="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
@@ -66,7 +66,7 @@
           </div>
         </div>
 
-        <div class="">
+        <!-- <div class="">
 
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4 px-4 py-2">
             <div v-for="shop in shops" :key="shop.id">
@@ -80,7 +80,61 @@
             </div>
           </div>
 
+        </div> -->
+
+        <div class="px-4 mt-8">
+          <div class="relative">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/arbeitsschutz-schweissen.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 77 }}" class="">
+                  <p class="text-center">Средства защиты головы, рук и лица</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/autogentechnik.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 3 }}" class="">
+                  <p class="text-center">Принадлежности для газокислородной сварки</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/Kreise-SH-hell4.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 1 }}" class="">
+                  <p class="text-center">Современные сварочные аппараты на дуговой сварке</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/schweissbrenner.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 2 }}" class="">
+                  <p class="text-center">Сварочные горелки и их изнашиваемые детали</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/schweisszusatzwerkstoffe.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 4 }}" class="">
+                  <p class="text-center">Сварочные электроды, проволока и присадочные материалы</p>
+                </nuxt-link>
+              </div>
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/oberflaechenbearbeitung.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'prods', query: { ct: 5 }}" class="">
+                  <p class="text-center">Инструменты и химия для очистки поверхности</p>
+                </nuxt-link>
+              </div>          
+              <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
+                <img src="/bnr/schweisszubehoer.webp" class=" rounded-full w-24 border border-white/20"/>
+                <nuxt-link :to="{ name: 'cts' }" class="">
+                  <p class="text-center">Другие принадлежности для ваших сварочных работ</p>
+                </nuxt-link>
+              </div>
+              
+            </div>
+
+          </div>
         </div>
+
 
         <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
           <div class="w-full lg:w-5/12">
