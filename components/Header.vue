@@ -88,7 +88,8 @@
             <li id="navabar-menu" class=" group">
 
               <div class="relative">
-                <p hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
+                <p v-if="region" hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> {{ region }}</p>
+                <p v-else hover="true" id="change-city" data-collapse-toggle="change-city" class=" mdi mdi-map-marker cursor-pointer text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 mt-1"> Регион не выбран</p>
                 
                 <div class="absolute invisible group-hover:visible right-0 z-50">
                   <div class="transition group-hover:translate-y-2 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform">
@@ -275,12 +276,18 @@ import { VueAutosuggest } from "vue-autosuggest";
           }
         },
       findSelectedShop() {
+        let shopMutate = this.shops[0]
+
         this.shops.forEach((element) => {
-          // console.log(element)
-          if (element.city.toLowerCase() === 'москва') {
-            this.selectShop(element)
+          try {
+            if (element.city.toLowerCase() ===  this.region.toLowerCase()) {
+              shopMutate = element
+            }            
+          } catch {
+            console.log('Err location detect')
           }
         })
+        this.selectShop(shopMutate)
       },
 
       clickHandler(item) {
