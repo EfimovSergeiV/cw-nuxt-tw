@@ -30,9 +30,9 @@
       <CartModal v-if="cartModal && !stateCartModal" />
       <RequestPriceModal v-if="requestModal" />
       <ShowWriteUsModal v-if="contactForm" />
+      <MSGModal v-if="msgShowCookie() === 'true' && msgModal" />
       
       <!-- <PrivacyPolicy /> -->
-
 
     </transition>
 
@@ -160,6 +160,7 @@
         showWriteUs: true,
         latitude: null,
         longitude: null,
+        // msgShowCookie: this.$storage.getCookie('msgmod')
       }
     },
     methods: {
@@ -170,6 +171,9 @@
         displayForm: 'displayForm',
         sendCoordinates: 'sendCoordinates',
       }),
+      msgShowCookie() {
+        return this.$storage.getCookies().msgmod
+      },
     },
     computed: {
       ...mapState({
@@ -182,7 +186,8 @@
         shopModal: (state) => state.shopModal,
         cookies: (state) => state.cookies,
         contactForm: (state) => state.contactForm,
-        cookiestore: (state) => state.storage.cookies
+        cookiestore: (state) => state.storage.cookies,
+        msgModal: (state) => state.msgModal,
       }),
     },
     mounted() {
@@ -194,6 +199,11 @@
               "latitude": position.coords.latitude, 
               "longitude": position.coords.longitude 
             }
+            // Smolensk localtion 
+            // let location = {
+            //   "latitude": '54.7903112', 
+            //   "longitude": '32.0503663' 
+            // }
             this.sendCoordinates(location)
           });
         } else {

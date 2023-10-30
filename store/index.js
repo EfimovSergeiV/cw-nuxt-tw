@@ -25,6 +25,7 @@ export const state = () => ({
   toasts: [],
   contactForm: false,
   adress: null,
+  msgModal: false, /// Для отображения модальки о неработающем магазине
 })
 
 export const getters = {
@@ -78,6 +79,11 @@ export const mutations = {
   },
   selectShop(state, shop) {
     state.shop = shop
+    /// Костыль
+    console.log('QQQQ',state.auth)
+    if (shop.city === 'Смоленск') {
+      state.msgModal = true
+    }
   },
   adressFromCoordinates(state, adress) {
     state.adress = adress
@@ -86,10 +92,19 @@ export const mutations = {
     state.shops.forEach((element) => {
       if (element.city.toLowerCase() === adress.at(-1).toLowerCase()) {
         state.shop = element
+        
+        /// Костыль
+        if (element.city === 'Смоленск') {
+          state.msgModal = true
+        }
+        console.log(element)
       }
     })
 
-  }
+  },
+  msgModalState (state) {
+    state.msgModal = !state.msgModal
+  },
 }
 
 export const actions = {
@@ -152,5 +167,9 @@ export const actions = {
   },
   selectShop({ commit }, shop ) {
     commit('selectShop', shop)
-  }
+  },
+  msgModal({commit}) {
+    commit('msgModalState')
+  },
+
 }
