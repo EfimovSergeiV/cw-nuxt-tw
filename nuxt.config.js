@@ -1,3 +1,5 @@
+/// NODEJS = v14.18.1
+
 import cfg from "./conf"   ///{ backend, yandexMetrika, gtmId, googleAnalyticsId } from "./conf" 
 // import yandexMetrika from "./conf" 
 // import gtmId from "./conf"

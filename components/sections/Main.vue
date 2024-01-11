@@ -18,32 +18,33 @@
                     <div class="bg-white h-full rounded-sm group">
 
                       <div class="relative h-full rounded-sm">
-                        <div class="flex items-center h-full justify-center">
-                          <div class="">
+                        <div class="flex items-start h-full justify-center">
+                          <div class="pt-8 md:pt-6">
                             <img 
                               :src="product.preview_image"
                               onerror="this.src='../../noimage-235-177.png'"
                               :alt="product.name"
                               loading=lazy
-                              class="h-16 md:h-28"
-                            />                            
+                              class="h-14 md:h-20"
+                            />
                           </div>
                         </div>
 
                         <div class="absolute left-0 top-0">
                           <div class="flex items-center p-1">
-                            <p class="flex items-center uppercase text-red-600 font-bold mdi mdi-alert-decagram text-xs">Новинка</p>
+                            <p class="flex items-center uppercase text-red-600 font-bold mdi mdi-alert-decagram text-xs"> Новинка</p>
                           </div>
                         </div>
                         <div class="absolute top-0 right-0">
                           <div class="flex items-center p-1 rounded-sm">
                             <p v-if="product.only_price === 0" class="text-gray-700 font-bold text-xs">По запросу</p>
-                            <p v-else class="text-gray-700 font-bold text-xs">{{ product.only_price.toLocaleString() }} руб.</p>
+                            <p v-else class="text-gray-700 font-bold text-base">{{ product.only_price.toLocaleString() }} <span class="text-xs">руб.</span> </p>
                           </div>
                         </div>
                         <div class="absolute bottom-0 left-0 w-full">
                           <div class="flex items-center justify-center p-1 h-10 rounded-sm">
-                            <p class="text-gray-900 text-xs text-center">{{ product.name }}</p>
+                            <p v-if="product.name.length > 80" class="text-gray-900 text-xs text-center font-semibold pb-2">{{ product.name.slice(0, 80) }} ...</p>
+                            <p v-else class="text-gray-900 text-xs text-center font-semibold pb-2">{{ product.name }}</p>
                           </div>
                         </div>
                       </div>

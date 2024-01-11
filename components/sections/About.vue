@@ -9,7 +9,7 @@
           <img src="bnr/banner_image-1.webp" />
         </div>
 
-        <div class="border-b border-gray-700/20 dark:border-white/10">
+        <div class="">
           <blockquote class="text-2xl font-semibold italic text-center text-gray-700 dark:text-gray-300">
             
             <span class="px-4">ЕСЛИ НУЖНО</span>
@@ -22,10 +22,29 @@
           </blockquote>
         </div>
 
+        <div class="py-4">
+          <div class="flex items-center justify-center">
+            <p class="text-center text-xl">
+              С 2009 года Главный сварщик – ваш надежный партнер в мире сварочного оборудования!
+            </p>
+
+            
+          </div>
+
+          <div class="flex items-center justify-center py-2 text-gray-600 dark:text-gray-400">
+            <div class=" max-w-3xl">
+              <p class="text-center text-sm">
+                Наши магазины – это место, где профессионалы и энтузиасты приходят за лучшими решениями для сварочных работ. Сварка - это искусство, и мы знаем, как сделать его доступным и эффективным для каждого.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
         <div class="px-4 mt-8">
           <div class="relative">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
               <div class="flex items-center gap-2 bg-white dark:bg-gray-600 py-2 px-2 shadow-md shadow-black/50 rounded-md border border-white/10">
                 <img src="/bnr/arbeitsschutz-schweissen.webp" class=" rounded-full w-24 border border-white/20"/>
@@ -75,7 +94,7 @@
           </div>
         </div>
 
-        <div class="px-4 py-4">
+        <!-- <div class="px-4 py-4">
 
           <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-2">
 
@@ -117,7 +136,7 @@
             </div>
 
           </div>
-        </div>
+        </div> -->
 
         <!-- <div class="">
 
@@ -138,14 +157,14 @@
 
 
 
-        <div class="flex flex-col lg:flex-row gap-8 items-center justify-between my-8 mx-4">
-          <div class="w-full lg:w-5/12">
-            <p class="text-2xl text-center my-2 text-gray-900 dark:text-gray-100">Сертификаты</p>
-            <p class="text-sm text-center text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700">
+        <!-- <div class=" lg:flex-row gap-8 items-center justify-between my-8 mx-4">
+          <div class="flex flex-col w-full justify-center ">
+            <p class="text-2xl text-center my-2 text-gray-900 dark:text-gray-100">Наши сертификаты</p>
+            <p class="text-sm text-center text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all duration-700 max-w-3xl">
               Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
             </p>
           </div>
-          <div class="flex items-center gap-4">
+          <div class="grid grid-cols-3 items-center gap-4">
             <div class="">
               <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="esab-cert.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md " fluid/>
             </div>
@@ -154,20 +173,62 @@
             </div>
             <div class="">
               <img @click="cert = 'svarog.jpg'" alt="cert-3" src="svarog.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md " fluid />
-            </div>                
+            </div>
+            
+
+            <div class="">
+              <img @click="cert = 'esab-cert.jpg'" alt="cert-1" src="esab-cert.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md " fluid/>
+            </div>
+            <div class="">
+              <img @click="cert = 'cert-redius.jpg'" alt="cert-2" src="cert-redius.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md" fluid />
+            </div>
+            <div class="">
+              <img @click="cert = 'svarog.jpg'" alt="cert-3" src="svarog.jpg" class="cursor-zoom-in w-48 shadow-md shadow-black/50 rounded-md " fluid />
+            </div>  
+
+
           </div>
+        </div> -->
+
+
+        <div class="py-6">
+          <div class="flex items-center justify-center">
+            <p class="text-center text-xl">
+              Наши сертификаты
+            </p>
+          </div>
+
+          <div class="flex items-center justify-center py-2 text-gray-600 dark:text-gray-400">
+            <div class=" max-w-3xl">
+              <p class="text-center text-sm">
+                Мы являемся официальным дистрибьютором ведущих брендов сварочного оборудования, и всегда готовы предложить вам широкий выбор продуктов, которые обеспечат вашу эффективную и качественную работу. Наши специалисты всегда готовы проконсультировать вас и помочь выбрать именно то, что вам нужно.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 px-8 py-8">
+
+            <div class="flex items-center justify-center gap-6">
+              <img @click="cert = 'certs/aurora-2.jpg'" src="certs/aurora-2.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/aurora-3.jpg'" src="certs/aurora-3.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/aurora.jpg'" src="certs/aurora.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in "/>
+              <img @click="cert = 'certs/cert-redius.jpg'" src="certs/cert-redius.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />              
+            </div>
+            <div class="flex items-center justify-center gap-6">
+              <img @click="cert = 'certs/cert-svarog.jpg'" src="certs/cert-svarog.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/esab-cert.jpg'" src="certs/esab-cert.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/svarog-2.png'" src="certs/svarog-2.png" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />              
+            </div>
+          </div>
+
         </div>
 
 
-        <div class="my-10 lg:my-20"></div>
-
-
-        <div class="my-10 lg:my-20"></div>
 
         <div class="flex items-center justify-center">
           <div class="text-center text-sm md:text-base">
-            <p class="text-gray-900 dark:text-gray-100">Если вы не нашли то, что Вам нужно - свяжитесь с нами и мы найдем этот товар специально для Вас!</p>
-            <p class="text-gray-900 dark:text-gray-100">Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!</p>            
+            <p class="text-gray-900 dark:text-gray-100">Если вы не нашли то, что Вам нужно - <a href="mailto:zakaz@glsvar.ru" target="blank" class=" font-semibold border-b">свяжитесь с нами</a> и мы найдем этот товар специально для Вас!</p>
+            <p class="text-gray-600 dark:text-gray-400">Покупайте современное сварочное оборудование у нас и помните, качественное оборудование - залог успешной работы!</p>            
           </div>
         </div>
 
@@ -191,9 +252,7 @@
             <div class="relative rounded-sm px-10">
               <div class="overflow-y-auto h-screen">
                 <div class="flex min-h-full justify-center text-center items-center">
-                  <!-- <img src="cert-redius.jpg" class="rounded-sm cursor-zoom-out" fluid/> -->
-                  <!-- <img src="esab-cert.jpg" class="rounded-sm cursor-zoom-out" fluid/> -->
-                  <img @click="cert = null" :src="cert" class="rounded-sm cursor-zoom-out" fluid/>
+                  <img @click="cert = null" :src="cert" class="rounded-sm cursor-zoom-out w-[80%]" fluid/>
                 </div>
 
               </div>

@@ -80,7 +80,6 @@ export const mutations = {
   selectShop(state, shop) {
     state.shop = shop
     /// Костыль
-    console.log('QQQQ',state.auth)
     if (shop.city === 'Смоленск') {
       state.msgModal = true
     }
