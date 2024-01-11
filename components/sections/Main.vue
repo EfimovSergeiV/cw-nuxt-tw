@@ -43,7 +43,7 @@
                         </div>
                         <div class="absolute bottom-0 left-0 w-full">
                           <div class="flex items-center justify-center p-1 h-10 rounded-sm">
-                            <p v-if="product.name.length > 80" class="text-gray-900 text-xs text-center font-semibold pb-2">{{ product.name.slice(0, 80) }} ...</p>
+                            <p v-if="product.name.length > 80" class="text-gray-900 text-xs text-center font-semibold pb-2">{{ product.name.slice(0, 60) }}...</p>
                             <p v-else class="text-gray-900 text-xs text-center font-semibold pb-2">{{ product.name }}</p>
                           </div>
                         </div>
