@@ -52,26 +52,43 @@
         </div>
 
         
-        <div class="flex justify-between mt-6 mx-2">
+        <div class="flex justify-between my-4 mx-2">
+          <div>
+            <button @click="cleanCart" class="text-xs text-gray-800 dark:text-gray-400">очистить корзину</button>            
+          </div>          
           <div class="">
             <div class="flex gap-6">
               <!-- <div class="flex gap-2">
                 <p>Всего товаров:</p>
                 <p class="font-bold">4</p>
               </div> -->
-              <div class="flex gap-2">
-                <p>Итог:</p>
+              <div class="flex gap-8">
+                <p class="text-sm">Итог заказа:</p>
                 <p class="text-2xl">{{ cartTotalPrice().toLocaleString() }} руб.</p>
               </div>
             </div>
           </div>
-          <div>
-            <button @click="cleanCart" class="text-xs">Очистить корзину</button>            
-          </div>
-
         </div>
 
+        <div class="flex items-center justify-end">
+          <div class="px-2 flex items-start gap-4 py-2">
+            <div class="">
+              <p class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод?</p>
+            </div>
+            <div class="px-2">
+              <div class="">
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-sale"></p>
+                  </div>
+                  <input :value="client.person" @change="clientPerson" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-sm focus:ring-blue-500/0 focus:border-blue-500/0 block  pl-10 px-0.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500/0 dark:focus:border-blue-500/0" placeholder="Ваш промокод">
+                </div>
+              </div>          
+            </div>
+          </div>          
+        </div>
       </div>
+
 
       <div v-else class="flex justify-center my-10">
 
