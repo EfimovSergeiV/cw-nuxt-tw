@@ -73,16 +73,29 @@
         <div class="flex items-center justify-end">
           <div class="px-2 flex items-start gap-4 py-2">
             <div class="">
-              <p class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод?</p>
+              <p v-if="true" class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод?</p>
+              
+              <div v-else class="">
+                <div v-if="false" class="">
+                  <p class="text-sm font-medium text-gray-900 dark:text-gray-400">Промокод не актуален</p>
+                </div>
+                <div v-else class="">
+                  <p class="text-sm font-medium text-gray-900 dark:text-gray-400">Ваша скидка {{ promocode }} {{ '10%' }}</p>
+                </div>
+              </div>
+              
             </div>
             <div class="px-2">
-              <div class="">
+              <div class="flex">
                 <div class="relative">
                   <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <p class="mdi mdi-sale"></p>
                   </div>
-                  <input :value="client.person" @change="clientPerson" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded-sm focus:ring-blue-500/0 focus:border-blue-500/0 block  pl-10 px-0.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500/0 dark:focus:border-blue-500/0" placeholder="Ваш промокод">
+                  <input v-model="promocode" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs focus:ring-blue-500/0 focus:border-blue-500/0 block  pl-10 px-0.5 py-1 dark:bg-gray-700 dark:border-gray-600/0 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500/0 dark:focus:border-blue-500/0" placeholder="ввести промокод">
                 </div>
+                <button @click="checkPromocode()" class="bg-gray-50 border border-gray-300 text-gray-900 text-xs focus:ring-blue-500/0 focus:border-blue-500/0 block px-1 py-1 dark:bg-gray-700 dark:border-gray-600/0 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500/0 dark:focus:border-blue-500/0">
+                  применить
+                </button>
               </div>          
             </div>
           </div>          
@@ -90,32 +103,43 @@
       </div>
 
 
-      <div v-else class="flex justify-center my-10">
 
-        <div class="flex items-center gap-8">
-          <div class="grid gap-2 grid-cols-1">
-            <div class="mx-4 text-center">
-              <p class="text-xl">Ваша корзина пуста</p>
+      <div v-else class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
+
+        <div class="flex justify-center my-10">
+
+          <div class="flex items-center gap-8">
+            <div class="grid gap-2 grid-cols-1">
+              <div class="mx-4 text-center">
+                <p class="text-xl">Ваша корзина пуста</p>
+              </div>
+              <div class="border-b border-gray-700 dark:border-gray-300"></div>
+              <div class="mx-4 text-center">
+                <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
+              </div>
             </div>
-            <div class="border-b border-gray-700 dark:border-gray-300"></div>
-            <div class="mx-4 text-center">
-              <nuxt-link :to="{ name: 'cts' }" class="text-sm hover:underline hover:text-gray-900 dark:hover:text-gray-100 ">Перейти в каталог</nuxt-link>
-            </div>
+            <div>
+              <p class="mdi mdi-close-outline mdi-36px"></p>
+            </div>          
           </div>
-          <div>
-            <p class="mdi mdi-close-outline mdi-36px"></p>
-          </div>          
+          
         </div>
-        
+
       </div>
+
+
+
+
+
+
 
 
       <div class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
 
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between pb-4">
             <div class="">
-              1. Данные покупателя
+              <p class=" text-sm">Оформление заказа</p>
             </div>
             <div class="flex justify-end gap-4">
 
@@ -141,38 +165,66 @@
           </div>
 
 
-          <div class="grid md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 items-end gap-4">
 
-            <div class="">
-              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Имя (необязательно)</label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <p class="mdi mdi-account"></p>
+
+            <div class="grid grid-cols-1 items-end gap-4">
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Имя (необязательно)</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-account"></p>
+                  </div>
+                  <input :value="client.person" @change="clientPerson" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
                 </div>
-                <input :value="client.person" @change="clientPerson" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
+              </div>
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта (необязательно)</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-email"></p>
+                  </div>
+                  <input :value="client.email" @change="clientPerson" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
+                </div>
+              </div>
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <p class="mdi mdi-phone"></p>
+                  </div>
+                  <input :value="client.phone" @change="clientPerson" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
+                </div> 
               </div>
             </div>
-            <div class="">
-              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта (необязательно)</label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <p class="mdi mdi-email"></p>
-                </div>
-                <input :value="client.email" @change="clientPerson" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
-              </div>
-              <!-- {{ emailState }} -->
-            </div>
-            <div class="">
-              <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <p class="mdi mdi-phone"></p>
-                </div>
-                <input :value="client.phone" @change="clientPerson" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
-              </div> 
-              <!-- {{ phoneState }}                -->
-            </div>
 
+
+
+
+            <div class="grid grid-cols-1 items-end gap-4">
+              <div class="">
+                <div class="">
+                  <select v-model="selectedShop" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option disabled value="null">Выберие магазин</option>
+                    <option v-for="shop in shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
+                  </select>                    
+                </div>
+              </div>
+              <div class="">
+                <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
+                <textarea v-model="comment" id="message" rows="4" class="min-h-[128px] block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-end items-center mt-4">
+            <button @click="sendOrder" class="">
+              <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
+                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
+                  <p class="text-white text-base w-52 py-1.5">Сделать заказ</p>
+                </div>
+              </div>
+            </button>
           </div>
 
 
@@ -181,7 +233,7 @@
 
       <div v-if="entity == 'true'" class="mt-4">
         <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm transition-all duration-300">
-          <p class="">Дополнительные поля для юр.лиц:</p>
+          <p class="text-sm">Дополнительные поля для юр.лиц:</p>
           <div class="grid md:grid-cols-3 gap-4">
             <CartField keyword="legaladress" placeholder="Россия, Москва, 117312, ул. Вавилова, д. 123" title="Юридический адрес" />
             <CartField keyword="company" placeholder="ООО Полное название компании" title="Полное наименование" />
@@ -198,53 +250,12 @@
       
 
       <div class="mt-4">
-        <div class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 p-4 rounded-sm">
+        <div v-if="selectedShop" class="bg-white border-gray-200 border dark:border-gray-700 dark:bg-gray-800 rounded-sm">
 
-          <div class="flex items-center justify-between">
+          <div class="">
             <div class="">
-              2. Способ получения
-            </div>
-            <div class="flex justify-end gap-4">
-              <ul class="flex justify-end items-center gap-4 w-full md:grid-cols-2">
-                <li>
-                  <input type="radio" id="pickup" name="delivery" v-model="delivery" value="false" class="hidden peer" required>
-                  <label for="pickup" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-pointer inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">                           
-                    <div class="block">
-                      <div class="w-full">Самовывоз из магазина</div>
-                    </div>
-                  </label>
-                </li>
-                <li>
-                  <input disabled type="radio" id="delivery" name="delivery" v-model="delivery" value="true" class="hidden peer">
-                  <label for="delivery" class="text-gray-700 dark:text-gray-300 peer-checked:text-gray-900 dark:peer-checked:text-gray-100 peer-checked:border-b-2 border-blue-500 select-none text-sm cursor-not-allowed inline-flex justify-between items-center px-2 py-1 w-full transition-all ease-in duration-75">
-                    <div class="block">
-                      <div class="w-full">Доставка ТК</div>
-                    </div>
-                  </label>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-
-          <div class="my-4">
-
-
-          </div>
-
-          <label for="countries" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Выберите магазин</label>
-
-
-          <div class="border dark:border-gray-600 rounded-sm bg-gray-50 dark:bg-gray-700">
-            <div class="">
-              <div class="grid lg:grid-cols-2 justify-items-stretch items-center ">
-                <div class="mx-2 my-2">
-                  <select v-model="selectedShop" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option disabled value="null">Выберие магазин</option>
-                    <option v-for="shop in shops" :key="shop.id" :value="shop">{{ shop.adress }}</option>
-                  </select>                    
-                </div>
-                <div class="justify-self-center mx-2 my-2" v-if="selectedShop">
+              <div class="grid grid-cols-1 items-center ">
+                <div class=" mx-2 my-4">
                   <div class="" v-if="selectedShop.phone">
                     <div class="flex items-center">
                       <div class="border-r">
@@ -261,25 +272,10 @@
 
             </div>
             <div class="" v-if="selectedShop">
-              <iframe :src="selectedShop.google_maps" width="100%" height="250" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe :src="selectedShop.google_maps" width="100%" height="320" class="rounded-sm" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
-          <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Комментарий к заказу (необязательно)</label>
-          <textarea v-model="comment" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
-
-          <div class="flex justify-end items-center my-4">
-            <button @click="sendOrder" class="">
-              <!-- <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Сделать заказ
-              </span> -->
-              <div class=" text-sm text-gray-100 rounded-lg bg-blue-600 hover:bg-blue-700 border border-gray-300/50 dark:border-gray-500/50 transition-all duration-1000">
-                <div class=" bg-gradient-to-br from-gray-100/20 to-gray-900/40 rounded-lg">
-                  <p class="text-white text-base w-52 py-1.5">Сделать заказ</p>
-                </div>
-              </div>
-            </button>
-          </div>
 
         </div>
       </div>
@@ -288,8 +284,8 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex';
-import CartField from '../CartField.vue';
+  import { mapState, mapActions, mapGetters } from 'vuex';
+  import CartField from '../CartField.vue';
 
   export default {
     name: 'CartForm',
@@ -315,6 +311,7 @@ import CartField from '../CartField.vue';
         delivery: false,
         // "delivery_adress":"this.deliverycity",
         // "delivery_summ":0,
+        promocode: null,
       }
     },
     computed: {
@@ -386,6 +383,9 @@ import CartField from '../CartField.vue';
     //     return true
     //   }
     // },
+    checkPromocode() {
+      console.log(this.promocode)
+    },
     sendOrder() {
       if (this.selectedShop) {
         const data = {

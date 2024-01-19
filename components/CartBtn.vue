@@ -57,9 +57,6 @@ export default {
     filterCart(id) {
       return this.cartID.filter((n) => n === id).length !== 0
     },
-    logging() {
-      console.log(this.product)
-    },
     ...mapActions({
       addProductToCart: 'modules/cart/addProductToCart',
       delProductToCart: 'modules/cart/delProductToCart',

@@ -209,15 +209,15 @@
           <div class="grid grid-cols-1 gap-4 px-8 py-8">
 
             <div class="flex items-center justify-center gap-6">
-              <img @click="cert = 'certs/aurora-2.jpg'" src="certs/aurora-2.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
-              <img @click="cert = 'certs/aurora-3.jpg'" src="certs/aurora-3.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
-              <img @click="cert = 'certs/aurora.jpg'" src="certs/aurora.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in "/>
-              <img @click="cert = 'certs/cert-redius.jpg'" src="certs/cert-redius.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />              
+              <img @click="cert = 'certs/aurora-2.jpg'" src="certs/aurora-2.jpg" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/aurora-3.jpg'" src="certs/aurora-3.jpg" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/aurora.jpg'" src="certs/aurora.jpg" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in "/>
+              <img @click="cert = 'certs/cert-redius.jpg'" src="certs/cert-redius.jpg" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in " />              
             </div>
             <div class="flex items-center justify-center gap-6">
-              <img @click="cert = 'certs/cert-svarog.jpg'" src="certs/cert-svarog.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
-              <img @click="cert = 'certs/esab-cert.jpg'" src="certs/esab-cert.jpg" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />
-              <img @click="cert = 'certs/svarog-2.png'" src="certs/svarog-2.png" class=" w-[16%] rounded-md shadow-lg shadow-black/50 cursor-zoom-in " />              
+              <img @click="cert = 'certs/cert-svarog.jpg'" src="certs/cert-svarog.jpg" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/esab-cert.jpg'" src="certs/esab-cert.jpg" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in " />
+              <img @click="cert = 'certs/svarog-2.png'" src="certs/svarog-2.png" class=" w-[16%] shadow-md shadow-black/50 cursor-zoom-in " />              
             </div>
           </div>
 

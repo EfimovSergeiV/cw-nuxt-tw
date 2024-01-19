@@ -7,7 +7,7 @@ export const state = () => ({
     // counter: 0,
     cartModal: false,       /// Окно перейти в корзину при покупке
     requestModal: false,    /// Окно запроса стоимости
-    stateCartModal: false,   /// Чекбокс отображения модальки корзины
+    stateCartModal: false,  /// Чекбокс отображения модальки корзины
   })
   
   export const getters = {

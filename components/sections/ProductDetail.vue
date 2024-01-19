@@ -98,13 +98,14 @@
 
 
             <div class="my-2">
-              <p class="text-sm">Аналоги</p>
+              <p v-if="analogue.length > 0" class="text-sm">Аналоги</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:h-36">
               <div v-for="prod_analogue in analogue" :key="prod_analogue.id" class="">
                 <ProductSmall :product="prod_analogue" />
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -143,7 +144,7 @@
                 <div class="columns-1 gap-8">
                   <div v-for="param in product.propstrmodel" :key="param.id" class="border-b border-gray-300 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-600">
                     <div class="flex justify-between">
-                      <div class=""><small>{{ param.name }} :</small></div>
+                      <div class=""><small>{{ param.name }}</small></div>
                       <div class="text-right"><small>{{ param.value }}</small></div>                
                     </div>
                   </div>
