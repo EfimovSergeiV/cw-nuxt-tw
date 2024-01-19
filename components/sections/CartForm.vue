@@ -24,7 +24,7 @@
                 <div v-for="product in cart" :key="product.id" class="my-4">
                   <div class="flex items-center gap-2">
                     <div class="flex justify-center items-center w-24 bg-white rounded-sm">
-                      <img :src="product.preview_image" class="rounded-sm w-20" />
+                      <img :src="product.preview_image" class="rounded-sm w-20 p-2" />
                     </div>
                     <div class="flex justify-center w-1/2">
                       <p class="text-sm">{{ product.name }}</p>

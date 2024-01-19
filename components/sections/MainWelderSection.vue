@@ -74,7 +74,7 @@
                             </div>
                           </div>
                           <div class="grid grid-cols-1 gap-2">
-                            <nuxt-link :to="{ name: 'prods', query: { 'ct': 77 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Сварочные маски</nuxt-link>
+                            <nuxt-link :to="{ name: 'prods', query: { 'ct': 108 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Средства защиты</nuxt-link>
                             <div class="flex gap-1">
                               <nuxt-link :to="{ name: 'prods', query: { 'ct': 14 }}" class="text-xs text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-all">Электроды</nuxt-link>
                               <p class="text-xs"> и </p>
