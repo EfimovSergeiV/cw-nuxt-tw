@@ -162,7 +162,7 @@
 
     <transition name="fade">
       <!-- fixed inset-0 overflow-y-hidden overscroll-y-none w-full h-full top-0 left-0 my-10 -->
-      <div v-if="largeImage" class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-gray-500/50 backdrop-blur-sm z-40">
+      <div v-if="largeImage"  class="fixed w-full h-full overscroll-y-none top-0 left-0 bg-gray-500/50 backdrop-blur-sm z-40">
         <div class="flex min-h-full bg-gray-500/50 justify-center text-center items-center">
           <div class="relative rounded-sm">
             <div class="overflow-y-auto h-screen">
@@ -180,8 +180,8 @@
                       style="height: 100%"
                     >
                       <slide v-for="image in product.prod_img" :key="image.id" class="rounded-sm">
-                        <div @click="largeImage = false" class="flex items-center justify-center">
-                          <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out p-6" fluid/>
+                        <div @click="largeImage = false" class="flex h-full w-full items-center justify-center">
+                          <img :src="image.image" :alt="image.image" class="rounded-sm cursor-zoom-out h-full w-full p-4" fluid/>
                         </div>
                       </slide>
                       <hooper-navigation slot="hooper-addons"></hooper-navigation>

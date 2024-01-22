@@ -71,8 +71,8 @@
         </div>
 
         <div class="flex items-center justify-end">
-          <div class="px-2 flex items-start gap-4 py-2">
-            <div class="">
+          <div class="px-2 grid grid-cols-1 md:flex items-start gap-4 py-2">
+            <div class="flex justify-end">
               <p v-if="true" class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод?</p>
               
               <div v-else class="">
