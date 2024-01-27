@@ -16,6 +16,7 @@ export const state = () => ({
     currentacc: null,
     corresponding: null,
     bic: null,
+    promocode: null,
   },
   shop: null, /// Определённый или выбранный магазин ( сделать глобальным )
   shops: null,
@@ -104,6 +105,9 @@ export const mutations = {
   msgModalState (state) {
     state.msgModal = !state.msgModal
   },
+  writePromocode(state, promocode) {
+    state.client.promocode = promocode
+  }
 }
 
 export const actions = {
@@ -148,6 +152,9 @@ export const actions = {
   },
   clientPerson({ commit }, event ) {
     commit('clientData', { key: event.target.id, value: event.target.value })
+  },
+  addPromocode({ commit }, promocode ) {
+    commit('writePromocode', promocode)
   },
   addToast({ commit }, text ) {
     /// Сделать присваивание ID

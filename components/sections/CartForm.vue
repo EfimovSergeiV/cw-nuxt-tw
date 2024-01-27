@@ -73,7 +73,7 @@
         <div class="flex items-center justify-end">
           <div class="px-2 grid grid-cols-1 md:flex items-start gap-4 py-2">
             <div class="flex justify-end">
-              <p v-if="true" class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод?</p>
+              <p v-if="true" class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод {{client.promocode}}?</p>
               
               <div v-else class="">
                 <div v-if="false" class="">
@@ -311,7 +311,8 @@
         delivery: false,
         // "delivery_adress":"this.deliverycity",
         // "delivery_summ":0,
-        promocode: null,
+        promocode: "23Февраля",
+        promo_attempts: 3,
       }
     },
     computed: {
@@ -342,10 +343,12 @@
     ...mapActions({
       addToast: 'addToast',
       clientPerson: 'clientPerson',
+      addPromocode: 'addPromocode',
       saveOrder: 'modules/cart/saveOrder',
       incProductToCart: 'modules/cart/incProductToCart',
       decProductToCart: 'modules/cart/decProductToCart',
       delProductToCart: 'modules/cart/delProductToCart',
+      addDiskount: 'modules/cart/addDiskount',
       addProductToFav: 'modules/favorites/addProductToFav',
       delProductToFav: 'modules/favorites/delProductToFav',
       cleanCart: 'modules/cart/cleanCart',
@@ -384,7 +387,26 @@
     //   }
     // },
     checkPromocode() {
-      console.log(this.promocode)
+      this.promo_attempts--
+      if (this.promo_attempts > 0) {
+        this.$axios.$post('o/check-promo/', { "promo": this.promocode }).then((response) => {
+          if (this.client.promocode === null) {
+            this.addDiskount(response)
+            this.addToast(`Ваша скидка по промокоду ${response.discount}% применена.`)
+          }
+          this.addPromocode(this.promocode)
+        }).catch((err) => {
+            this.addToast('Ваш промокод устарел или не найден.')
+          }
+        )
+      } else {
+        this.$router.push({name: 'index',})
+        setTimeout(() => {
+          this.cleanCart()
+          this.addToast('Перестань перебирать коды!')
+        }, 2500)
+      }
+
     },
     sendOrder() {
       if (this.selectedShop) {
@@ -400,6 +422,8 @@
           // "delivery_summ":0,        
           adress: this.selectedShop.adress,
           total: this.totalPrice,
+
+          promocode: this.client.promocode,
 
           company: this.client.company,
           legaladress: this.client.legaladress,
