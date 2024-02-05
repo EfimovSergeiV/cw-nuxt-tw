@@ -8,7 +8,7 @@
         <div class="overflow-x-auto w-full">
           <div class="">
 
-            <div class="grid gap-2 px-2 py-4">
+            <div class="grid gap-2 px-2 py-4 border-b border-t border-gray-300 dark:border-gray-600">
               <div class="flex lg:items-center lg:gap-2">
                 <div class="flex justify-center w-24"><p class="text-sm">Изображение</p></div>
                 <div class="flex justify-center w-1/2"><p class="text-sm">Наименование</p></div>
@@ -26,8 +26,8 @@
                     <div class="flex justify-center items-center w-24 bg-white rounded-sm">
                       <img :src="product.preview_image" class="rounded-sm w-20 p-2" />
                     </div>
-                    <div class="flex justify-center w-1/2">
-                      <p class="text-sm">{{ product.name }}</p>
+                    <div class="flex justify-start w-1/2">
+                      <p class="text-sm px-6">{{ product.name }}</p>
                     </div>
                     <div class="flex justify-center w-32">
                       <button  @click="decProductToCart(product)" class="mdi mdi-minus cursor-pointer"></button>
@@ -52,16 +52,12 @@
         </div>
 
         
-        <div class="flex justify-between my-4 mx-2">
+        <div class="flex justify-between my-4 border-t border-gray-300 dark:border-gray-600">
           <div>
             <button @click="cleanCart" class="text-xs text-gray-800 dark:text-gray-400">очистить корзину</button>            
           </div>          
-          <div class="">
+          <div class="py-4">
             <div class="flex gap-6">
-              <!-- <div class="flex gap-2">
-                <p>Всего товаров:</p>
-                <p class="font-bold">4</p>
-              </div> -->
               <div class="flex gap-8">
                 <p class="text-sm">Итог заказа:</p>
                 <p class="text-2xl">{{ cartTotalPrice().toLocaleString() }} руб.</p>
@@ -70,7 +66,7 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-end">
+        <div class="fl ex items-center justify-end hidden">
           <div class="px-2 grid grid-cols-1 md:flex items-start gap-4 py-2">
             <div class="flex justify-end">
               <p v-if="true" class="text-sm font-medium text-gray-900 dark:text-gray-400">Есть наш промокод {{client.promocode}}?</p>

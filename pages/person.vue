@@ -7,7 +7,7 @@
 
     <div class="mx-auto px-4 lg:max-w-7xl lg:px-8">
       <div id="cat-title" class="flex justify-end mt-2">
-        <p class="text-3xl font-bold">Личный кабинет</p>
+        <p class="text-3xl font-bold">Ваши заказы</p>
       </div>
     </div>
 
@@ -17,180 +17,88 @@
 
     <div class="mx-auto py-2 px-4 lg:max-w-7xl lg:px-8">
 
-      <div class="grid md:grid-cols-2 gap-4">
 
 
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
-          <div class="grid gap-2">
+      <div class="">
+        <div class="border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-sm py-1 px-4 transition-all">
 
-            <div class="flex">
-              <p class="text-sm">История заказов</p>
-            </div>
-
-            <div v-if="orders" class="overflow-y-scroll h-80">
-              <div class="grid grid-cols-1 gap-2">
-                
-                <div v-for="order in orders" :key="order.id" class="">
-                  <div class="bg-white dark:bg-gray-700 rounded-sm border dark:border-gray-600 p-1">
-                    <div class="">
-                      <p class="text-sm font-bold my-1 mx-1">{{ order.order_number }}</p>
-                      
-                      <div v-for="product, item in order.client_product" :key="item" class="py-2 mx-1 flex items-center justify-between">
-                        
-                        <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="text-xs">{{ item + 1 }}. {{ product.name }}</nuxt-link>
-                        <div class="flex items-center justify-end gap-2">
-                          <p class="text-xs">{{ product.price }} руб.</p>
-                          <p class="text-xs">X</p>
-                          <p class="text-xs">{{ product.quantity }}</p>                          
-                        </div>
-
-                      </div>
-                      
-                    </div>
-                    <div class="flex items-end justify-end gap-4 mx-1 my-2">
-                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs">Удалить</button>
-                      <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-xs">Отменить</button>
-                    </div>
-                    
-                  </div>
-                </div>
-
-                
-              </div>
-            </div>
-            <div v-else>
-              <div class="flex items-center justify-center h-80">
-                <p>Нет товаров в истории</p>
-              </div>
-            </div>
-
+          <div class="py-2 grid grid-cols-1 gap-2">
+            <p class="text-lg">Ваш заказ успешно принят!</p>
+            <p class="">Мы свяжемся с вами по указанным вами контактам</p>
           </div>
-        </div>
 
+          <div class="py-2">
+            <p class="text-lg">Контактные данные:</p>
 
-
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
-          <div class="grid gap-4 h-full">
-            <div class="flex">
-              <p class="text-sm">Персональные данные</p>
+            <div class="py-2 px-4 grid grid-cols-1 gap-2">
+              <p class="text-sm">Имя: {{ client.person }}</p>
+              <p class="text-sm">Телефон: {{ client.phone }}</p>
+              <p class="text-sm">Электронная почта: {{ client.email }}</p>
             </div>
-
-            <div class="grid content-between">
-              <div class="">
-                <div class="">
-                  <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Имя</label>
-                  <div class="relative">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <p class="mdi mdi-account"></p>
-                    </div>
-                    <input :value="client.person" @change="clientPerson" type="text" id="person" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Иван Иванов">
-                  </div>
-                </div>
-
-                <div class="">
-                  <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Электронная почта</label>
-                  <div class="relative">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <p class="mdi mdi-email"></p>
-                    </div>
-                    <input :value="client.email" @change="clientPerson" type="text" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@domen.com">
-                  </div>
-                </div>
-
-                <div class="">
-                  <label for="message" class="block mt-2 mb-1 text-xs font-medium text-gray-900 dark:text-gray-400">Номер телефона</label>
-                  <div class="relative">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <p class="mdi mdi-phone"></p>
-                    </div>
-                    <input :value="client.phone" @change="clientPerson" type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="+7 (987) 654 32 10">
-                  </div>               
-                </div>
-              </div>
-
-              <div class="flex items-center justify-end gap-4 h-full my-2">
-                <div class="">
-                  <button @click="savePerson" class="w-full relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-blue-400 to-blue-800 group-hover:from-blue-400 group-hover:to-blue-800 hover:text-gray-100 dark:text-gray-300 hover:dark:text-gray-100 focus:ring-1 focus:outline-none focus:ring-cyan-200 dark:focus:ring-blue-700">
-                    <span class="px-8 py-2 relative transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                      Сохранить
-                    </span>
-                  </button>
-                </div>
-                <div class="">
-                  <button to="#" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 text-sm">Удалить профиль</button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-      <div class="grid grid-cols-1 gap-4 my-4">
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
-          <div class="flex items-center justify-between">
-            <p class="text-sm my-2">Товары в сравнении</p>
-            <nuxt-link :to="{ name: 'compare'}" class="text-sm my-2">перейти</nuxt-link>
-          </div>
-          <div v-if="comp.length == 0" class="flex justify-center items-center h-24 min-h-full">
-            <p>Нет товаров для сравнения</p>
-          </div>
-          <div v-else class="">
-            <div class="grid grid-cols-3 gap-4 lg:grid-cols-6">
-              <div v-for="product in comp" :key="product.id" class="">
-                
-                <div class="flex items-center justify-center bg-white rounded-sm pb-12 relative">
-                  <img :src="product.preview_image" class="h-20 rounded-sm"/>
-                  <div class="absolute top-0 right-0 px-1">
-                    <button @click="delToComparison(product) && addToast('Товар удалён из сравниваемых')" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
-                  </div>   
-                  <div class="absolute bottom-0 p-1">
-                    <div  class="flex justify-center items-center text-center">
-                      <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="text-xs text-gray-700 font-semibold">{{ product.name }}</nuxt-link>
-                    </div>
-                  </div>    
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white dark:bg-gray-800 px-4 py-4 border border-gray-300 dark:border-gray-700">
-          <div class="flex">
-            <p class="text-sm my-2">Товары в избранном</p>
             
           </div>
-          <div v-if="favorites.length == 0" class="flex justify-center items-center h-24 min-h-full">
-            <p>Нет товаров в избранном</p>
-          </div>
-          <div v-else class="">
-            <div class="grid grid-cols-3 lg:grid-cols-6 gap-4">
-              <div v-for="product in favorites" :key="product.id" class="">
-                
-                <div class="flex items-center justify-center bg-white rounded-sm pb-12 relative">
-                  <img :src="product.preview_image" class="h-20 rounded-sm"/>
-                  <div class="absolute top-0 right-0 px-1">
-                    <button @click="delProductToFav(product) && addToast('Товар удалён из избранных')" class="text-xs text-gray-700 font-semibold text-center mdi mdi-close"></button>
-                  </div>   
-                  <div class="absolute bottom-0 p-1">
-                    <div  class="flex justify-center items-center text-center">
-                      <nuxt-link :to="{ name: 'product-id', params: { id: product.id }}" class="text-xs text-gray-700 font-semibold">{{ product.name }}</nuxt-link>
-                    </div>
-                  </div>    
-                </div>
-                
+
+          <div class="py-2">
+            <p class="text-lg">Подробности заказа:</p>
+            <div v-for="order in orders" :key="order.id" class="px-4 py-2">
+              
+              <div class="grid grid-cols-1 gap-2">
+                <p class="text-sm">Номер заказа: <span class="font-semibold">{{ order.order_number }}</span></p>
+
+                <div class="flex gap-4">
+                  <p class="text-sm">Статус заказа:</p>
+                  <div class="">
+                    <p v-if="order.status === 'notprocessed'">Не обработан</p>
+                    <p v-else>Обработан</p>
+                  </div>
+                </div>                
               </div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div v-for="product in order.client_product" :key="product.id" class="">              
+                  <div class="py-2">
+                    <div class="grid grid-cols-1 md:flex gap-4">
+                      
+                      <div class="py-4 px-8 bg-white rounded-sm flex items-center justify-center">
+                        <img :src="product.preview_image" alt="" class=" h-40 md:h-20" />
+                      </div>
+                      
+                      <div class="">
+                        <div class="">
+                          <p class="text-xs">{{ product.vcode }}</p>
+                          <div class="py-2">
+                            <p class="text-sm">{{ product.name }}</p>
+                            <p class="text-sm">{{ product.price }} руб.</p>                          
+                          </div>
+                          <p class="text-sm">Кол-во: {{ product.quantity }}</p>
+                        </div>
+                      </div>
+
+                    </div>                  
+                  </div>
+                </div>
+              </div>
+
+
+              <p class="text-sm">Итог заказа: <span class="text-base">{{ order.total.toLocaleString() }}</span> руб.</p>
+
             </div>
+            
           </div>
+
+          <div class="py-6 flex items-center justify-center">
+            <nuxt-link :to="{ name: 'cts' }" class="uppercase">Продолжить покупки</nuxt-link>
+          </div>
+
         </div>
       </div>
+
+      
 
 
     </div>
 
+    <Recommend :recommends="recommends" />
     <Footer :brands="brands" class="" />
 
   </div>
@@ -202,6 +110,7 @@ import { mapState, mapActions } from 'vuex'
 import Navbar from '~/components/Navbar.vue'
 import Footer from '~/components/Footer.vue'
 import Order from '~/components/sections/Order.vue'
+import Recommend from '~/components/sections/Recommend.vue'
 
 import TopSliderSection from '~/components/sections/TopSliderSection.vue'
 
@@ -211,13 +120,15 @@ import TopSliderSection from '~/components/sections/TopSliderSection.vue'
         TopSliderSection,
         Navbar,
         Order,
+        Recommend,
         Footer,
     },
     async asyncData({ $axios }) {
       const cts = await $axios.$get(`c/ct/`)
       const brands = await $axios.$get('/c/brands/')
       const widebanners = await $axios.$get('c/widebanners/')
-      return { widebanners, cts, brands }
+      const recommends = await $axios.$get(`c/recommend/`)
+      return { widebanners, cts, brands, recommends }
     },
     data() {
       return {
